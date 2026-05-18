@@ -1,0 +1,6 @@
+{
+  "name": "Nagy Levente - Okosotthon Integrátor",
+  "description": "Prémium okosotthon megoldások fúrás, falbontás és por nélkül Home Assistant alapon.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
