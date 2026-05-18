@@ -1,0 +1,52 @@
+{
+  "header": {
+    "title": "Okosotthon Helyi Vezérléssel",
+    "description": "Felejtse el a lassú felhős szervereket. Megoldásaimmal az adatai a falakon belül maradnak, a vezérlés pedig internet nélkül is villámgyors.",
+    "name": "Nagy Levente",
+    "profileImage": "/profil.jpg"
+  },
+  "features": [
+    {
+      "text": "Értesítést kérek a telefonomra, ha csőtörés van",
+      "detail": "Azonnali vízszivárgás-érzékelés és riasztás",
+      "icon": "Droplets"
+    },
+    {
+      "text": "A folyosón magától felgyulladna a fény éjjel",
+      "detail": "Automata mozgásérzékelős világításvezérlés",
+      "icon": "Lightbulb"
+    },
+    {
+      "text": "Távolról látni és szabályozni a hőmérsékletet",
+      "detail": "Okos termosztát és fogyasztáscsökkentés (15-30% megtakarítás)",
+      "icon": "Thermometer"
+    },
+    {
+      "text": "Elfelejtettem kihúzni a vasalót? Lekapcsolnám",
+      "detail": "Biztonsági okoskonnektorok távoli eléréssel",
+      "icon": "Zap"
+    },
+    {
+      "text": "Értesítést kérek, ha a gyerek épségben hazaért",
+      "detail": "Bejárati ajtó nyitásérzékelő és értesítések",
+      "icon": "ShieldCheck"
+    },
+    {
+      "text": "Mindent egy appból",
+      "detail": "Világítás, kapu és kamera egyetlen felületen.",
+      "icon": "Smartphone"
+    }
+  ],
+  "stats": [
+    { "text": "100% Adatvédelem", "icon": "Lock" },
+    { "text": "Internet nélkül is működik", "icon": "Wifi" },
+    { "text": "Nincs válaszidő-késleltetés", "icon": "Zap" },
+    { "text": "Home Assistant Alapú", "icon": "Cpu" }
+  ],
+  "cta": {
+    "title": "Kérjen ingyenes helyszíni felmérést!",
+    "description": "Kimegyek, átbeszéljük az igényeit, teszteljük a Wi-Fi hálózatot, és mutatok egy működő bemutató darabot.",
+    "button": "Kapcsolatfelvétel Messengeren",
+    "link": "https://m.me/leventesmarthome"
+  }
+}

@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-900 text-slate-50 antialiased selection:bg-sky-500/30 overflow-x-hidden;
+    background-image: 
+      linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+@layer components {
+  /* Layout Containers */
+  .page-container {
+    @apply relative max-w-4xl mx-auto px-6 py-12 md:py-24 font-sans text-slate-100;
+  }
+
+  /* Typography */
+  .section-title {
+    @apply text-2xl font-display font-semibold mb-8 flex items-center gap-3 text-white;
+  }
+
+  .main-heading {
+    @apply text-4xl md:text-7xl font-display font-extrabold text-white mb-8 tracking-tighter leading-tight;
+  }
+
+  .lead-text {
+    @apply text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-medium;
+  }
+
+  /* Cards & UI Elements */
+  .feature-card {
+    @apply relative p-6 bg-slate-800/40 border border-slate-700/50 rounded-2xl 
+           backdrop-blur-md transition-all duration-500 shadow-lg shadow-black/20;
+  }
+
+  .feature-card:hover {
+    @apply border-sky-400/50 bg-slate-800/80 scale-[1.02] -translate-y-1 
+           shadow-2xl shadow-sky-500/10;
+  }
+
+  .feature-icon {
+    @apply mt-0.5 p-2.5 bg-slate-700/50 rounded-xl transition-all duration-500 
+           border border-slate-600/30 shadow-inner;
+  }
+
+  .feature-card:hover .feature-icon {
+    @apply bg-sky-500/20 border-sky-400/30 text-white scale-110 rotate-3;
+  }
+
+  .feature-detail {
+    @apply transition-colors duration-500 text-slate-500;
+  }
+
+  .feature-card:hover .feature-detail {
+    @apply text-slate-400;
+  }
+
+  .tech-card {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+    @apply p-8 md:p-12 border border-slate-700/50 rounded-[2.5rem] relative overflow-hidden 
+           shadow-2xl backdrop-blur-xl;
+  }
+
+  .cta-box {
+    @apply p-10 md:p-16 bg-sky-500/10 border border-sky-400/20 rounded-[2.5rem] 
+           text-center backdrop-blur-xl shadow-2xl;
+  }
+
+  .badge-item {
+    @apply flex items-center gap-2 px-5 py-2.5 bg-slate-800/60 border border-slate-700/50 
+           rounded-2xl text-sm font-semibold text-sky-300 shadow-md backdrop-blur-sm
+           hover:border-sky-500/50 transition-colors;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-3 px-10 py-5 bg-sky-500 hover:bg-sky-400 
+           text-slate-950 font-extrabold rounded-2xl transition-all hover:scale-[1.05] 
+           active:scale-[0.95] shadow-xl shadow-sky-500/30;
+  }
+
+  /* Decoration */
+  .bg-glow {
+    @apply fixed inset-0 overflow-hidden pointer-events-none z-0;
+  }
+
+  .glow-orb {
+    @apply absolute w-[70%] h-[70%] blur-[160px] rounded-full opacity-30 mix-blend-screen;
+    animation: pulse 10s infinite alternate ease-in-out;
+  }
+
+  @keyframes pulse {
+    from { transform: scale(1) translate(0, 0); opacity: 0.2; }
+    to { transform: scale(1.1) translate(20px, 20px); opacity: 0.4; }
+  }
+
+  .profile-avatar {
+    @apply w-32 h-32 md:w-44 md:h-44 rounded-full border-1 border-sky-400/30 overflow-hidden 
+           shadow-2xl shadow-sky-500/40 relative bg-slate-800 transition-all duration-500 will-change-transform;
+    outline: 8px solid rgba(15, 23, 42, 0.5);
+  }
+
+  .profile-avatar:hover {
+    @apply scale-105 border-sky-400 shadow-sky-500/60;
+  }
+
+  .profile-avatar::after {
+    content: '';
+    @apply absolute inset-0 bg-linear-to-t from-slate-900/60 to-transparent pointer-events-none;
+  }
+
+  .name-badge {
+    @apply inline-flex px-5 py-2 text-sm font-bold tracking-[0.25em] uppercase 
+           text-sky-400 bg-sky-500/10 border border-sky-400/20 rounded-full 
+           backdrop-blur-xl shadow-lg shadow-black/20;
+  }
+}
