@@ -1,12 +1,448 @@
 <!DOCTYPE html>
 <html lang="hu">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nagy Levente - Smart Home</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nagy Levente - Okosotthon Helyi Vezérléssel</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script shadow>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151e2f',
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                background-color: #020617; /* bg-slate-950 */
+                color: #f8fafc; /* text-slate-50 */
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                overflow-x: hidden;
+                background-image: 
+                    linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+            ::selection {
+                background-color: rgba(14, 165, 233, 0.3); /* selection:bg-sky-500/30 */
+            }
+        }
+
+        @layer components {
+            .glow-orb {
+                position: absolute;
+                width: 70%;
+                height: 70%;
+                filter: blur(160px);
+                border-radius: 9999px;
+                opacity: 0.3;
+                mix-blend-mode: screen;
+                animation: pulse 10s infinite alternate ease-in-out;
+            }
+
+            @keyframes pulse {
+                from { transform: scale(1) translate(0, 0); opacity: 0.2; }
+                to { transform: scale(1.1) translate(20px, 20px); opacity: 0.4; }
+            }
+
+            .main-heading {
+                font-family: 'Outfit', sans-serif;
+                font-weight: 800;
+                font-size: 3rem; /* md:4.5rem */
+                line-height: 1;
+                letter-spacing: -0.05em;
+                color: white;
+                margin-bottom: 2rem;
+            }
+            @media (min-width: 768px) {
+                .main-heading { font-size: 4.5rem; }
+            }
+
+            .feature-card {
+                position: relative;
+                padding: 1.5rem;
+                background-color: rgba(8, 12, 24, 0.9);
+                border: 1px solid rgba(56, 189, 248, 0.2);
+                border-radius: 1.25rem;
+                backdrop-filter: blur(12px);
+                transition: all 0.5s;
+                box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            }
+
+            .feature-card:hover {
+                border-color: rgba(56, 189, 248, 0.6);
+                background-color: rgba(10, 15, 30, 0.95);
+                transform: translateY(-6px) scale(1.02);
+                box-shadow: 0 30px 60px -12px rgba(14, 165, 233, 0.15);
+            }
+
+            .feature-icon {
+                margin-top: 0.125rem;
+                padding: 0.625rem;
+                background-color: rgba(30, 41, 59, 0.5);
+                border-radius: 0.75rem;
+                transition: all 0.5s;
+                border: 1px solid rgba(51, 65, 85, 0.3);
+            }
+
+            .feature-card:hover .feature-icon {
+                background-color: rgba(14, 165, 233, 0.2);
+                border-color: rgba(56, 189, 248, 0.3);
+                color: white;
+                transform: scale(1.1) rotate(3deg);
+            }
+
+            .tech-card {
+                background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(7, 10, 18, 0.98));
+                padding: 2rem;
+                border: 1px solid rgba(56, 189, 248, 0.2);
+                border-radius: 2.5rem;
+                position: relative;
+                overflow: hidden;
+                backdrop-filter: blur(24px);
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            }
+            @media (min-width: 768px) {
+                .tech-card { padding: 3rem; }
+            }
+
+            .profile-avatar {
+                width: 8rem;
+                height: 8rem;
+                border-radius: 9999px;
+                border: 2px solid rgba(56, 189, 248, 0.3);
+                overflow: hidden;
+                position: relative;
+                background-color: #1e293b;
+                transition: all 0.5s;
+                outline: 8px solid rgba(15, 23, 42, 0.5);
+                box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.4);
+            }
+            @media (min-width: 768px) {
+                .profile-avatar { width: 11rem; height: 11rem; }
+            }
+
+            .btn-primary {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.75rem;
+                padding: 1.25rem 2.5rem;
+                background-color: #0ea5e9;
+                color: #020617;
+                font-weight: 800;
+                border-radius: 1rem;
+                transition: all 0.2s;
+                box-shadow: 0 20px 25px -5px rgba(14, 165, 233, 0.3);
+            }
+            .btn-primary:hover {
+                background-color: #38bdf8;
+                transform: scale(1.05);
+            }
+            .btn-primary:active {
+                transform: scale(0.95);
+            }
+
+            .name-badge {
+                display: inline-flex;
+                padding: 0.5rem 1.25rem;
+                font-size: 0.875rem;
+                font-weight: 700;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: #38bdf8;
+                background-color: rgba(14, 165, 233, 0.1);
+                border: 1px solid rgba(56, 189, 248, 0.2);
+                border-radius: 9999px;
+                backdrop-filter: blur(24px);
+            }
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-950">
+
+    <!-- Visual Decoration -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="glow-orb top-[-10%] left-[-10%] bg-sky-500/20" style="animation-delay: 0s;"></div>
+        <div class="glow-orb bottom-[-20%] right-[-10%] bg-blue-600/20" style="animation-delay: -2s;"></div>
+        <div class="glow-orb top-[20%] right-[-20%] bg-indigo-500/10" style="animation-delay: -4s;"></div>
+        <div class="glow-orb bottom-[10%] left-[-20%] bg-cyan-400/10" style="animation-delay: -6s;"></div>
+    </div>
+
+    <div class="relative max-w-4xl mx-auto px-6 py-12 md:py-24 font-sans text-slate-100 z-10">
+        
+        <!-- Header Section -->
+        <header class="mb-4 md:mb-6 scroll-reveal">
+            <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-4 text-center md:text-left">
+                <div class="flex-1">
+                    <h1 class="main-heading">
+                        Okosotthon <br />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-500">
+                            Helyi Vezérléssel
+                        </span>
+                    </h1>
+                    <p class="text-2xl md:text-3xl text-white max-w-2xl mx-auto md:mx-0 leading-tight font-extrabold tracking-tight">
+                        Felejtse el a lassú felhős szervereket. 
+                    </p>
+                    <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto md:mx-0 leading-relaxed font-medium mt-2">
+                        Megoldásaimmal az adatai a falakon belül maradnak, a vezérlés pedig internet nélkül is villámgyors.
+                    </p>
+                </div>
+
+                <div class="flex flex-col items-center md:items-end shrink-0 gap-2">
+                    <div class="profile-avatar shadow-sky-500/50">
+                        <img 
+                            src="profil.jpg" 
+                            alt="Nagy Levente"
+                            class="w-full h-full object-cover object-top transition-opacity duration-500"
+                            onerror="this.src='https://ui-avatars.com/api/?name=Nagy+Levente&background=0ea5e9&color=fff&size=200'"
+                        >
+                    </div>
+                    <span class="name-badge">Nagy Levente</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Section Divider -->
+        <div class="flex items-center gap-4 mb-8 opacity-50 scroll-reveal">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <div class="w-2 h-2 rounded-full bg-sky-500 shadow-[0_0_15px_rgba(56,189,248,0.8)]"></div>
+            <div class="h-px w-12 bg-slate-800"></div>
+        </div>
+
+        <!-- Feature Grid -->
+        <section class="mb-16 scroll-reveal">
+            <h2 class="text-3xl md:text-4xl font-display font-black mb-10 flex items-center gap-3 text-white">
+                <i data-lucide="help-circle" class="w-10 h-10 text-sky-400"></i>
+                Hogyan teheti kényelmesebbé az életét?
+            </h2>
+            
+            <div class="grid gap-6 md:grid-cols-2">
+                <!-- Card 1 -->
+                <div class="feature-card">
+                    <div class="flex items-start gap-5">
+                        <div class="feature-icon">
+                            <i data-lucide="smartphone" class="w-7 h-7 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl text-white font-black leading-tight mb-2 tracking-tight">
+                                Lássam a telefonomon, ki áll a kapuban
+                            </p>
+                            <p class="text-base text-sky-400 font-bold italic">
+                                → Intelligens videó-kaputelefon integráció
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="feature-card">
+                    <div class="flex items-start gap-5">
+                        <div class="feature-icon">
+                            <i data-lucide="droplets" class="w-7 h-7 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl text-white font-black leading-tight mb-2 tracking-tight">
+                                Értesítést kérek a telefonomra, ha csőtörés van
+                            </p>
+                            <p class="text-base text-sky-400 font-bold italic">
+                                → Azonnali vízszivárgás-érzékelés és riasztás
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="feature-card">
+                    <div class="flex items-start gap-5">
+                        <div class="feature-icon">
+                            <i data-lucide="lightbulb" class="w-7 h-7 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl text-white font-black leading-tight mb-2 tracking-tight">
+                                Szeretném, ha a folyosón magától felgyulladna a fény éjjel
+                            </p>
+                            <p class="text-base text-sky-400 font-bold italic">
+                                → Automata mozgásérzékelős világításvezérlés
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="feature-card">
+                    <div class="flex items-start gap-5">
+                        <div class="feature-icon">
+                            <i data-lucide="thermometer" class="w-7 h-7 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl text-white font-black leading-tight mb-2 tracking-tight">
+                                Távolról akarom látni és szabályozni, hány fok van otthon
+                            </p>
+                            <p class="text-base text-sky-400 font-bold italic">
+                                → Okos termosztát és fogyasztáscsökkentés (akár 15-30% megtakarítás)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="feature-card">
+                    <div class="flex items-start gap-5">
+                        <div class="feature-icon">
+                            <i data-lucide="zap" class="w-7 h-7 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl text-white font-black leading-tight mb-2 tracking-tight">
+                                Elfelejtettem kihúzni a vasalót? Szeretném bárhonnan lekapcsolni
+                            </p>
+                            <p class="text-base text-sky-400 font-bold italic">
+                                → Biztonsági okoskonnektorok távoli eléréssel
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="feature-card">
+                    <div class="flex items-start gap-5">
+                        <div class="feature-icon">
+                            <i data-lucide="shield-check" class="w-7 h-7 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-2xl text-white font-black leading-tight mb-2 tracking-tight">
+                                Értesítést kérek, ha a gyerek épségben hazaért az iskolából
+                            </p>
+                            <p class="text-base text-sky-400 font-bold italic">
+                                → Bejárati ajtó nyitásérzékelő és családi értesítések
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="flex items-center gap-4 mb-12 opacity-50 scroll-reveal">
+            <div class="h-px w-12 bg-slate-800"></div>
+            <div class="w-2 h-2 rounded-full bg-sky-500 shadow-[0_0_10px_rgba(56,189,248,0.5)]"></div>
+            <div class="h-px flex-1 bg-slate-800"></div>
+        </div>
+
+        <!-- Technical Features -->
+        <section class="mb-20 scroll-reveal">
+            <div class="tech-card">
+                <div class="absolute top-0 right-0 p-8 opacity-5 text-white">
+                    <i data-lucide="cpu" class="w-32 h-32"></i>
+                </div>
+                
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-display font-semibold mb-4 text-white">
+                        Miért a Helyi Vezérlésű Rendszer?
+                    </h2>
+                    <p class="text-slate-400 mb-8 max-w-2xl leading-relaxed text-lg">
+                        A piacon kapható legtöbb eszközzel ellentétben az általam telepített rendszerek 
+                        <span class="text-slate-100 italic font-medium">nem függenek külső felhős szerverektől</span>. 
+                        A házon belül elhelyezett "helyi agy" garantálja a sebességet és a biztonságot.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-3">
+                        <div class="flex items-center gap-2 px-5 py-2.5 bg-slate-800/60 border border-slate-700/50 rounded-2xl text-sm font-semibold text-sky-300 shadow-md backdrop-blur-sm hover:border-sky-500/50 transition-colors">
+                            <i data-lucide="lock" class="w-4 h-4"></i> 100% Adatvédelem
+                        </div>
+                        <div class="flex items-center gap-2 px-5 py-2.5 bg-slate-800/60 border border-slate-700/50 rounded-2xl text-sm font-semibold text-sky-300 shadow-md backdrop-blur-sm hover:border-sky-500/50 transition-colors">
+                            <i data-lucide="zap" class="w-4 h-4"></i> Zéró késleltetés
+                        </div>
+                        <div class="flex items-center gap-2 px-5 py-2.5 bg-slate-800/60 border border-slate-700/50 rounded-2xl text-sm font-semibold text-sky-300 shadow-md backdrop-blur-sm hover:border-sky-500/50 transition-colors">
+                            <i data-lucide="wifi" class="w-4 h-4"></i> Offline működés
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="scroll-reveal">
+            <div class="p-10 md:p-16 bg-sky-500/10 border border-sky-400/20 rounded-[2.5rem] text-center backdrop-blur-xl shadow-2xl">
+                <h2 class="text-3xl md:text-4xl font-display font-bold mb-4 text-white">
+                    Kérjen ingyenes felmérést!
+                </h2>
+                <p class="text-slate-300 text-lg mb-8 max-w-lg mx-auto leading-relaxed">
+                    Kimegyek, átbeszéljük az igényeit, és mutatok egy működő bemutató darabot.
+                </p>
+                
+                <a 
+                    href="https://m.me/leventesmarthome" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="btn-primary"
+                >
+                    <i data-lucide="message-circle" class="w-6 h-6"></i>
+                    Kapcsolatfelvétel Messengeren
+                </a>
+            </div>
+        </section>
+
+        <footer class="mt-24 pt-8 border-t border-slate-900 text-center text-sm text-slate-600">
+            <p>© 2026 Nagy Levente EV. | Rendszerüzemeltetési pontosság az Ön otthonában.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Inicializáljuk az ikonokat
+        lucide.createIcons();
+
+        // Scroll Reveal animáció
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
 </html>
