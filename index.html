@@ -45,6 +45,8 @@
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
                 overflow-x: hidden;
+                overflow-wrap: break-word;
+                hyphens: auto;
                 background-image: 
                     linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
                     linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
@@ -71,6 +73,17 @@
                 color: #38bdf8;
             }
 
+            .mobile-nav-link {
+                padding: 1rem 1.5rem;
+                font-size: 1.125rem;
+                font-weight: 700;
+                color: #f8fafc;
+                border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+                display: block;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+
             .glow-orb {
                 position: absolute;
                 width: 70%;
@@ -90,11 +103,15 @@
             .main-heading {
                 font-family: 'Outfit', sans-serif;
                 font-weight: 800;
-                font-size: 3rem; /* md:4.5rem */
-                line-height: 1;
-                letter-spacing: -0.05em;
+                font-size: 2.25rem; /* Default for mobile, md:4.5rem */
+                line-height: 1.1;
+                letter-spacing: -0.02em;
                 color: white;
                 margin-bottom: 2rem;
+                word-wrap: break-word;
+            }
+            @media (min-width: 480px) {
+                .main-heading { font-size: 3rem; }
             }
             @media (min-width: 768px) {
                 .main-heading { font-size: 4.5rem; }
@@ -200,13 +217,16 @@
                 padding: 1rem 2rem;
                 border-radius: 1.5rem;
                 font-weight: 900;
-                font-size: 2.25rem;
+                font-size: 1.75rem; /* Default for mobile */
                 box-shadow: 0 25px 50px -12px rgba(16, 185, 129, 0.4);
                 text-align: center;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                min-width: 250px;
+                min-width: 200px;
+            }
+            @media (min-width: 480px) {
+                .price-tag { font-size: 2.25rem; min-width: 250px; }
             }
 
             .profile-avatar {
@@ -290,9 +310,19 @@
                 <a href="#pricing" class="nav-link">Árazás</a>
                 <a href="#contact" class="nav-link">Kapcsolat</a>
             </div>
-            <!-- Mobile Menu Toggle (Simplified) -->
-            <div class="md:hidden">
-                <i data-lucide="menu" class="w-6 h-6 text-white"></i>
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden p-2 text-white hover:text-sky-400 transition-colors" aria-label="Menü">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-slate-800 shadow-2xl">
+            <div class="flex flex-col py-2">
+                <a href="#home" class="mobile-nav-link">Főoldal</a>
+                <a href="#concept" class="mobile-nav-link">Mi az az okosotthon?</a>
+                <a href="#features" class="mobile-nav-link">Előnyök</a>
+                <a href="#pricing" class="mobile-nav-link">Árazás</a>
+                <a href="#contact" class="mobile-nav-link">Kapcsolat</a>
             </div>
         </div>
     </nav>
@@ -310,17 +340,17 @@
         <header id="home" class="mb-4 md:mb-12 scroll-reveal transition-all duration-1000">
             <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-4 text-center md:text-left">
                 <div class="flex-1">
-                    <h1 class="main-heading">
+                    <h1 class="main-heading break-words">
                         HelyiOkos <br />
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-500">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-500 px-[0.1em] -mx-[0.1em]">
                             Otthonautomatizálás
                         </span>
                     </h1>
-                    <p class="text-2xl md:text-3xl text-white max-w-2xl mx-auto md:mx-0 leading-tight font-extrabold tracking-tight">
+                    <p class="text-xl md:text-3xl text-white max-w-2xl mx-auto md:mx-0 leading-tight font-extrabold tracking-normal md:tracking-tight">
                         Felejtse el a lassú felhős szervereket. 
                     </p>
-                    <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto md:mx-0 leading-relaxed font-medium mt-2">
-                        Megoldásaimmal az adatai a falakon belül maradnak, a vezérlés pedig internet nélkül is villámgyors.
+                    <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto md:mx-0 leading-relaxed font-medium mt-4">
+                        Megoldásainkkal az adatai a falakon belül maradnak, a vezérlés pedig internet nélkül is villámgyors.
                     </p>
                 </div>
 
@@ -360,7 +390,7 @@
                             <i data-lucide="smartphone" class="w-7 h-7 text-sky-400"></i>
                         </div>
                         <div>
-                            <p class="text-2xl text-white font-black leading-tight mb-2 tracking-tight">
+                            <p class="text-xl md:text-2xl text-white font-black leading-tight mb-2 tracking-tight">
                                 Lássam a telefonomon, ki áll a kapuban
                             </p>
                             <p class="text-base text-sky-400 font-bold italic">
@@ -377,7 +407,7 @@
                             <i data-lucide="droplets" class="w-7 h-7 text-sky-400"></i>
                         </div>
                         <div>
-                            <p class="text-2xl text-white font-black leading-tight mb-2 tracking-tight">
+                            <p class="text-xl md:text-2xl text-white font-black leading-tight mb-2 tracking-tight">
                                 Értesítést kérek a telefonomra, ha csőtörés van
                             </p>
                             <p class="text-base text-sky-400 font-bold italic">
@@ -394,7 +424,7 @@
                             <i data-lucide="lightbulb" class="w-7 h-7 text-sky-400"></i>
                         </div>
                         <div>
-                            <p class="text-2xl text-white font-black leading-tight mb-2 tracking-tight">
+                            <p class="text-xl md:text-2xl text-white font-black leading-tight mb-2 tracking-tight">
                                 Szeretném, ha a folyosón magától felgyulladna a fény éjszaka
                             </p>
                             <p class="text-base text-sky-400 font-bold italic">
@@ -411,7 +441,7 @@
                             <i data-lucide="thermometer" class="w-7 h-7 text-sky-400"></i>
                         </div>
                         <div>
-                            <p class="text-2xl text-white font-black leading-tight mb-2 tracking-tight">
+                            <p class="text-xl md:text-2xl text-white font-black leading-tight mb-2 tracking-tight">
                                 Távolról akarom látni és szabályozni a hőmérsékletet
                             </p>
                             <p class="text-base text-sky-400 font-bold italic">
@@ -428,7 +458,7 @@
                             <i data-lucide="zap" class="w-7 h-7 text-sky-400"></i>
                         </div>
                         <div>
-                            <p class="text-2xl text-white font-black leading-tight mb-2 tracking-tight">
+                            <p class="text-xl md:text-2xl text-white font-black leading-tight mb-2 tracking-tight">
                                 Elfelejtettem kihúzni a vasalót? Bárhonnan lekapcsolom
                             </p>
                             <p class="text-base text-sky-400 font-bold italic">
@@ -445,7 +475,7 @@
                             <i data-lucide="shield-check" class="w-7 h-7 text-sky-400"></i>
                         </div>
                         <div>
-                            <p class="text-2xl text-white font-black leading-tight mb-2 tracking-tight">
+                            <p class="text-xl md:text-2xl text-white font-black leading-tight mb-2 tracking-tight">
                                 Értesítést kérek, ha a gyerek épségben hazaért
                             </p>
                             <p class="text-base text-sky-400 font-bold italic">
@@ -536,26 +566,26 @@
 
                 <div class="grid md:grid-cols-2 gap-8 mb-12">
                     <div class="space-y-5">
-                        <div class="flex items-center gap-4 text-white font-bold text-xl">
-                            <i data-lucide="check-circle-2" class="text-emerald-500 w-7 h-7"></i>
+                        <div class="flex items-center gap-4 text-white font-bold text-lg md:text-xl">
+                            <i data-lucide="check-circle-2" class="text-emerald-500 w-6 h-6 md:w-7 md:h-7 shrink-0"></i>
                             Központi vezérlőegység ("Helyi Agy")
                         </div>
-                        <div class="flex items-center gap-4 text-white font-bold text-xl">
-                            <i data-lucide="check-circle-2" class="text-emerald-500 w-7 h-7"></i>
+                        <div class="flex items-center gap-4 text-white font-bold text-lg md:text-xl">
+                            <i data-lucide="check-circle-2" class="text-emerald-500 w-6 h-6 md:w-7 md:h-7 shrink-0"></i>
                             Nagyteljesítményű univerzális antenna
                         </div>
-                        <div class="flex items-center gap-4 text-white font-bold text-xl">
-                            <i data-lucide="check-circle-2" class="text-emerald-500 w-7 h-7"></i>
+                        <div class="flex items-center gap-4 text-white font-bold text-lg md:text-xl">
+                            <i data-lucide="check-circle-2" class="text-emerald-500 w-6 h-6 md:w-7 md:h-7 shrink-0"></i>
                             Teljes szoftveres programozás
                         </div>
                     </div>
                     <div class="space-y-5">
-                        <div class="flex items-center gap-4 text-white font-bold text-xl">
-                            <i data-lucide="check-circle-2" class="text-emerald-500 w-7 h-7"></i>
+                        <div class="flex items-center gap-4 text-white font-bold text-lg md:text-xl">
+                            <i data-lucide="check-circle-2" class="text-emerald-500 w-6 h-6 md:w-7 md:h-7 shrink-0"></i>
                             Biztonságos egyedi távoli elérés
                         </div>
-                        <div class="flex items-center gap-4 text-white font-bold text-xl">
-                            <i data-lucide="check-circle-2" class="text-emerald-500 w-7 h-7"></i>
+                        <div class="flex items-center gap-4 text-white font-bold text-lg md:text-xl">
+                            <i data-lucide="check-circle-2" class="text-emerald-500 w-6 h-6 md:w-7 md:h-7 shrink-0"></i>
                             Ingyenes helyszíni felmérés
                         </div>
                     </div>
@@ -619,6 +649,24 @@
 
         document.querySelectorAll('.scroll-reveal').forEach(el => {
             observer.observe(el);
+        });
+
+        // Mobil menü kezelése
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Menü bezárása ha rákattintunk egy linkre
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
         });
 
         // Navigációs háttér váltás görgetéskor
