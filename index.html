@@ -54,8 +54,8 @@
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
                 overflow-x: hidden;
-                overflow-wrap: break-word;
-                hyphens: auto;
+                overflow-wrap: normal;
+                hyphens: none;
                 background-image: 
                     linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
                     linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
@@ -141,15 +141,15 @@
             }
 
             .concept-card {
-                padding: 2rem;
+                padding: 1.5rem;
                 background-color: rgba(15, 23, 42, 0.6);
                 border: 1px solid rgba(30, 41, 59, 1);
-                border-radius: 2rem;
+                border-radius: 1.5rem;
                 backdrop-filter: blur(24px);
                 transition: all 0.5s;
             }
             @media (min-width: 768px) {
-                .concept-card { padding: 2.5rem; }
+                .concept-card { padding: 1.75rem; }
             }
             .concept-card:hover {
                 border-color: rgba(56, 189, 248, 0.3);
@@ -368,8 +368,9 @@
             </a>
             <div class="hidden md:flex items-center gap-2">
                 <a href="#features" class="nav-link">Előnyök</a>
-                <a href="#concept" class="nav-link">Mi az az okosotthon?</a>
+                <a href="#concept" class="nav-link">Működés</a>
                 <a href="#usage" class="nav-link">Vezérlés</a>
+                <a href="#devices" class="nav-link">Eszközök</a>
                 <a href="#pricing" class="nav-link">Árazás</a>
                 <a href="#contact" class="nav-link">Kapcsolat</a>
             </div>
@@ -382,8 +383,9 @@
         <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-slate-800 shadow-2xl">
             <div class="flex flex-col py-2">
                 <a href="#features" class="mobile-nav-link">Előnyök</a>
-                <a href="#concept" class="mobile-nav-link">Mi az az okosotthon?</a>
+                <a href="#concept" class="mobile-nav-link">Működés</a>
                 <a href="#usage" class="mobile-nav-link">Vezérlés</a>
+                <a href="#devices" class="mobile-nav-link">Eszközök</a>
                 <a href="#pricing" class="mobile-nav-link">Árazás</a>
                 <a href="#contact" class="mobile-nav-link">Kapcsolat</a>
             </div>
@@ -551,7 +553,7 @@
         </section>
 
         <!-- SZEKCIÓ 2: Mi ez? (Egyszerűsített magyarázat) -->
-        <section id="concept" class="mb-24 scroll-reveal">
+        <section id="concept" class="mb-20 scroll-reveal">
             <h2 class="section-title">
                 <i data-lucide="info" class="w-10 h-10 text-sky-400"></i>
                 De mi az az okosotthon és hogyan működik?
@@ -559,31 +561,31 @@
             <div class="grid md:grid-cols-3 gap-6">
                 <!-- Concept 1 -->
                 <div class="concept-card">
-                    <div class="w-14 h-14 bg-sky-500/10 border border-sky-500/20 rounded-2xl flex items-center justify-center mb-6">
-                        <i data-lucide="heart" class="w-8 h-8 text-sky-400"></i>
+                    <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="heart" class="w-6 h-6 text-sky-400"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-4">A láthatatlan gondoskodás</h3>
-                    <p class="text-slate-400 text-sm md:text-lg leading-relaxed" style="hyphens: none; word-break: normal;">
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-2 font-display">A láthatatlan gondoskodás</h3>
+                    <p class="text-slate-300 text-sm md:text-base leading-relaxed" style="hyphens: none; word-break: normal; overflow-wrap: normal;">
                         Az okosotthon nem egy bonyolult technikai eszköz, hanem egy intelligens rendszer, amely észrevétlenül dolgozik a háttérben. Összeköti az ingatlan meglévő funkcióit, így a lakás <strong>automatikusan reagál az élethelyzetekre</strong>: lekapcsolja az eszközöket, ha Ön távozik, vagy kellemes klímát teremt, mire hazaér.
                     </p>
                 </div>
                 <!-- Concept 2 -->
                 <div class="concept-card">
-                    <div class="w-14 h-14 bg-sky-500/10 border border-sky-500/20 rounded-2xl flex items-center justify-center mb-6">
-                        <i data-lucide="shield-check" class="w-8 h-8 text-sky-400"></i>
+                    <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-sky-400"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-4">Helyi, privát biztonság</h3>
-                    <p class="text-slate-400 text-sm md:text-lg leading-relaxed" style="hyphens: none; word-break: normal;">
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-2 font-display">Helyi, privát biztonság</h3>
+                    <p class="text-slate-300 text-sm md:text-base leading-relaxed" style="hyphens: none; word-break: normal; overflow-wrap: normal;">
                         Megoldásom egyetlen kisméretű központi egység, amely az otthonába kerül (nem lassú, külföldi felhős szervereken keresztül működik). Internetkapcsolat nélkül, <strong>teljesen offline is villámgyors</strong> marad. Minden adata és kameraképe a falakon belül marad az Ön maximális privátszférája érdekében.
                     </p>
                 </div>
                 <!-- Concept 3 -->
                 <div class="concept-card">
-                    <div class="w-14 h-14 bg-sky-500/10 border border-sky-500/20 rounded-2xl flex items-center justify-center mb-6">
-                        <i data-lucide="hammer" class="w-8 h-8 text-sky-400"></i>
+                    <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="hammer" class="w-6 h-6 text-sky-400"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-4">Modern mikrohálózat</h3>
-                    <p class="text-slate-400 text-sm md:text-lg leading-relaxed" style="hyphens: none; word-break: normal;">
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-2 font-display">Modern mikrohálózat</h3>
+                    <p class="text-slate-300 text-sm md:text-base leading-relaxed" style="hyphens: none; word-break: normal; overflow-wrap: normal;">
                         A rendszer egy biztonságos vezeték nélküli mikrohálózaton kommunikál. Akár kész, teljesen felújított ingatlanokba is <strong>beépíthető bontás nélkül</strong>. A telepítés koszmentes, csupán a központi egység igényel táp- és internetkábelt, minden más eszköz vezeték nélkül kapcsolódik.
                     </p>
                 </div>
@@ -591,23 +593,189 @@
         </section>
 
         <!-- Usage Interfaces -->
-        <section id="usage" class="mb-24 scroll-reveal">
-            <h2 class="section-title">Hogyan fogja vezérelni?</h2>
+        <section id="usage" class="mb-20 scroll-reveal">
+            <h2 class="section-title">
+                <i data-lucide="sliders" class="w-10 h-10 text-sky-400"></i>
+                Hogyan fogja vezérelni?
+            </h2>
             <div class="grid gap-6 md:grid-cols-3 text-center">
-                <div class="p-8 md:p-10 bg-slate-900/40 border border-slate-800 rounded-3xl backdrop-blur-md hover:border-sky-500/20 transition-all">
-                    <i data-lucide="smartphone" class="w-12 h-12 text-sky-400 mx-auto mb-6"></i>
-                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Mobilalkalmazás</h3>
-                    <p class="text-sm md:text-lg text-slate-400 leading-relaxed" style="hyphens: none; word-break: normal;">Egyetlen letisztult telefonos applikációból (iOS/Android) vezérelhető minden.</p>
+                <div class="p-6 md:p-8 bg-slate-900/40 border border-slate-800 rounded-3xl backdrop-blur-md hover:border-sky-500/20 transition-all flex flex-col justify-start">
+                    <div class="w-12 h-12 text-sky-400 mx-auto mb-4 flex items-center justify-center bg-sky-500/10 border border-sky-500/20 rounded-2xl">
+                        <i data-lucide="smartphone" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-2 font-display">Mobilalkalmazás</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed" style="hyphens: none; word-break: normal; overflow-wrap: normal;">Egyetlen letisztult telefonos applikációból (iOS/Android) vezérelhető minden.</p>
                 </div>
-                <div class="p-8 md:p-10 bg-slate-900/40 border border-slate-800 rounded-3xl backdrop-blur-md hover:border-sky-500/20 transition-all">
-                    <i data-lucide="globe" class="w-12 h-12 text-sky-400 mx-auto mb-6"></i>
-                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Egyedi Webcím</h3>
-                    <p class="text-sm md:text-lg text-slate-400 leading-relaxed" style="hyphens: none; word-break: normal;">Például: <span class="text-sky-400 font-mono">jozsika.helyiokos.com</span> professzionális elérés távolról is.</p>
+                <div class="p-6 md:p-8 bg-slate-900/40 border border-slate-800 rounded-3xl backdrop-blur-md hover:border-sky-500/20 transition-all flex flex-col justify-start">
+                    <div class="w-12 h-12 text-sky-400 mx-auto mb-4 flex items-center justify-center bg-sky-500/10 border border-sky-500/20 rounded-2xl">
+                        <i data-lucide="globe" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-2 font-display">Egyedi Webcím</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed" style="hyphens: none; word-break: normal; overflow-wrap: normal;">Például: <span class="text-sky-400 font-mono text-xs md:text-sm">jozsika.helyiokos.com</span> elérés távolról is.</p>
                 </div>
-                <div class="p-8 md:p-10 bg-slate-900/40 border border-slate-800 rounded-3xl backdrop-blur-md hover:border-sky-500/20 transition-all">
-                    <i data-lucide="mic" class="w-12 h-12 text-sky-400 mx-auto mb-6"></i>
-                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Hangvezérlés</h3>
-                    <p class="text-sm md:text-lg text-slate-400 leading-relaxed" style="hyphens: none; word-break: normal;">Teljes mértékben kompatibilis Alexa és Google Assistant asszisztensekkel.</p>
+                <div class="p-6 md:p-8 bg-slate-900/40 border border-slate-800 rounded-3xl backdrop-blur-md hover:border-sky-500/20 transition-all flex flex-col justify-start">
+                    <div class="w-12 h-12 text-sky-400 mx-auto mb-4 flex items-center justify-center bg-sky-500/10 border border-sky-500/20 rounded-2xl">
+                        <i data-lucide="mic" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-2 font-display">Hangvezérlés</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed" style="hyphens: none; word-break: normal; overflow-wrap: normal;">Teljes mértékben kompatibilis Alexa és Google Assistant asszisztensekkel.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SZEKCIÓ: Választható okoseszközök és funkciók -->
+        <section id="devices" class="mb-24 scroll-reveal">
+            <h2 class="section-title">
+                <i data-lucide="cpu" class="w-10 h-10 text-sky-400"></i>
+                Választható okoseszközök és funkciók
+            </h2>
+            <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                Az Alapcsomagon felül az alábbi intelligens eszközök és vezérlések integrálhatóak otthonába. <span class="text-sky-400 font-bold">Kattintson az egyes eszközökre</span> a részletes bemutatásukért és az okos funkcióik megismeréséért!
+            </p>
+            
+            <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+                <!-- Mozgásérzékelő -->
+                <div onclick="openDeviceModal('mozgas')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="eye" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Mozgás- és jelenlét-érzékelő</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Automatikus világításkapcsolás és biztonsági értesítések mozgás észlelésekor.</p>
+                    </div>
+                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                    </div>
+                </div>
+
+                <!-- Lámpa -->
+                <div onclick="openDeviceModal('lampa')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="lightbulb" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Személyre szabott világítás</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Egyedi világítási hangulatok, jelenlét-szimuláció és központi lekapcsolás.</p>
+                    </div>
+                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                    </div>
+                </div>
+
+                <!-- Vízszivárgás érzékelő -->
+                <div onclick="openDeviceModal('szivargas')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="droplets" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Vízszivárgás érzékelő</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Azonnali riasztás telefonra és automatizált vízelzárás csőtöréskor.</p>
+                    </div>
+                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                    </div>
+                </div>
+
+                <!-- Kaputelefon -->
+                <div onclick="openDeviceModal('kaputelefon')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="bell" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Intelligens kaputelefon és kamera</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Távoli videós beszélgetés a látogatóval és kényelmes kapunyitás futároknak.</p>
+                    </div>
+                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                    </div>
+                </div>
+
+                <!-- Okos fűtés -->
+                <div onclick="openDeviceModal('futes')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="thermometer" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Okos fűtés és termosztát</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Helyiségenkénti egyedi hőmérséklet-szabályozás és rezsimegtakarítás.</p>
+                    </div>
+                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                    </div>
+                </div>
+
+                <!-- Klíma -->
+                <div onclick="openDeviceModal('klima')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="wind" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Klíma és hűtésvezérlés</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Személyre szabott hűtés indítása távolról, takarékos működés rendszerbe kötve.</p>
+                    </div>
+                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                    </div>
+                </div>
+
+                <!-- Kapunyitó -->
+                <div onclick="openDeviceModal('kapunyito')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="key" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Intelligens kapu- és garázsnyitó</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Kényelmes kapunyitás telefonról, automatikus beengedés érkezéskor.</p>
+                    </div>
+                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                    </div>
+                </div>
+
+                <!-- Okoskonnektor -->
+                <div onclick="openDeviceModal('konnektor')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="plug" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Biztonsági okoskonnektor</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Fogyasztásmérés, távoli áramtalanítás és automatizált töltések.</p>
+                    </div>
+                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                    </div>
+                </div>
+
+                <!-- Ajtó/ablak nyitásérzékelő -->
+                <div onclick="openDeviceModal('nyitas')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="door-closed" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Ajtó- és ablaknyitás érzékelő</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Behatolás-értesítés, távollét-ellenőrzés és fűtésszabályozás szellőztetéskor.</p>
+                    </div>
+                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                    </div>
+                </div>
+
+                <!-- Okos redőny -->
+                <div onclick="openDeviceModal('redony')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group mx-auto sm:mx-0 sm:col-span-2 md:col-span-3 w-full">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 w-full">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
+                                <i data-lucide="sliders" class="w-6 h-6 text-sky-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Intelligens redőny- és árnyékolóvezérlés</h3>
+                                <p class="text-sm text-slate-400 leading-relaxed">Automatikus árnyékolás napsütés szerint, fényre ébredés és viharvédelem.</p>
+                            </div>
+                        </div>
+                        <div class="text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform whitespace-nowrap md:self-center">
+                            Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -719,7 +887,333 @@
         </svg>
     </a>
 
+    <!-- Device Details Modal -->
+    <div id="device-modal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300" style="z-index: 99999;">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl transform scale-95 transition-all duration-300 relative flex flex-col max-h-[90vh]">
+            <!-- Close button in top right -->
+            <button onclick="closeDeviceModal()" class="absolute top-4 right-4 z-50 p-2 rounded-full bg-slate-950/60 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 transition-all" aria-label="Bezárás">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            
+            <!-- Modal Image with Gradient Overlay -->
+            <div class="h-56 sm:h-64 w-full relative overflow-hidden shrink-0">
+                <img id="modal-image" src="" alt="" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+                <!-- Header title on top of image -->
+                <div class="absolute bottom-4 left-6 right-6">
+                    <span id="modal-badge" class="name-badge mb-2 inline-block">Okoseszköz</span>
+                    <h3 id="modal-title" class="text-xl sm:text-2xl md:text-3xl font-display font-black text-white leading-tight"></h3>
+                </div>
+            </div>
+            
+            <!-- Modal Body Content -->
+            <div class="p-6 sm:p-8 overflow-y-auto flex-1">
+                <div id="modal-content" class="text-slate-300 text-sm sm:text-base leading-relaxed space-y-4">
+                    <!-- Content injected by JS -->
+                </div>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="p-4 sm:p-6 bg-slate-950/40 border-t border-slate-800/60 flex justify-end shrink-0">
+                <button onclick="closeDeviceModal()" class="px-6 py-2.5 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-all">
+                    Bezárás
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Okoseszközök adatai a Popuphoz
+        const devicesData = {
+            mozgas: {
+                title: "Mozgás és jelenlét-érzékelő",
+                badge: "Mozgásérzékelő",
+                image: "https://images.unsplash.com/photo-1753039495488-434a2fe53e41?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">A kényelem és biztonság láthatatlan őre</p>
+                    <p class="mb-4 text-slate-300">A mozgásérzékelő nemcsak a biztonsági riasztórendszer része lehet, hanem a mindennapi kényelem alapköve is. Segítségével ingatlanja önműködően reagál az Ön jelenlétére.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Intelligens világítás:</strong> Ha éjszaka kimegy a mosdóba vagy a konyhába, a folyosói fények lágyan, csökkentett fényerővel automatikusan felkapcsolnak, majd a távozása után lekapcsolnak. Nem szükséges a sötétben tapogatóznia a kapcsoló után.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Biztonsági védelem:</strong> Ha Ön nincs otthon, a rendszer azonnali riasztási értesítést küld a telefonjára, amennyiben váratlan mozgást észlel az ingatlanban.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Energiahatékonyság:</strong> Ha egy helyiségben hosszabb ideig nincs mozgás, a rendszer automatikusan lekapcsolja az ott felejtett világítást vagy fűtést.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            lampa: {
+                title: "Személyre szabott világítás",
+                badge: "Lámpa és világítás",
+                image: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=800&q=80",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Személyre szabott fények minden pillanatra</p>
+                    <p class="mb-4 text-slate-300">A világításvezérlés túlmutat az egyszerű fel- és lekapcsoláson. Lehetővé teszi az otthona hangulatának teljes testreszabását és távoli elérését.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Világítási hangulatok:</strong> Hozzon létre egyetlen gombnyomással "Mozi", "Vacsora" vagy "Olvasás" hangulatot. A lámpák pontosan a beállított fényerőre és színhőmérsékletre állnak be.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Jelenlét-szimuláció:</strong> Amikor Ön utazik, a rendszer képes előre megadott séma szerint fel- és lekapcsolni a fényeket az otthonában, azt az érzetet keltve, mintha otthon tartózkodna.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Központi lekapcsolás:</strong> Távozáskor az ajtó mellett elhelyezett fizikai gombbal vagy mobiltelefonjával az összes lámpát egyszerre lekapcsolhatja.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            szivargas: {
+                title: "Vízszivárgás érzékelő és védelem",
+                badge: "Vízszivárgás érzékelő",
+                image: "https://plus.unsplash.com/premium_photo-1661878761783-1675425509b9?q=80&w=1533&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Megbízható védelem a méregdrága vízkárok ellen</p>
+                    <p class="mb-4 text-slate-300">A vízkár az egyik leggyakoribb és legdrágább lakásbaleset. Ez a kis méretű eszköz észrevétlenül őrzi ingatlana biztonságát.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Gyors felismerés:</strong> Helyezze el a mosógép, a mosogatógép alá vagy a vízvezeték-strangokhoz. Már egyetlen csepp víz érzékelésekor hangos riasztást ad.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Azonnali telefonos értesítés:</strong> Bárhol is tartózkodik a világban, mobiltelefonján azonnal értesítést kap, ha szivárgás vagy csőtörés lép fel otthonában.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Szelepvezérlés (opcionális):</strong> A rendszer képes vezérelni egy elektromos főelzáró szelepet is, így szivárgás észlelésekor másodpercek alatt elzárja a ház fő vízvezetékét.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            kaputelefon: {
+                title: "Intelligens kaputelefon és kamera",
+                badge: "Kaputelefon",
+                image: "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Mindig láthatja, ki áll a kapu előtt</p>
+                    <p class="mb-4 text-slate-300">A modern videós kaputelefon segítségével soha többé nem mulaszt el egyetlen csomagot, vagy nem kívánt látogatót sem.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Távoli videókapcsolat:</strong> Ha megszólal a csengő, a telefonja jelez. Videókapcsolaton keresztül beszélhet a látogatóval vagy a futárral akkor is, ha éppen a munkahelyén vagy nyaraláson tartózkodik.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Biztonsági felvétel:</strong> A kaputelefon kamerája rögzíti, ha valaki gyanúsan közel lép az ajtóhoz, vagy ha becsengettek Önhöz, így utólag is pontosan visszanézhető minden esemény.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Kapunyitás integráció:</strong> Közvetlenül az alkalmazásból kinyithatja a kiskaput a családtagoknak vagy a futárnak, hogy letehesse a csomagot a teraszon.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            futes: {
+                title: "Okos fűtés és termosztát",
+                badge: "Okos fűtés",
+                image: "https://images.unsplash.com/photo-1636569608385-58efc32690ea?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Optimális hőmérséklet ott és akkor, amikor Ön szeretné</p>
+                    <p class="mb-4 text-slate-300">Az okos fűtésrendszer nemcsak kényelmes, hanem az egyik leggyorsabban megtérülő okosotthon-befektetés a felesleges energiafogyasztás kiszűrésével.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Helyiségenkénti szabályozás:</strong> Miért fűtené a hálószobát napközben, vagy a nappalit éjszaka? Állítson be egyedi hőmérsékleti menetrendet minden szobára külön-külön.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Távollét-üzemmód:</strong> Amikor elhagyja az otthonát, a fűtés automatikusan energiatakarékos hőmérsékletre áll be. Hazaérkezése előtt pedig az alkalmazáson keresztül kellemes melegre fűtheti a lakást.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Nyitott ablak érzékelés:</strong> Ha szellőztetést észlel a rendszer (a nyitásérzékelők segítségével), azonnal lekapcsolja abban a szobában a fűtést, megvédve Önt a felesleges rezsiköltségektől.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            klima: {
+                title: "Klíma és hűtésvezérlés",
+                badge: "Klíma integráció",
+                image: "https://images.unsplash.com/photo-1762341123870-d706f257a12e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Tökéletes hűvös fogadtatás a legforróbb napokon is</p>
+                    <p class="mb-4 text-slate-300">Integrálja meglévő vagy új klímaberendezését a központi vezérlőbe az energiatakarékos működésért.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Távoli indítás:</strong> Indítsa el távolról a klímát hazafelé menet, így hűvös és friss otthon fogadja Önt a legnagyobb nyári melegben is.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Automatizáció:</strong> Ha a belső hőmérséklet meghalad egy kritikus szintet, a klíma magától elindul, de csak akkor, ha az ablakok zárva vannak.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Egységes szabályozás:</strong> Nincs szükség egymástól független távirányítókra. A fűtés és a hűtés egyetlen központi intelligens szabályozó alatt fut, kiküszöbölve azt, hogy a két rendszer egymás ellen dolgozzon.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            kapunyito: {
+                title: "Intelligens kapu és garázsnyitó",
+                badge: "Kapunyitó",
+                image: "https://ae01.alicdn.com/kf/Se99198e3147e4f8c96c551ec6a7a3e463/ZIGBEE-Tuya-Ewelink-Garage-Door-Opener-Controller-Smart-Switch-Relay-Module-Gate-Open-Work-for-Alexa.jpg",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Zökkenőmentes és biztonságos érkezés</p>
+                    <p class="mb-4 text-slate-300">A kapuvezérlés kényelmessé és rendkívül biztonságossá teszi az ingatlanba való bejutást.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Geolokáció alapú nyitás (opcionális):</strong> Amikor autóval megközelíti az otthonát, az utcai kapu és a garázsajtó automatikusan kinyílik Ön előtt, nem kell a távirányítókkal bajlódnia vezetés közben.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Nyitva felejtett kapu riasztás:</strong> Ha a garázskapu vagy a kertkapu véletlenül nyitva maradt több mint 10 perce, a rendszer azonnali figyelmeztetést küld az Ön telefonjára.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Távoli vezérelhetőség:</strong> Engedje be a kertészt, a családtagokat vagy a futárt egyetlen kattintással a telefonjáról, függetlenül attól, hogy Ön hol tartózkodik.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            konnektor: {
+                title: "Biztonsági okoskonnektor",
+                badge: "Okoskonnektor",
+                image: "https://www.viztisztitomarket.hu/fotky1924/fotos/_vyr_2129_-delight-smart-wifi-okos-konnektor-fogyasztasmerovel.jpg",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Gondoskodjon hagyományos elektromos készülékei biztonságáról és méréséről</p>
+                    <p class="mb-4 text-slate-300">Változtassa a legegyszerűbb elektromos fogyasztóit intelligens és teljesen áramtalanítható eszközökké.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Garantált nyugalom:</strong> Aggódik, hogy bedugva maradt a vasaló vagy a kávéfőző? Az okoskonnektorral távolról os ellenőrizheti annak állapotát, és egyetlen érintéssel áramtalaníthatja a hálózatot.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Valós idejű fogyasztásmérés:</strong> Pontosan láthatja, hogy melyik gyerekszobai számítógép, hűtőgép vagy egyéb berendezés mennyi áramot fogyaszt, optimalizálva a kiadásokat.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Időzített áramellátás:</strong> Beállíthat részletes ütemterveket, például hogy az akkumulátortöltők csak néhány órán át kapjanak áramot, megóvva azokat a túlmelegedéstől.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            nyitas: {
+                title: "Ajtó és ablaknyitás érzékelő",
+                badge: "Nyitásérzékelő",
+                image: "https://images.euronics.hu/product_images/800x600/resize/10081502429214_zm2cgnqf.jpg?v=3",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Ingatlana szemei, melyekkel semmilyen nyílászáró nem marad ellenőrizetlenül</p>
+                    <p class="mb-4 text-slate-300">Ezek a magasszintű mágneses érzékelők figyelemmel kísérik az ablakok és ajtók nyitott vagy zárt állapotát.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Beépített biztonság:</strong> Távozás után, élesített riasztási állapotban bármely ablak vagy ajtó nyitásakor a központi egység szirénázni kezd, és azonnal értesítést küld Önnek.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Fűtésszabályozás szellőztetéskor:</strong> Megakadályozza a felesleges energiapazarlást. Ha kinyitja a szoba ablakát szellőztetni, az adott helyiség fűtése automatikusan megáll.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Indulás előtti gyors ellenőrzés:</strong> Távozás előtt csak pillantson rá a mobilalkalmazásra, és azonnal látja, ha véletlenül nyitva maradt valamelyik nyílászáró.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            redony: {
+                title: "Intelligens redőny és árnyékolóvezérlés",
+                badge: "Redőnyvezérlés",
+                image: "https://lakberinfo.hu/cikkek/2017/08/77/okosredony-a1.jpg",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Optimális természetes fény és klímavédelem</p>
+                    <p class="mb-4 text-slate-300">Kösse össze motoros redőnyeit, zsaluziáit az okosotthon vezérléssel a tökéletes kényelemért.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Aktív hővédelem:</strong> Ha a külső hőmérséklet és a napsütés mértéke túl magas, a rendszer automatikusan leengedi az árnyékolókat, megvédve otthonát a túlmelegedéstől.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Fényre ébredés:</strong> Kezdje harmonikusan a napját: állítsa be, hogy árnyékolói reggel fokozatosan nyíljanak fel, beengedve a természetes napfényt a hálószobába.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Aktív viharvédelem:</strong> Ha az időjárás-érzékelők erőteljes, viharos szelet mérnek, a rendszer önműködően biztonságba helyezi a külső zsaluziákat.</div>
+                        </li>
+                    </ul>
+                `
+            }
+        };
+
+        // Modal fv-ek okoseszközökhöz
+        function openDeviceModal(deviceId) {
+            const data = devicesData[deviceId];
+            if (!data) return;
+
+            const modal = document.getElementById('device-modal');
+            const innerModal = modal.querySelector('.transform');
+            
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-badge').textContent = data.badge;
+            document.getElementById('modal-image').src = data.image;
+            document.getElementById('modal-image').alt = data.title;
+            document.getElementById('modal-content').innerHTML = data.content;
+            
+            // Megjelenítés
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+            innerModal.classList.remove('scale-95');
+            innerModal.classList.add('scale-100');
+            
+            // Görgetés letiltása
+            document.body.style.overflow = 'hidden';
+            
+            // Ikonok frissítése az új tartalomhoz
+            lucide.createIcons();
+        }
+
+        function closeDeviceModal() {
+            const modal = document.getElementById('device-modal');
+            const innerModal = modal.querySelector('.transform');
+            
+            // Eltüntetés
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.classList.remove('opacity-100');
+            innerModal.classList.add('scale-95');
+            innerModal.classList.remove('scale-100');
+            
+            // Görgetés visszaállítása
+            document.body.style.overflow = '';
+        }
+
+        // Kattintás a modal háttérre bezárja azt
+        document.getElementById('device-modal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeDeviceModal();
+            }
+        });
+
+        // ESC gomb bezárja a modalt
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeDeviceModal();
+            }
+        });
+
         // Inicializáljuk az ikonokat
         lucide.createIcons();
 
