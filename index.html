@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HelyiOkos</title>
+    <title>HelyiOkos - Intelligens Okosotthon Rendszerek Helyi Vezérléssel</title>
+    <meta name="description" content="Okosotthon rendszerek kiépítése internetfüggőség nélkül. Gyors, biztonságos és privát automatizálás fix áron, rejtett költségek nélkül. Kérjen ingyenes felmérést!">
+    <meta name="keywords" content="okosotthon, smart home, otthonautomatizálás, helyi vezérlés, Home Assistant, okosotthon szerelés, okos fűtés, vízszivárgás érzékelő">
+    
+    <meta property="og:title" content="HelyiOkos - Okosotthon Rendszerek Helyi Vezérléssel">
+    <meta property="og:description" content="Felejtse el a lassú felhős szervereket. Megoldásaimmal az adatai a falakon belül maradnak.">
+    <meta property="og:image" content="https://helyiokos.com/og-image.jpg"> 
+    <meta property="og:url" content="https://helyiokos.com">
+    <meta property="og:type" content="website">
+    
     <link rel="icon" type="image/png" href="favicon.png">
     
     <!-- Google Fonts -->
@@ -245,6 +254,27 @@
                 .profile-avatar { width: 11rem; height: 11rem; }
             }
 
+            .phone-button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #10b981; /* Élénkzöld okosotthon szín */
+                color: #ffffff !important;
+                font-size: 1.25rem;
+                font-weight: bold;
+                text-decoration: none !important; /* Eltünteti a csúnya aláhúzást */
+                padding: 14px 28px;
+                border-radius: 50px; /* Teljesen lekerekített gomb */
+                box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+                white-space: nowrap; /* GARANTÁLJA, hogy a szám soha ne törjön két sorba mobilon! */
+                transition: transform 0.2s ease, background-color 0.2s ease;
+            }
+
+            .phone-button:hover {
+                background-color: #059669;
+                transform: scale(1.03);
+            }
+
             .btn-primary {
                 display: inline-flex;
                 align-items: center;
@@ -278,6 +308,32 @@
                 border-radius: 9999px;
                 backdrop-filter: blur(24px);
             }
+
+            .floating-messenger {
+                position: fixed;
+                bottom: 1.25rem;
+                right: 1.25rem;
+                width: 60px;
+                height: 60px;
+                background-color: #0084FF;
+                color: white;
+                border-radius: 9999px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                z-index: 50;
+                transition: all 0.3s ease;
+                padding: 0.75rem;
+            }
+            .floating-messenger:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 20px 25px -5px rgba(0, 84, 255, 0.3);
+            }
+            .floating-messenger svg {
+                width: 100%;
+                height: 100%;
+            }
         }
 
         .scroll-reveal {
@@ -296,7 +352,7 @@
 
     <!-- Sticky Navigation -->
     <nav class="fixed top-0 left-0 w-full h-16 md:h-20 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800 z-50 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-6 h-full flex items-center justify-between">
+        <div class="max-w-4xl mx-auto px-6 h-full flex items-center justify-between">
             <a href="#home" class="flex items-center gap-2 text-white font-display font-black text-xl tracking-tighter">
                 <div class="w-8 h-8 bg-sky-500 rounded-lg flex items-center justify-center shadow-lg shadow-sky-500/20">
                     <i data-lucide="zap" class="w-5 h-5 text-slate-950"></i>
@@ -341,9 +397,9 @@
             <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-4 text-center md:text-left">
                 <div class="flex-1">
                     <h1 class="main-heading break-words">
-                        HelyiOkos <br />
+                        Okosotthon <br />
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-500 px-[0.1em] -mx-[0.1em]">
-                            Otthonautomatizálás
+                            Helyi Vezérléssel
                         </span>
                     </h1>
                     <p class="text-xl md:text-3xl text-white max-w-2xl mx-auto md:mx-0 leading-tight font-extrabold tracking-normal md:tracking-tight">
@@ -591,10 +647,15 @@
                     </div>
                 </div>
 
-                <div class="bg-slate-950/60 p-8 rounded-3xl border border-sky-500/20 backdrop-blur-md">
-                    <h3 class="text-2xl font-black text-white mb-4">Modularitás: Haladjon a saját tempójában!</h3>
-                    <p class="text-slate-300 leading-relaxed text-lg">
-                        Nem kell egyszerre az egész házat okosítani. Elég, ha most lerakjuk a stabil alapot az <strong>Alapcsomaggal</strong>, aztán a saját tempódban haladunk tovább: a jövőben <strong>bármikor kérhetsz hozzá új funkciókat</strong>. Ha később szeretnél egy okos fűtést vagy extra világítást, <strong>kimegyek hozzád, felszerelem az új eszközöket, és ráprogramozom</strong> őket a meglévő rendszeredre. Amikor megkeresel, pontosan átbeszéljük az új igényeket, és arra egy <strong>teljesen egyedi, kulcsrakész árajánlatot</strong> kapsz – így a rendszered <strong>bármikor, kockázatmentesen bővíthető</strong>.
+                <div class="mt-12 bg-slate-950/60 p-8 rounded-3xl border border-sky-500/20 backdrop-blur-md pb-[100px] md:pb-8">
+                    <h3 class="text-2xl font-black text-white mb-6">Modularitás: Haladjon a saját tempójában!</h3>
+                    
+                    <p class="text-slate-300 leading-relaxed text-lg text-left mb-5" style="hyphens: none; word-break: normal;">
+                        Nem kell egyszerre az egész házat okosítani. Elég, ha most lerakjuk a stabil alapot az <strong>Alapcsomaggal</strong>, aztán a saját tempódban haladunk tovább: a jövőben <strong>bármikor kérhetsz hozzá új funkciókat</strong>.
+                    </p>
+                    
+                    <p class="text-slate-300 leading-relaxed text-lg text-left" style="hyphens: none; word-break: normal;">
+                        Ha később szeretnél egy okos fűtést vagy extra világítást, <strong>kimegyek hozzád, felszerelem az új eszközöket, és ráprogramozom</strong> őket a meglévő rendszeredre. Amikor megkeresel, pontosan átbeszéljük az új igényeket, és arra egy <strong>teljesen egyedi, kulcsrakész árajánlatot</strong> kapsz – így a rendszered <strong>bármikor, kockázatmentesen bővíthető</strong>.
                     </p>
                 </div>
             </div>
@@ -602,25 +663,29 @@
 
         <!-- Call to Action / Contact -->
         <section id="contact" class="scroll-reveal">
-            <div class="p-10 md:p-20 bg-sky-500/10 border border-sky-400/20 rounded-[3rem] text-center backdrop-blur-xl shadow-2xl relative overflow-hidden">
+            <div class="px-6 py-12 md:p-20 bg-sky-500/10 border border-sky-400/20 rounded-[3rem] text-center backdrop-blur-xl shadow-2xl relative overflow-hidden">
                 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-50"></div>
                 
-                <h2 class="text-4xl md:text-5xl font-display font-black mb-6 text-white tracking-tight">
+                <h2 class="text-3xl md:text-5xl font-display font-black mb-6 text-white tracking-normal">
                     Kezdjük el otthona okosítását!
                 </h2>
-                <p class="text-slate-300 text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+                <p class="text-slate-300 text-xl mb-6 max-w-2xl mx-auto leading-relaxed">
                     Kérjen ingyenes felmérést: kimegyek, átbeszéljük az igényeit, és mutatok egy működő bemutató darabot.
                 </p>
                 
-                <a 
-                    href="https://m.me/leventesmarthome" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    class="btn-primary"
-                >
-                    <i data-lucide="message-circle" class="w-7 h-7"></i>
-                    Kapcsolatfelvétel Messengeren
-                </a>
+                <div class="phone-container" style="margin: 25px 0; display: flex; justify-content: center;">
+                    <a href="tel:+36202109008" class="phone-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px; margin-right: 10px;">
+                            <path d="M4.93 4.93a10 10 0 0114.14 0c.39.39.39 1.03 0 1.42l-1.42 1.42a.5.5 0 01-.71 0A7 7 0 005.12 17.1c-.2.2-.51.2-.71 0l-1.42-1.42a1 1 0 010-1.42A10 10 0 014.93 4.93z"/>
+                            <path d="M12 9a3 3 0 013 3v6a3 3 0 01-6 0v-6a3 3 0 013-3zm5.34 2.16a1 1 0 011.41 0 8 8 0 010 11.31 1 1 0 01-1.41-1.41 6 6 0 000-8.49 1 1 0 010-1.41z"/>
+                        </svg>
+                        06 20 210 9008
+                    </a>
+                </div>
+
+                <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 20px;" class="text-slate-400 font-medium">
+                    Vagy kattintson a jobb alsó sarokban lévő Messenger ikonra, és írjon üzenetet!
+                </p>
             </div>
         </section>
 
@@ -628,6 +693,12 @@
             <p>© 2026 Nagy Levente EV. | Rendszerüzemeltetési pontosság az Ön otthonában.</p>
         </footer>
     </div>
+
+    <a href="https://m.me/61581849661468" class="floating-messenger" target="_blank" rel="noopener noreferrer" title="Írjon nekünk Messengeren!">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 0a8 8 0 0 0-8 8c0 1.48.4 2.87 1.1 4.07L0 16l4.05-1.07A7.95 7.95 0 0 0 8 16a8 8 0 0 0 8-8 8 8 0 0 0-8-8zm.75 10.32l-1.8-1.92-3.5 1.92 3.85-4.1 1.8 1.92 3.5-1.92-3.85 4.1z"/>
+        </svg>
+    </a>
 
     <script>
         // Inicializáljuk az ikonokat
