@@ -732,14 +732,14 @@
                     </div>
                 </div>
 
-                <!-- Vízszivárgás érzékelő -->
+                <!-- Vízszivárgás érzékelő és főelzáró -->
                 <div onclick="openDeviceModal('szivargas')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
                             <i data-lucide="droplets" class="w-6 h-6 text-sky-400"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Vízszivárgás érzékelő</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Azonnali riasztás telefonra és automatizált vízelzárás csőtöréskor.</p>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Vízszivárgás érzékelő és főelzáró</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Azonnali riasztás és önműködő főcsap-elzárás csőtörés vagy szivárgás érzékelésekor.</p>
                         <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">9 900 Ft-tól</div>
                     </div>
                     <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
@@ -852,20 +852,6 @@
                     </div>
                 </div>
 
-                <!-- Okos fővízcsap-elzáró szelep -->
-                <div onclick="openDeviceModal('fofizcsap')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
-                            <i data-lucide="shield-alert" class="w-6 h-6 text-sky-400"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Okos fővízcsap-elzáró szelep</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Csőtörés vagy szivárgás észlelésekor azonnal és önműködően elzárja a főcsapot.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">24 900 Ft-tól</div>
-                    </div>
-                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                        Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                    </div>
-                </div>
             </div>
 
             <!-- Highlights Info Box requested under the devices list -->
@@ -931,10 +917,8 @@
                                     <i data-lucide="cpu" class="w-5 h-5 text-sky-400"></i>
                                 </div>
                                 <div class="text-left">
-                                    <h4 class="text-xs sm:text-sm font-bold text-white">Okosotthon Rendszer Alapcsomag</h4>
-                                    <p class="text-[10px] sm:text-xs text-slate-300 mt-1 leading-relaxed">
-                                        Minden kalkulációhoz kötelezően hozzáadódó tétel. Ez a rendszer központi agya, ami tartalmazza a biztonságos helyi vezérlőegységet, hálózati szoftveres antennát és a mobilalkalmazásos felület programozását.
-                                    </p>
+                                    <h4 class="text-xs sm:text-sm font-bold text-white">Alapcsomag</h4>
+                                    <a href="#pricing" onclick="closeConfiguratorModal()" class="text-xs text-sky-400 hover:text-sky-300 underline font-medium inline-block mt-1">Az alapcsomag részletes leírása →</a>
                                 </div>
                             </div>
                             <div class="shrink-0 text-left sm:text-right bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
@@ -1140,15 +1124,15 @@
                     <ul class="space-y-3 text-slate-300 text-sm md:text-base">
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Intelligens világítás:</strong> Beállítom neked, hogy ha éjszaka kimegy a mosdóba vagy a konyhába, a folyosói fények lágyan, csökkentett fényerővel automatikusan felkapcsoljanak, majd a távozásod után lekapcsoljanak. Többé nem kell a sötétben tapogatóznod a kapcsoló után.</div>
+                            <div><strong>Intelligens világítás:</strong> Beállítom neked, hogy ha éjszaka kimegy a mosdóba vagy a konyhába, a folyosói fények lágyan, csökkentett fényerővel kapcsoljanak fel, vigyázva az álmodra.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Biztonsági védelem:</strong> Ha nem vagy otthon és élesíted a rendszert, azonnali riasztási értesítést küldök a telefonodra, amint váratlan mozgást észlelek az ingatlanodban.</div>
+                            <div><strong>Jelenlét-szimuláció és biztonság:</strong> Ha távol vagy, a mozgásérzékelők riasztóként működnek, és azonnali értesítést küldenek a telefonodra, ha mozgást észlelnek.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Energiahatékonyság:</strong> Ha egy szobában hosszabb ideig nem érzékelek mozgást, automatikusan lekapcsolom neked az ott felejtett világítást vagy fűtést.</div>
+                            <div><strong>Energiatakarékosság:</strong> Lekapcsolja a világítást azokban a helyiségekben, ahol már senki sem tartózkodik, elkerülve a felesleges fogyasztást.</div>
                         </li>
                     </ul>
                 `
@@ -1164,7 +1148,7 @@
                     <ul class="space-y-3 text-slate-300 text-sm md:text-base">
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Világítási hangulatok:</strong> Elmentem neked a kedvenc beállításaidat, így eenetlen gombnyomással elindíthatod a "Mozi", "Vacsora" vagy "Olvasás" hangulatot, finomra hangolt fényerővel és színhőmérséklettel.</div>
+                            <div><strong>Világítási hangulatok:</strong> Elmentem neked a kedvenc beállításaidat, így egyetlen gombnyomással elindíthatod a "Mozi", "Vacsora" vagy "Olvasás" hangulatot, finomra hangolt fényerővel és színhőmérséklettel.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
@@ -1178,25 +1162,25 @@
                 `
             },
             szivargas: {
-                title: "Vízszivárgás érzékelő",
-                badge: "Vízszivárgás érzékelő",
-                price: "9 900 Ft-tól",
+                title: "Vízszivárgás érzékelő és főelzáró",
+                badge: "Vízvédelem",
+                price: "Vízérzékelő: 9 900 Ft | Szelepmotor: 24 900 Ft",
                 image: "https://plus.unsplash.com/premium_photo-1661878761783-1675425509b9?q=80&w=1533&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 content: `
-                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Megbízható védelem a méregdrága vízkárok ellen</p>
-                    <p class="mb-4 text-slate-300">Elhelyezem az érzékelőket a kritikus helyeken (pl. mosógép, mosogatógép vagy strangok mellett), hogy azonnal megvédve tudhasd az otthonodat.</p>
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Azonnali, önműködő védelem a katasztrofális csőtörések és beázások ellen</p>
+                    <p class="mb-4 text-slate-300">A mosógép, mosogatógép, kazán vagy strangok mellé helyezett vezeték nélküli okos érzékelők azonnal jelzik a vizet, és a főelzáró csapra szerelt intelligens motorral összekötve másodpercek alatt elzárják a főcsapot.</p>
                     <ul class="space-y-3 text-slate-300 text-sm md:text-base">
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Gyors felismerés:</strong> Már egyetlen csepp víz érzékelésekor hangos riasztást adok neked az ingatlanban, hogy azonnal cselekedni tudj.</div>
+                            <div><strong>Azonnali riasztás és jelzés:</strong> Már egyetlen csepp folyadék észlelésekor hangos helyi riasztást ad a fali érzékelő, és push üzenetet küld a telefonodra.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Azonnali telefonos értesítés:</strong> Bárhol is jársz a világban, azonnali üzenetet küldök a telefonodra, ha vízszivárgást vagy csőtörést észlelek.</div>
+                            <div><strong>Önműködő elzárás csőtöréskor:</strong> A meglévő szabványos karos golyóscsapra szerelhető fel a roncsolásmentes elzárómotor (nem igényel vízhálózat-megbontást). Szivárgáskor automatikusan elzárja a vizet.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Szelepvezérlés (opcionális):</strong> Összekötöm a rendszert egy elektromos főszeleppel, így baj esetén másodpercek alatt önműködően elzárom a lakásod főnyomócsövét, megakadályozva a katasztrófát.</div>
+                            <div><strong>Távoli kezelés bárhonnan:</strong> Nyaralás alatt vagy elutazáskor a mobilapplikációból egyetlen érintéssel bármikor, bárhonnan biztonságosan lezárhatod vagy megnyithatod a teljes vízhálózatot.</div>
                         </li>
                     </ul>
                 `
@@ -1380,30 +1364,6 @@
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
                             <div><strong>Aktív viharvédelem:</strong> Ha az időjárás-érzékelők viharos, erős szelet mérnek, automatikusan biztonságba húzom neked a külső zsaluziákat, hogy megvédjem őket a sérülésektől.</div>
-                        </li>
-                    </ul>
-                `
-            },
-            fofizcsap: {
-                title: "Okos fővízcsap-elzáró szelep",
-                badge: "Fővízszelep elzáró",
-                price: "24 900 Ft-tól",
-                image: "https://ae01.alicdn.com/kf/H75677cbadd0c4e7da4aa2c2865c69781U.jpg",
-                content: `
-                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Azonnali, önműködő védelem a katasztrofális csőtörések és beázások ellen</p>
-                    <p class="mb-4 text-slate-300">Felszerelem és beállítom a főelzáró csapra illeszthető intelligens motort, amely azonnal elzárja a vízellátást, ha a vízszivárgás-érzékelő folyadékot észlel.</p>
-                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
-                        <li class="flex gap-2">
-                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Teljesen automatikus beavatkozás:</strong> Csőtörés vagy szivárgás esetén a rendszer emberi beavatkozás nélkül, másodperceken belül magától elzárja a főcsapot.</div>
-                        </li>
-                        <li class="flex gap-2">
-                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Távoli manuális vezérlés:</strong> Elutazáskor vagy nyaralás alatt a mobilalkalmazásból bármikor, bárhonnan lezárhatod vagy megnyithatod a lakás főcsapját.</div>
-                        </li>
-                        <li class="flex gap-2">
-                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Roncsolásmentes felszerelés:</strong> A meglévő, szabványos karos golyóscsapra szerelhető rá, így nincs szükség a vízhálózat megbontására vagy csőszerelésre.</div>
                         </li>
                     </ul>
                 `
