@@ -959,14 +959,14 @@
                             </div>
 
                             <!-- Kapcsolati űrlap -->
-                            <div class="border-t border-slate-800/80 pt-4 space-y-3">
+                            <form id="calc-form" onsubmit="event.preventDefault(); sendCustomConfiguration();" class="border-t border-slate-800/80 pt-4 space-y-3">
                                 <h4 class="text-xs font-bold text-sky-400 uppercase tracking-wider mb-1 flex items-center gap-1.5 font-display text-[11px]">
                                     <i data-lucide="user" class="w-3.5 h-3.5 text-sky-400"></i>
                                     Kapcsolati adatok az ajánlathoz
                                 </h4>
                                 <div>
                                     <label for="calc-name" class="block text-[9px] font-bold text-slate-400 uppercase tracking-wider mb-1">Név *</label>
-                                    <input type="text" id="calc-name" placeholder="Pl. Nagy Andrea" class="w-full px-3.5 py-2.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:border-sky-500/50 focus:outline-none transition-all">
+                                    <input type="text" id="calc-name" required placeholder="Pl. Nagy Andrea" class="w-full px-3.5 py-2.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:border-sky-500/50 focus:outline-none transition-all">
                                 </div>
                                 <div>
                                     <label for="calc-phone" class="block text-[9px] font-bold text-slate-400 uppercase tracking-wider mb-1">Telefonszám (opcionális)</label>
@@ -974,14 +974,14 @@
                                 </div>
                                 <div>
                                     <label for="calc-email" class="block text-[9px] font-bold text-slate-400 uppercase tracking-wider mb-1">E-mail cím *</label>
-                                    <input type="email" id="calc-email" placeholder="Pl. andrea@okosotthon.hu" class="w-full px-3.5 py-2.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:border-sky-500/50 focus:outline-none transition-all">
+                                    <input type="email" id="calc-email" required placeholder="Pl. andrea@okosotthon.hu" class="w-full px-3.5 py-2.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:border-sky-500/50 focus:outline-none transition-all">
                                 </div>
-                            </div>
 
-                            <button id="calc-submit-btn" onclick="sendCustomConfiguration()" class="w-full py-3 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-all shadow-md hover:shadow-sky-500/20 flex items-center justify-center gap-1.5 cursor-pointer text-xs sm:text-sm">
-                                <i data-lucide="send" class="w-3.5 h-3.5 shrink-0"></i>
-                                Személyes ajánlat kérése
-                            </button>
+                                <button id="calc-submit-btn" type="submit" class="w-full py-3 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-all shadow-md hover:shadow-sky-500/20 flex items-center justify-center gap-1.5 cursor-pointer text-xs sm:text-sm mt-3">
+                                    <i data-lucide="send" class="w-3.5 h-3.5 shrink-0"></i>
+                                    Személyes ajánlat kérése
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -998,35 +998,71 @@
                     </svg>
                 </button>
 
-                <div class="text-center space-y-4 mb-6">
-                    <div class="w-16 h-16 bg-emerald-500/10 border border-emerald-500/30 rounded-full flex items-center justify-center mx-auto text-emerald-400">
-                        <i data-lucide="check" class="w-10 h-10"></i>
+                <div class="text-center space-y-4 mb-5">
+                    <div class="w-14 h-14 bg-emerald-500/10 border border-emerald-500/30 rounded-full flex items-center justify-center mx-auto text-emerald-400">
+                        <i data-lucide="check" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-display font-black text-white">Ajánlatkérés folyamatban!</h3>
+                    <h3 class="text-xl sm:text-2xl font-display font-black text-white">Ajánlatkérés elküldve!</h3>
                     <p class="text-sm text-slate-300">
-                        Kedves <span id="success-user-name" class="font-bold text-sky-400"></span>, sikeresen összeállítottad a rendszeredet! Válaszd ki az alábbi lehetőségek közül, hogyan szeretnéd elküldeni nekem az ajánlatkérésedet:
+                        Kedves <span id="success-user-name" class="font-bold text-sky-400"></span>, sikeresen összeállítottad a személyre szabott rendszeredet! Az ajánlatkérésedet sikeresen rögzítettem.
                     </p>
                 </div>
 
-                <!-- Preformatted text box for copying -->
-                <div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-4 mb-6 max-h-[160px] overflow-y-auto custom-scrollbar text-left">
-                    <p class="text-[11px] text-slate-500 uppercase font-black tracking-wider mb-2">Ajánlat részletei:</p>
-                    <pre class="text-xs text-slate-300 font-mono whitespace-pre-wrap select-all leading-normal" id="success-copy-text"></pre>
+                <!-- Unique Ajánlatszám Code display visual block -->
+                <div class="bg-slate-950 border border-sky-500/20 rounded-2xl p-4 sm:p-5 mb-5 text-center shadow-inner">
+                    <div class="text-[10px] text-slate-400 uppercase tracking-widest font-black mb-1.5">Egyedi ajánlatszámod</div>
+                    <div class="text-3xl font-display font-black text-sky-400 tracking-wider" id="success-tracking-id">#HO-1000</div>
+                    <div class="text-[10px] text-slate-500 mt-1.5 leading-normal">
+                        Hamarosan egyedileg feldolgozom az adataidat, és felveszem veled a kapcsolatot a megadott e-mail címen.
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                    <button onclick="copyToClipboard()" id="copy-text-btn" class="py-3 bg-slate-950 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-white font-bold text-[11px] sm:text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer">
-                        <i data-lucide="copy" class="w-3.5 h-3.5 text-sky-400"></i>
-                        Csak másolás
+                <!-- Prominent Messenger Contact Button underneath tracking -->
+                <div class="mb-6">
+                    <button onclick="openMessengerNotice()" class="w-full py-5 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-black text-base sm:text-lg lg:text-xl uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-3 cursor-pointer shadow-lg hover:shadow-sky-500/25 active:scale-98 animate-pulse font-display">
+                        <i data-lucide="message-square" class="w-5.5 h-5.5 text-white"></i>
+                        Kérdésem Van
                     </button>
-                    <a href="https://m.me/61581849661468" target="_blank" rel="noopener noreferrer" onclick="copyToClipboardForMessenger(this)" id="trigger-messenger-btn" class="py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold text-[11px] sm:text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-lg hover:shadow-blue-500/20 text-center">
-                        <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
-                        Messengeren
+                </div>
+
+                <!-- Auxiliary methods / copy representation block -->
+                <div class="bg-slate-950/40 border border-slate-800 rounded-2xl p-4 mb-4 text-left">
+                    <div class="flex justify-between items-center mb-2">
+                        <p class="text-[9px] text-slate-500 uppercase font-black tracking-wider">Ajánlat szöveges összegzése:</p>
+                        <button onclick="copyToClipboard()" id="copy-text-btn" class="px-2.5 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-[10px] text-sky-400 font-bold rounded-lg transition-all flex items-center gap-1 cursor-pointer">
+                            <i data-lucide="copy" class="w-3 h-3"></i> Másolás
+                        </button>
+                    </div>
+                    <div class="max-h-[100px] overflow-y-auto custom-scrollbar">
+                        <pre class="text-[11px] text-slate-400 font-mono whitespace-pre-wrap select-all leading-normal" id="success-copy-text"></pre>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button id="trigger-mail-btn" onclick="triggerMailSender()" class="text-slate-500 hover:text-sky-400 text-[11px] font-bold transition-all underline cursor-pointer">
+                        E-mail piszkozat kézi megnyitása levelezőben
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Messenger Értesítő Overlay iFrame kompatibilis modalként -->
+        <div id="messenger-notice-overlay" class="fixed inset-0 bg-slate-950/95 backdrop-blur-md z-[110000] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300" style="z-index: 110000;">
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl transform scale-95 transition-all duration-300 relative text-center">
+                <div class="w-14 h-14 bg-sky-500/10 border border-sky-500/30 rounded-full flex items-center justify-center mx-auto text-sky-400 mb-4 shadow-lg shadow-sky-500/5">
+                    <i data-lucide="message-square" class="w-7 h-7"></i>
+                </div>
+                <h4 class="text-lg font-display font-black text-white mb-2">Irány a Messenger beszélgetés!</h4>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+                    Az ajánlatodat elmentettem a(z) <span id="messenger-notice-id" class="font-bold text-sky-400">#HO-0000</span> alatt. Írj nekem Messengeren, és hivatkozz erre az azonosítóra a gyors egyeztetéshez!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-2.5">
+                    <button onclick="closeMessengerNotice()" class="flex-1 py-3 bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white rounded-xl transition-all font-bold text-xs cursor-pointer">
+                        Mégse
+                    </button>
+                    <a id="messenger-direct-link" href="https://m.me/61581849661468" target="_blank" rel="noopener noreferrer" onclick="closeMessengerNotice()" class="flex-1 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl transition-all font-bold text-xs shadow-lg shadow-blue-500/20 flex items-center justify-center gap-1.5 cursor-pointer text-center">
+                        Megnyitás <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                     </a>
-                    <button id="trigger-mail-btn" onclick="triggerMailSender()" class="py-3 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-[11px] sm:text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-lg hover:shadow-sky-500/20">
-                        <i data-lucide="mail" class="w-3.5 h-3.5"></i>
-                        E-mailben
-                    </button>
                 </div>
             </div>
         </div>
@@ -1582,6 +1618,26 @@
             }
         }
 
+        // Messenger Overlay vezérlés
+        window.openMessengerNotice = function() {
+            const overlay = document.getElementById('messenger-notice-overlay');
+            const inner = overlay.querySelector('.transform');
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            overlay.classList.add('opacity-100');
+            inner.classList.remove('scale-95');
+            inner.classList.add('scale-100');
+            lucide.createIcons();
+        };
+
+        window.closeMessengerNotice = function() {
+            const overlay = document.getElementById('messenger-notice-overlay');
+            const inner = overlay.querySelector('.transform');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            overlay.classList.remove('opacity-100');
+            inner.classList.add('scale-95');
+            inner.classList.remove('scale-100');
+        };
+
         // Egyedi konfigurációs e-mail megküldése kérése
         window.sendCustomConfiguration = function() {
             const nameInput = document.getElementById('calc-name');
@@ -1617,7 +1673,14 @@
                 return;
             }
 
-            // Összeállítjuk az átlátható e-mail szöveget
+            // Szuper tiszta, rendkívül rövid és ütközésmentes 6-karakteres azonosító (Pl. #HO-4F9D2B)
+            // A Date.now() utolsó 4 karaktere base36-ban folyamatosan és gyorsan változik, mögötte egy 2-jegyű random kód, így összesen 6 szimbólum reprezentálja az egyedi kódot.
+            const base36Time = Date.now().toString(36).slice(-4).toUpperCase();
+            const randomChar = Math.floor(10 + Math.random() * 80).toString(36).toUpperCase();
+            const trackingId = `#HO-${base36Time}${randomChar}`;
+
+            // Kigyűjtjük az eszközöket az API számára
+            let items = [];
             let total = 100000;
             let devicesText = "  - OKOSOTTHON RENDSZER ALAPCSOMAG (A rendszer agya): 1 db - 100 000 Ft\n";
 
@@ -1627,53 +1690,98 @@
                     const rowPrice = item.price * count;
                     total += rowPrice;
                     devicesText += `  - ${item.name}: ${count} db - ${formatPrice(rowPrice)} Ft\n`;
+                    items.push({
+                        name: item.name,
+                        price: item.price,
+                        count: count
+                    });
                 }
             });
 
-            const emailSubject = `Okosotthon egyedi csomag kalkuláció - ${name}`;
-            const emailBody = `Kedves Levente!
+            const emailSubject = `HO-ÚJ AJÁNLATKÉRÉS [${trackingId}] - ${name}`;
+            const emailBody = `HelyiOkos egyedi okosotthon kalkuláció
+Ajánlatszám: ${trackingId}
 
-Kérlek, készítsd el nekem a személyre szabott okosotthon ajánlatot!
-A kalkulátor segítségével összeállítottam a saját konfigurációmat.
-
-Kapcsolati adataim:
+Kapcsolati adatok:
 ----------------------------------------------
 Név: ${name}
 Telefonszám: ${phone || "Nincs megadva"}
 E-mail: ${email}
 
-Összeállított egyedi csomagom részletei:
+Összeállított egyedi csomag:
 ----------------------------------------------
 ${devicesText}
 ----------------------------------------------
 Várható teljes végösszeg beépítéssel együtt: ${formatPrice(total)} Ft
 
-Várom visszajelzésedet és a helyszíni felmérést!
-
-Üdvözlettel,
-${name}`;
+Hivatkozz az ajánlatszámra gyors egyeztetéshez!`;
 
             lastGeneratedMailSubject = emailSubject;
             lastGeneratedMailBody = emailBody;
 
-            // Felfrissítjük a popup vizuális részeit
-            document.getElementById('success-user-name').textContent = name;
-            document.getElementById('success-copy-text').textContent = emailBody;
+            // Betöltési állapot vizuális visszajelzése
+            const submitBtn = document.getElementById('calc-submit-btn');
+            const origBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `<i data-lucide="loader-2" class="w-3.5 h-3.5 animate-spin"></i> Küldés folyamatban...`;
+                lucide.createIcons();
+            }
 
-            // Megjelenítjük a sikeres csomagküldés modal-t, miközben bezárjuk a konfigurátor modalt
-            closeConfiguratorModal();
+            // Küldés a szerveroldali Express API-ra háttérben
+            fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    items: items,
+                    total: total,
+                    trackingId: trackingId
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log("[HelyiOkos API Válasz]:", data);
+            })
+            .catch(err => {
+                console.error("[HelyiOkos API Hiba]:", err);
+            })
+            .finally(() => {
+                // Visszaállítjuk a gombot
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = origBtnHtml;
+                    lucide.createIcons();
+                }
 
-            const successModal = document.getElementById('success-calculator-modal');
-            const innerModal = successModal.querySelector('.transform');
-            
-            successModal.classList.remove('opacity-0', 'pointer-events-none');
-            successModal.classList.add('opacity-100');
-            innerModal.classList.remove('scale-95');
-            innerModal.classList.add('scale-100');
-            document.body.style.overflow = 'hidden';
+                // Siker modal kitöltése és aktiválása
+                document.getElementById('success-user-name').textContent = name;
+                document.getElementById('success-tracking-id').textContent = trackingId;
+                
+                // Beállítjuk a Messenger overlay-be is a számot azonosításra
+                const msgNoticeIds = document.querySelectorAll('#messenger-notice-id');
+                msgNoticeIds.forEach(el => {
+                    el.textContent = trackingId;
+                });
 
-            // Elindítjuk az alapértelmezett mailto-t is proaktívan
-            triggerMailSender();
+                document.getElementById('success-copy-text').textContent = emailBody;
+
+                // Bezárjuk a konfigurátor modalt és megnyitjuk a sikeres kalkuláció modalt
+                closeConfiguratorModal();
+
+                const successModal = document.getElementById('success-calculator-modal');
+                const innerModal = successModal.querySelector('.transform');
+                
+                successModal.classList.remove('opacity-0', 'pointer-events-none');
+                successModal.classList.add('opacity-100');
+                innerModal.classList.remove('scale-95');
+                innerModal.classList.add('scale-100');
+                document.body.style.overflow = 'hidden';
+            });
         };
 
         window.closeSuccessModal = function() {
