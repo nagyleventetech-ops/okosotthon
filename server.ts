@@ -4,13 +4,9 @@ import dotenv from "dotenv";
 import nodemailer from "nodemailer";
 import fs from "fs";
 import { createServer as createViteServer } from "vite";
-// server.ts eleje
-dotenv.config();
 
-console.log("SMTP Konfiguráció ellenőrzése:");
-console.log("Host:", process.env.SMTP_HOST);
-console.log("User:", process.env.SMTP_USER);
-console.log("Pass:", process.env.SMTP_PASS ? "Beállítva (OK)" : "HIÁNYZIK!");
+// Load environment variables
+dotenv.config();
 
 function formatPrice(val: number): string {
   return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
