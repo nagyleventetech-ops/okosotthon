@@ -334,7 +334,7 @@ async function startServer() {
             <td align="center" style="padding: 30px 20px; background-color: #0d1117 !important; border-bottom: 2px solid #0284c7 !important; text-align: center;">
               <!-- Embedded inline logo reference via cid:logo -->
               <img src="cid:logo" alt="HelyiOkos" style="height: 48px; width: auto; margin: 0 auto 12px auto; display: block;" />
-              <div style="font-size: 13px; color: #38bdf8 !important; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; margin-top: 8px;">Kézhez kaptam az igényeidet!</div>
+              <div style="font-size: 13px; color: #38bdf8 !important; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; margin-top: 8px;">Sikeresen rögzítettem az igényeit!</div>
               <div style="font-size: 20px; color: #ffffff !important; font-weight: 900; margin-top: 6px; font-family: Arial, sans-serif;">Ajánlatszám: ${trackingId}</div>
             </td>
           </tr>
@@ -342,16 +342,16 @@ async function startServer() {
           <!-- Message Body Content -->
           <tr>
             <td style="padding: 30px 20px; text-align: left;">
-              <p style="font-size: 17px; font-weight: bold; color: #38bdf8 !important; margin-top: 0; margin-bottom: 15px;">Szia ${name}!</p>
+              <p style="font-size: 17px; font-weight: bold; color: #38bdf8 !important; margin-top: 0; margin-bottom: 15px;">Kedves ${name}!</p>
               <p style="font-size: 14.5px; line-height: 1.6; color: #cbd5e1 !important; margin-bottom: 20px;">
-                Sikeresen összeállítottad a személyre szabott okosotthon csomagodat! Megkaptam az ajánlatkérésedet, hamarosan (általában 24 órán belül) keresni foglak a részletekkel és a felméréssel kapcsolatban.
+                Sikeresen összeállította a személyre szabott okosotthon csomagját! Megkaptam az ajánlatkérését, hamarosan (általában 24 órán belül) keresni fogom Önt a részletekkel és a felméréssel kapcsolatban.
               </p>
               <p style="font-size: 14px; line-height: 1.6; color: #cbd5e1 !important; margin-bottom: 25px;">
-                Addig is, itt találod az általad kalkulált egyedi összeállítás tisztán olvasható részleteit:
+                Addig is, alább találja az Ön által kalkulált egyedi összeállítás tisztán olvasható részleteit:
               </p>
 
               <!-- Összeállított Csomag Eszközök -->
-              <h3 style="font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: #0284c7 !important; border-bottom: 1px solid #30363d !important; padding-bottom: 8px; margin-bottom: 15px; font-weight: bold;">Az összeállított konfigurációd</h3>
+              <h3 style="font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: #0284c7 !important; border-bottom: 1px solid #30363d !important; padding-bottom: 8px; margin-bottom: 15px; font-weight: bold;">Az Ön által összeállított konfiguráció</h3>
               
               <div style="overflow-x: auto; margin-bottom: 25px;">
                 <table width="100%" border="0" cellspacing="0" cellpadding="12" class="white-table" style="background-color: #161b22 !important; border-radius: 12px; margin-bottom: 10px; font-size: 13.5px; color: #f0f6fc !important; border-collapse: collapse; overflow: hidden; border: 1px solid #30363d !important;">
@@ -387,7 +387,7 @@ async function startServer() {
                 <tr>
                   <td>
                     <p style="font-size: 13px; line-height: 1.6; color: #cbd5e1 !important; margin: 0;">
-                      Ha bármilyen további kérdésed adódna, hivatkozz bátran a(z) <strong style="color: #38bdf8 !important;">${trackingId}</strong> azonosítószámodra!
+                      Ha bármilyen további kérdése adódna, hivatkozzon bátran a(z) <strong style="color: #38bdf8 !important;">${trackingId}</strong> azonosítószámára!
                     </p>
                   </td>
                 </tr>
@@ -398,7 +398,7 @@ async function startServer() {
                 <tr>
                   <td align="center" style="padding-top: 10px; padding-bottom: 5px;">
                     <a href="https://m.me/61581849661468" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 16px 32px; background-color: #2563eb !important; background-image: linear-gradient(to right, #2563eb, #0ea5e9) !important; color: #ffffff !important; font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; font-weight: 950; text-decoration: none; border-radius: 14px; box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3); text-transform: uppercase; letter-spacing: 1.5px; text-align: center;">
-                      Írj nekem Messengeren!
+                      Írjon nekem Messengeren!
                     </a>
                   </td>
                 </tr>
