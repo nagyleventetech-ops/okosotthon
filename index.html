@@ -1737,114 +1737,49 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
                 lucide.createIcons();
             }
 
-            // Küldés a szerveroldali Express API-ra háttérben
-            fetch('/api/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    items: items,
-                    total: total,
-                    trackingId: trackingId
-                })
-            })
-            .then(res => res.json())
-            .then(data => {
-                console.log("[HelyiOkos API Válasz]:", data);
-            })
-            .catch(err => {
-                console.error("[HelyiOkos API Hiba]:", err);
-            })
-            .finally(() => {
-                // Visszaállítjuk a gombot
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = origBtnHtml;
-                    lucide.createIcons();
-                }
-
-                // Siker modal kitöltése és aktiválása
-                document.getElementById('success-user-name').textContent = name;
-                document.getElementById('success-tracking-id').textContent = trackingId;
-                
-                // Beállítjuk a Messenger overlay-be is a számot azonosításra
-                const msgNoticeIds = document.querySelectorAll('#messenger-notice-id');
-                msgNoticeIds.forEach(el => {
-                    el.textContent = trackingId;
-                });
-
-                document.getElementById('success-copy-text').textContent = emailBody;
-
-                // Bezárjuk a konfigurátor modalt és megnyitjuk a sikeres kalkuláció modalt
-                closeConfiguratorModal();
-
-                const successModal = document.getElementById('success-calculator-modal');
-                const innerModal = successModal.querySelector('.transform');
-                
-                successModal.classList.remove('opacity-0', 'pointer-events-none');
-                successModal.classList.add('opacity-100');
-                innerModal.classList.remove('scale-95');
-                innerModal.classList.add('scale-100');
-                document.body.style.overflow = 'hidden';
-            });
-        };
-
-        window.closeSuccessModal = function() {
+                    // EmailJS küldés a régi fetch helyett
+        emailjs.send("service_unckkjq", "TEMPLATE_ID_IDE", {
+            name: name,
+            phone: phone,
+            email: email,
+            items: items,
+            total: total,
+            trackingId: trackingId,
+            message: emailBody // Ez a szöveges tartalom, amit a kalkulátorod generált
+        })
+        .then(() => {
+            console.log("Sikeres küldés!");
+            
+            // A régi modal logikát itt hagyjuk változatlanul:
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = origBtnHtml;
+                lucide.createIcons();
+            }
+        
+            document.getElementById('success-user-name').textContent = name;
+            document.getElementById('success-tracking-id').textContent = trackingId;
+            
+            const msgNoticeIds = document.querySelectorAll('#messenger-notice-id');
+            msgNoticeIds.forEach(el => { el.textContent = trackingId; });
+        
+            document.getElementById('success-copy-text').textContent = emailBody;
+        
+            closeConfiguratorModal();
+        
             const successModal = document.getElementById('success-calculator-modal');
             const innerModal = successModal.querySelector('.transform');
             
-            successModal.classList.add('opacity-0', 'pointer-events-none');
-            successModal.classList.remove('opacity-100');
-            innerModal.classList.add('scale-95');
-            innerModal.classList.remove('scale-100');
-            document.body.style.overflow = '';
-        };
-
-        window.triggerMailSender = function() {
-            const recipient = "nagylevente.tech@gmail.com";
-            const mailtoUri = `mailto:${recipient}?subject=${encodeURIComponent(lastGeneratedMailSubject)}&body=${encodeURIComponent(lastGeneratedMailBody)}`;
-            window.location.href = mailtoUri;
-        };
-
-        window.copyToClipboard = function() {
-            const pre = document.getElementById('success-copy-text');
-            if (pre) {
-                navigator.clipboard.writeText(pre.textContent).then(() => {
-                    const btn = document.getElementById('copy-text-btn');
-                    const origContent = btn.innerHTML;
-                    btn.innerHTML = `<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Másolva!`;
-                    lucide.createIcons();
-                    setTimeout(() => {
-                        btn.innerHTML = origContent;
-                        lucide.createIcons();
-                    }, 2000);
-                }).catch(err => {
-                    console.error("Váratlan hiba a másoláskor:", err);
-                });
-            }
-        };
-
-        window.copyToClipboardForMessenger = function(el) {
-            const pre = document.getElementById('success-copy-text');
-            if (pre) {
-                navigator.clipboard.writeText(pre.textContent).then(() => {
-                    const origContent = el.innerHTML;
-                    el.innerHTML = `<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Másolva!`;
-                    lucide.createIcons();
-                    setTimeout(() => {
-                        el.innerHTML = origContent;
-                        lucide.createIcons();
-                    }, 3000);
-                }).catch(err => {
-                    console.error("Másolási hiba:", err);
-                });
-            }
-        };
-
+            successModal.classList.remove('opacity-0', 'pointer-events-none');
+            successModal.classList.add('opacity-100');
+            innerModal.classList.remove('scale-95');
+            innerModal.classList.add('scale-100');
+            document.body.style.overflow = 'hidden';
+        })
+        .catch((err) => {
+            console.error("Hiba az EmailJS küldésnél:", err);
+            alert("Sajnos nem sikerült elküldeni az e-mailt. Kérlek próbáld újra!");
+        });
         // Renderelés futtatása betöltéskor
         renderCalculatorDevices();
         recalculateTotal();
