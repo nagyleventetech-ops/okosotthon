@@ -252,6 +252,15 @@
                 transition: all 0.5s;
                 outline: 8px solid rgba(15, 23, 42, 0.5);
                 box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.4);
+                -webkit-mask-image: -webkit-radial-gradient(white, black);
+                transform: translate3d(0, 0, 0);
+            }
+            .profile-avatar img {
+                image-rendering: auto;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                transform: translateZ(0) scale(1.02);
+                will-change: transform;
             }
             @media (min-width: 768px) {
                 .profile-avatar { width: 11rem; height: 11rem; }
@@ -360,13 +369,13 @@
 <body class="bg-slate-950">
 
     <!-- Sticky Navigation -->
-    <nav class="fixed top-0 left-0 w-full h-16 md:h-20 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800 z-50 transition-all duration-300">
+    <nav class="fixed top-0 left-0 w-full h-16 lg:h-20 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800 z-50 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-6 h-full flex items-center justify-between">
             <a href="#home" class="flex items-center gap-2 text-white font-display font-black text-xl tracking-tighter">
                 <img src="HelyiOkos.png" alt="HelyiOkos Logó" class="w-8 h-8 object-contain">
                 <span>HelyiOkos</span>
             </a>
-            <div class="hidden md:flex items-center gap-2">
+            <div class="hidden lg:flex items-center gap-2">
                 <a href="#features" class="nav-link">Előnyök</a>
                 <a href="#concept" class="nav-link">Működés</a>
                 <a href="#usage" class="nav-link">Vezérlés</a>
@@ -375,12 +384,12 @@
                 <a href="#contact" class="nav-link">Kapcsolat</a>
             </div>
             <!-- Mobile Menu Toggle -->
-            <button id="menu-btn" class="md:hidden p-2 text-white hover:text-sky-400 transition-colors" aria-label="Menü">
+            <button id="menu-btn" class="lg:hidden p-2 text-white hover:text-sky-400 transition-colors" aria-label="Menü">
                 <i data-lucide="menu" class="w-7 h-7"></i>
             </button>
         </div>
         <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-slate-800 shadow-2xl">
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-slate-800 shadow-2xl">
             <div class="flex flex-col py-2">
                 <a href="#features" class="mobile-nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Előnyök</a>
                 <a href="#concept" class="mobile-nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Működés</a>
@@ -858,7 +867,7 @@
             <div class="mt-10 p-5 md:p-6 bg-sky-500/5 border border-sky-500/15 rounded-3xl flex items-start gap-4 backdrop-blur-md">
                 <i data-lucide="info" class="w-6 h-6 text-sky-400 shrink-0 mt-0.5 animate-pulse"></i>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed text-left" style="hyphens: none; word-break: normal;">
-                    <strong>💡 Transzparens árak:</strong> A fenti árak minden esetben tartalmazzák az eszköz beszerzését, a szakszerű fizikai beszerelést és az alapvető működési programozást. Mivel minden otthon egyedi, a komplex, több eszközt összekötő egyedi automatizációk (például: ha a fűtésrendszernél a helyszíni felmérés alapján radiátorszelepet, vizes padlófűtésszabályzót [GA] vagy gázkazán-indítót [GC] kell választani; vagy ha a vízszivárgás-érzékelő mellé okos elzárószelepet is kérsz, hogy csőtörés esetén a rendszer azonnal, magától elzárja a főcsapot) pontos mérnöki óradíjat a helyszíni felmérés során határozom meg.
+                    <strong>💡 Transzparens árak:</strong> A fenti árak minden esetben tartalmazzák az eszköz beszerzését, a szakszerű fizikai beszerelést és az alapvető működési programozást. Mivel minden otthon egyedi, a komplex, több eszközt összekötő egyedi automatizációk (például: ha a fűtésrendszernél a helyszíni felmérés alapján radiátorszelepet, vizes padlófűtésszabályzót [GA] vagy gázkazán-indítót [GC] kell választani; vagy ha a vízszivárgás-érzékelő mellé okos elzárószelepet is szeretne, hogy csőtörés esetén a rendszer azonnal, magától elzárja a főcsapot) pontos mérnöki óradíjat a helyszíni felmérés során határozom meg.
                 </p>
             </div>
         </section>
@@ -870,10 +879,10 @@
                     <i data-lucide="calculator" class="w-8 h-8"></i>
                 </div>
                 <h2 class="text-2xl md:text-3xl font-display font-black text-white mb-3">
-                    Rakd össze a saját csomagod
+                    Állítsa össze saját csomagját
                 </h2>
                 <p class="text-slate-300 text-sm md:text-base mb-6 max-w-xl mx-auto leading-relaxed">
-                    Tervezd meg az okosotthonodat interaktívan! Válaszd ki az eszközök darabszámát, és a rendszerem azonnal kiszámolja a várható végösszeget a beépítési munkadíjakkal együtt.
+                    Tervezze meg okosotthonát interaktívan! Válassza ki az eszközök darabszámát, és a rendszerem azonnal kiszámolja a várható végösszeget a beépítési munkadíjakkal együtt.
                 </p>
                 <button onclick="openConfiguratorModal()" class="inline-flex items-center gap-2 px-8 py-4 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-all shadow-lg shadow-sky-500/10 hover:shadow-sky-500/25 hover:-translate-y-0.5 cursor-pointer text-sm md:text-base">
                     <i data-lucide="sliders" class="w-4 h-4"></i>
@@ -898,7 +907,7 @@
                         Okosotthon Konfigurátor
                     </h2>
                     <p class="text-slate-400 text-xs sm:text-sm mt-1">
-                        Állítsd össze a saját rendszeredet! Változtasd az eszközök darabszámát, és kövesd élőben a beépített árak alakulását.
+                        Állítsa össze saját rendszerét! Változtassa az eszközök darabszámát, és kövesse élőben a beépített árak alakulását.
                     </p>
                 </div>
 
@@ -907,7 +916,7 @@
                     <div class="lg:col-span-7 bg-slate-950/40 border border-slate-800/60 rounded-2xl p-4 sm:p-6">
                         <h3 class="text-sm font-bold text-white mb-4 flex items-center gap-2">
                             <i data-lucide="sliders" class="w-4 h-4 text-sky-400"></i>
-                            Válaszd ki az elemeket (beépítéssel együtt)
+                            Válassza ki az elemeket (beépítéssel együtt)
                         </h3>
 
                         <!-- Kötelező fix agy és alapdíj (100 000 Ft-os alapcsomaggal) -->
@@ -1004,16 +1013,16 @@
                     </div>
                     <h3 class="text-xl sm:text-2xl font-display font-black text-white">Ajánlatkérés elküldve!</h3>
                     <p class="text-sm text-slate-300">
-                        Kedves <span id="success-user-name" class="font-bold text-sky-400"></span>, sikeresen összeállítottad a személyre szabott rendszeredet! Az ajánlatkérésedet sikeresen rögzítettem.
+                        Kedves <span id="success-user-name" class="font-bold text-sky-400"></span>, sikeresen összeállította a személyre szabott rendszerét! Az ajánlatkérését sikeresen rögzítettem.
                     </p>
                 </div>
 
                 <!-- Unique Ajánlatszám Code display visual block -->
                 <div class="bg-slate-950 border border-sky-500/20 rounded-2xl p-4 sm:p-5 mb-5 text-center shadow-inner">
-                    <div class="text-[10px] text-slate-400 uppercase tracking-widest font-black mb-1.5">Egyedi ajánlatszámod</div>
+                    <div class="text-[10px] text-slate-400 uppercase tracking-widest font-black mb-1.5">Egyedi ajánlatszáma</div>
                     <div class="text-3xl font-display font-black text-sky-400 tracking-wider" id="success-tracking-id">#HO-1000</div>
                     <div class="text-[10px] text-slate-500 mt-1.5 leading-normal">
-                        Hamarosan egyedileg feldolgozom az adataidat, és felveszem veled a kapcsolatot a megadott e-mail címen.
+                        Hamarosan egyedileg feldolgozom az adatait, és felveszem Önnel a kapcsolatot a megadott e-mail címen.
                     </div>
                 </div>
 
@@ -1054,7 +1063,7 @@
                 </div>
                 <h4 class="text-lg font-display font-black text-white mb-2">Irány a Messenger beszélgetés!</h4>
                 <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
-                    Az ajánlatodat elmentettem a(z) <span id="messenger-notice-id" class="font-bold text-sky-400">#HO-0000</span> alatt. Írj nekem Messengeren, és hivatkozz erre az azonosítóra a gyors egyeztetéshez!
+                    Az ajánlatát elmentettem a(z) <span id="messenger-notice-id" class="font-bold text-sky-400">#HO-0000</span> alatt. Írjon nekem Messengeren, és hivatkozzon erre az azonosítóra a gyors egyeztetéshez!
                 </p>
                 <div class="flex flex-col sm:flex-row gap-2.5">
                     <button onclick="closeMessengerNotice()" class="flex-1 py-3 bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white rounded-xl transition-all font-bold text-xs cursor-pointer">
@@ -1156,15 +1165,15 @@
                 image: "https://images.unsplash.com/photo-1753039495488-434a2fe53e41?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 content: `
                     <p class="font-bold text-sky-400 text-base md:text-lg mb-4">A kényelem és biztonság láthatatlan őre</p>
-                    <p class="mb-4 text-slate-300">Felszerelem neked a helyiség jelenlét-érzékelőit, így otthonod önműködően reagál a mozgásodra és kényelmessé teszi a mindennapjaidat.</p>
+                    <p class="mb-4 text-slate-300">Felszerelem Önnek a helyiség jelenlét-érzékelőit, így otthona önműködően reagál a mozgásra és kényelmessé teszi a mindennapokat.</p>
                     <ul class="space-y-3 text-slate-300 text-sm md:text-base">
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Intelligens világítás:</strong> Beállítom neked, hogy ha éjszaka kimegy a mosdóba vagy a konyhába, a folyosói fények lágyan, csökkentett fényerővel kapcsoljanak fel, vigyázva az álmodra.</div>
+                            <div><strong>Intelligens világítás:</strong> Beállítom Önnek, hogy ha éjszaka kimegy a mosdóba vagy a konyhába, a folyosói fények lágyan, csökkentett fényerővel kapcsoljanak fel, vigyázva az Ön álmára.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Jelenlét-szimuláció és biztonság:</strong> Ha távol vagy, a mozgásérzékelők riasztóként működnek, és azonnali értesítést küldenek a telefonodra, ha mozgást észlelnek.</div>
+                            <div><strong>Jelenlét-szimuláció és biztonság:</strong> Ha Ön távol van, a mozgásérzékelők riasztóként működnek, és azonnali értesítést küldenek a telefonjára, ha mozgást észlelnek.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
@@ -1180,19 +1189,19 @@
                 image: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=800&q=80",
                 content: `
                     <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Személyre szabott fények minden pillanatra</p>
-                    <p class="mb-4 text-slate-300">Testre szabom otthonod világítását, így nemcsak kényelmesen irányíthatod a lámpákat, de egyedi vizuális hangulatokat is kaphatsz.</p>
+                    <p class="mb-4 text-slate-300">Testre szabom otthona világítását, így nemcsak kényelmesen irányíthatja a lámpákat, de egyedi vizuális hangulatokat is kaphat.</p>
                     <ul class="space-y-3 text-slate-300 text-sm md:text-base">
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Világítási hangulatok:</strong> Elmentem neked a kedvenc beállításaidat, így egyetlen gombnyomással elindíthatod a "Mozi", "Vacsora" vagy "Olvasás" hangulatot, finomra hangolt fényerővel és színhőmérséklettel.</div>
+                            <div><strong>Világítási hangulatok:</strong> Elmentem Önnek a kedvenc beállításait, így egyetlen gombnyomással elindíthatja a "Mozi", "Vacsora" vagy "Olvasás" hangulatot, finomra hangolt fényerővel és színhőmérséklettel.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Jelenlét-szimuláció:</strong> Amikor elutazol, előre megadott séma szerint automatikusan kapcsolgatom a fényeket az otthonodban, azt az érzetet keltve a külvilág számára, mintha otthon lennél.</div>
+                            <div><strong>Jelenlét-szimuláció:</strong> Amikor Ön elutazik, előre megadott séma szerint automatikusan kapcsolgatom a fényeket az otthonában, azt az érzetet keltve a külvilág számára, mintha otthon lenne.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Központi lekapcsolás:</strong> Távozáskor a bejárati ajtó melletti kapcsolóval vagy a telefonodról egy mozdulattal lekapcsolhatod az összes lámpát a házadban.</div>
+                            <div><strong>Központi lekapcsolás:</strong> Távozáskor a bejárati ajtó melletti kapcsolóval vagy a telefonjáról egy mozdulattal lekapcsolhatja az összes lámpát a házában.</div>
                         </li>
                     </ul>
                 `
@@ -1208,7 +1217,7 @@
                     <ul class="space-y-3 text-slate-300 text-sm md:text-base">
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Azonnali riasztás és jelzés:</strong> Már egyetlen csepp folyadék észlelésekor hangos helyi riasztást ad a fali érzékelő, és push üzenetet küld a telefonodra.</div>
+                            <div><strong>Azonnali riasztás és jelzés:</strong> Már egyetlen csepp folyadék észlelésekor hangos helyi riasztást ad a fali érzékelő, és push üzenetet küld a telefonjára.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
@@ -1216,7 +1225,7 @@
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Távoli kezelés bárhonnan:</strong> Nyaralás alatt vagy elutazáskor a mobilapplikációból egyetlen érintéssel bármikor, bárhonnan biztonságosan lezárhatod vagy megnyithatod a teljes vízhálózatot.</div>
+                            <div><strong>Távoli kezelés bárhonnan:</strong> Nyaralás alatt vagy elutazáskor a mobilapplikációból egyetlen érintéssel bármikor, bárhonnan biztonságosan lezárhatja vagy megnyithatja a teljes vízhálózatot.</div>
                         </li>
                     </ul>
                 `
@@ -1227,20 +1236,20 @@
                 price: "74 900 Ft-tól",
                 image: "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 content: `
-                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Mindig láthatod, ki áll a kapu előtt</p>
-                    <p class="mb-4 text-slate-300">Felszerelem és beállítom neked a korszerű videós kaputelefont, hogy teljes biztonsággal ellenőrizni tudd a látogatóidat.</p>
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Mindig láthatja, ki áll a kapu előtt</p>
+                    <p class="mb-4 text-slate-300">Felszerelem és beállítom Önnek a korszerű videós kaputelefont, hogy teljes biztonsággal ellenőrizni tudja látogatóit.</p>
                     <ul class="space-y-3 text-slate-300 text-sm md:text-base">
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Távoli videókapcsolat:</strong> Ha valaki becsenget, hívást indítok a telefonodra. Élő videókapcsolattal beszélhetsz vele, mintha épp otthon tartózkodnál.</div>
+                            <div><strong>Távoli videókapcsolat:</strong> Ha valaki becsenget, hívást indítok a telefonjára. Élő videókapcsolattal beszélhet vele, mintha épp otthon tartózkodna.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Biztonsági felvétel:</strong> Rögzítem neked a becsengetőket vagy az ajtód előtt gyanúsan várakozókat, így utólag bármikor visszanézheted az eseményeket.</div>
+                            <div><strong>Biztonsági felvétel:</strong> Rögzítem Önnek a becsengetőket vagy az ajtó előtt gyanúsan várakozókat, így utólag bármikor visszanézheti az eseményeket.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Kapunyitás integráció:</strong> Beállítom neked, hogy közvetlenül az alkalmazásból kinyithasd a kiskaput a családtagoknak, vagy akár a futárnak, hogy letehesse a csomagodat a teraszon.</div>
+                            <div><strong>Kapunyitás integráció:</strong> Beállítom Önnek, hogy közvetlenül az alkalmazásból kinyithassa a kiskaput a családtagoknak, vagy akár a futárnak, hogy letehesse a csomagot a teraszon.</div>
                         </li>
                     </ul>
                 `
@@ -1251,14 +1260,14 @@
                 price: "21 900 Ft-tól",
                 image: "https://images.unsplash.com/photo-1636569608385-58efc32690ea?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 content: `
-                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Optimális hőmérséklet ott és akkor, amikor szeretnéd</p>
-                    <p class="mb-4 text-slate-300">Kösd össze otthonod fűtését az intelligens vezérléssel! A helyszíni felmérés során közösen vizsgáljuk meg a fűtésrendszeredet, és választjuk ki, hogy melyik megoldásokra van szükség az alábbiak közül a te lakásodban:</p>
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Optimális hőmérséklet ott és akkor, amikor szeretné</p>
+                    <p class="mb-4 text-slate-300">Kösse össze otthona fűtését az intelligens vezérléssel! A helyszíni felmérés során személyesen átvizsgálom a fűtésrendszerét, és kiválasztom, hogy melyik megoldásokra van szükség az alábbiak közül az Ön otthonában:</p>
                     
                     <div class="p-4 bg-slate-950/60 border border-slate-800 rounded-2xl mb-4 space-y-4">
                         <div>
                             <p class="text-sky-400 font-bold text-sm sm:text-base mb-1">🔥 Okos radiátorszelep (Hagyományos radiátorokhoz)</p>
                             <p class="text-xs sm:text-sm text-slate-400">Ár: 21 900 Ft-tól / szelepenként</p>
-                            <p class="text-xs text-slate-300 mt-1">Ezzel szobánként külön tudom szabályozni neked a fűtést a maximális kényelemért.</p>
+                            <p class="text-xs text-slate-300 mt-1">Ezzel szobánként külön tudom szabályozni Önnek a fűtést a maximális kényelemért.</p>
                         </div>
                         <div class="border-t border-slate-800/80 pt-3">
                             <p class="text-sky-400 font-bold text-sm sm:text-base mb-1">🌡️ Központi fali termosztát - 'GA' típus (Padlófűtéshez)</p>
@@ -1268,18 +1277,18 @@
                         <div class="border-t border-slate-800/80 pt-3">
                             <p class="text-sky-400 font-bold text-sm sm:text-base mb-1">⚡ Központi fali termosztát - 'GC' típus (Kazánvezérléshez)</p>
                             <p class="text-xs sm:text-sm text-slate-400">Ár: 49 900 Ft-tól</p>
-                            <p class="text-xs text-slate-300 mt-1">Gázkazánok vagy nagyobb vizes kazánrendszerek gadaságos és automatizált indításához.</p>
+                            <p class="text-xs text-slate-300 mt-1">Gázkazánok vagy nagyobb vizes kazánrendszerek gazdaságos és automatizált indításához.</p>
                         </div>
                     </div>
 
                     <ul class="space-y-3 text-slate-300 text-sm md:text-base">
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Helyiségenkénti időprogram:</strong> Beállítom neked, hogy a háló és nappali pontosan akkor melegedjen fel, amikor ott tartózkodsz, felesleges éjszakai vagy napközbeni túlfűtés nélkül.</div>
+                            <div><strong>Helyiségenkénti időprogram:</strong> Beállítom Önnek, hogy a hálószoba és a nappali pontosan akkor melegedjen fel, amikor ott tartózkodik, felesleges éjszakai vagy napközbeni túlfűtés nélkül.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Nyitott ablak érzékelés:</strong> Ha szellőztetést észlelek, azonnal lekapcsolom abban a szobában a fűtést, megvédve téged a felesleges rezsiköltségektől.</div>
+                            <div><strong>Nyitott ablak érzékelés:</strong> Ha szellőztetést észlelek, azonnal lekapcsolom abban a szobában a fűtést, megvédve Önt a felesleges rezsiköltségektől.</div>
                         </li>
                     </ul>
                 `
@@ -1291,19 +1300,19 @@
                 image: "https://images.unsplash.com/photo-1762341123870-d706f257a12e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 content: `
                     <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Tökéletes hűvös fogadtatás a legforróbb napokon is</p>
-                    <p class="mb-4 text-slate-300">Összekötöm a meglévő vagy új klímádat a központi okosotthon egységgel, így a működése teljesen kényelmes és takarékos lesz.</p>
+                    <p class="mb-4 text-slate-300">Összekötöm a meglévő vagy új klímáját a központi okosotthon egységgel, így a működése teljesen kényelmes és takarékos lesz.</p>
                     <ul class="space-y-3 text-slate-300 text-sm md:text-base">
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Távoli indítás:</strong> Elindítom neked a klímát hazafelé menet a mobilodról, így a legforróbb napon is kellemes, friss levegőjű otthon fogad majd.</div>
+                            <div><strong>Távoli indítás:</strong> Elindítom Önnek a klímát hazafelé menet a mobiljáról, így a legforróbb napon is kellemes, friss levegőjű otthon fogadja majd.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Automatizáció:</strong> Ha az ingatlanod belső hőmérséklete elér egy kritikus határt, bekapcsolom a hűtést, de kizárólag akkor, ha az ablakok zárva vannak.</div>
+                            <div><strong>Automatizáció:</strong> Ha az ingatlana belső hőmérséklete elér egy kritikus határt, bekapcsolom a hűtést, de kizárólag akkor, ha az ablakok zárva vannak.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Egységes szabályozás:</strong> Összehangolom a hűtést és fűtést egyetlen központ alá, így garantálom neked, hogy a két rendszer soha nem fog egymás ellen dolgozni.</div>
+                            <div><strong>Egységes szabályozás:</strong> Összehangolom a hűtést és fűtést egyetlen központ alá, így garantálom Önnek, hogy a két rendszer soha nem fog egymás ellen dolgozni.</div>
                         </li>
                     </ul>
                 `
@@ -1315,19 +1324,19 @@
                 image: "https://ae01.alicdn.com/kf/Se99198e3147e4f8c96c551ec6a7a3e463/ZIGBEE-Tuya-Ewelink-Garage-Door-Opener-Controller-Smart-Switch-Relay-Module-Gate-Open-Work-for-Alexa.jpg",
                 content: `
                     <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Zökkenőmentes és biztonságos érkezés</p>
-                    <p class="mb-4 text-slate-300">Intelligens vezérlés alá helyezem a kapudat és a garázsajtódat, hogy a hazaérkezésed rendkívül kényelmessé váljon.</p>
+                    <p class="mb-4 text-slate-300">Intelligens vezérlés alá helyezem a kapuját és a garázsajtaját, hogy a hazaérkezése rendkívül kényelmessé váljon.</p>
                     <ul class="space-y-3 text-slate-300 text-sm md:text-base">
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Helymeghatározós nyitás (opcionális):</strong> Beállítom neked, hogy amint autóval megközelíted a házadat, a kapu és garázskapu magától kinyíljon, így nem kell a távirányítókkal bűvészkedned vezetés közben.</div>
+                            <div><strong>Helymeghatározós nyitás (opcionális):</strong> Beállítom Önnek, hogy amint autóval megközelíti a házat, a kapu és a garázskapu magától kinyíljon, így nem kell a távirányítókkal bajlódnia vezetés közben.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Nyitva felejtett kapu jelzés:</strong> Ha a garázskapud véletlenül nyitva maradna 10 percnél hosszabb ideig, azonnali riasztással figyelmeztetlek a telefonodon.</div>
+                            <div><strong>Nyitva felejtett kapu jelzés:</strong> Ha a garázskapuja véletlenül nyitva maradna 10 percnél hosszabb ideig, azonnali riasztással figyelmeztetem a telefonján.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Távoli beléptetés:</strong> Egyetlen gombnyomással beengedheted a kertészt, a futárt vagy a családtagokat távolról is, függetlenül attól, hogy te épp hol tartózkodsz.</div>
+                            <div><strong>Távoli beléptetés:</strong> Egyetlen gombnyomással beengedheti a kertészt, a futárt vagy a családtagokat távolról is, függetlenül attól, hogy Ön épp hol tartózkodik.</div>
                         </li>
                     </ul>
                 `
@@ -1338,20 +1347,20 @@
                 price: "12 900 Ft-tól",
                 image: "https://www.viztisztitomarket.hu/fotky1924/fotos/_vyr_2129_-delight-smart-wifi-okos-konnektor-fogyasztasmerovel.jpg",
                 content: `
-                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Gondoskodj hagyományos elektromos készülékeid biztonságáról és méréséről</p>
-                    <p class="mb-4 text-slate-300">Okossá és teljesen áramtalaníthatóvá teszem a legegyszerűbb, lakásban lévő elektromos fogyasztóidat.</p>
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Gondoskodjon hagyományos elektromos készülékei biztonságáról és méréséről</p>
+                    <p class="mb-4 text-slate-300">Okossá és teljesen áramtalaníthatóvá teszem a legegyszerűbb, lakásában lévő elektromos fogyasztóit.</p>
                     <ul class="space-y-3 text-slate-300 text-sm md:text-base">
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Garantált lelki nyugalom:</strong> Aggódsz, hogy bedugva felejtetted a vasalót vagy a kávéfőzőt? Távolról is ellenőrizheted az állapotukat, és egyetlen gombnyomással lekapcsolham neked az áramellátásukat.</div>
+                            <div><strong>Garantált lelki nyugalom:</strong> Aggódik, hogy bedugva felejtette a vasalót vagy a kávéfőzőt? Távolról is ellenőrizheti az állapotukat, és egyetlen gombnyomással lekapcsolhatja az áramellátásukat.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Valós idejű fogyasztásmérés:</strong> Folyamatosan mutatni fogom neked a rákötött gépek áramfogyasztását, ezáltal pontosan látni fogod, hol tudsz még energiát spórolni.</div>
+                            <div><strong>Valós idejű fogyasztásmérés:</strong> Folyamatosan mutatni fogom Önnek a rákötött gépek áramfogyasztását, ezáltal pontosan látni fogja, hol tud még energiát spórolni.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Okos időzítések:</strong> Beállítok neked részletes menetrendeket és töltésvédelmet, hogy a csatolt akkumulátortöltőid csak a szükséges ideig kapjanak áramot, elkerülve a túlmelegedést.</div>
+                            <div><strong>Okos időzítések:</strong> Beállítok Önnek részletes menetrendeket és töltésvédelmet, hogy a csatlakoztatott akkumulátortöltői csak a szükséges ideig kapjanak áramot, elkerülve a túlmelegedést.</div>
                         </li>
                     </ul>
                 `
@@ -1362,20 +1371,20 @@
                 price: "9 900 Ft-tól",
                 image: "https://images.euronics.hu/product_images/800x600/resize/10081502429214_zm2cgnqf.jpg?v=3",
                 content: `
-                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Ingatlanod szemei, melyekkel semmilyen nyílászáró nem marad ellenőrizetlenül</p>
-                    <p class="mb-4 text-slate-300">Felszerelem neked a mágneses érzékelőket, amelyek folyamatosan nyomon követik a lakásod ajtajainak és ablakainak állapotát.</p>
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Ingatlana szemei, melyekkel semmilyen nyílászáró nem marad ellenőrizetlenül</p>
+                    <p class="mb-4 text-slate-300">Felszerelem Önnek a mágneses érzékelőket, amelyek folyamatosan nyomon követik a lakása ajtajainak és ablakainak állapotát.</p>
                     <ul class="space-y-3 text-slate-300 text-sm md:text-base">
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Biztonsági védelem:</strong> Ha élesített állapotban kinyílik bármelyik ablakod vagy ajtód, azonnal szirénázni kezdek és push értesítést küldök a telefonodra, hogy azonnal reagálhass.</div>
+                            <div><strong>Biztonsági védelem:</strong> Ha élesített állapotban kinyílik bármelyik ablaka vagy ajtaja, azonnal szirénázni kezdek és push értesítést küldök a telefonjára, hogy azonnal reagálhasson.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Szellőztetés és fűtésvezérlés:</strong> Beállítom neked, hogy ha kinyitod a szoba ablakát szellőztetni, a rendszer abban a helyiségben automatikusan leállítsa a fűtést, megvédve téged a pazarlástól.</div>
+                            <div><strong>Szellőztetés és fűtésvezérlés:</strong> Beállítom Önnek, hogy ha kinyitja a szoba ablakát szellőztetni, a rendszer abban a helyiségben automatikusan leállítsa a fűtést, megvédve Önt a pazarlástól.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Indulás előtti ellenőrzés:</strong> Távozás előtt elegendő egyetlen pillantás a mobilalkalmazásodra, ahol rögtön látni fogod, ha véletlenül nyitva felejtettél egy ablakot.</div>
+                            <div><strong>Indulás előtti ellenőrzés:</strong> Távozás előtt elegendő egyetlen pillantás a mobilalkalmazására, ahol rögtön látni fogja, ha véletlenül nyitva felejtett egy ablakot.</div>
                         </li>
                     </ul>
                 `
@@ -1387,19 +1396,19 @@
                 image: "https://lakberinfo.hu/cikkek/2017/08/77/okosredony-a1.jpg",
                 content: `
                     <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Optimális természetes fény és klímavédelem</p>
-                    <p class="mb-4 text-slate-300">Összekötöm a motoros redőnyeidet, zsaluziáidat az intelligens okosotthon egységével a maximális kényelmed érdekében.</p>
+                    <p class="mb-4 text-slate-300">Összekötöm a motoros redőnyeit, zsaluziáit az intelligens okosotthon egységével a maximális kényelme érdekében.</p>
                     <ul class="space-y-3 text-slate-300 text-sm md:text-base">
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Aktív hővédelem:</strong> Beállítom neked, hogy ha a külső hőmérséklet és a napsütés mértéke túl magas, automatikusan leengedjem az árnyékolókat, megóvva otthonodat a túlmelegedéstől.</div>
+                            <div><strong>Aktív hővédelem:</strong> Beállítom Önnek, hogy ha a külső hőmérséklet és a napsütés mértéke túl magas, automatikusan leengedjem az árnyékolókat, megóvva otthonát a túlmelegedéstől.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Fényre ébredés:</strong> Kezdheted harmonikusan a napjaidat: beprogramozom, hogy a redőnyök reggel fokozatosan nyíljanak fel, beengedve a természetes napfényt a hálódba.</div>
+                            <div><strong>Fényre ébredés:</strong> Kezdheti harmonikusan a napjait: beprogramozom, hogy a redőnyök reggel fokozatosan nyíljanak fel, beengedve a természetes napfényt a hálószobájába.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Aktív viharvédelem:</strong> Ha az időjárás-érzékelők viharos, erős szelet mérnek, automatikusan biztonságba húzom neked a külső zsaluziákat, hogy megvédjem őket a sérülésektől.</div>
+                            <div><strong>Aktív viharvédelem:</strong> Ha az időjárás-érzékelők viharos, erős szelet mérnek, automatikusan biztonságos állásba húzom a külső zsaluziákat, hogy megvédjem őket a sérülésektől.</div>
                         </li>
                     </ul>
                 `
@@ -1714,7 +1723,7 @@ ${devicesText}
 ----------------------------------------------
 Várható teljes végösszeg beépítéssel együtt: ${formatPrice(total)} Ft
 
-Hivatkozz az ajánlatszámra gyors egyeztetéshez!`;
+Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
 
             lastGeneratedMailSubject = emailSubject;
             lastGeneratedMailBody = emailBody;
@@ -1884,11 +1893,11 @@ Hivatkozz az ajánlatszámra gyors egyeztetéshez!`;
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
                 nav.classList.add('py-2', 'bg-slate-950/95');
-                nav.classList.remove('md:h-20');
+                nav.classList.remove('lg:h-20');
                 nav.classList.add('h-16');
             } else {
                 nav.classList.remove('py-2', 'bg-slate-950/95');
-                nav.classList.add('md:h-20');
+                nav.classList.add('lg:h-20');
                 nav.classList.remove('h-16');
             }
         });
