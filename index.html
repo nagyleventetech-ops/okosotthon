@@ -22,10 +22,45 @@
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        document.getElementById('calc-submit-btn').addEventListener('click', function() {
+        
+        // Szép popup üzenet
+        const message = `
+            <div style="text-align: center; padding: 20px;">
+                <p style="font-size: 1.1rem; margin-bottom: 16px; color: #0f172a;">
+                    Köszönjük az érdeklődését!
+                </p>
+                <p style="margin-bottom: 20px; line-height: 1.5;">
+                    Jelenleg az ajánlatkérő rendszerünk karbantartás alatt áll.<br>
+                    Kérjük, keressen meg minket Messenger-en, és rövid időn belül személyre szabott ajánlatot készítünk Önnek.
+                </p>
+                <a href="https://m.me/..." 
+                   target="_blank"
+                   style="background: #1877f2; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; display: inline-block; font-weight: 600;">
+                    Üzenet küldése Messenger-en
+                </a>
+            </div>
+        `;
     
+        // SweetAlert2 használata (ha van már a projektben) - ajánlott
+        if (typeof Swal !== 'undefined') {
+            Swal.fire({
+                html: message,
+                showConfirmButton: false,
+                customClass: {
+                    popup: 'rounded-2xl'
+                }
+            });
+        } 
+        // Ha nincs SweetAlert, akkor sima alert
+        else {
+            alert("Köszönjük az érdeklődését!\n\nJelenleg az ajánlatkérő rendszerünk karbantartás alatt áll. Kérjük, keressen meg minket Messenger-en, és rövid időn belül személyre szabott ajánlatot készítünk Önnek.");
+        }
+    });</script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
+    
     <script shadow>
         tailwind.config = {
             theme: {
@@ -986,7 +1021,9 @@
                                     <input type="email" id="calc-email" required placeholder="Pl. andrea@okosotthon.hu" class="w-full px-3.5 py-2.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:border-sky-500/50 focus:outline-none transition-all">
                                 </div>
 
-                                <button id="calc-submit-btn" type="submit" class="w-full py-3 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-all shadow-md hover:shadow-sky-500/20 flex items-center justify-center gap-1.5 cursor-pointer text-xs sm:text-sm mt-3">
+                                <button id="calc-submit-btn" 
+                                        type="button" 
+                                        class="w-full py-3 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-all shadow-md hover:shadow-sky-500/20 flex items-center justify-center gap-1.5 cursor-pointer text-xs sm:text-sm mt-3">
                                     <i data-lucide="send" class="w-3.5 h-3.5 shrink-0"></i>
                                     Személyes ajánlat kérése
                                 </button>
