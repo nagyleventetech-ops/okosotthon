@@ -1736,16 +1736,19 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
                 submitBtn.innerHTML = `<i data-lucide="loader-2" class="w-3.5 h-3.5 animate-spin"></i> Küldés folyamatban...`;
                 lucide.createIcons();
             }
-
+        let itemsHtml = items.map(item => `
+            <tr>
+                <td>${item.name}</td>
+                <td>${item.units} db</td>
+                <td>${item.price} Ft</td>
+            </tr>
+        `).join('');
                     // EmailJS küldés a régi fetch helyett
-        emailjs.send("service_unckkjq", "TEMPLATE_ID_IDE", {
+        emailjs.send("service_unckkjq", "template_3u3swvo", {
             name: name,
             phone: phone,
-            email: email,
-            items: items,
-            total: total,
-            trackingId: trackingId,
-            message: emailBody // Ez a szöveges tartalom, amit a kalkulátorod generált
+            items_table: items_table_html, // A táblázat, amit generáltunk
+            message: "Új ajánlatkérés érkezett." // Ez fix szöveg lehet
         })
         .then(() => {
             console.log("Sikeres küldés!");
