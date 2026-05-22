@@ -1738,11 +1738,20 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
             }
 
             // Küldés a szerveroldali Express API-ra háttérben
+            
             fetch('/api/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
+                emailjs.send("service_unckkjq", "template_3u3swvo", {
+                  from_name: "Pisti",
+                  to_email: "levikel32@gmail.com",
+                  message: "Helló ez egy teszt"
+                })
+                .then(() => alert("Email elküldve!"))
+                .catch(() => alert("Hiba történt"));
+            
                 body: JSON.stringify({
                     name: name,
                     phone: phone,
