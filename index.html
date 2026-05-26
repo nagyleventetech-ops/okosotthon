@@ -1737,61 +1737,38 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
                 lucide.createIcons();
             }
 
-            // Küldés a szerveroldali Express API-ra háttérben
-            fetch('/api/send-email', {
+            // Mivel a weblap statikus környezetben (pl. GitHub Pages) fut Node.js szerver nélkül, 
+            // közvetlenül beküldjük a kalkulációt a FormSubmit ingyenes és biztonságos AJAX feldolgozóján keresztül.
+            // Így a statikus oldalról is garantáltan, azonnal megérkezik Levente e-mail fiókjába a részletes ajánlatkérés.
+            fetch('https://formsubmit.co/ajax/nagylevente.tech@gmail.com', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 },
                 body: JSON.stringify({
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    items: items,
-                    total: total,
-                    trackingId: trackingId
+                    "Egyedi ajánlatszám (Tracking ID)": "#" + trackingId,
+                    "Ügyfél neve": name,
+                    "Ügyfél e-mail címe": email,
+                    "Ügyfél telefonszáma": phone || "Nincs megadva",
+                    "Kalkulált nettó végösszeg (Beépítéssel együtt)": formatPrice(total) + " Ft",
+                    "Konfiguráció részletei": devicesText,
+                    "_subject": emailSubject,
+                    "_replyto": email,
+                    "_honey": "" // Anti-spam mézesbödön mező
                 })
             })
             .then(res => {
                 if (!res.ok) {
-                    throw new Error("Szerver hiba (státusz kód: " + res.status + ")");
+                    throw new Error("FormSubmit hiba (státusz kód: " + res.status + ")");
                 }
                 return res.json();
             })
             .then(data => {
-                console.log("[HelyiOkos API Válasz]:", data);
+                console.log("[HelyiOkos FormSubmit Sikeres Küldés]:", data);
             })
             .catch(err => {
-                console.warn("[HelyiOkos API Hiba - Static Mode Fallback bekapcsolása]:", err);
-                
-                // Mivel statikus környezetben (pl. GitHub Pages) fut a weblap Node.js nélkül,
-                // beküldjük a kalkulációt a FormSubmit ingyenes és biztonságos AJAX feldolgozóján át directement.
-                // Így a statikus oldalról is tökéletesen megérkezik Levente e-mail fiókjába a lead.
-                return fetch('https://formsubmit.co/ajax/nagylevente.tech@gmail.com', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        "Egyedi ajánlatszám (Tracking ID)": "#" + trackingId,
-                        "Ügyfél neve": name,
-                        "Ügyfél e-mail címe": email,
-                        "Ügyfél telefonszáma": phone || "Nincs megadva",
-                        "Kalkulált nettó végösszeg (Beépítéssel együtt)": formatPrice(total) + " Ft",
-                        "Konfiguráció részletei": devicesText,
-                        "_subject": emailSubject,
-                        "_replyto": email,
-                        "_honey": "" // Anti-spam mézesbödön mező
-                    })
-                })
-                .then(fsRes => fsRes.json())
-                .then(fsData => {
-                    console.log("[Static FormSubmit API Válasz]:", fsData);
-                })
-                .catch(fsErr => {
-                    console.error("[Static FormSubmit API Hiba]:", fsErr);
-                });
+                console.error("[HelyiOkos FormSubmit Küldés Sikertelen]:", err);
             })
             .finally(() => {
                 // Visszaállítjuk a gombot
