@@ -711,15 +711,15 @@
             </p>
             
             <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-                <!-- Mozgásérzékelő -->
-                <div onclick="openDeviceModal('mozgas')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+                <!-- Okos Ajtózár -->
+                <div onclick="openDeviceModal('aqara_u200')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
-                            <i data-lucide="eye" class="w-6 h-6 text-sky-400"></i>
+                            <i data-lucide="lock" class="w-6 h-6 text-sky-400"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Mozgás- és jelenlét-érzékelő</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Automatikus világításkapcsolás és biztonsági értesítések mozgás észlelésekor.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">16 900 Ft-tól</div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Okos Ajtózár</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Kulcsnélküli szabadság, ujjlenyomat-olvasó és kimagasló biztonság teljeskörű beszereléssel és billentyűzettel.</p>
+                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">109 000 Ft</div>
                     </div>
                     <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
@@ -732,9 +732,24 @@
                         <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
                             <i data-lucide="lightbulb" class="w-6 h-6 text-sky-400"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Személyre szabott világítás</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Egyedi világítási hangulatok, jelenlét-szimuláció és központi lekapcsolás.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">14 900 Ft-tól</div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Prémium Okos Izzó</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Egyedi világítási hangulatok, meleg/hideg tónusok, fényerőszabályzás és jelenlét-szimuláció.</p>
+                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">9 900 Ft</div>
+                    </div>
+                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                    </div>
+                </div>
+
+                <!-- Vezetéknélküli fali kapcsoló -->
+                <div onclick="openDeviceModal('sonoff_kapcsolo')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="toggle-right" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Vezetéknélküli fali kapcsoló</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Mobilis, bárhová felragasztható vezeték nélküli kapcsoló 3 nyomásfunkcióval.</p>
+                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">9 900 Ft</div>
                     </div>
                     <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
@@ -777,9 +792,9 @@
                         <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
                             <i data-lucide="thermometer" class="w-6 h-6 text-sky-400"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Okos fűtés- és termosztátvezérlés</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Helyiségenkénti egyedi hőmérséklet-szabályozás és rezsimegtakarítás.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">23 900 Ft-tól</div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Okos Fűtés (radiátor)</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-3">A rendszer kizárólag radiátoros fűtés okosítására alkalmas a prémium radiátorszelepekkel.</p>
+                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">23 900 Ft</div>
                     </div>
                     <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
@@ -801,30 +816,15 @@
                     </div>
                 </div>
 
-                <!-- Kapunyitó -->
-                <div onclick="openDeviceModal('kapunyito')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
-                            <i data-lucide="key" class="w-6 h-6 text-sky-400"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Intelligens kapu- és garázsnyitó</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Kényelmes kapunyitás telefonról, automatikus beengedés érkezéskor.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">24 900 Ft-tól</div>
-                    </div>
-                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                        Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                    </div>
-                </div>
-
                 <!-- Okoskonnektor -->
                 <div onclick="openDeviceModal('konnektor')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
                             <i data-lucide="plug" class="w-6 h-6 text-sky-400"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Biztonsági okoskonnektor</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Fogyasztásmérés, távoli áramtalanítás és automatizált töltések.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">14 900 Ft-tól</div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Okoskonnektor (4db)</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-3">4 db-os prémium, előre felprogramozott okoskonnektor csomag helyi, biztonságos és felhőmentes szoftverrel.</p>
+                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">35 000 Ft</div>
                     </div>
                     <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
@@ -853,23 +853,23 @@
                             <i data-lucide="sliders" class="w-6 h-6 text-sky-400"></i>
                         </div>
                         <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Intelligens redőnyvezérlés</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Automatikus árnyékolás napsütés szerint, fényre ébredés és viharvédelem.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">22 900 Ft-tól</div>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Kizárólag meglévő gyöngyláncos/golyós láncos redőnyök utólagos, szerelésmentes okosítása.</p>
+                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">24 900 Ft</div>
                     </div>
                     <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
                     </div>
                 </div>
 
-                <!-- Okos Ajtó zár -->
-                <div onclick="openDeviceModal('aqara_u200')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+                <!-- Mozgásérzékelő -->
+                <div onclick="openDeviceModal('mozgas')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
                     <div>
                         <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
-                            <i data-lucide="lock" class="w-6 h-6 text-sky-400"></i>
+                            <i data-lucide="eye" class="w-6 h-6 text-sky-400"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Okos Ajtó zár</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Aqara U200 okos zár teljes beszereléssel és billentyűzettel. Választható ezüst, fekete vagy fehér színben.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">109 000 Ft-tól</div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Mozgás- és jelenlét-érzékelő</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Automatikus világításkapcsolás és biztonsági értesítések mozgás észlelésekor.</p>
+                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">16 900 Ft-tól</div>
                     </div>
                     <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
@@ -882,7 +882,7 @@
             <div class="mt-10 p-5 md:p-6 bg-sky-500/5 border border-sky-500/15 rounded-3xl flex items-start gap-4 backdrop-blur-md">
                 <i data-lucide="info" class="w-6 h-6 text-sky-400 shrink-0 mt-0.5 animate-pulse"></i>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed text-left" style="hyphens: none; word-break: normal;">
-                    <strong>💡 Transzparens árak:</strong> A fenti árak minden esetben tartalmazzák az eszköz beszerzését, a szakszerű fizikai beszerelést és az alapvető működési programozást. Mivel minden otthon egyedi, a komplex, több eszközt összekötő egyedi automatizációk (például: ha a fűtésrendszernél a helyszíni felmérés alapján radiátorszelepet, vizes padlófűtésszabályzót [GA] vagy gázkazán-indítót [GC] kell választani; vagy ha a vízszivárgás-érzékelő mellé okos elzárószelepet is szeretne, hogy csőtörés esetén a rendszer azonnal, magától elzárja a főcsapot) pontos mérnöki óradíjat a helyszíni felmérés során határozom meg.
+                    <strong>💡 Transzparens árak:</strong> A fenti árak minden esetben tartalmazzák az eszközök beszerzését, a szakszerű fizikai elhelyezést és az alapvető működési programozást. Mivel minden otthon egyedi, a komplex, több eszközt összekötő egyedi automatizációk (például: ha a vízszivárgás-érzékelő mellé az azonnali automata elzáráshoz okos fővízszelepet is választ; vagy ha az okos izzók mellé vezeték nélküli fali kapcsolókat szeretne társítani) pontos, személyre szabott beállításait a díjmentes helyszíni felmérés során közösen véglegesítjük.
                 </p>
             </div>
         </section>
@@ -969,6 +969,22 @@
                                 <!-- Összesített elemek dinamikus részletezője -->
                                 <div id="calc-summary-items" class="space-y-2.5 max-h-[140px] overflow-y-auto pr-1 text-xs text-slate-400 custom-scrollbar">
                                     <!-- Csak a kiválasztott elemek (db > 0) fognak itt megjelenni -->
+                                </div>
+
+                                <!-- Ajánló doboz -->
+                                <div id="calc-recommendation-box" class="hidden mt-3 p-3 bg-sky-500/10 border border-sky-500/20 rounded-xl text-left">
+                                    <div class="flex items-start gap-2.5">
+                                        <div class="w-8 h-8 rounded-lg bg-sky-500/25 text-sky-400 flex items-center justify-center shrink-0">
+                                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h5 class="text-xs font-bold text-white leading-tight">Szerelésmentes Bónusz Ajánlat!</h5>
+                                            <p class="text-[10px] text-slate-300 mt-1 leading-normal">Mivel választott legalább egy <strong>Prémium Okos Izzót</strong>, a meglévő fali kapcsolók átalakítása nélkül javasoljuk mellé a <strong>Vezetéknélküli fali kapcsolót (9 900 Ft)</strong>, hogy tetszőleges helyről és szerelésmentesen irányíthassa a fényeket!</p>
+                                            <button onclick="changeCount('sonoff_kapcsolo', 1); if(typeof checkRecommendation === 'function') { checkRecommendation(); }" class="mt-2 text-[10px] font-bold text-sky-400 hover:text-sky-300 flex items-center gap-1 bg-sky-400/5 hover:bg-sky-400/10 border border-sky-400/15 px-2 py-1 rounded-lg transition-all cursor-pointer">
+                                                Hozzáadás a csomaghoz <i data-lucide="plus" class="w-3 h-3"></i>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="mt-4 pt-3 border-t border-slate-800/80">
@@ -1193,35 +1209,55 @@
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Jelenlét-szimuláció és biztonság:</strong> Ha Ön távol van, a mozgásérzékelők riasztóként működnek, és azonnali értesítést küldenek a telefonjára, ha mozgást észlelnek.</div>
-                        </li>
-                        <li class="flex gap-2">
-                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
                             <div><strong>Energiatakarékosság:</strong> Lekapcsolja a világítást azokban a helyiségekben, ahol már senki sem tartózkodik, elkerülve a felesleges fogyasztást.</div>
                         </li>
                     </ul>
                 `
             },
             lampa: {
-                title: "Személyre szabott világítás",
-                badge: "Lámpa és világítás",
-                price: "14 900 Ft-tól",
+                title: "Prémium Okos Izzó",
+                badge: "Prémium Okos Izzó",
+                price: "9 900 Ft",
                 image: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=800&q=80",
                 content: `
-                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Személyre szabott fények minden pillanatra</p>
-                    <p class="mb-4 text-slate-300">Testre szabom otthona világítását, így nemcsak kényelmesen irányíthatja a lámpákat, de egyedi vizuális hangulatokat is kaphat.</p>
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Személyre szabott fények egyszerűen és hálózati villanyszerelés nélkül</p>
+                    <p class="mb-4 text-slate-300">A falba szerelt relék helyett a korszerű, teljesen szerelés- és veszélymentes <strong class="text-white">Prémium Okos Izzókat</strong> használom az Ön kényelméért.</p>
                     <ul class="space-y-3 text-slate-300 text-sm md:text-base">
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Világítási hangulatok:</strong> Elmentem Önnek a kedvenc beállításait, így egyetlen gombnyomással elindíthatja a "Mozi", "Vacsora" vagy "Olvasás" hangulatot, finomra hangolt fényerővel és színhőmérséklettel.</div>
+                            <div><strong>Dinamikus fényerő és színhőmérséklet:</strong> Meleg sárgás fény az esti meghitt pihenéshez, semleges vagy hideg fehér a nappali produktív munkavégzéshez.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Jelenlét-szimuláció:</strong> Amikor Ön elutazik, előre megadott séma szerint automatikusan kapcsolgatom a fényeket az otthonában, azt az érzetet keltve a külvilág számára, mintha otthon lenne.</div>
+                            <div><strong>Világítási hangulatok és időzítések:</strong> Elmentem Önnek a kedvenc beállításait, így egyetlen gombnyomással elérheti a "Mozi", "Olvasás" vagy "Vacsora" módokat.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Központi lekapcsolás:</strong> Távozáskor a bejárati ajtó melletti kapcsolóval vagy a telefonjáról egy mozdulattal lekapcsolhatja az összes lámpát a házában.</div>
+                            <div><strong>Jelenlét-szimuláció:</strong> Távollétében a rendszer tetszőlegesen, természetes sémával kapcsolgatja az izzókat, megijesztve a potenciális hívatlan látogatókat.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            sonoff_kapcsolo: {
+                title: "Vezetéknélküli fali kapcsoló",
+                badge: "Vezetéknélküli fali kapcsoló",
+                price: "9 900 Ft",
+                image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=600",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Vezeték nélküli kényelem bontás és feszültség alatti szerelés nélkül</p>
+                    <p class="mb-4 text-slate-300">A <strong class="text-white">Vezetéknélküli fali kapcsoló</strong> egy pici és stílusos vezeték nélküli nyomógomb, amellyel a falbontás és a 230V-os feszültség alatti szerelés teljesen elkerülhető. Egyszerűen és tetszőlegesen vezérelheti az okos izzókat.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>3 integrált vezérlési parancs:</strong> Egy gombon beállítható az egyszeri kattintás (pl. lámpa be/ki), dupla kattintás (pl. hangulatfény aktíválása) és hosszú nyomás (pl. az egész ház áramtalanítása távozáskor).</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Bárhová elhelyezhető:</strong> Kétoldalú ragasztóval a meglévő fali kapcsoló mellé, az éjjeliszekrényre, de akár a dohányzóasztalra is tehető. Csak fel kell ragasztani!</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Brutális elem élettartam:</strong> Nem igényel tápkábelt, a beépített gombelemmel akár 2-3 évig is működik, és a rendszer időben jelzi, ha elemet kell cserélni.</div>
                         </li>
                     </ul>
                 `
@@ -1256,7 +1292,6 @@
                 price: "74 900 Ft-tól",
                 image: "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 content: `
-                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Mindig láthatja, ki áll a kapu előtt</p>
                     <p class="mb-4 text-slate-300">Felszerelem és beállítom Önnek a korszerű videós kaputelefont, hogy teljes biztonsággal ellenőrizni tudja látogatóit.</p>
                     <ul class="space-y-3 text-slate-300 text-sm md:text-base">
                         <li class="flex gap-2">
@@ -1267,48 +1302,25 @@
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
                             <div><strong>Biztonsági felvétel:</strong> Rögzítem Önnek a becsengetőket vagy az ajtó előtt gyanúsan várakozókat, így utólag bármikor visszanézheti az eseményeket.</div>
                         </li>
-                        <li class="flex gap-2">
-                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Kapunyitás integráció:</strong> Beállítom Önnek, hogy közvetlenül az alkalmazásból kinyithassa a kiskaput a családtagoknak, vagy akár a futárnak, hogy letehesse a csomagot a teraszon.</div>
-                        </li>
                     </ul>
                 `
             },
             futes: {
-                title: "Okos fűtés- és termosztátvezérlés",
-                badge: "Okos fűtés",
-                price: "23 900 Ft-tól",
+                title: "Okos Fűtés (radiátor)",
+                badge: "Okos Fűtés (radiátor)",
+                price: "23 900 Ft",
                 image: "https://images.unsplash.com/photo-1636569608385-58efc32690ea?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 content: `
                     <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Optimális hőmérséklet ott és akkor, amikor szeretné</p>
-                    <p class="mb-4 text-slate-300">Kösse össze otthona fűtését az intelligens vezérléssel! A helyszíni felmérés során személyesen átvizsgálom a fűtésrendszerét, és kiválasztom, hogy melyik megoldásokra van szükség az alábbiak közül az Ön otthonában:</p>
-                    
-                    <div class="p-4 bg-slate-950/60 border border-slate-800 rounded-2xl mb-4 space-y-4">
-                        <div>
-                            <p class="text-sky-400 font-bold text-sm sm:text-base mb-1">🔥 Okos radiátorszelep (Hagyományos radiátorokhoz)</p>
-                            <p class="text-xs sm:text-sm text-slate-400">Ár: 23 900 Ft-tól / szelepenként</p>
-                            <p class="text-xs text-slate-300 mt-1">Ezzel szobánként külön tudom szabályozni Önnek a fűtést a maximális kényelemért.</p>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-3">
-                            <p class="text-sky-400 font-bold text-sm sm:text-base mb-1">🌡️ Központi fali termosztát - 'GA' típus (Padlófűtéshez)</p>
-                            <p class="text-xs sm:text-sm text-slate-400">Ár: 52 900 Ft-tól</p>
-                            <p class="text-xs text-slate-300 mt-1">Vizes padlófűtések, szelepek és zónák intelligens, összehangolt vezérléséhez.</p>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-3">
-                            <p class="text-sky-400 font-bold text-sm sm:text-base mb-1">⚡ Központi fali termosztát - 'GC' típus (Kazánvezérléshez)</p>
-                            <p class="text-xs sm:text-sm text-slate-400">Ár: 52 900 Ft-tól</p>
-                            <p class="text-xs text-slate-300 mt-1">Gázkazánok vagy nagyobb vizes kazánrendszerek gazdaságos és automatizált indításához.</p>
-                        </div>
-                    </div>
-
+                    <p class="mb-4 text-slate-300">A rendszer kizárólag <strong class="text-white">radiátoros fűtés okosítására alkalmas prémium radiátorszelepekkel</strong>. Ezekkel a stílusos és tartós kiegészítőkkel minden egyes helyiséget külön hőszabályzási zónává alakítunk át, radikálisan növelve a komfortérzetet és csökkentve a téli rezsiköltségeket.</p>
                     <ul class="space-y-3 text-slate-300 text-sm md:text-base">
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Helyiségenkénti időprogram:</strong> Beállítom Önnek, hogy a hálószoba és a nappali pontosan akkor melegedjen fel, amikor ott tartózkodik, felesleges éjszakai vagy napközbeni túlfűtés nélkül.</div>
+                            <div><strong>Helyiségenkénti külön időprogram:</strong> Beállítom Önnek, hogy a gyerekszoba, a hálószoba és a nappali pontosan akkor és olyan fokra melegedjen fel, amikor ott tartózkodnak, elkerülve az üres szobák felesleges túlfűtését.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Nyitott ablak érzékelés:</strong> Ha szellőztetést észlelek, azonnal lekapcsolom abban a szobában a fűtést, megvédve Önt a felesleges rezsiköltségektől.</div>
+                            <div><strong>Nyitott ablak érzékelés:</strong> Ha a szobában ablaknyitást vagy hirtelen hőmérséklet-esést észlel a rendszer, azonnal lekapcsolja a radiátorszelepet, megvédve Önt a felesleges és drága utcára fűtéstől.</div>
                         </li>
                     </ul>
                 `
@@ -1337,50 +1349,26 @@
                     </ul>
                 `
             },
-            kapunyito: {
-                title: "Intelligens kapu- és garázsnyitó",
-                badge: "Kapunyitó",
-                price: "24 900 Ft-tól",
-                image: "https://ae01.alicdn.com/kf/Se99198e3147e4f8c96c551ec6a7a3e463/ZIGBEE-Tuya-Ewelink-Garage-Door-Opener-Controller-Smart-Switch-Relay-Module-Gate-Open-Work-for-Alexa.jpg",
-                content: `
-                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Zökkenőmentes és biztonságos érkezés</p>
-                    <p class="mb-4 text-slate-300">Intelligens vezérlés alá helyezem a kapuját és a garázsajtaját, hogy a hazaérkezése rendkívül kényelmessé váljon.</p>
-                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
-                        <li class="flex gap-2">
-                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Helymeghatározós nyitás (opcionális):</strong> Beállítom Önnek, hogy amint autóval megközelíti a házat, a kapu és a garázskapu magától kinyíljon, így nem kell a távirányítókkal bajlódnia vezetés közben.</div>
-                        </li>
-                        <li class="flex gap-2">
-                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Nyitva felejtett kapu jelzés:</strong> Ha a garázskapuja véletlenül nyitva maradna 10 percnél hosszabb ideig, azonnali riasztással figyelmeztetem a telefonján.</div>
-                        </li>
-                        <li class="flex gap-2">
-                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Távoli beléptetés:</strong> Egyetlen gombnyomással beengedheti a kertészt, a futárt vagy a családtagokat távolról is, függetlenül attól, hogy Ön épp hol tartózkodik.</div>
-                        </li>
-                    </ul>
-                `
-            },
             konnektor: {
-                title: "Biztonsági okoskonnektor",
-                badge: "Okoskonnektor",
-                price: "14 900 Ft-tól",
+                title: "Okoskonnektor (4db)",
+                badge: "Okoskonnektor (4db)",
+                price: "35 000 Ft",
                 image: "https://www.viztisztitomarket.hu/fotky1924/fotos/_vyr_2129_-delight-smart-wifi-okos-konnektor-fogyasztasmerovel.jpg",
                 content: `
-                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Gondoskodjon hagyományos elektromos készülékei biztonságáról és méréséről</p>
-                    <p class="mb-4 text-slate-300">Okossá és teljesen áramtalaníthatóvá teszem a legegyszerűbb, lakásában lévő elektromos fogyasztóit.</p>
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Mérhető fogyasztás és tiszta helyi vezérlési biztonság</p>
+                    <p class="mb-4 text-slate-300">A csomag 4 db előre felprogramozott okoskonnektort tartalmaz. Ezek az eszközök nyílt forráskódú, biztonságos, kizárólag helyi hálózaton kommunikáló szoftverrel működnek, így nem függenek semmilyen külső felhőtől vagy külföldi szervertől.</p>
                     <ul class="space-y-3 text-slate-300 text-sm md:text-base">
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Garantált lelki nyugalom:</strong> Aggódik, hogy bedugva felejtette a vasalót vagy a kávéfőzőt? Távolról is ellenőrizheti az állapotukat, és egyetlen gombnyomással lekapcsolhatja az áramellátásukat.</div>
+                            <div><strong>Garantált helyi biztonság:</strong> Mivel nincs felhőkapcsolat, az adatai nem szivárognak ki, és az internet megszakadása esetén is 100%-ban megbízhatóan működnek a helyi beállítások.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Valós idejű fogyasztásmérés:</strong> Folyamatosan mutatni fogom Önnek a rákötött gépek áramfogyasztását, ezáltal pontosan látni fogja, hol tud még energiát spórolni.</div>
+                            <div><strong>Valós idejű precíz áramfogyasztás-mérés:</strong> Folyamatos visszajelzést ad a rákötött hűtőszekrény, TV, mosógép vagy számítógép pontos áramfelvételéről és fogyasztásáról.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Okos időzítések:</strong> Beállítok Önnek részletes menetrendeket és töltésvédelmet, hogy a csatlakoztatott akkumulátortöltői csak a szükséges ideig kapjanak áramot, elkerülve a túlmelegedést.</div>
+                            <div><strong>Automata töltővédelem és időzítés:</strong> Elkerülheti a túlmelegedést vagy felesleges üzemidőket. Automatikusan lekapcsol, ha a telefonja feltöltött, vagy rögzített ütemterv szerint kapcsolja le a hálózaton maradt készenléti eszközöket.</div>
                         </li>
                     </ul>
                 `
@@ -1412,7 +1400,7 @@
             redony: {
                 title: "Intelligens redőnyvezérlés",
                 badge: "Redőnyvezérlés",
-                price: "22 900 Ft-tól",
+                price: "24 900 Ft",
                 image: "https://lakberinfo.hu/cikkek/2017/08/77/okosredony-a1.jpg",
                 content: `
                     <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Optimális természetes fény és klímavédelem</p>
@@ -1434,13 +1422,13 @@
                 `
             },
             aqara_u200: {
-                title: "Okos Ajtó zár - Aqara U200 Kit",
-                badge: "Okos Ajtó zár",
+                title: "Okos Ajtózár",
+                badge: "Okos Ajtózár",
                 price: "109 000 Ft",
                 image: "https://basic-tutorials.de/wp-content/uploads/2024/06/aqara_smart_lock_u20041-2048x1152.jpg.avif",
                 content: `
                     <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Kulcsnélküli szabadság és kimagasló fizikai védelem</p>
-                    <p class="mb-4 text-slate-300">Az Aqara U200 az egyik első piacvezető okos ajtózár, amely a legújabb Thread-alapú helyi technológiát használja. Teljes körű beszereléssel, konfigurálással és a helyi Home Assistant központba való illesztéssel adom át Önnek.</p>
+                    <p class="mb-4 text-slate-300">Az okos ajtózár az egyik legkorszerűbb kiegészítő, amely modern, helyi és vezeték nélküli technológiát használ. Teljes körű beszereléssel, konfigurálással és a helyi Home Assistant központba való illesztéssel adom át Önnek.</p>
                     <p class="mb-4 text-sm text-sky-300 font-bold bg-sky-500/5 border border-sky-500/10 rounded-xl p-3">Választható színek az ajtó stílusához: fém ezüst, mély fekete, vagy letisztult fehér. A kártyás/kódos kültéri egység a csomag része.</p>
                     <ul class="space-y-3 text-slate-300 text-sm md:text-base">
                         <li class="flex gap-2">
@@ -1453,7 +1441,7 @@
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
-                            <div><strong>Thread Border technológia:</strong> A Home Assistant Connect ZBT-2 koordinátoron keresztül helyi és azonnali, titkosított hálózati kommunikáció valósul meg, amely internet-kimaradás esetén is hibátlanul reagál.</div>
+                            <div><strong>Helyi és azonos idejű vezérlés:</strong> A belső egységgel felesleges felhőátjárók nélkül, helyi hálózatban valósul meg a titkosított és azonnali kommunikáció, amely külső internet-kimaradás esetén is hibátlanul reagál.</div>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-emerald-400 font-bold shrink-0">✓</span> 
@@ -1526,20 +1514,18 @@
         // INTERAKTÍV OKOSOTTHON KALKULÁTOR LOGIKA
         // ==========================================
         const calculatorProducts = [
-            { id: 'mozgas', name: 'Mozgás- és jelenlét-érzékelő', price: 16900, icon: 'eye', desc: 'Automatizált világításkapcsolás és biztonság.' },
-            { id: 'lampa', name: 'Személyre szabott világítás (kapcsolónként)', price: 14900, icon: 'lightbulb', desc: 'Kapcsolók felprogramozása és egyedi fényhangulatok.' },
+            { id: 'aqara_u200', name: 'Okos Ajtózár', price: 109000, icon: 'lock', desc: 'A zár beszerelését, konfigurálását és egyedi üzembe helyezését tartalmazza ujjlenyomat-olvasóval és billentyűzettel együtt.' },
+            { id: 'lampa', name: 'Prémium Okos Izzó', price: 9900, icon: 'lightbulb', desc: 'Szerelésmentes, állítható színhőmérsékletű és fényerejű prémium fényforrás.' },
+            { id: 'sonoff_kapcsolo', name: 'Vezetéknélküli fali kapcsoló', price: 9900, icon: 'toggle-left', desc: 'Vezeték nélküli kapcsoló az okos izzók fali szerelés nélküli irányításához.' },
             { id: 'szivargas', name: 'Vízszivárgás érzékelő', price: 10900, icon: 'droplets', desc: 'Csőtörések, beázások megelőzésére és riasztásra.' },
             { id: 'kaputelefon', name: 'Intelligens kaputelefon és kamera', price: 74900, icon: 'bell', desc: 'Távoli videós beszélgetés kapunyitással.' },
-            { id: 'futes', name: 'Okos fűtés (Radiátorszelep - radiátorokhoz)', price: 23900, icon: 'thermometer', desc: 'Szobánkénti zónavezérlés radiátorokhoz.' },
-            { id: 'central_ga', name: 'Központi fali termosztát (GA típus - padlófűtés)', price: 52900, icon: 'layers', desc: 'Padlófűtési rendszerek szelepeinek intelligens vezérlése.' },
-            { id: 'central_gc', name: 'Központi fali termosztát (GC típus - kazánindítás)', price: 52900, icon: 'flame', desc: 'Gázkazánok gazdaságos és automatizált indításához.' },
+            { id: 'futes', name: 'Okos Fűtés (radiátor)', price: 23900, icon: 'thermometer', desc: 'Kizárólag hagyományos és kiegészítő radiátorok szobánkénti zónavezérlésére.' },
             { id: 'klima', name: 'Klíma és hűtésvezérlés (klímánként)', price: 14900, icon: 'wind', desc: 'Összekötés a helyi hazaérkező hűsítéssel és távoli kezeléssel.' },
-            { id: 'kapunyito', name: 'Intelligens kapu- és garázsnyitó (kapunként)', price: 24900, icon: 'key', desc: 'Garázskapu és udvari kapu kényelmes vezérlése.' },
-            { id: 'konnektor', name: 'Biztonsági okoskonnektor', price: 14900, icon: 'plug', desc: 'Készülékek áramtalanítása és fogyasztási statisztika.' },
+            { id: 'konnektor', name: 'Okoskonnektor (4db)', price: 35000, icon: 'plug', desc: 'Biztonságos, kizárólag helyi hálózaton kommunikáló, fogyasztásmérős csomag.' },
             { id: 'nyitas', name: 'Ajtó- és ablaknyitás érzékelő', price: 10900, icon: 'door-closed', desc: 'Behatolás-védelem és fűtési rákapcsolási kontroll.' },
-            { id: 'redony', name: 'Intelligens redőnyvezérlés (redőnyönként)', price: 22900, icon: 'sliders', desc: 'Napszak szerinti és vihar-leengedés árnyékolókhoz.' },
+            { id: 'redony', name: 'Intelligens redőnyvezérlés (szerelésmentes)', price: 24900, icon: 'sliders', desc: 'Kizárólag meglévő gyöngyláncos/golyós láncos redőnyök utólagos, szerelésmentes okosítása.' },
             { id: 'fofizcsap', name: 'Okos fővízcsap-elzáró szelep', price: 24900, icon: 'shield-alert', desc: 'Azonnali vízelzárás és védelem csőtöréskor.' },
-            { id: 'aqara_u200', name: 'Okos Ajtó zár (ezüst / fekete / fehér)', price: 109000, icon: 'lock', desc: 'A zár beszerelését, konfigurálását és egyedi üzembe helyezését tartalmazza ujjlenyomat-olvasóval és billentyűzettel együtt.' },
+            { id: 'mozgas', name: 'Mozgás- és jelenlét-érzékelő', price: 16900, icon: 'eye', desc: 'Automatizált világításkapcsolás és biztonság.' },
             { id: 'ha_zbt2', name: 'Home Assistant Connect ZBT-2 (Thread Border Router)', price: 31000, icon: 'cpu', desc: 'A megbízható helyi Thread hálózati működéshez szükséges koordinátor.' }
         ];
 
@@ -1564,7 +1550,7 @@
                 if (item.id === 'aqara_u200') {
                     extraInfo = `
                         <div class="mt-2 text-[11px] text-sky-400 bg-sky-500/5 border border-sky-500/10 p-3 rounded-xl leading-relaxed">
-                            Az Aqara U200 okos zár teljes telepítéssel (109 000 Ft) tartalmazza a zár beszerelését, konfigurálását és üzembe helyezését.<br>
+                            Az Okos Ajtózár teljes telepítéssel (109 000 Ft) tartalmazza a zár beszerelését, konfigurálását és üzembe helyezését.<br>
                             A megbízható helyi működéshez szükséges a Home Assistant Connect ZBT-2 Thread koordinátor (+31 000 Ft).
                         </div>
                     `;
@@ -1579,7 +1565,7 @@
                             <div>
                                 <h4 class="text-sm md:text-base font-bold text-white">${item.name}</h4>
                                 <p class="text-xs text-slate-400 leading-normal mt-0.5">${item.desc}</p>
-                                <span class="block text-sky-400 font-bold text-xs mt-1 font-mono">${formatPrice(item.price)} Ft-tól</span>
+                                <span class="block text-sky-400 font-bold text-xs mt-1 font-mono">${formatPrice(item.price)} Ft</span>
                             </div>
                         </div>
                         
@@ -1606,7 +1592,7 @@
         window.changeCount = function(itemId, amount) {
             const current = selectedCounts[itemId] || 0;
             
-            // Ha az Aqara U200 zár aktív (darabszám > 0), a ZBT-2 manuálisan nem csökkenthető 1 alá!
+            // Ha az Okos Ajtózár aktív (darabszám > 0), a ZBT-2 manuálisan nem csökkenthető 1 alá!
             let minVal = 0;
             if (itemId === 'ha_zbt2' && (selectedCounts['aqara_u200'] || 0) > 0) {
                 minVal = 1;
@@ -1620,7 +1606,7 @@
                 counterEl.innerText = newVal;
             }
 
-            // Automatikus függőségi logika az Aqara U200 és a ZBT-2 között
+            // Automatikus függőségi logika az Okos Ajtózár és a ZBT-2 koordinátor között
             if (itemId === 'aqara_u200') {
                 if (newVal > 0) {
                     // Ha kiválasztja az U200-at, automatikusan hozzáadjuk a ZBT-2 Thread koordinátort is (legalább 1 darabot)
@@ -1718,7 +1704,32 @@
             if (grandTotalEl) {
                 grandTotalEl.innerText = `${formatPrice(total)} Ft`;
             }
+
+            // Dinamikus bónusz ajánló doboz vezérlése (Izzó mellé fali kapcsoló)
+            const recBoxEl = document.getElementById('calc-recommendation-box');
+            if (recBoxEl) {
+                const hasIzzo = (selectedCounts['lampa'] || 0) > 0;
+                const hasKapcsolo = (selectedCounts['sonoff_kapcsolo'] || 0) > 0;
+                if (hasIzzo && !hasKapcsolo) {
+                    recBoxEl.classList.remove('hidden');
+                } else {
+                    recBoxEl.classList.add('hidden');
+                }
+            }
         }
+
+        window.checkRecommendation = function() {
+            const recBoxEl = document.getElementById('calc-recommendation-box');
+            if (recBoxEl) {
+                const hasIzzo = (selectedCounts['lampa'] || 0) > 0;
+                const hasKapcsolo = (selectedCounts['sonoff_kapcsolo'] || 0) > 0;
+                if (hasIzzo && !hasKapcsolo) {
+                    recBoxEl.classList.remove('hidden');
+                } else {
+                    recBoxEl.classList.add('hidden');
+                }
+            }
+        };
 
         // Messenger Overlay vezérlés
         window.openMessengerNotice = function() {
