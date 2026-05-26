@@ -861,6 +861,21 @@
                     </div>
                 </div>
 
+                <!-- Okos Ajtó zár -->
+                <div onclick="openDeviceModal('aqara_u200')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="lock" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all">Okos Ajtó zár</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Aqara U200 okos zár teljes beszereléssel és billentyűzettel. Választható ezüst, fekete vagy fehér színben.</p>
+                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">99 000 Ft-tól</div>
+                    </div>
+                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Részletek megtekintése <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                    </div>
+                </div>
+
             </div>
 
             <!-- Highlights Info Box requested under the devices list -->
@@ -1417,6 +1432,35 @@
                         </li>
                     </ul>
                 `
+            },
+            aqara_u200: {
+                title: "Okos Ajtó zár - Aqara U200 Kit",
+                badge: "Okos Ajtó zár",
+                price: "99 000 Ft",
+                image: "https://basic-tutorials.de/wp-content/uploads/2024/06/aqara_smart_lock_u20041-2048x1152.jpg.avif",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Kulcsnélküli szabadság és kimagasló fizikai védelem</p>
+                    <p class="mb-4 text-slate-300">Az Aqara U200 az egyik első piacvezető okos ajtózár, amely a legújabb Thread-alapú helyi technológiát használja. Teljes körű beszereléssel, konfigurálással és a helyi Home Assistant központba való illesztéssel adom át Önnek.</p>
+                    <p class="mb-4 text-sm text-sky-300 font-bold bg-sky-500/5 border border-sky-500/10 rounded-xl p-3">Választható színek az ajtó stílusához: fém ezüst, mély fekete, vagy letisztult fehér. A kártyás/kódos kültéri egység a csomag része.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Gyors és biztonságos nyitási módok:</strong> Használja a szuperpontos ujjlenyomat-olvasót, egyedi PIN-kódokat (akár időszakos vendégkódokat), NFC kártyát, Apple Home Key-t, távoli nyitást mobilalkalmazásból, vagy akár hangvezérlést.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Maximális fizikai biztonság:</strong> A meglévő zárbetét megmarad (kívülről nem látszik változás), így az eredeti fizikai vésznyitó kulcsok továbbra is 100%-ban működnek.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Thread Border technológia:</strong> A Home Assistant Connect ZBT-2 koordinátoron keresztül helyi és azonnali, titkosított hálózati kommunikáció valósul meg, amely internet-kimaradás esetén is hibátlanul reagál.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Hosszú akkumulátor élettartam:</strong> Újratölthető lítium-ion akkumulátorokkal a belső egység, valamint elemekkel a külső számbillentyűzet hónapokig gond nélkül üzemel, és a rendszer előre jelzi a merülést.</div>
+                        </li>
+                    </ul>
+                `
             }
         };
 
@@ -1494,7 +1538,9 @@
             { id: 'konnektor', name: 'Biztonsági okoskonnektor', price: 12900, icon: 'plug', desc: 'Készülékek áramtalanítása és fogyasztási statisztika.' },
             { id: 'nyitas', name: 'Ajtó- és ablaknyitás érzékelő', price: 9900, icon: 'door-closed', desc: 'Behatolás-védelem és fűtési rákapcsolási kontroll.' },
             { id: 'redony', name: 'Intelligens redőnyvezérlés (redőnyönként)', price: 22900, icon: 'sliders', desc: 'Napszak szerinti és vihar-leengedés árnyékolókhoz.' },
-            { id: 'fofizcsap', name: 'Okos fővízcsap-elzáró szelep', price: 24900, icon: 'shield-alert', desc: 'Azonnali vízelzárás és védelem csőtöréskor.' }
+            { id: 'fofizcsap', name: 'Okos fővízcsap-elzáró szelep', price: 24900, icon: 'shield-alert', desc: 'Azonnali vízelzárás és védelem csőtöréskor.' },
+            { id: 'aqara_u200', name: 'Okos Ajtó zár (ezüst / fekete / fehér)', price: 99000, icon: 'lock', desc: 'A zár beszerelését, konfigurálását és egyedi üzembe helyezését tartalmazza ujjlenyomat-olvasóval és billentyűzettel együtt.' },
+            { id: 'ha_zbt2', name: 'Home Assistant Connect ZBT-2 (Thread Border Router)', price: 29000, icon: 'cpu', desc: 'A megbízható helyi Thread hálózati működéshez szükséges koordinátor.' }
         ];
 
         // Kiválasztott státuszok tárolása
@@ -1513,44 +1559,86 @@
             const container = document.getElementById('calc-device-list');
             if (!container) return;
 
-            container.innerHTML = calculatorProducts.map(item => `
-                <div class="p-4 bg-slate-950/40 border border-slate-800 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-slate-700 transition-colors">
-                    <div class="flex items-start gap-3 text-left">
-                        <div class="w-10 h-10 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
-                            <i data-lucide="${item.icon}" class="w-5 h-5 text-sky-400"></i>
+            container.innerHTML = calculatorProducts.map(item => {
+                let extraInfo = '';
+                if (item.id === 'aqara_u200') {
+                    extraInfo = `
+                        <div class="mt-2 text-[11px] text-sky-400 bg-sky-500/5 border border-sky-500/10 p-3 rounded-xl leading-relaxed">
+                            Az Aqara U200 okos zár teljes telepítéssel (99 000 Ft) tartalmazza a zár beszerelését, konfigurálását és üzembe helyezését.<br>
+                            A megbízható helyi működéshez szükséges a Home Assistant Connect ZBT-2 Thread koordinátor (+29 000 Ft).
                         </div>
-                        <div>
-                            <h4 class="text-sm md:text-base font-bold text-white">${item.name}</h4>
-                            <p class="text-xs text-slate-400 leading-normal mt-0.5">${item.desc}</p>
-                            <span class="block text-sky-400 font-bold text-xs mt-1 font-mono">${formatPrice(item.price)} Ft-tól</span>
+                    `;
+                }
+                return `
+                <div class="p-4 bg-slate-950/40 border border-slate-800 rounded-2xl flex flex-col hover:border-slate-700 transition-all duration-300">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div class="flex items-start gap-3 text-left">
+                            <div class="w-10 h-10 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                                <i data-lucide="${item.icon}" class="w-5 h-5 text-sky-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm md:text-base font-bold text-white">${item.name}</h4>
+                                <p class="text-xs text-slate-400 leading-normal mt-0.5">${item.desc}</p>
+                                <span class="block text-sky-400 font-bold text-xs mt-1 font-mono">${formatPrice(item.price)} Ft-tól</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Darabszám léptető -->
+                        <div class="flex items-center gap-1.5 self-end sm:self-center shrink-0">
+                            <button onclick="changeCount('${item.id}', -1)" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:border-sky-500/50 text-slate-300 hover:text-white flex items-center justify-center transition-colors font-bold select-none cursor-pointer">
+                                -
+                            </button>
+                            <div class="w-10 text-center font-bold text-white text-sm font-mono" id="calc-count-${item.id}">
+                                0
+                            </div>
+                            <button onclick="changeCount('${item.id}', 1)" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:border-sky-500/50 text-slate-300 hover:text-white flex items-center justify-center transition-colors font-bold select-none cursor-pointer">
+                                +
+                            </button>
                         </div>
                     </div>
-                    
-                    <!-- Darabszám léptető -->
-                    <div class="flex items-center gap-1.5 self-end sm:self-center">
-                        <button onclick="changeCount('${item.id}', -1)" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:border-sky-500/50 text-slate-300 hover:text-white flex items-center justify-center transition-colors font-bold select-none cursor-pointer">
-                            -
-                        </button>
-                        <div class="w-10 text-center font-bold text-white text-sm font-mono" id="calc-count-${item.id}">
-                            0
-                        </div>
-                        <button onclick="changeCount('${item.id}', 1)" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:border-sky-500/50 text-slate-300 hover:text-white flex items-center justify-center transition-colors font-bold select-none cursor-pointer">
-                            +
-                        </button>
-                    </div>
+                    ${extraInfo}
                 </div>
-            `).join('');
+                `;
+            }).join('');
         }
 
         // Darabszám változtatás kezelő
         window.changeCount = function(itemId, amount) {
             const current = selectedCounts[itemId] || 0;
-            const newVal = Math.max(0, current + amount);
+            
+            // Ha az Aqara U200 zár aktív (darabszám > 0), a ZBT-2 manuálisan nem csökkenthető 1 alá!
+            let minVal = 0;
+            if (itemId === 'ha_zbt2' && (selectedCounts['aqara_u200'] || 0) > 0) {
+                minVal = 1;
+            }
+
+            let newVal = Math.max(minVal, current + amount);
             selectedCounts[itemId] = newVal;
 
             const counterEl = document.getElementById(`calc-count-${itemId}`);
             if (counterEl) {
                 counterEl.innerText = newVal;
+            }
+
+            // Automatikus függőségi logika az Aqara U200 és a ZBT-2 között
+            if (itemId === 'aqara_u200') {
+                if (newVal > 0) {
+                    // Ha kiválasztja az U200-at, automatikusan hozzáadjuk a ZBT-2 Thread koordinátort is (legalább 1 darabot)
+                    if ((selectedCounts['ha_zbt2'] || 0) === 0) {
+                        selectedCounts['ha_zbt2'] = 1;
+                        const zbtEl = document.getElementById('calc-count-ha_zbt2');
+                        if (zbtEl) {
+                            zbtEl.innerText = 1;
+                        }
+                    }
+                } else {
+                    // Ha kiveszi az U200 csomagot (0 darab), a ZBT-2 is automatikusan teljesen kerüljön ki (0 darab)
+                    selectedCounts['ha_zbt2'] = 0;
+                    const zbtEl = document.getElementById('calc-count-ha_zbt2');
+                    if (zbtEl) {
+                        zbtEl.innerText = 0;
+                    }
+                }
             }
 
             recalculateTotal();
@@ -1747,7 +1835,7 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
             // =========================================================================
             // Az e-mail 100%-ban márkajelzés nélkül, gyönyörű egyedi dizájnnal
             // és a saját Gmail fiókodról (profilképeddel) megy ki az ügyfeleknek és neked!
-            const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwIu3kcAPtTSZjQ9o8KztX9z8bXHQsOT85BaEyUhMQxGsYgjVDl1DscToXp8wF863EP/exec";
+            const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzEbE49lCZfTMky_500gXuBKM3L2DZpqkX7AsKvzkIHXihGZoaslvXRlPYIuzvjwiJk/exec";
             // =========================================================================
 
             const emailPromise = fetch(GOOGLE_SCRIPT_URL.trim(), {
