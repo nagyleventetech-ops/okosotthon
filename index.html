@@ -1745,71 +1745,30 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
             // =========================================================================
             // PRÉMIUM E-MAIL INTEGRÁCIÓS BEÁLLÍTÁS (Google Apps Script - 100% White-Label)
             // =========================================================================
-            // Ha szeretnéd, hogy az e-mail 100%-ban márkajelzés nélkül, gyönyörű egyedi dizájnnal
-            // és a saját Gmail fiókodról (profilképeddel) menjen ki az ügyfeleknek és neked,
-            // kövesd a projekt gyökerében elhelyezett 'google-mail-script.js' útmutatóját!
-            // Másold be az ott kapott Webes alkalmazás URL-t az alábbi változóba:
+            // Az e-mail 100%-ban márkajelzés nélkül, gyönyörű egyedi dizájnnal
+            // és a saját Gmail fiókodról (profilképeddel) megy ki az ügyfeleknek és neked!
             const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzEbE49lCZfTMky_500gXuBKM3L2DZpqkX7AsKvzkIHXihGZoaslvXRlPYIuzvjwiJk/exec";
             // =========================================================================
 
-            let emailPromise;
-
-            if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL.trim() !== "" && GOOGLE_SCRIPT_URL.includes("https://script.google.com")) {
-                // Szuper-professzionális, 100% Saját Márkás Google Apps Script alapú adatküldés
-                emailPromise = fetch(GOOGLE_SCRIPT_URL.trim(), {
-                    method: 'POST',
-                    mode: 'no-cors', // CORS kompatibilis beküldés
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        trackingId: trackingId.replace("#", ""),
-                        name: name,
-                        email: email,
-                        phone: phone || "Nincs megadva",
-                        total: total,
-                        items: items
-                    })
+            const emailPromise = fetch(GOOGLE_SCRIPT_URL.trim(), {
+                method: 'POST',
+                mode: 'no-cors', // CORS kompatibilis beküldés
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    trackingId: trackingId.replace("#", ""),
+                    name: name,
+                    email: email,
+                    phone: phone || "Nincs megadva",
+                    total: total,
+                    items: items
                 })
-                .then(() => {
-                    console.log("[HelyiOkos API]: Sikeres küldés Google Apps Script segítségével!");
-                    return { success: true, provider: "GoogleAppsScript" };
-                });
-            } else {
-                // Megbízható, azonnali FormSubmit AJAX fallback (FormSubmit márkajelzéssel az e-mailben)
-                emailPromise = fetch('https://formsubmit.co/ajax/nagylevente.tech@gmail.com', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        "name": name, // Feladó neveként jelenik meg
-                        "email": email, // Feladó válaszcímeként jelenik meg
-                        "Egyedi ajánlatszám (Tracking ID)": "#" + trackingId,
-                        "Ügyfél neve": name,
-                        "Ügyfél e-mail címe": email,
-                        "Ügyfél telefonszáma": phone || "Nincs megadva",
-                        "Kalkulált nettó végösszeg (Beépítéssel együtt)": formatPrice(total) + " Ft",
-                        "Konfiguráció részletei": devicesText,
-                        "_subject": emailSubject,
-                        "_replyto": email,
-                        "_cc": email, // Másolatként megkapja az ügyfél is közvetlenül
-                        "_template": "box", // Letisztult, dobozos, árnyékolt modern kártyadizájn
-                        "_honey": "" // Spam szűrés
-                    })
-                })
-                .then(res => {
-                    if (!res.ok) {
-                        throw new Error("FormSubmit hiba (státusz kód: " + res.status + ")");
-                    }
-                    return res.json();
-                })
-                .then(data => {
-                    console.log("[HelyiOkos FormSubmit Sikeres Küldés]:", data);
-                    return { success: true, provider: "FormSubmit" };
-                });
-            }
+            })
+            .then(() => {
+                console.log("[HelyiOkos API]: Sikeres küldés Google Apps Script segítségével!");
+                return { success: true };
+            });
 
             emailPromise
             .catch(err => {
