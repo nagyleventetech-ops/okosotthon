@@ -16,7 +16,8 @@
     <link rel="icon" type="image/png" href="HelyiOkos.png">
     <link rel="apple-touch-icon" href="logo.png">
     
-    <!-- Calendly Widget Script -->
+    <!-- Calendly Widget Script & style for gorgeous desktop popup overlay -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     
     <!-- Google Fonts -->
@@ -1058,21 +1059,19 @@
                     <div class="text-3xl font-display font-black text-sky-400 tracking-wider" id="success-tracking-id">#HO-1000</div>
                 </div>
 
-                <!-- Prominent Calendly Trigger Button -->
-                <div class="mb-5" id="calendly-trigger-section">
-                    <button onclick="toggleCalendlyWidget()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs sm:text-sm uppercase tracking-widest rounded-2xl transition-all flex items-center justify-center gap-3 cursor-pointer shadow-lg hover:shadow-emerald-500/25 active:scale-98 animate-pulse font-display">
+                <!-- Prominent Calendly Trigger Section -->
+                <div class="mb-5 p-4 border border-emerald-500/20 bg-emerald-500/5 rounded-2xl text-center" id="calendly-trigger-section">
+                    <button onclick="openCalendlyPopup()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs sm:text-sm uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-3 cursor-pointer shadow-lg hover:shadow-emerald-500/25 active:scale-98 animate-pulse font-display">
                         <i data-lucide="calendar" class="w-5 h-5 text-slate-950"></i>
                         INGYENES helyszíni felmérés igénylése
                     </button>
-                    <p class="text-[10px] text-emerald-400 text-center mt-2 font-medium leading-normal">
-                        ★ Foglaljon ingyenes felmérést azonnal az alábbi gombbal!
+                    <p class="text-[10px] text-emerald-400 mt-2 font-medium leading-normal">
+                        ★ Foglaljon ingyenes felmérést a fenti gombra kattintva!
                     </p>
-                </div>
-
-                <!-- Calendly inline widget (hidden/collapsed by default) -->
-                <div id="calendly-widget-container" class="max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out border border-transparent rounded-2xl mb-5">
-                    <div class="bg-slate-950 p-2 border border-slate-800 rounded-2xl">
-                        <div class="calendly-inline-widget" data-url="https://calendly.com/nagylevente-tech/30min?background_color=020617&text_color=ffffff&primary_color=7dd3fc" style="min-width:320px;height:650px;"></div>
+                    <div class="mt-3.5 pt-3.5 border-t border-emerald-500/10">
+                        <a href="https://calendly.com/nagylevente-tech/30min" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-bold text-sky-450 hover:text-sky-400 hover:underline transition-all">
+                            Megnyitás külön teljes ablakban (új lapon) <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -1934,43 +1933,16 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
             innerModal.classList.add('scale-95');
             innerModal.classList.remove('scale-100');
             document.body.style.overflow = '';
-
-            // Reset Calendly accordion if open
-            const container = document.getElementById('calendly-widget-container');
-            const triggerBtn = document.querySelector('#calendly-trigger-section button');
-            if (container && !container.classList.contains('max-h-0')) {
-                container.classList.add('max-h-0', 'opacity-0', 'border-transparent');
-                container.classList.remove('max-h-[750px]', 'opacity-100', 'border-slate-800/80');
-                if (triggerBtn) {
-                    triggerBtn.innerHTML = `<i data-lucide="calendar" class="w-5 h-5 text-slate-950"></i> INGYENES helyszíni felmérés igénylése`;
-                    triggerBtn.classList.add('animate-pulse', 'bg-emerald-500', 'hover:bg-emerald-400');
-                    triggerBtn.classList.remove('bg-slate-800', 'hover:bg-slate-700', 'text-white');
-                }
-            }
         };
 
-        window.toggleCalendlyWidget = function() {
-            const container = document.getElementById('calendly-widget-container');
-            const triggerBtn = document.querySelector('#calendly-trigger-section button');
-            
-            if (container.classList.contains('max-h-0')) {
-                container.classList.remove('max-h-0', 'opacity-0', 'border-transparent');
-                container.classList.add('max-h-[750px]', 'opacity-100', 'border-slate-800/80');
-                if (triggerBtn) {
-                    triggerBtn.innerHTML = `<i data-lucide="calendar-off" class="w-5 h-5 text-white"></i> Időpontfoglaló elrejtése`;
-                    triggerBtn.classList.remove('animate-pulse', 'bg-emerald-500', 'hover:bg-emerald-400');
-                    triggerBtn.classList.add('bg-slate-800', 'hover:bg-slate-700', 'text-white');
-                }
+        window.openCalendlyPopup = function() {
+            if (typeof Calendly !== 'undefined' && typeof Calendly.initPopupWidget === 'function') {
+                Calendly.initPopupWidget({
+                    url: 'https://calendly.com/nagylevente-tech/30min?background_color=020617&text_color=ffffff&primary_color=7dd3fc'
+                });
             } else {
-                container.classList.add('max-h-0', 'opacity-0', 'border-transparent');
-                container.classList.remove('max-h-[750px]', 'opacity-100', 'border-slate-800/80');
-                if (triggerBtn) {
-                    triggerBtn.innerHTML = `<i data-lucide="calendar" class="w-5 h-5 text-slate-950"></i> INGYENES helyszíni felmérés igénylése`;
-                    triggerBtn.classList.add('animate-pulse', 'bg-emerald-500', 'hover:bg-emerald-400');
-                    triggerBtn.classList.remove('bg-slate-800', 'hover:bg-slate-700', 'text-white');
-                }
+                window.open('https://calendly.com/nagylevente-tech/30min', '_blank');
             }
-            lucide.createIcons();
         };
 
         window.triggerMailSender = function() {
