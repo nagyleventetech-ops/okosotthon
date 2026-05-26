@@ -22,8 +22,10 @@
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
     
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <script shadow>
         tailwind.config = {
             theme: {
@@ -984,9 +986,7 @@
                                     <input type="email" id="calc-email" required placeholder="Pl. andrea@okosotthon.hu" class="w-full px-3.5 py-2.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:border-sky-500/50 focus:outline-none transition-all">
                                 </div>
 
-                                <button id="calc-submit-btn" 
-                                        type="button" 
-                                        class="w-full py-3 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-all shadow-md hover:shadow-sky-500/20 flex items-center justify-center gap-1.5 cursor-pointer text-xs sm:text-sm mt-3">
+                                <button id="calc-submit-btn" type="submit" class="w-full py-3 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-all shadow-md hover:shadow-sky-500/20 flex items-center justify-center gap-1.5 cursor-pointer text-xs sm:text-sm mt-3">
                                     <i data-lucide="send" class="w-3.5 h-3.5 shrink-0"></i>
                                     Személyes ajánlat kérése
                                 </button>
@@ -1738,13 +1738,11 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
             }
 
             // Küldés a szerveroldali Express API-ra háttérben
-            
             fetch('/api/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-
                 body: JSON.stringify({
                     name: name,
                     phone: phone,
@@ -1754,12 +1752,46 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
                     trackingId: trackingId
                 })
             })
-            .then(res => res.json())
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error("Szerver hiba (státusz kód: " + res.status + ")");
+                }
+                return res.json();
+            })
             .then(data => {
                 console.log("[HelyiOkos API Válasz]:", data);
             })
             .catch(err => {
-                console.error("[HelyiOkos API Hiba]:", err);
+                console.warn("[HelyiOkos API Hiba - Static Mode Fallback bekapcsolása]:", err);
+                
+                // Mivel statikus környezetben (pl. GitHub Pages) fut a weblap Node.js nélkül,
+                // beküldjük a kalkulációt a FormSubmit ingyenes és biztonságos AJAX feldolgozóján át directement.
+                // Így a statikus oldalról is tökéletesen megérkezik Levente e-mail fiókjába a lead.
+                return fetch('https://formsubmit.co/ajax/nagylevente.tech@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        "Egyedi ajánlatszám (Tracking ID)": "#" + trackingId,
+                        "Ügyfél neve": name,
+                        "Ügyfél e-mail címe": email,
+                        "Ügyfél telefonszáma": phone || "Nincs megadva",
+                        "Kalkulált nettó végösszeg (Beépítéssel együtt)": formatPrice(total) + " Ft",
+                        "Konfiguráció részletei": devicesText,
+                        "_subject": emailSubject,
+                        "_replyto": email,
+                        "_honey": "" // Anti-spam mézesbödön mező
+                    })
+                })
+                .then(fsRes => fsRes.json())
+                .then(fsData => {
+                    console.log("[Static FormSubmit API Válasz]:", fsData);
+                })
+                .catch(fsErr => {
+                    console.error("[Static FormSubmit API Hiba]:", fsErr);
+                });
             })
             .finally(() => {
                 // Visszaállítjuk a gombot
@@ -1904,44 +1936,5 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
             }
         });
     </script>
-        <!-- === IDE TEDD A SCRIPTET === -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            const submitBtn = document.getElementById('calc-submit-btn');
-            
-            if (submitBtn) {
-                submitBtn.addEventListener('click', function() {
-                    
-                    const message = `
-                        <div style="text-align: center; padding: 20px;">
-                            <p style="font-size: 1.1rem; margin-bottom: 16px; color: #0f172a;">
-                                Köszönöm az érdeklődését!
-                            </p>
-                            <p style="margin-bottom: 20px; line-height: 1.5;">
-                                Jelenleg az ajánlatkérő rendszer karbantartás alatt áll.<br>
-                                Kérem, keressen meg Messenger-en, és rövid időn belül személyre szabott ajánlatot készítek Önnek.
-                            </p>
-                            <a href="https://m.me/..." 
-                               target="_blank"
-                               style="background: #1877f2; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; display: inline-block; font-weight: 600;">
-                                Üzenet küldése Messenger-en
-                            </a>
-                        </div>
-                    `;
-
-                    if (typeof Swal !== 'undefined') {
-                        Swal.fire({
-                            html: message,
-                            showConfirmButton: false,
-                            customClass: { popup: 'rounded-2xl' }
-                        });
-                    } else {
-                        alert("Köszönöm az érdeklődését!\n\nJelenleg az ajánlatkérő rendszer karbantartás alatt áll.\nKérem, keressen meg Messenger-en amíg a probléma fenn áll!");
-                    }
-                });
-            }
-        });
-    </script>    
 </body>
 </html>
