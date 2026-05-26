@@ -1707,9 +1707,9 @@
                 }
             });
 
-            const emailSubject = `HO-ÚJ AJÁNLATKÉRÉS [${trackingId}] - ${name}`;
+            const emailSubject = `Új ajánlatkérés [Azonosító: #${trackingId}] - ${name}`;
             const emailBody = `HelyiOkos egyedi okosotthon kalkuláció
-Ajánlatszám: ${trackingId}
+Ajánlatszám: #${trackingId}
 
 Kapcsolati adatok:
 ----------------------------------------------
@@ -1739,7 +1739,7 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
 
             // Mivel a weblap statikus környezetben (pl. GitHub Pages) fut Node.js szerver nélkül, 
             // közvetlenül beküldjük a kalkulációt a FormSubmit ingyenes és biztonságos AJAX feldolgozóján keresztül.
-            // Így a statikus oldalról is garantáltan, azonnal megérkezik Levente e-mail fiókjába a részletes ajánlatkérés.
+            // Ez automatikusan kiküldi Levente e-mail fiókjába és egyben az ügyfél e-mail címére is másolatban (CC).
             fetch('https://formsubmit.co/ajax/nagylevente.tech@gmail.com', {
                 method: 'POST',
                 headers: {
@@ -1747,6 +1747,8 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
+                    "name": name, // FormSubmit beépített mező: automatikusan ez lesz a feladó neve a FormSubmit felirat helyett!
+                    "email": email, // FormSubmit beépített mező: beállítja a feladó e-mail címet / válaszcímet
                     "Egyedi ajánlatszám (Tracking ID)": "#" + trackingId,
                     "Ügyfél neve": name,
                     "Ügyfél e-mail címe": email,
@@ -1755,6 +1757,8 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
                     "Konfiguráció részletei": devicesText,
                     "_subject": emailSubject,
                     "_replyto": email,
+                    "_cc": email, // Dinamikus másolatküldés (CC) az ügyfélnek, így az ügyfél is azonnal megkapja az árajánlatot!
+                    "_template": "box", // Box téma a letisztult, profi, kártyás megjelenésért a táblázat helyett
                     "_honey": "" // Anti-spam mézesbödön mező
                 })
             })
