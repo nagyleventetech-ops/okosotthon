@@ -1069,7 +1069,7 @@
                         ★ Foglaljon ingyenes felmérést a fenti gombra kattintva!
                     </p>
                     <div class="mt-3.5 pt-3.5 border-t border-emerald-500/10">
-                        <a href="https://calendly.com/nagylevente-tech/30min" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-bold text-sky-450 hover:text-sky-400 hover:underline transition-all">
+                        <a href="#" onclick="event.preventDefault(); openCalendlyPopupFull();" class="inline-flex items-center gap-1 text-[11px] font-bold text-sky-450 hover:text-sky-400 hover:underline transition-all">
                             Megnyitás külön teljes ablakban (új lapon) <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
@@ -1899,6 +1899,12 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
                 }
 
                 // Siker modal kitöltése és aktiválása
+                window.lastCalculatorData = {
+                    name: name,
+                    email: email,
+                    trackingId: trackingId
+                };
+
                 document.getElementById('success-user-name').textContent = name;
                 document.getElementById('success-tracking-id').textContent = trackingId;
                 
@@ -1936,13 +1942,45 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
         };
 
         window.openCalendlyPopup = function() {
+            const data = window.lastCalculatorData || {};
+            const name = data.name || '';
+            const email = data.email || '';
+            const trackingId = data.trackingId || '';
+            const cleanTrackingId = trackingId.replace('#', ''); // Pl. HO-1024
+
             if (typeof Calendly !== 'undefined' && typeof Calendly.initPopupWidget === 'function') {
                 Calendly.initPopupWidget({
-                    url: 'https://calendly.com/nagylevente-tech/30min?background_color=020617&text_color=ffffff&primary_color=7dd3fc'
+                    url: 'https://calendly.com/nagylevente-tech/30min?background_color=020617&text_color=ffffff&primary_color=7dd3fc',
+                    prefill: {
+                        name: name,
+                        email: email,
+                        customAnswers: {
+                            a2: trackingId
+                        }
+                    },
+                    utm: {
+                        utmCampaign: cleanTrackingId
+                    }
                 });
             } else {
-                window.open('https://calendly.com/nagylevente-tech/30min', '_blank');
+                window.openCalendlyPopupFull();
             }
+        };
+
+        window.openCalendlyPopupFull = function() {
+            const data = window.lastCalculatorData || {};
+            const name = data.name || '';
+            const email = data.email || '';
+            const trackingId = data.trackingId || '';
+            const cleanTrackingId = trackingId.replace('#', '');
+
+            const url = `https://calendly.com/nagylevente-tech/30min?background_color=020617&text_color=ffffff&primary_color=7dd3fc` 
+                + (name ? `&name=${encodeURIComponent(name)}` : '')
+                + (email ? `&email=${encodeURIComponent(email)}` : '')
+                + `&a2=${encodeURIComponent(trackingId)}`
+                + (cleanTrackingId ? `&utm_campaign=${encodeURIComponent(cleanTrackingId)}` : '');
+            
+            window.open(url, '_blank');
         };
 
         window.triggerMailSender = function() {
