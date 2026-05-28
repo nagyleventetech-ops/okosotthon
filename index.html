@@ -444,12 +444,12 @@
         <!-- Mobile Dropdown Menu -->
         <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-slate-800 shadow-2xl">
             <div class="flex flex-col py-2">
-                <a href="#features" class="mobile-nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Előnyök</a>
-                <a href="#concept" class="mobile-nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Működés</a>
-                <a href="#usage" class="mobile-nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Vezérlés</a>
-                <a href="#devices" class="mobile-nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Eszközök</a>
-                <a href="javascript:void(0)" onclick="openConfiguratorModal(); document.getElementById('mobile-menu').classList.add('hidden');" class="mobile-nav-link text-sky-400 font-bold">Kalkulátor</a>
-                <a href="#contact" class="mobile-nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Kapcsolat</a>
+                <a href="#features" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Előnyök</a>
+                <a href="#concept" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Működés</a>
+                <a href="#usage" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Vezérlés</a>
+                <a href="#devices" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Eszközök</a>
+                <a href="javascript:void(0)" onclick="openConfiguratorModal(); document.getElementById('mobile-menu')?.classList.add('hidden');" class="mobile-nav-link text-sky-400 font-bold">Kalkulátor</a>
+                <a href="#contact" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Kapcsolat</a>
             </div>
         </div>
     </nav>
@@ -473,12 +473,27 @@
                             Helyi Vezérléssel
                         </span>
                     </h1>
-                    <p class="text-xl md:text-3xl text-white max-w-2xl mx-auto md:mx-0 leading-tight font-extrabold tracking-normal md:tracking-tight">
-                        Felejtse el a lassú felhős szervereket. 
+                    <p class="text-2xl md:text-4xl text-sky-400 max-w-2xl mx-auto md:mx-0 leading-tight font-black tracking-normal md:tracking-tight mt-2">
+                        Modern élet, elérhető áron!
                     </p>
-                    <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto md:mx-0 leading-relaxed font-medium mt-4">
-                        Okosotthon rendszerek kiépítése internetfüggőség nélkül. Megoldásaimmal az okosotthon vezérlés privát, biztonságos és helyi vezérléssel internet nélkül is villámgyors.
+                    <p class="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto md:mx-0 leading-relaxed font-semibold mt-4">
+                        Nem technológiát adok el, hanem kényelmes, biztonságos és energiatakarékos életminőséget – szerelésmentesen vagy szakszerű, pormentes beépítéssel.
                     </p>
+                    <p class="text-base text-slate-400 max-w-2xl mx-auto md:mx-0 leading-relaxed mt-2">
+                        Felejtse el a lassú felhős szervereket és a havidíjakat. Rendszerem internet-kimaradás esetén is villámgyors és 100%-ban helyben működik.
+                    </p>
+                    
+                    <!-- Hero CTAs -->
+                    <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+                        <button onclick="openCalendlyPopup()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-sky-500 hover:bg-sky-400 text-slate-900 font-extrabold rounded-xl transition-all shadow-lg shadow-sky-500/15 hover:shadow-sky-500/30 hover:-translate-y-0.5 cursor-pointer text-sm md:text-base">
+                            <i data-lucide="calendar" class="w-5 h-5"></i>
+                            Ingyenes Helyszíni Felmérés
+                        </button>
+                        <button onclick="openConfiguratorModal()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-950/80 hover:bg-slate-900 border border-slate-800 hover:border-slate-700 text-white font-bold rounded-xl transition-all hover:-translate-y-0.5 cursor-pointer text-sm md:text-base">
+                            <i data-lucide="calculator" class="w-5 h-5"></i>
+                            Saját Okosotthon Tervező
+                        </button>
+                    </div>
                 </div>
 
                 <div class="flex flex-col items-center md:items-end shrink-0 gap-2">
@@ -505,19 +520,23 @@
         <!-- SZEKCIÓ 1: Élethelyzetek (A Horog) -->
         <section id="features" class="mb-24 scroll-reveal">
             <h2 class="section-title">
-                <i data-lucide="help-circle" class="w-10 h-10 text-sky-400"></i>
-                Hogyan teheti kényelmesebbé az életét?
+                <i data-lucide="sparkles" class="w-10 h-10 text-sky-400"></i>
+                Élethelyzetek, amikben az Ön otthona segít
             </h2>
+            <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                Nem csupán technikai eszközöket adok el Önnek, hanem egy gondtalan, biztonságos és energiatakarékos életminőséget. 
+                <span class="text-sky-400 font-bold">Kattintson az egyes élethelyzetekre</span>, hogy megismerje, pontosan hogyan oldom meg ezt a problémát az Ön otthonában!
+            </p>
             
             <div class="grid gap-6 md:grid-cols-2">
                 <!-- Card 1 -->
-                <div class="feature-card">
+                <div onclick="openProblemModal('doorbell')" class="feature-card group cursor-pointer hover:border-sky-500/40 hover:bg-slate-900/40 transition-all duration-300 flex flex-col justify-between border border-slate-800">
                     <div class="flex items-start gap-5">
-                        <div class="feature-icon">
+                        <div class="feature-icon group-hover:bg-sky-500/20 group-hover:scale-105 transition-all">
                             <i data-lucide="smartphone" class="w-7 h-7 text-sky-400"></i>
                         </div>
                         <div>
-                            <p class="text-xl md:text-2xl text-white font-black leading-tight mb-2 tracking-tight">
+                            <p class="text-xl md:text-2xl text-white font-black leading-tight mb-2 tracking-tight group-hover:text-sky-400 transition-colors">
                                 Lássam a telefonomon, hogy ki áll az ajtóban
                             </p>
                             <p class="text-base text-sky-400 font-bold italic">
@@ -525,16 +544,19 @@
                             </p>
                         </div>
                     </div>
+                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 self-end group-hover:translate-x-1 transition-transform">
+                        Hogyan oldom meg Önnek ezt? <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="feature-card">
+                <div onclick="openProblemModal('water')" class="feature-card group cursor-pointer hover:border-sky-500/40 hover:bg-slate-900/40 transition-all duration-300 flex flex-col justify-between border border-slate-800">
                     <div class="flex items-start gap-5">
-                        <div class="feature-icon">
+                        <div class="feature-icon group-hover:bg-sky-500/20 group-hover:scale-105 transition-all">
                             <i data-lucide="droplets" class="w-7 h-7 text-sky-400"></i>
                         </div>
                         <div>
-                            <p class="text-xl md:text-2xl text-white font-black leading-tight mb-2 tracking-tight">
+                            <p class="text-xl md:text-2xl text-white font-black leading-tight mb-2 tracking-tight group-hover:text-sky-400 transition-colors">
                                 Értesítést kérek a telefonomra, ha csőtörés van
                             </p>
                             <p class="text-base text-sky-400 font-bold italic">
@@ -542,16 +564,19 @@
                             </p>
                         </div>
                     </div>
+                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 self-end group-hover:translate-x-1 transition-transform">
+                        Hogyan oldom meg Önnek ezt? <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="feature-card">
+                <div onclick="openProblemModal('lighting')" class="feature-card group cursor-pointer hover:border-sky-500/40 hover:bg-slate-900/40 transition-all duration-300 flex flex-col justify-between border border-slate-800">
                     <div class="flex items-start gap-5">
-                        <div class="feature-icon">
+                        <div class="feature-icon group-hover:bg-sky-500/20 group-hover:scale-105 transition-all">
                             <i data-lucide="lightbulb" class="w-7 h-7 text-sky-400"></i>
                         </div>
                         <div>
-                            <p class="text-xl md:text-2xl text-white font-black leading-tight mb-2 tracking-tight">
+                            <p class="text-xl md:text-2xl text-white font-black leading-tight mb-2 tracking-tight group-hover:text-sky-400 transition-colors">
                                 Szeretném, ha a folyosón magától felkapcsolódna a fény éjszaka
                             </p>
                             <p class="text-base text-sky-400 font-bold italic">
@@ -559,16 +584,19 @@
                             </p>
                         </div>
                     </div>
+                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 self-end group-hover:translate-x-1 transition-transform">
+                        Hogyan oldom meg Önnek ezt? <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </div>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="feature-card">
+                <div onclick="openProblemModal('heating')" class="feature-card group cursor-pointer hover:border-sky-500/40 hover:bg-slate-900/40 transition-all duration-300 flex flex-col justify-between border border-slate-800">
                     <div class="flex items-start gap-5">
-                        <div class="feature-icon">
+                        <div class="feature-icon group-hover:bg-sky-500/20 group-hover:scale-105 transition-all">
                             <i data-lucide="thermometer" class="w-7 h-7 text-sky-400"></i>
                         </div>
                         <div>
-                            <p class="text-xl md:text-2xl text-white font-black leading-tight mb-2 tracking-tight">
+                            <p class="text-xl md:text-2xl text-white font-black leading-tight mb-2 tracking-tight group-hover:text-sky-400 transition-colors">
                                 Távolról akarom látni és szabályozni a hőmérsékletet
                             </p>
                             <p class="text-base text-sky-400 font-bold italic">
@@ -576,16 +604,19 @@
                             </p>
                         </div>
                     </div>
+                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 self-end group-hover:translate-x-1 transition-transform">
+                        Hogyan oldom meg Önnek ezt? <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </div>
                 </div>
 
                 <!-- Card 5 -->
-                <div class="feature-card">
+                <div onclick="openProblemModal('iron')" class="feature-card group cursor-pointer hover:border-sky-500/40 hover:bg-slate-900/40 transition-all duration-300 flex flex-col justify-between border border-slate-800">
                     <div class="flex items-start gap-5">
-                        <div class="feature-icon">
+                        <div class="feature-icon group-hover:bg-sky-500/20 group-hover:scale-105 transition-all">
                             <i data-lucide="zap" class="w-7 h-7 text-sky-400"></i>
                         </div>
                         <div>
-                            <p class="text-xl md:text-2xl text-white font-black leading-tight mb-2 tracking-tight">
+                            <p class="text-xl md:text-2xl text-white font-black leading-tight mb-2 tracking-tight group-hover:text-sky-400 transition-colors">
                                 Elfelejtettem kihúzni a vasalót? Bárhonnan lekapcsolom
                             </p>
                             <p class="text-base text-sky-400 font-bold italic">
@@ -593,22 +624,28 @@
                             </p>
                         </div>
                     </div>
+                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 self-end group-hover:translate-x-1 transition-transform">
+                        Hogyan oldom meg Önnek ezt? <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </div>
                 </div>
 
                 <!-- Card 6 -->
-                <div class="feature-card">
+                <div onclick="openProblemModal('kids')" class="feature-card group cursor-pointer hover:border-sky-500/40 hover:bg-slate-900/40 transition-all duration-300 flex flex-col justify-between border border-slate-800">
                     <div class="flex items-start gap-5">
-                        <div class="feature-icon">
+                        <div class="feature-icon group-hover:bg-sky-500/20 group-hover:scale-105 transition-all">
                             <i data-lucide="shield-check" class="w-7 h-7 text-sky-400"></i>
                         </div>
                         <div>
-                            <p class="text-xl md:text-2xl text-white font-black leading-tight mb-2 tracking-tight">
+                            <p class="text-xl md:text-2xl text-white font-black leading-tight mb-2 tracking-tight group-hover:text-sky-400 transition-colors">
                                 Értesítést kérek, hogy a gyerekem épségben hazaért
                             </p>
                             <p class="text-base text-sky-400 font-bold italic">
                                 → Bejárati ajtó nyitásérzékelő és családi értesítések
                             </p>
                         </div>
+                    </div>
+                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 self-end group-hover:translate-x-1 transition-transform">
+                        Hogyan oldom meg Önnek ezt? <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                     </div>
                 </div>
             </div>
@@ -644,11 +681,11 @@
                 <!-- Concept 3 -->
                 <div class="concept-card">
                     <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4">
-                        <i data-lucide="hammer" class="w-6 h-6 text-sky-400"></i>
+                        <i data-lucide="wifi" class="w-6 h-6 text-sky-400"></i>
                     </div>
                     <h3 class="text-lg md:text-xl font-bold text-white mb-2 font-display">Modern mikrohálózat</h3>
                     <p class="text-slate-300 text-sm md:text-base leading-relaxed" style="hyphens: none; word-break: normal; overflow-wrap: normal;">
-                        A rendszer egy biztonságos vezeték nélküli mikrohálózaton kommunikál. Akár kész, teljesen felújított ingatlanokba is <strong>beépíthető bontás nélkül</strong>. A telepítés koszmentes, csupán a központi egység igényel táp- és internetkábelt, minden más eszköz vezeték nélkül kapcsolódik.
+                        A rendszer egy biztonságos, dedikált és zárt mikrohálózaton kommunikál. Igény szerint professzionális, stabil jelerősítőket és hálózati egységeket (routereket, AP-kat) is felszerelek az otthonában, hogy a kapcsolat minden sarokban stabil és hibátlan legyen. Mindez <strong>bontás és vésés nélkül, pormentesen</strong> épül ki.
                     </p>
                 </div>
             </div>
@@ -685,70 +722,69 @@
             </div>
         </section>
 
-        <!-- Pricing Section (Okosotthon Rendszer Alapcsomag) -->
+        <!-- Pricing Section (Okosotthon Rendszer Alapok) -->
         <section id="pricing" class="mb-24 scroll-reveal">
             <div class="pricing-card">
-                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 mb-12">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 mb-8">
                     <div class="flex-1">
+                        <span class="text-sky-400 text-xs sm:text-sm font-black tracking-widest uppercase block mb-2">Transzparens árképzés</span>
                         <h2 class="text-3xl md:text-5xl font-display font-black text-white mb-3">
-                            Okosotthon Rendszer Alapcsomag
+                            Hogyan épül fel a rendszer ára?
                         </h2>
-                        <p class="text-sky-400 text-xl font-bold tracking-widest uppercase">Minden rendszer alapköve</p>
-                    </div>
-                    <div class="price-tag">
-                        100 000 Ft
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8 mb-8">
-                    <div class="space-y-5">
-                        <div class="flex items-center gap-4 text-white font-bold text-lg md:text-xl">
-                            <i data-lucide="check-circle-2" class="text-emerald-500 w-6 h-6 md:w-7 md:h-7 shrink-0"></i>
-                            Központi vezérlőegység ("Helyi Agy")
-                        </div>
-                        <div class="flex items-center gap-4 text-white font-bold text-lg md:text-xl">
-                            <i data-lucide="check-circle-2" class="text-emerald-500 w-6 h-6 md:w-7 md:h-7 shrink-0"></i>
-                            Nagyteljesítményű univerzális antenna (pendrive méretű)
-                        </div>
-                        <div class="flex items-center gap-4 text-white font-bold text-lg md:text-xl">
-                            <i data-lucide="check-circle-2" class="text-emerald-500 w-6 h-6 md:w-7 md:h-7 shrink-0"></i>
-                            Teljes szoftveres programozás
-                        </div>
-                    </div>
-                    <div class="space-y-5">
-                        <div class="flex items-center gap-4 text-white font-bold text-lg md:text-xl">
-                            <i data-lucide="check-circle-2" class="text-emerald-500 w-6 h-6 md:w-7 md:h-7 shrink-0"></i>
-                            Professzionális, védett távoli hozzáférés
-                        </div>
-                        <div class="flex items-center gap-4 text-white font-bold text-lg md:text-xl">
-                            <i data-lucide="check-circle-2" class="text-emerald-500 w-6 h-6 md:w-7 md:h-7 shrink-0"></i>
-                            Online és mobilalkalmazásos vezérlőfelület
-                        </div>
-                        <div class="flex items-center gap-4 text-white font-bold text-lg md:text-xl">
-                            <i data-lucide="check-circle-2" class="text-emerald-500 w-6 h-6 md:w-7 md:h-7 shrink-0"></i>
-                            Ingyenes helyszíni felmérés (akár azonnali eszköztelepítéssel)
-                        </div>
+                        <p class="text-slate-300 text-base sm:text-lg leading-relaxed text-left max-w-2xl">
+                            Nincsenek rejtett költségek vagy havidíjak. Az Ön személyre szabott lokális okosotthona két egyszerű és átlátható tételből áll össze:
+                        </p>
                     </div>
                 </div>
 
-                <!-- Fontos információ doboz a csomag tartalmáról -->
-                <div class="mb-12 p-6 bg-slate-950/60 border border-slate-800 rounded-3xl flex items-start gap-4 backdrop-blur-md">
-                    <i data-lucide="info" class="w-6 h-6 text-sky-400 shrink-0 mt-0.5"></i>
-                    <p class="text-sm md:text-base text-slate-300 leading-relaxed text-left" style="hyphens: none; word-break: normal;">
-                        <strong>Figyelem:</strong> Ez az alapcsomag magát a biztonságos, helyi rendszermagot (a vezérlőegységet, az antennát és a mobilalkalmazásos felületet) és annak teljes beállítását tartalmazza. További végponti eszközöket (pl. okoskonnektorokat, mozgásérzékelőket, nyitásérzékelőket, termosztátokat) az alapcsomag ára nem biztosít. Az Ön egyedi igényeinek megfelelő kiegészítő eszközöket az ingyenes helyszíni felmérés során egyeztetjük személyesen, lehetőséget adva arra, hogy pontosan azokat a funkciókat konfiguráljam be, amelyekre Önnek valójában szüksége van.
-                    </p>
+                <div class="grid md:grid-cols-2 gap-8 my-8">
+                    <!-- 1. Alapkő -->
+                    <div class="p-6 bg-slate-950/50 border border-slate-800 rounded-2xl relative flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
+                                    <i data-lucide="cpu" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-lg font-black text-white">1. Rendszer Alapkő & Szerver</h3>
+                            </div>
+                            <p class="text-sm text-slate-300 leading-relaxed mb-4 text-left">
+                                Minden rendszer alapja a helyi mini computer alapú offline szerver és nagyteljesítményű antenna, amely önállóan, felhő és internet nélkül is vezérli az otthonát. Ez tartalmazza a teljes szoftveres programozást, az egyedi mobilalkalmazás-felületet, a távoli biztonságos elérést, továbbá magát az ingyenes helyszíni felmérést is.
+                            </p>
+                        </div>
+                        <div class="text-xl font-black text-emerald-400 mt-2 text-left">
+                            Fix 100 000 Ft
+                        </div>
+                    </div>
+
+                    <!-- 2. Modulok -->
+                    <div class="p-6 bg-slate-950/50 border border-slate-800 rounded-2xl relative flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
+                                    <i data-lucide="plus-circle" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-lg font-black text-white">2. Választott Okosotthon Funkciók</h3>
+                            </div>
+                            <p class="text-sm text-slate-300 leading-relaxed mb-4 text-left">
+                                Tervezze meg saját rendszerét! Csak olyan funkciókért és okoseszközökért fizet, amelyekre valóban szüksége van. Legyen az okos radiátorszelep, redőnyvezérlés, vagy ujjlenyomatos okoszár, a kalkulátorban pontosan az Ön ingatlanmérete alapján, darabszámra kiszámolva láthatja az árakat beépítéssel együtt!
+                            </p>
+                        </div>
+                        <div class="text-xl font-black text-sky-400 mt-2 text-left">
+                            Egyedileg kalkulált árak
+                        </div>
+                    </div>
                 </div>
 
-                <div class="mt-12 bg-slate-950/60 p-8 rounded-3xl border border-sky-500/20 backdrop-blur-md pb-[100px] md:pb-8">
-                    <h3 class="text-2xl font-black text-white mb-6">Modularitás: Haladjon a saját tempójában!</h3>
-                    
-                    <p class="text-slate-300 leading-relaxed text-lg text-left mb-5" style="hyphens: none; word-break: normal;">
-                        Nem szükséges egyszerre a teljes ingatlant automatizálni. A stabil kiindulópontot az <strong>Alapcsomag</strong> jelenti, amelyre alapozva a későbbiekben bármikor, tetszőleges ütemben adhatók hozzá újabb funkciók.
-                    </p>
-                    
-                    <p class="text-slate-300 leading-relaxed text-lg text-left" style="hyphens: none; word-break: normal;">
-                        Ha a jövőben okos fűtést, redőnyvezérlést vagy több intelligens lámpát szeretne, ezek az eszközök bármikor hozzáadhatóak a rendszerhez. Személyesen egyeztetek Önnel az új igényekről és elképzelésekről, majd rövid időn belül kézhez kapja a személyre szabott ajánlatot – így rendszere bármikor, kötöttségek nélkül fejleszthető tovább.
-                    </p>
+                <!-- Kalkulátor CTA -->
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-6 p-6 bg-slate-950/60 border border-sky-500/10 rounded-2xl">
+                    <div class="text-left">
+                        <strong class="text-white block text-sm sm:text-base mb-1">Kísérletezze ki saját rendszerét percek alatt!</strong>
+                        <span class="text-xs text-slate-400">Próbálja ki az interaktív okosotthon tervezőt, és nézze meg a végösszeget azonnal!</span>
+                    </div>
+                    <button onclick="openConfiguratorModal()" class="w-full sm:w-auto shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 bg-sky-500 hover:bg-sky-400 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer">
+                        <i data-lucide="calculator" class="w-4 h-4"></i>
+                        Megnyitom a tervezőt
+                    </button>
                 </div>
             </div>
         </section>
@@ -759,184 +795,209 @@
                 <i data-lucide="cpu" class="w-10 h-10 text-sky-400"></i>
                 Választható okoseszközök és funkciók
             </h2>
-            <p class="text-slate-300 text-lg mb-8 leading-relaxed">
-                Az Alapcsomagon felül az alábbi intelligens eszközök és vezérlések integrálhatóak otthonába. <span class="text-sky-400 font-bold">Kattintson az egyes eszközökre</span> a részletes bemutatásukért és az okos funkcióik megismeréséért!
+            <p class="text-slate-300 text-lg mb-8 leading-relaxed text-left">
+                A helyi központi egységen (offline szerveren) felül az alábbi intelligens eszközök és modulok integrálhatóak otthonába, teljes körű beépítéssel és konfigurációval.
             </p>
-            
-            <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-                <!-- Okos Ajtózár -->
-                <div onclick="openDeviceModal('aqara_u200')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+
+            <!-- KATEGÓRIA 1: Szerelésmentes és Kisfeszültségű eszközök -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-display font-black text-white">
+                        Szerelésmentes és kisfeszültségű eszközök
+                        <span class="text-xs text-sky-400 font-medium block md:inline md:ml-2">(bontás, kosz és villanyszerelő nélkül beépíthetőek)</span>
+                    </h3>
+                </div>
+
+                <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+                    <!-- Intelligens ajtózár -->
+                    <div class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
                             <i data-lucide="lock" class="w-6 h-6 text-sky-400"></i>
                         </div>
-                        <strong class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all block">Okos Ajtózár</strong>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Kulcsnélküli szabadság, ujjlenyomat-olvasó és kimagasló biztonság teljeskörű beszereléssel és billentyűzettel.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">109 000 Ft</div>
+                        <strong class="text-base font-bold text-white group-hover:text-sky-400 transition-all leading-tight">Intelligens ajtózár</strong>
                     </div>
-                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                        Ajtózár tulajdonságai <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                    </div>
-                </div>
 
-                <!-- Lámpa -->
-                <div onclick="openDeviceModal('lampa')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                    <!-- Intelligens függönymotor -->
+                    <div class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="columns" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <strong class="text-base font-bold text-white group-hover:text-sky-400 transition-all leading-tight">Intelligens függönymotor</strong>
+                    </div>
+
+                    <!-- Okos kisállat-etető -->
+                    <div class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="cog" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <strong class="text-base font-bold text-white group-hover:text-sky-400 transition-all leading-tight">Okos kisállat-etető</strong>
+                    </div>
+
+                    <!-- Prémium okosizzó -->
+                    <div class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
                             <i data-lucide="lightbulb" class="w-6 h-6 text-sky-400"></i>
                         </div>
-                        <strong class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all block">Prémium Okos Izzó</strong>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Egyedi világítási hangulatok, meleg/hideg tónusok, fényerőszabályzás és jelenlét-szimuláció.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">9 900 Ft</div>
+                        <strong class="text-base font-bold text-white group-hover:text-sky-400 transition-all leading-tight">Prémium okosizzó</strong>
                     </div>
-                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                        Izzó és világításvezérlés részletei <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                    </div>
-                </div>
 
-                <!-- Vezetéknélküli fali kapcsoló -->
-                <div onclick="openDeviceModal('sonoff_kapcsolo')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                    <!-- Vezeték nélküli fali kapcsoló -->
+                    <div class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
                             <i data-lucide="toggle-right" class="w-6 h-6 text-sky-400"></i>
                         </div>
-                        <strong class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all block">Vezetéknélküli fali kapcsoló</strong>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Mobilis, bárhová felragasztható vezeték nélküli kapcsoló 3 nyomásfunkcióval.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">9 900 Ft</div>
+                        <strong class="text-base font-bold text-white group-hover:text-sky-400 transition-all leading-tight">Vezeték nélküli fali kapcsoló</strong>
                     </div>
-                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                        Kapcsoló funkciói és előnyei <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                    </div>
-                </div>
 
-                <!-- Vízszivárgás érzékelő és főelzáró -->
-                <div onclick="openDeviceModal('szivargas')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                    <!-- Vízszivárgás-érzékelő -->
+                    <div class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
                             <i data-lucide="droplets" class="w-6 h-6 text-sky-400"></i>
                         </div>
-                        <strong class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all block">Vízszivárgás érzékelő és főelzáró</strong>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Azonnali riasztás és önműködő főcsap-elzárás csőtörés vagy szivárgás érzékelésekor.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">10 900 Ft-tól</div>
+                        <strong class="text-base font-bold text-white group-hover:text-sky-400 transition-all leading-tight">Vízszivárgás-érzékelő</strong>
                     </div>
-                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                        Vízvédelem és szivárgáskezelés részletei <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                    </div>
-                </div>
 
-                <!-- Kaputelefon -->
-                <div onclick="openDeviceModal('kaputelefon')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                    <!-- Intelligens kaputelefon -->
+                    <div class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
                             <i data-lucide="bell" class="w-6 h-6 text-sky-400"></i>
                         </div>
-                        <strong class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all block">Intelligens kaputelefon és kamera</strong>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Távoli videós beszélgetés a látogatóval és kényelmes kapunyitás futároknak.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">74 900 Ft-tól</div>
+                        <strong class="text-base font-bold text-white group-hover:text-sky-400 transition-all leading-tight">Intelligens kaputelefon</strong>
                     </div>
-                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                        Kaputelefon és kamera tulajdonságai <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                    </div>
-                </div>
 
-                <!-- Okos fűtés -->
-                <div onclick="openDeviceModal('futes')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                    <!-- Intelligens radiátorszelep -->
+                    <div class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
                             <i data-lucide="thermometer" class="w-6 h-6 text-sky-400"></i>
                         </div>
-                        <strong class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all block">Okos Fűtés (radiátor)</strong>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">A rendszer kizárólag radiátoros fűtés okosítására alkalmas a prémium radiátorszelepekkel.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">23 900 Ft</div>
+                        <strong class="text-base font-bold text-white group-hover:text-sky-400 transition-all leading-tight">Intelligens radiátorszelep</strong>
                     </div>
-                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                        Fűtésszabályozás extra opciók <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                    </div>
-                </div>
 
-                <!-- Klíma -->
-                <div onclick="openDeviceModal('klima')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                    <!-- Intelligens klímavezérlés -->
+                    <div class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
                             <i data-lucide="wind" class="w-6 h-6 text-sky-400"></i>
                         </div>
-                        <strong class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all block">Klíma és hűtésvezérlés</strong>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Személyre szabott hűtés indítása távolról, takarékos működés rendszerbe kötve.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">14 900 Ft-tól</div>
+                        <strong class="text-base font-bold text-white group-hover:text-sky-400 transition-all leading-tight">Intelligens klímavezérlés</strong>
                     </div>
-                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                        Klímavezérlés és hűtés opciók <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                    </div>
-                </div>
 
-                <!-- Okoskonnektor -->
-                <div onclick="openDeviceModal('konnektor')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                    <!-- Intelligens dugalj / okoskonnektor -->
+                    <div class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
                             <i data-lucide="plug" class="w-6 h-6 text-sky-400"></i>
                         </div>
-                        <strong class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all block">Okoskonnektor (4db)</strong>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">4 db-os prémium, előre felprogramozott okoskonnektor csomag helyi, biztonságos és felhőmentes szoftverrel.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">35 000 Ft</div>
+                        <strong class="text-base font-bold text-white group-hover:text-sky-400 transition-all leading-tight">Intelligens dugalj</strong>
                     </div>
-                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                        Okoskonnektor csomag funkciói <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                    </div>
-                </div>
 
-                <!-- Ajtó/ablak nyitásérzékelő -->
-                <div onclick="openDeviceModal('nyitas')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                    <!-- Ajtó- és ablaknyitás-érzékelő -->
+                    <div class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
                             <i data-lucide="door-closed" class="w-6 h-6 text-sky-400"></i>
                         </div>
-                        <strong class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all block">Ajtó- és ablaknyitás érzékelő</strong>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Behatolás-értesítés, távollét-ellenőrzés és fűtésszabályozás szellőztetéskor.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">10 900 Ft-tól</div>
+                        <strong class="text-base font-bold text-white group-hover:text-sky-400 transition-all leading-tight">Ajtó- és ablaknyitás-érzékelő</strong>
                     </div>
-                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                        Nyitásérzékelő biztonsági funkciói <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                    </div>
-                </div>
 
-                <!-- Okos redőny -->
-                <div onclick="openDeviceModal('redony')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
-                            <i data-lucide="sliders" class="w-6 h-6 text-sky-400"></i>
-                        </div>
-                        <strong class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all block">Intelligens redőnyvezérlés</strong>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Kizárólag meglévő gyöngyláncos/golyós láncos redőnyök utólagos, szerelésmentes okosítása.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">24 900 Ft</div>
-                    </div>
-                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                        Redőnyvezérlés utólagos beállításai <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                    </div>
-                </div>
-
-                <!-- Mozgásérzékelő -->
-                <div onclick="openDeviceModal('mozgas')" class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
-                    <div>
-                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-all">
+                    <!-- Mozgás- és jelenlét-érzékelő -->
+                    <div class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
                             <i data-lucide="eye" class="w-6 h-6 text-sky-400"></i>
                         </div>
-                        <strong class="text-lg font-bold text-white mb-2 group-hover:text-sky-400 transition-all block">Mozgás- és jelenlét-érzékelő</strong>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-3">Automatikus világításkapcsolás és biztonsági értesítések mozgás észlelésekor.</p>
-                        <div class="text-sky-400 text-xs font-bold bg-sky-400/5 border border-sky-400/10 rounded-lg px-2.5 py-1 inline-block">16 900 Ft-tól</div>
-                    </div>
-                    <div class="mt-4 text-xs text-sky-400 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                        Jelenlét-érzékelő intelligens funkciói <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                        <strong class="text-base font-bold text-white group-hover:text-sky-400 transition-all leading-tight">Mozgás- és jelenlét-érzékelő</strong>
                     </div>
                 </div>
-
             </div>
 
-            <!-- Highlights Info Box requested under the devices list -->
+            <!-- KATEGÓRIA 2: 230V hálózati feszültséget igénylő eszközök -->
+            <div class="mb-12 border-t border-slate-800/80 pt-10">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500">
+                        <i data-lucide="zap" class="w-5 h-5 animate-pulse"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-display font-black text-white">
+                        ⚠️ 230V hálózati feszültséget igénylő eszközök
+                        <span class="text-xs text-amber-500 font-bold block md:inline md:ml-2">❗ Fizikai beépítésüket szakképzett villanyszerelőnek kell elvégeznie!</span>
+                    </h3>
+                </div>
+
+                <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+                    <!-- Digitális okostermosztát -->
+                    <div class="p-5 bg-slate-900/40 border border-slate-800 hover:border-amber-500/30 rounded-2xl hover:bg-slate-900/80 transition-all duration-300 flex items-center gap-4 group">
+                        <div class="w-12 h-12 bg-amber-500/10 border border-amber-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-amber-500/20 transition-all">
+                            <i data-lucide="thermometer-snowflake" class="w-6 h-6 text-amber-500"></i>
+                        </div>
+                        <strong class="text-base font-bold text-white group-hover:text-amber-500 transition-all leading-tight">Digitális okostermosztát</strong>
+                    </div>
+
+                    <!-- Kapcsoló mögé rejthető okosrelé -->
+                    <div class="p-5 bg-slate-900/40 border border-slate-800 hover:border-amber-500/30 rounded-2xl hover:bg-slate-900/80 transition-all duration-300 flex items-center gap-4 group">
+                        <div class="w-12 h-12 bg-amber-500/10 border border-amber-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-amber-500/20 transition-all">
+                            <i data-lucide="cpu" class="w-6 h-6 text-amber-500"></i>
+                        </div>
+                        <strong class="text-base font-bold text-white group-hover:text-amber-500 transition-all leading-tight">Kapcsoló mögé rejthető okosrelé</strong>
+                    </div>
+
+                    <!-- Intelligens kapu- és garázsnyitó modul -->
+                    <div class="p-5 bg-slate-900/40 border border-slate-800 hover:border-amber-500/30 rounded-2xl hover:bg-slate-900/80 transition-all duration-300 flex items-center gap-4 group">
+                        <div class="w-12 h-12 bg-amber-500/10 border border-amber-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-amber-500/20 transition-all">
+                            <i data-lucide="layers" class="w-6 h-6 text-amber-500"></i>
+                        </div>
+                        <strong class="text-base font-bold text-white group-hover:text-amber-500 transition-all leading-tight">Intelligens kapu- és garázsnyitó modul</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Highlights Info Box -->
             <div class="mt-10 p-5 md:p-6 bg-sky-500/5 border border-sky-500/15 rounded-3xl flex items-start gap-4 backdrop-blur-md">
                 <i data-lucide="info" class="w-6 h-6 text-sky-400 shrink-0 mt-0.5 animate-pulse"></i>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed text-left" style="hyphens: none; word-break: normal;">
-                    <strong>💡 Transzparens árak:</strong> A fenti árak minden esetben tartalmazzák az eszközök beszerzését, a szakszerű fizikai elhelyezést és az alapvető működési programozást. Mivel minden otthon egyedi, a komplex, több eszközt összekötő egyedi automatizációk (például: ha a vízszivárgás-érzékelő mellé az azonnali automata elzáráshoz okos fővízszelepet is választ; vagy ha az okos izzók mellé vezeték nélküli fali kapcsolókat szeretne társítani) pontos, személyre szabott beállításait a díjmentes helyszíni felmérés során közösen véglegesítjük.
+                    <strong>💡 Transzparens árak:</strong> A fenti árak minden esetben tartalmazzák az eszközök beszerzését, az alapvető működési programozást és a szoftveres beállításokat. A 230V-os elektromos bekötést fizikai szinten megrendelői oldalon villanyszerelőnek kell elkészítenie, amihez én teljes szakmai támogatást és bekötési rajzot adok díjmentesen.
                 </p>
+            </div>
+        </section>
+
+        <!-- SZEKCIÓ 9: 230V / VILLANYSZERELŐI ÚTMUTATÓ -->
+        <section id="electrician" class="mb-24 scroll-reveal">
+            <div class="p-8 bg-amber-500/5 border border-amber-500/20 rounded-3xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-14 h-14 bg-amber-500/10 border border-amber-500/35 rounded-2xl flex items-center justify-center text-amber-500 shrink-0">
+                        <i data-lucide="zap" class="w-8 h-8"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h2 class="text-xl md:text-2xl font-display font-black text-white mb-3 flex items-center gap-2">
+                            ⚠️ 230V / Villanyszerelő Bevonása és Felelősség
+                        </h2>
+                        <div class="text-slate-300 text-sm md:text-base leading-relaxed space-y-4">
+                            <p>
+                                A <strong class="text-white">HelyiOkos</strong> elkötelezett a biztonság és a szakszerű beépítés mellett. Bár az okoseszközök többsége elemes vagy kisfeszültségű (szerelés nélkül, por- és koszmentesen integrálható), a fali konnektorok mögötti relék, a beépített fali termosztátok és az elektromos kapumotorok <strong class="text-amber-400">230V hálózati feszültséggel működnek</strong>.
+                            </p>
+                            <p class="font-bold text-white">
+                                ❗ Életvédelmi és garanciális okokból 230V-os hálózati munkákat kizárólag szakképzett, regisztrált villanyszerelő végezhet!
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-4 mt-4 bg-slate-950/40 p-5 rounded-2xl border border-slate-800/60">
+                                <div>
+                                    <h4 class="text-amber-400 font-bold mb-2 flex items-center gap-1.5 fs-md">
+                                        <i data-lucide="user-check" class="w-4 h-4"></i> Amit a villanyszerelő végez:
+                                    </h4>
+                                    <p class="text-xs text-slate-400">
+                                        A megrendelő által megbízott villanyszerelő szereli be a süllyesztett okosreléket a kapcsolók mögé, beköti a 230V-os fali termosztátokat, és kiépíti a szükséges elektromos tápellátást.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 class="text-sky-400 font-bold mb-2 flex items-center gap-1.5 fs-md">
+                                        <i data-lucide="cog" class="w-4 h-4"></i> Amit a HelyiOkos végez:
+                                    </h4>
+                                    <p class="text-xs text-slate-400">
+                                        Én adom a pontos bekötési rajzot és szakmai támogatást a villanyszerelőnek. A fizikai bekötés után én végzem az eszközök szoftveres felprogramozását, a helyi központhoz való stabil párosítását és az automatizációk beállítását.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -961,123 +1022,429 @@
 
         <!-- Interaktív Okosotthon Kalkulátor Modal (A "Rakd össze a saját csomagod" konfigurátor) -->
         <div id="configurator-modal" class="fixed inset-0 bg-slate-950/95 backdrop-blur-md z-[9999] opacity-0 pointer-events-none transition-all duration-300 overflow-y-auto flex items-start justify-center p-4 md:p-6" style="scroll-behavior: smooth;">
-            <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-6xl w-full my-8 p-6 md:p-8 shadow-2xl transform scale-95 transition-all duration-300 relative flex flex-col gap-6 text-left">
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-4xl w-full my-8 p-6 md:p-8 shadow-2xl transform scale-95 transition-all duration-300 relative flex flex-col gap-6 text-left">
                 <!-- Close Button -->
-                <button onclick="closeConfiguratorModal()" class="absolute top-4 right-4 p-2 rounded-full bg-slate-950/60 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer z-10" title="Bezárás - Beállítások megőrződnek">
+                <button onclick="closeConfiguratorModal()" class="absolute top-4 right-4 p-2 rounded-full bg-slate-950/60 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer z-10" title="Bezárás">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
 
+                <!-- FEJLÉC: Mindig azonos -->
                 <div class="border-b border-slate-800/80 pb-4 pr-10">
                     <h2 class="text-xl sm:text-2xl font-display font-black text-white flex items-center gap-3">
-                        <i data-lucide="calculator" class="w-8 h-8 text-sky-400"></i>
-                        Okosotthon Konfigurátor
+                        <i data-lucide="calculator" class="w-8 h-8 text-sky-400 animate-pulse"></i>
+                        Intelligens Okosotthon Tervező
                     </h2>
                     <p class="text-slate-400 text-xs sm:text-sm mt-1">
-                        Állítsa össze saját rendszerét! Változtassa az eszközök darabszámát, és kövesse élőben a beépített árak alakulását.
+                        Válaszoljon néhány egyszerű kérdésre, és tervezőnk azonnal összeállítja az optimális, privát és biztonságos eszközkészletet a becsült árakkal együtt!
                     </p>
                 </div>
 
-                <div class="grid lg:grid-cols-12 gap-8 items-start">
-                    <!-- BAL OLDAL: Eszközök és darabszámlálók -->
-                    <div class="lg:col-span-7 bg-slate-950/40 border border-slate-800/60 rounded-2xl p-4 sm:p-6">
-                        <div class="text-sm font-bold text-white mb-4 flex items-center gap-2">
-                            <i data-lucide="sliders" class="w-4 h-4 text-sky-400"></i>
-                            Válassza ki az elemeket (beépítéssel együtt)
-                        </div>
-
-                        <!-- Kötelező fix agy és alapdíj (100 000 Ft-os alapcsomaggal) -->
-                        <div class="p-4 bg-sky-500/5 border border-sky-500/20 rounded-2xl mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
-                                    <i data-lucide="cpu" class="w-5 h-5 text-sky-400"></i>
-                                </div>
-                                <div class="text-left">
-                                    <strong class="text-xs sm:text-sm font-bold text-white">Alapcsomag</strong>
-                                    <a href="#pricing" onclick="closeConfiguratorModal()" class="text-xs text-sky-400 hover:text-sky-300 underline font-medium inline-block mt-1">Az alapcsomag részletes leírása →</a>
-                                </div>
-                            </div>
-                            <div class="shrink-0 text-left sm:text-right bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
-                                <span class="text-sky-400 font-display font-black text-sm sm:text-base block">100 000 Ft</span>
-                                <span class="text-[9px] text-emerald-400 font-bold tracking-wider uppercase">Csomag Alap</span>
-                            </div>
-                        </div>
-
-                        <!-- Programozottan generált lista -->
-                        <div id="calc-device-list" class="space-y-3 max-h-[420px] overflow-y-auto pr-1.5 custom-scrollbar">
-                            <!-- Eszközkártyák kerülnek ide JS-ből -->
-                        </div>
+                <!-- HALADÁSI MUTATÓ (Progressbar) -->
+                <div id="wizard-progress-bar-container" class="w-full bg-slate-950/60 border border-slate-800/50 p-3 sm:px-5 rounded-2xl flex justify-between items-center text-xs text-slate-400 gap-1.5 overflow-x-auto shrink-0 md:scrollbar-none">
+                    <div id="prog-step-1" class="flex items-center gap-2 font-bold text-sky-400 shrink-0">
+                        <span class="w-5 h-5 rounded-full bg-sky-500/10 border border-sky-400 flex items-center justify-center text-[10px] shrink-0">1</span> Ingatlan
                     </div>
-
-                    <!-- JOBB OLDAL: Élő összegzés és Kapcsolati űrlap -->
-                    <div class="lg:col-span-5">
-                        <div class="bg-slate-950/50 border border-slate-800 rounded-2xl p-5 sm:p-6 space-y-5 text-left">
-                            <div>
-                                <div class="text-sm font-bold text-white mb-3 flex items-center gap-2 border-b border-slate-800/60 pb-2.5">
-                                    <i data-lucide="receipt" class="w-4 h-4 text-sky-400"></i>
-                                    Alkatrészek és munkadíjak összesítése
-                                </div>
-                                
-                                <!-- Összesített elemek dinamikus részletezője -->
-                                <div id="calc-summary-items" class="space-y-2.5 max-h-[140px] overflow-y-auto pr-1 text-xs text-slate-400 custom-scrollbar">
-                                    <!-- Csak a kiválasztott elemek (db > 0) fognak itt megjelenni -->
-                                </div>
-
-                                <!-- Ajánló doboz -->
-                                <div id="calc-recommendation-box" class="hidden mt-3 p-3 bg-sky-500/10 border border-sky-500/20 rounded-xl text-left">
-                                    <div class="flex items-start gap-2.5">
-                                        <div class="w-8 h-8 rounded-lg bg-sky-500/25 text-sky-400 flex items-center justify-center shrink-0">
-                                            <i data-lucide="sparkles" class="w-4 h-4"></i>
-                                        </div>
-                                        <div class="flex-1">
-                                            <strong class="text-xs font-bold text-white leading-tight block">Szerelésmentes Bónusz Ajánlat!</strong>
-                                            <p class="text-[10px] text-slate-300 mt-1 leading-normal">Mivel választott legalább egy <strong>Prémium Okos Izzót</strong>, a meglévő fali kapcsolók átalakítása nélkül javasoljuk mellé a <strong>Vezetéknélküli fali kapcsolót (9 900 Ft)</strong>, hogy tetszőleges helyről és szerelésmentesen irányíthassa a fényeket!</p>
-                                            <button onclick="changeCount('sonoff_kapcsolo', 1); if(typeof checkRecommendation === 'function') { checkRecommendation(); }" class="mt-2 text-[10px] font-bold text-sky-400 hover:text-sky-300 flex items-center gap-1 bg-sky-400/5 hover:bg-sky-400/10 border border-sky-400/15 px-2 py-1 rounded-lg transition-all cursor-pointer">
-                                                Hozzáadás a csomaghoz <i data-lucide="plus" class="w-3 h-3"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="mt-4 pt-3 border-t border-slate-800/80">
-                                    <div class="flex justify-between items-center text-[10px] text-slate-500 uppercase tracking-widest font-black mb-1">
-                                        <span>Várható végösszeg</span>
-                                        <span class="text-emerald-400 text-[10px] px-1.5 py-0.5 bg-emerald-500/10 border border-emerald-500/20 rounded font-bold">Beépítve</span>
-                                    </div>
-                                    <div class="text-xl sm:text-2xl font-display font-black text-sky-400" id="calc-live-grand-total">
-                                        100 000 Ft
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Kapcsolati űrlap -->
-                            <form id="calc-form" onsubmit="event.preventDefault(); sendCustomConfiguration();" class="border-t border-slate-800/80 pt-4 space-y-3">
-                                <div class="text-xs font-bold text-sky-400 uppercase tracking-wider mb-1 flex items-center gap-1.5 font-display text-[11px]">
-                                    <i data-lucide="user" class="w-3.5 h-3.5 text-sky-400"></i>
-                                    Kapcsolati adatok az ajánlathoz
-                                </div>
-                                <div>
-                                    <label for="calc-name" class="block text-[9px] font-bold text-slate-400 uppercase tracking-wider mb-1">Név *</label>
-                                    <input type="text" id="calc-name" required placeholder="Pl. Nagy Andrea" class="w-full px-3.5 py-2.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:border-sky-500/50 focus:outline-none transition-all">
-                                </div>
-                                <div>
-                                    <label for="calc-phone" class="block text-[9px] font-bold text-slate-400 uppercase tracking-wider mb-1">Telefonszám (opcionális)</label>
-                                    <input type="tel" id="calc-phone" placeholder="Pl. +36 30 123 4567" class="w-full px-3.5 py-2.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:border-sky-500/50 focus:outline-none transition-all">
-                                </div>
-                                <div>
-                                    <label for="calc-email" class="block text-[9px] font-bold text-slate-400 uppercase tracking-wider mb-1">E-mail cím *</label>
-                                    <input type="email" id="calc-email" required placeholder="Pl. andrea@okosotthon.hu" class="w-full px-3.5 py-2.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:border-sky-500/50 focus:outline-none transition-all">
-                                </div>
-
-                                <button id="calc-submit-btn" type="submit" class="w-full py-3 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-all shadow-md hover:shadow-sky-500/20 flex items-center justify-center gap-1.5 cursor-pointer text-xs sm:text-sm mt-3">
-                                    <i data-lucide="send" class="w-3.5 h-3.5 shrink-0"></i>
-                                    Egyedi árajánlat kérése azonnal
-                                </button>
-                            </form>
-                        </div>
+                    <div class="w-6 h-px bg-slate-800 shrink-0"></div>
+                    <div id="prog-step-2" class="flex items-center gap-2 shrink-0">
+                        <span class="w-5 h-5 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-[10px] shrink-0">2</span> Méret
+                    </div>
+                    <div class="w-6 h-px bg-slate-800 shrink-0"></div>
+                    <div id="prog-step-3" class="flex items-center gap-2 shrink-0">
+                        <span class="w-5 h-5 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-[10px] shrink-0">3</span> Funkciók
+                    </div>
+                    <div class="w-6 h-px bg-slate-800 shrink-0"></div>
+                    <div id="prog-step-4" class="flex items-center gap-2 shrink-0">
+                        <span class="w-5 h-5 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-[10px] shrink-0">4</span> Eredmény
                     </div>
                 </div>
+
+                <!-- LÉPÉSEK TARALMA -->
+                <div class="flex-1 py-2">
+                    <!-- Lépés 1: Ingatlan típusa -->
+                    <div id="wizard-step-1" class="wizard-step-panel space-y-5">
+                        <h3 class="text-lg font-black text-white font-display">1. Mi az Ön ingatlanának típusa?</h3>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <label class="wizard-option-card relative cursor-pointer border border-slate-800 rounded-2xl p-6 hover:border-sky-500/30 bg-slate-950/30 flex items-start gap-4 hover:bg-slate-900/20 active:scale-99 transition-all block">
+                                <input type="radio" name="property_type" value="apartment" checked onchange="updatePropertySelection(this)" class="absolute top-4 right-4 text-sky-500 bg-slate-950 border-slate-800 focus:ring-sky-500 w-4 h-4 mt-0.5">
+                                <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-400/10 flex items-center justify-center shrink-0 text-sky-400">
+                                    <i data-lucide="building" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-base font-bold text-white block">Társasházi lakás</strong>
+                                    <span class="text-xs text-slate-400 leading-normal block mt-1">Bontás nélküli, pormentes rádiós okosítás meglévő lakásába is, tökéletes helyi biztonsági hálózattal.</span>
+                                </div>
+                            </label>
+
+                            <label class="wizard-option-card relative cursor-pointer border border-slate-800 rounded-2xl p-6 hover:border-sky-500/30 bg-slate-950/30 flex items-start gap-4 hover:bg-slate-900/20 active:scale-99 transition-all block">
+                                <input type="radio" name="property_type" value="house" onchange="updatePropertySelection(this)" class="absolute top-4 right-4 text-sky-500 bg-slate-950 border-slate-800 focus:ring-sky-500 w-4 h-4 mt-0.5">
+                                <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-400/10 flex items-center justify-center shrink-0 text-sky-400">
+                                    <i data-lucide="home" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-base font-bold text-white block">Családi ház / Ikerház</strong>
+                                    <span class="text-xs text-slate-400 leading-normal block mt-1">Kiemelt jelerősségű routerekkel és elosztókkal, hogy az egész udvaron, garázsban és szinteken stabil legyen a kapcsolat.</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Lépés 2: Lakás/Ház mérete -->
+                    <div id="wizard-step-2" class="wizard-step-panel hidden space-y-5">
+                        <h3 class="text-lg font-black text-white font-display">2. Mekkora az otthona? (Mi a szobák száma?)</h3>
+                        <p class="text-xs text-slate-400">A szobák száma segít nekünk megbecsülni a szükséges okos radiátorszelepek, konnektorok és mozgásérzékelők átlagos darabszámát.</p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <label class="wizard-option-card flex flex-col items-center justify-center text-center p-5 border border-slate-800 rounded-2xl cursor-pointer hover:border-sky-500/30 bg-slate-950/30 active:scale-99 transition-all block relative">
+                                <input type="radio" name="property_rooms" value="1" checked onchange="updateRoomsSelection(this)" class="absolute top-3 right-3 text-sky-500 w-4 h-4">
+                                <strong class="text-2xl font-black text-white font-display block mb-1">1 szoba</strong>
+                                <span class="text-[10px] text-slate-400">Garzon vagy stúdió</span>
+                            </label>
+
+                            <label class="wizard-option-card flex flex-col items-center justify-center text-center p-5 border border-slate-800 rounded-2xl cursor-pointer hover:border-sky-500/30 bg-slate-950/30 active:scale-99 transition-all block relative">
+                                <input type="radio" name="property_rooms" value="2" onchange="updateRoomsSelection(this)" class="absolute top-3 right-3 text-sky-500 w-4 h-4">
+                                <strong class="text-2xl font-black text-white font-display block mb-1">2 szoba</strong>
+                                <span class="text-[10px] text-slate-400">Kisebb otthon</span>
+                            </label>
+
+                            <label class="wizard-option-card flex flex-col items-center justify-center text-center p-5 border border-slate-800 rounded-2xl cursor-pointer hover:border-sky-500/30 bg-slate-950/30 active:scale-99 transition-all block relative">
+                                <input type="radio" name="property_rooms" value="3" onchange="updateRoomsSelection(this)" class="absolute top-3 right-3 text-sky-500 w-4 h-4">
+                                <strong class="text-2xl font-black text-white font-display block mb-1">3 szoba</strong>
+                                <span class="text-[10px] text-slate-400">Ideális lakás / ház</span>
+                            </label>
+
+                            <label class="wizard-option-card flex flex-col items-center justify-center text-center p-5 border border-slate-800 rounded-2xl cursor-pointer hover:border-sky-500/30 bg-slate-950/30 active:scale-99 transition-all block relative">
+                                <input type="radio" name="property_rooms" value="4" onchange="updateRoomsSelection(this)" class="absolute top-3 right-3 text-sky-500 w-4 h-4">
+                                <strong class="text-2xl font-black text-white font-display block mb-1">4+ szoba</strong>
+                                <span class="text-[10px] text-slate-400">Nagy otthon / emeletes</span>
+                            </label>
+                        </div>
+
+                        <!-- Eszközök finomhangolása szekció -->
+                        <div class="p-5 bg-slate-950/45 border border-slate-800/80 rounded-2xl space-y-4 mt-5">
+                            <h4 class="text-sm font-bold text-sky-400 uppercase tracking-wider flex items-center gap-1.5 font-display">
+                                <i data-lucide="sliders" class="w-4 h-4 text-sky-400"></i>
+                                Eszközdarabszámok pontosabb finomhangolása
+                            </h4>
+                            <p class="text-[11px] text-slate-450 leading-relaxed">
+                                A választott szobaszám alapján beállítottunk egy reális darabszámos átlagot. Ha pontosan tudja otthona adatait, a <strong class="text-sky-400 font-bold">+ / -</strong> gombokkal itt teljesen precízen testreszabhatja az eszközkészletet:
+                            </p>
+                            
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <!-- Okosított lámpák/kapcsolók -->
+                                <div class="bg-slate-900/60 border border-slate-800/60 p-4 rounded-xl flex items-center justify-between gap-4">
+                                    <div>
+                                        <span class="text-xs font-bold text-white block">Okos lámpák / kapcsolók</span>
+                                        <span class="text-[9px] text-slate-550 block mt-1">Izzók, spotok vagy fali kapcsolók</span>
+                                    </div>
+                                    <div class="flex items-center gap-2.5">
+                                        <button type="button" onclick="adjustCount('lights', -1)" class="w-8 h-8 rounded-lg bg-slate-955 hover:bg-slate-800 border border-slate-800 text-white flex items-center justify-center font-bold font-display select-none transition-all active:scale-95 cursor-pointer">-</button>
+                                        <span id="count-lights" class="text-sm font-bold text-sky-400 min-w-4 text-center">3</span>
+                                        <button type="button" onclick="adjustCount('lights', 1)" class="w-8 h-8 rounded-lg bg-slate-955 hover:bg-slate-800 border border-slate-800 text-white flex items-center justify-center font-bold font-display select-none transition-all active:scale-95 cursor-pointer">+</button>
+                                    </div>
+                                </div>
+
+                                <!-- Radiátorok / termosztátok -->
+                                <div class="bg-slate-900/60 border border-slate-800/60 p-4 rounded-xl flex items-center justify-between gap-4">
+                                    <div>
+                                        <span class="text-xs font-bold text-white block">Okos fűtők / radiátorok</span>
+                                        <span class="text-[9px] text-slate-550 block mt-1">Okos fűtőszelepek, termosztátok</span>
+                                    </div>
+                                    <div class="flex items-center gap-2.5">
+                                        <button type="button" onclick="adjustCount('radiators', -1)" class="w-8 h-8 rounded-lg bg-slate-955 hover:bg-slate-800 border border-slate-800 text-white flex items-center justify-center font-bold font-display select-none transition-all active:scale-95 cursor-pointer">-</button>
+                                        <span id="count-radiators" class="text-sm font-bold text-sky-400 min-w-4 text-center">1</span>
+                                        <button type="button" onclick="adjustCount('radiators', 1)" class="w-8 h-8 rounded-lg bg-slate-955 hover:bg-slate-800 border border-slate-800 text-white flex items-center justify-center font-bold font-display select-none transition-all active:scale-95 cursor-pointer">+</button>
+                                    </div>
+                                </div>
+
+                                <!-- Redőnyök -->
+                                <div class="bg-slate-900/60 border border-slate-800/60 p-4 rounded-xl flex items-center justify-between gap-4">
+                                    <div>
+                                        <span class="text-xs font-bold text-white block">Okos redőnyök / motorok</span>
+                                        <span class="text-[9px] text-slate-550 block mt-1">Vezérlendő redőny- és relémodulok</span>
+                                    </div>
+                                    <div class="flex items-center gap-2.5">
+                                        <button type="button" onclick="adjustCount('shutters', -1)" class="w-8 h-8 rounded-lg bg-slate-955 hover:bg-slate-800 border border-slate-800 text-white flex items-center justify-center font-bold font-display select-none transition-all active:scale-95 cursor-pointer">-</button>
+                                        <span id="count-shutters" class="text-sm font-bold text-sky-400 min-w-4 text-center">2</span>
+                                        <button type="button" onclick="adjustCount('shutters', 1)" class="w-8 h-8 rounded-lg bg-slate-955 hover:bg-slate-800 border border-slate-800 text-white flex items-center justify-center font-bold font-display select-none transition-all active:scale-95 cursor-pointer">+</button>
+                                    </div>
+                                </div>
+
+                                <!-- Biztonsági ablak/ajtó érzékelők -->
+                                <div class="bg-slate-900/60 border border-slate-800/60 p-4 rounded-xl flex items-center justify-between gap-4">
+                                    <div>
+                                        <span class="text-xs font-bold text-white block">Biztonsági érzékelők</span>
+                                        <span class="text-[9px] text-slate-550 block mt-1">Ablaknyitás és mozgásszenzorok</span>
+                                    </div>
+                                    <div class="flex items-center gap-2.5">
+                                        <button type="button" onclick="adjustCount('sensors', -1)" class="w-8 h-8 rounded-lg bg-slate-955 hover:bg-slate-800 border border-slate-800 text-white flex items-center justify-center font-bold font-display select-none transition-all active:scale-95 cursor-pointer">-</button>
+                                        <span id="count-sensors" class="text-sm font-bold text-sky-400 min-w-4 text-center">2</span>
+                                        <button type="button" onclick="adjustCount('sensors', 1)" class="w-8 h-8 rounded-lg bg-slate-955 hover:bg-slate-800 border border-slate-800 text-white flex items-center justify-center font-bold font-display select-none transition-all active:scale-95 cursor-pointer">+</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Helyszíni bővítési infó -->
+                            <div class="mt-4 p-4 bg-sky-500/5 border border-sky-500/10 rounded-xl flex items-start gap-3">
+                                <i data-lucide="help-circle" class="w-5 h-5 text-sky-450 shrink-0 mt-0.5"></i>
+                                <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">
+                                    <strong class="text-sky-350 font-bold block mb-1">💡 Helyszíni felmérés során bármit lehet még kérni!</strong>
+                                    Ennél lényegesen több és különlegesebb eszköz is kérhető. A helyszíni felmérés alkalmával mindent részletesen, érthetően elmagyarázok élőben, lehet bátran kérdezni, érdeklődni a lehetőségekről. Miután átbeszéltük az egyedi igényeket, otthon precízen összeállítom a végleges, személyre szabott árajánlatot. Ha a terv és az ár is tetszik, a hivatalos szerződéskötés után már indulhat is az okosotthon kiépítése!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lépés 3: Milyen funkciókat szeretne? -->
+                    <div id="wizard-step-3" class="wizard-step-panel hidden space-y-6">
+                        <div class="border-b border-slate-800/60 pb-3">
+                            <h3 class="text-lg font-black text-white font-display">3. Milyen funkciókat szeretne integrálni?</h3>
+                            <p class="text-xs text-slate-400 mt-1">Válasszon igényei szerint a kényelmi és biztonsági funkciók közül. Akár mindkét kategóriából is szabadon választhat!</p>
+                        </div>
+
+                        <!-- 1. ALAPVETŐ, GYORSAN KIÉPÍTHETŐ FUNKCIÓK (Nem igényelnek villanyszerelőt) -->
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-1.5 text-sky-400">
+                                <i data-lucide="plug-zap" class="w-4 h-4 text-sky-400"></i>
+                                <h4 class="text-xs font-extrabold uppercase tracking-wider font-display">Alapvető, egyszerű kiépítésű okos funkciók</h4>
+                            </div>
+                            
+                            <div class="grid sm:grid-cols-2 gap-3">
+                                <!-- Okos izzók -->
+                                <label class="flex items-start gap-3 p-4 border border-slate-800 rounded-2xl bg-slate-950/40 hover:border-sky-500/20 cursor-pointer select-none transition-all">
+                                    <input type="checkbox" name="desired_functions" value="lighting_basic" checked onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
+                                    <div>
+                                        <strong class="text-xs sm:text-sm font-bold text-white block">Okos izzók és vezeték nélküli okosgombok</strong>
+                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Egyszerűen becsavarható intelligens fényforrások, vezeték nélküli, elemről működő fali gombokkal/vezérlőkkel, fali átvezetékezés nélkül.</span>
+                                    </div>
+                                </label>
+
+                                <!-- Sima radiátorszelep -->
+                                <label class="flex items-start gap-3 p-4 border border-slate-800 rounded-2xl bg-slate-950/40 hover:border-sky-500/20 cursor-pointer select-none transition-all">
+                                    <input type="checkbox" name="desired_functions" value="heating_basic" checked onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
+                                    <div>
+                                        <strong class="text-xs sm:text-sm font-bold text-white block">Meglévő fűtés zónásítása (Okos radiátorszelepek)</strong>
+                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Meglévő radiátorok szelepeire csavarható akkumulátoros okos termosztátfejek, amik zónánként és időzítve szabályozzák a terek hőfokát.</span>
+                                    </div>
+                                </label>
+
+                                <!-- Klíma -->
+                                <label class="flex items-start gap-3 p-4 border border-slate-800 rounded-2xl bg-slate-950/40 hover:border-sky-500/20 cursor-pointer select-none transition-all">
+                                    <input type="checkbox" name="desired_functions" value="climate" checked onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
+                                    <div>
+                                        <strong class="text-xs sm:text-sm font-bold text-white block">Okos Klímavezérlés</strong>
+                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Split klímák távoli automatizált szabályozása és visszacsatolása a fűtés és hűtés abszolút rezsicsökkentéséhez.</span>
+                                    </div>
+                                </label>
+
+                                <!-- Érzékelők -->
+                                <label class="flex items-start gap-3 p-4 border border-slate-800 rounded-2xl bg-slate-950/40 hover:border-sky-500/20 cursor-pointer select-none transition-all">
+                                    <input type="checkbox" name="desired_functions" value="sensors" checked onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
+                                    <div>
+                                        <strong class="text-xs sm:text-sm font-bold text-white block">Biztonsági nyitás- & mozgásszenzorok</strong>
+                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Vezeték nélküli ablaknyitás- és radaros mozgásszenzorok, amelyek azonnali push értesítést küldenek telefonjára.</span>
+                                    </div>
+                                </label>
+
+                                <!-- Ajtózár -->
+                                <label class="flex items-start gap-3 p-4 border border-slate-800 rounded-2xl bg-slate-950/40 hover:border-sky-500/20 cursor-pointer select-none transition-all">
+                                    <input type="checkbox" name="desired_functions" value="lock" onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
+                                    <div>
+                                        <strong class="text-xs sm:text-sm font-bold text-white block">Okos Ajtózár (Aqara U200 komplett szett)</strong>
+                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Ujjlenyomat-olvasós, PIN-kódos, kulcsnélküli biztonsági beléptető rendszer, amely meglévő zárbetétre építhető.</span>
+                                    </div>
+                                </label>
+
+                                <!-- Intelligens LED -->
+                                <label class="flex items-start gap-3 p-4 border border-slate-800 rounded-2xl bg-slate-950/40 hover:border-sky-500/20 cursor-pointer select-none transition-all">
+                                    <input type="checkbox" name="desired_functions" value="led_lighting" onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
+                                    <div>
+                                        <strong class="text-xs sm:text-sm font-bold text-white block">Okos ledszalag (3m)</strong>
+                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Prémium meleg-fehér és RGBIC hangulatvilágítás tápegységgel és szoftveres integrációval.</span>
+                                    </div>
+                                </label>
+
+                                <!-- Vízszivárgás -->
+                                <label class="flex items-start gap-3 p-4 border border-slate-800 rounded-2xl bg-slate-950/40 hover:border-sky-500/20 cursor-pointer select-none transition-all">
+                                    <input type="checkbox" name="desired_functions" value="water_safety" onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
+                                    <div>
+                                        <strong class="text-xs sm:text-sm font-bold text-white block">Csőtörés elleni aktív Vízvédelem</strong>
+                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Vezeték nélküli padlószenzorok és motorvezérelt gömbcsap-elzáró vészleállító automatizmussal.</span>
+                                    </div>
+                                </label>
+
+                                <!-- Kisállat etető -->
+                                <label class="flex items-start gap-3 p-4 border border-slate-800 rounded-2xl bg-slate-950/40 hover:border-sky-500/20 cursor-pointer select-none transition-all">
+                                    <input type="checkbox" name="desired_functions" value="pet_feeding" onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
+                                    <div>
+                                        <strong class="text-xs sm:text-sm font-bold text-white block">Okos kisállat-etető</strong>
+                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Adagoló- és beépített mozgásérzékelős kamera integrálása, kutyák / macskák automatizált táplálásához.</span>
+                                    </div>
+                                </label>
+
+                                <!-- Redőnyök -->
+                                <label class="flex items-start gap-3 p-4 border border-slate-800 rounded-2xl bg-slate-950/40 hover:border-sky-500/20 cursor-pointer select-none transition-all">
+                                    <input type="checkbox" name="desired_functions" value="shutters" onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
+                                    <div>
+                                        <strong class="text-xs sm:text-sm font-bold text-white block">Sötétítés és redőnyvezérlés</strong>
+                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Meglévő fali motoros redőnyök okosítása vagy új árnyékolók integrációja az automata napszak-alapú sötétítéshez.</span>
+                                        <span class="text-sky-355 font-semibold block mt-1.5 text-[9px] uppercase tracking-wider leading-relaxed">💡 Az ár függ a meglévő redőnyök típusától, vagy az esetleges új redőnyök beépítésétől!</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 2. KIEMELT SÁRGA SZEKCIÓ: 230V HÁLÓZATI, VILLANYSZERELŐT IGÉNYLŐ FUNKCIÓK -->
+                        <div class="p-5 bg-amber-500/5 border border-amber-500/20 rounded-3xl space-y-4">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2 py-0.5 bg-amber-500/20 text-[10px] uppercase font-bold text-amber-400 rounded-md">230V Erősáram</span>
+                                <h4 class="text-xs font-black uppercase text-amber-400 tracking-wider font-display">Villanyszerelést igénylő funkciók</h4>
+                            </div>
+                            
+                            <p class="text-[11px] text-amber-400/80 leading-relaxed font-semibold">
+                                ⚡ Figyelem: az alábbi funkciók beépítéséhez meglévő 230V hálózati bekötés / fali erősáramú retrofitting munkák szükségesek! A villanyszerelő munkadíját a helyszíni felmérés alapján külön számoljuk el.
+                            </p>
+
+                            <div class="grid sm:grid-cols-2 gap-3">
+                                <!-- Okos fali kapcsolók / relék -->
+                                <label class="flex items-start gap-3 p-4 border border-amber-500/10 rounded-2xl bg-slate-950/60 hover:border-amber-500/20 cursor-pointer select-none transition-all text-left">
+                                    <input type="checkbox" name="desired_functions" value="lighting_pro" onchange="recalculateWizardBudget()" class="rounded border-amber-900/40 text-amber-500 focus:ring-amber-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
+                                    <div>
+                                        <strong class="text-xs sm:text-sm font-bold text-white block">Okos fali világításkapcsolók és rejtett relék (230V)</strong>
+                                        <span class="text-[10px] text-slate-400 leading-normal block mt-1">A meglévő fali kapcsolódobozok mögé rejtve beépített Zigbee/Wifi relémodulok, hogy a hagyományos dizájnú fali kapcsolóival is vezérelhesse az okosfényeket.</span>
+                                    </div>
+                                </label>
+
+                                <!-- Okos fali termosztát -->
+                                <label class="flex items-start gap-3 p-4 border border-amber-500/10 rounded-2xl bg-slate-950/60 hover:border-amber-500/20 cursor-pointer select-none transition-all text-left">
+                                    <input type="checkbox" name="desired_functions" value="heating_pro" onchange="recalculateWizardBudget()" class="rounded border-amber-900/40 text-amber-500 focus:ring-amber-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
+                                    <div>
+                                        <strong class="text-xs sm:text-sm font-bold text-white block">Okos fali termosztátok és szelepek (230V)</strong>
+                                        <span class="text-[10px] text-slate-400 leading-normal block mt-1">230V-os hálózati termosztátok, padlófűtés-zónásítók, elektromos kazánindítók és fali szelepek integrációja közvetlen vezetékes bekötéssel.</span>
+                                    </div>
+                                </label>
+
+                                <!-- Garázskapu -->
+                                <label class="flex items-start gap-3 p-4 border border-amber-500/10 rounded-2xl bg-slate-950/60 hover:border-amber-500/20 cursor-pointer select-none transition-all text-left">
+                                    <input type="checkbox" name="desired_functions" value="garage_opener" onchange="recalculateWizardBudget()" class="rounded border-amber-900/40 text-amber-500 focus:ring-amber-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
+                                    <div>
+                                        <strong class="text-xs sm:text-sm font-bold text-white block">Okos garázskapu-nyitó & kapuvezérlés (230V)</strong>
+                                        <span class="text-[10px] text-slate-400 leading-normal block mt-1">Meglévő garázs- és kertkapu-motorok fali/vezérlő sorkapcsos, relés integrálása a kényelmes automata hazatérési kapunyitáshoz.</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lépés 4 (Eredmények): Az intelligens csomag-kártya! -->
+                    <div id="wizard-step-4" class="wizard-step-panel hidden space-y-6">
+                        <!-- Betöltött ajánlott csomag kártya -->
+                        <div class="p-6 bg-gradient-to-br from-slate-950 to-slate-900 border border-sky-500/30 rounded-3xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-48 h-48 bg-sky-500/5 rounded-full blur-3xl pointer-events-none"></div>
+                            
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800/80 pb-5 mb-5">
+                                <div>
+                                    <span class="px-2.5 py-1 bg-sky-500/10 border border-sky-400/20 text-sky-450 rounded-lg text-xs font-bold font-display uppercase tracking-wider block w-max mb-1.5">Személyre szabott javaslatunk</span>
+                                    <h4 class="text-xl md:text-2xl font-display font-black text-white" id="wizard-result-system-name">HelyiOkos Premium Home Assistant Rendszer</h4>
+                                </div>
+                                <div class="text-left sm:text-right shrink-0">
+                                    <span class="text-slate-500 text-[10px] uppercase font-bold tracking-wider block">Csomag Becsült Darabszám</span>
+                                    <strong class="text-lg md:text-xl font-display font-black text-white block" id="wizard-result-device-count">12 db intelligens modul</strong>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6 items-center">
+                                <!-- Tulajdonság részletek -->
+                                <div class="space-y-3.5">
+                                    <div class="flex items-start gap-2.5">
+                                        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                        <p class="text-xs sm:text-sm text-slate-300"><strong>Zárt és 100% privát helyi központ:</strong> Minden adata, kameraképe a lakás falain belül marad. Internet nélkül is működik.</p>
+                                    </div>
+                                    <div class="flex items-start gap-2.5">
+                                        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                        <p class="text-xs sm:text-sm text-slate-300"><strong>Szoftveres beállítások:</strong> Komplett automatizációs sémákkal, jelenetmódokkal az egyszerű távoli egygombos vezérléshez.</p>
+                                    </div>
+                                    <div class="flex items-start gap-2.5">
+                                        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                        <p class="text-xs sm:text-sm text-slate-300"><strong>Transzparens telepítési segédlet:</strong> A feszültségmentes és kisfeszültségű kiegészítők teljes beszerelésével és szoftveres párosításával.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Csomagár kiemelés -->
+                                <div class="p-6 bg-slate-900/60 border border-slate-800/80 rounded-2xl text-center space-y-3 relative overflow-hidden">
+                                    <div class="text-[10px] text-slate-500 uppercase tracking-widest font-black leading-none">
+                                        Becsült / Körülbelüli bruttó ár
+                                    </div>
+                                    <div class="text-2xl sm:text-3.5xl md:text-4xl font-display font-black text-emerald-400 tracking-tight" id="wizard-result-grand-total">
+                                        100 000 Ft
+                                    </div>
+                                    <p id="wizard-result-inclusion-note" class="text-[10px] text-slate-400 leading-relaxed font-semibold transition-all">
+                                        Tartalmazza az összes eszközt, a lokális központot, a fizikai beszerelést, szoftveres párosítást és az egyedi szabályok felprogramozását!
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Jogi és tájékoztatási figyelmeztetés -->
+                            <div class="mt-5 p-4 bg-slate-950/60 border border-amber-500/20 rounded-2xl flex items-start gap-3">
+                                <i data-lucide="info" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+                                <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed text-left">
+                                    <strong class="text-amber-400 font-bold block mb-1">Fontos tájékoztatás:</strong>
+                                    A kalkulált összeg tájékoztató jellegű, a végleges, pontos árajánlatot a személyes helyszíni felmérés után tudjuk biztosítani. A végösszeg nagyban nem fog eltérni a becsülttől, kivéve ha a felmérés során további extra funkciókat kér. A pontos ár függ az Ön egyedi igényeitől (pl. a sötétítési megoldások típusától, vagy attól, hogy okos izzókat vagy a kapcsoló mögé rejthető okosreléket választunk-e, stb).
+                                    <span class="block mt-2 font-semibold text-sky-400">Szeretne még több kiegészítőt?</span>
+                                    Ha további plusz dolgokat szeretne (pl. több ledszalag, extra játszótéri/kerti kiegészítők, garázskapu vezérlés stb.), mindent lehet kérni a helyszíni felmérés során! Ott minden részletet átbeszélünk és összeállítok egy teljesen személyre szabott, pontos árajánlatot. Ez a konfigurátor egy hasznos kiindulópont, hogy mire lehet számítani az alapvető igények és extra kiegészítők nélküli alapár esetén.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- ŰRLAP RÉSZ - Ingyenes helyszíni felmérés igénylése -->
+                        <form id="calc-form" onsubmit="event.preventDefault(); sendCustomConfiguration();" class="bg-slate-950/40 border border-slate-800 p-5 sm:p-6 rounded-2xl space-y-4">
+                            <div class="text-sm font-bold text-sky-400 uppercase tracking-wider mb-2 flex items-center gap-2 font-display">
+                                <i data-lucide="user-check" class="w-4 h-4 text-sky-400"></i>
+                                Kérjen díjmentes helyszíni felmérést és írott árajánlatot!
+                            </div>
+                            
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="calc-name" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Név *</label>
+                                    <input type="text" id="calc-name" required placeholder="Pl. Nagy Andrea" class="w-full px-4 py-3 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:border-sky-500/50 focus:outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label for="calc-phone" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Telefonszám *</label>
+                                    <input type="tel" id="calc-phone" required placeholder="Pl. 06 30 123 4567" class="w-full px-4 py-3 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:border-sky-500/50 focus:outline-none transition-all">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="calc-email" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">E-mail cím *</label>
+                                    <input type="email" id="calc-email" required placeholder="Pl. andrea@okosotthon.hu" class="w-full px-4 py-3 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:border-sky-500/50 focus:outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label for="calc-survey-address" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Felmérés pontos címe *</label>
+                                    <input type="text" id="calc-survey-address" required placeholder="Pl. 2021 Tahitótfalu, Fő út 44." class="w-full px-4 py-3 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:border-sky-500/50 focus:outline-none transition-all">
+                                </div>
+                            </div>
+
+                            <button id="calc-submit-btn" type="submit" class="w-full py-4 bg-sky-500 hover:bg-sky-400 text-slate-950 font-black rounded-xl transition-all shadow-lg hover:shadow-sky-500/20 flex items-center justify-center gap-2 cursor-pointer text-xs sm:text-sm mt-4 font-display uppercase tracking-wider">
+                                <i data-lucide="calendar-check" class="w-4 h-4 shrink-0"></i>
+                                Ingyenes Helyszíni Felmérés és Árajánlat Kérése
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- ALUL: Lépegető Gombok -->
+                <div id="wizard-buttons-bar" class="border-t border-slate-800/80 pt-4 flex justify-between items-center shrink-0">
+                    <button id="wizard-btn-prev" onclick="goPrevStep()" class="px-5 py-2.5 bg-slate-950 border border-slate-800 hover:bg-slate-800 text-slate-300 font-semibold rounded-xl transition-all cursor-pointer text-xs sm:text-sm flex items-center gap-1.5 opacity-50 pointer-events-none">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i> Vissza
+                    </button>
+                    
+                    <button id="wizard-btn-next" onclick="goNextStep()" class="px-6 py-2.5 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-all cursor-pointer text-xs sm:text-sm flex items-center gap-1.5 shadow-md hover:shadow-sky-500/10">
+                        Következő <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
             </div>
         </div>
 
@@ -1250,6 +1617,46 @@
             <!-- Modal Footer -->
             <div class="p-4 sm:p-6 bg-slate-950/40 border-t border-slate-800/60 flex justify-end shrink-0">
                 <button onclick="closeDeviceModal()" class="px-6 py-2.5 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-all cursor-pointer">
+                    Bezárás
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem Solution Modal -->
+    <div id="problem-modal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300" style="z-index: 99999;">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl transform scale-95 transition-all duration-300 relative flex flex-col max-h-[90vh]">
+            <!-- Close button in top right -->
+            <button onclick="closeProblemModal()" class="absolute top-4 right-4 z-50 p-2 rounded-full bg-slate-950/60 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer" aria-label="Bezárás">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            
+            <!-- Modal Header Title Area -->
+            <div class="p-6 md:p-8 shrink-0 bg-gradient-to-r from-slate-950 to-slate-900 border-b border-slate-800 flex items-start gap-4">
+                <div id="problem-icon-container" class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center text-sky-400 shrink-0 mt-1">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-sky-400 font-bold tracking-wider text-xs uppercase block mb-1">Így oldom meg ezt a problémát</span>
+                    <h3 id="problem-title" class="text-xl sm:text-2xl font-display font-black text-white leading-tight">Problémamegoldás</h3>
+                </div>
+            </div>
+            
+            <!-- Modal Body Content -->
+            <div class="p-6 md:p-8 overflow-y-auto flex-1 text-left">
+                <div id="problem-content" class="text-slate-300 text-sm sm:text-base leading-relaxed space-y-4">
+                    <!-- Content injected by JS -->
+                </div>
+            </div>
+            
+            <!-- Modal Footer with CTA -->
+            <div class="p-4 sm:p-6 bg-slate-950/40 border-t border-slate-800/60 flex flex-col sm:flex-row sm:justify-between items-center gap-3 shrink-0">
+                <button onclick="openCalendlyPopup(); closeProblemModal();" class="w-full sm:w-auto px-6 py-2.5 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4"></i> Ingyenes felmérést kérek
+                </button>
+                <button onclick="closeProblemModal()" class="w-full sm:w-auto px-6 py-2.5 bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-300 font-semibold rounded-xl transition-all cursor-pointer">
                     Bezárás
                 </button>
             </div>
@@ -1514,6 +1921,106 @@
                         </li>
                     </ul>
                 `
+            },
+            switchbot_curtain: {
+                title: "Okos Függöny motor (U Rail 3)",
+                badge: "Okos Függöny",
+                price: "40 990 Ft",
+                image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=600",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Szerelésmentes, azonnali függöny-automatizáció por és kosz nélkül</p>
+                    <p class="mb-4 text-slate-300">A <strong class="text-white">SwitchBot Curtain U Rail 3</strong> segítségével meglévő, hagyományos elhúzható sínfüggönyét másodpercek alatt intelligenssé alakítom, fúrás és csavarozás nélkül.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Elegáns, zajtalan húzás:</strong> QuietDrift módban a motor szinte teljesen hangtalanul csúsztatja a függönyt, így kíméletesen, természetes fényre ébredhet.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Autonóm napfény-követés:</strong> Integrálható fényérzékelőkkel, így a függönyök automatikusan összehúzódnak, ha tűz a nap, vagy kinyílnak a délutáni világosságban.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            aqara_pet: {
+                title: "Okos Állatetető (Aqara C1)",
+                badge: "Okos Kisállat",
+                price: "44 990 Ft",
+                image: "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&q=80&w=600",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Kedvence gondoskodása távolról is, precíz programozással</p>
+                    <p class="mb-4 text-slate-300">Az <strong class="text-white">Aqara Smart Pet Feeder C1</strong> a tökéletes megoldás, ha hosszabb időre magára kell hagynia kedvencét. Biztonságos és lokális adagolás, amely sosem mulaszt el egyetlen étkezést sem.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Személyre szabott étrend és hanghívás:</strong> Beállítom a pontos adagokat és etetési időpontokat. A készülék képes lejátszani az Ön hangfelvételét is az etetés pillanatában, így kutyusa/cicája otthonosan érzi magát.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Különleges elemvédelem:</strong> Áramkimaradás esetén a behelyezhető elemek gondoskodnak a továbbműködésről, így kedvence sosem marad éhes, még internet- vagy hálózatkimaradás esetén sem.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            moes_thermostat: {
+                title: "MOES ZigBee Termosztát (GC/GA)",
+                badge: "Okos Hűtés-Fűtés",
+                price: "39 990 Ft",
+                image: "https://images.unsplash.com/photo-1545258122-474be508a2fe?auto=format&fit=crop&q=80&w=600",
+                content: `
+                    <p class="font-bold text-amber-500 text-base md:text-lg mb-4">⚠️ 230V hálózati tápellátású - Villanyszerelést igényel</p>
+                    <p class="mb-4 text-slate-300">A <strong class="text-white">MOES intelligens termosztát</strong> segítségével otthona padlófűtését vagy gázkazánját kötheti a helyi és privát okosrendszerbe, elérve az akár 20-30%-os energiamegtakarítást.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Precíziós zónavezérlés:</strong> Szabályozza otthona hőmérsétletét távolról, jelenlét alapon vagy külső időjárási adatokra reagálva.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Modern érintőképernyős kijelző:</strong> Gyönyörű minimál dizájn, amely tökéletesen illeszkedik a fal síkjába. Bekötését a 230V hálózat miatt regisztrált villanyszerelőnek kell elvégeznie.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            sonoff_relay: {
+                title: "SONOFF Extreme fali relé (ZBMINIL2)",
+                badge: "Hálózati Relé",
+                price: "8 990 Ft",
+                image: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=fit&crop=q=80&w=600",
+                content: `
+                    <p class="font-bold text-amber-500 text-base md:text-lg mb-4">⚠️ 230V hálózati tápellátású - Villanyszerelést igényel</p>
+                    <p class="mb-4 text-slate-300">A <strong class="text-white">SONOFF ZBMINIL2 Extreme</strong> a legkorszerűbb és legkisebb süllyesztett okosrelé. Fali kapcsolói mögé építve okosítja fel a meglévő lámpáit és világítási köreit.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Nullavezeték nélküli beépítés:</strong> Különleges kialakításának köszönhetően olyan régebbi típusú fali dobozokban is használható, ahol nincs gipszkarton bontási lehetőség a nullavezeték áthúzásához.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Megőrzi a hagyományos kapcsolókat:</strong> Nem kell lecserélnie a meglévő dekoratív kapcsolóit. A fizikai gomb ugyanúgy működik tovább, de a lámpa már távolról, időzítve és automatizáltan is vezérelhető.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            shelly_relay: {
+                title: "Shelly Plus 1 Mini Gen3 okosrelé",
+                badge: "Hálózati Relé",
+                price: "8 490 Ft",
+                image: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=fit&crop=q=80&w=600",
+                content: `
+                    <p class="font-bold text-amber-500 text-base md:text-lg mb-4">⚠️ 230V hálózati tápellátású - Villanyszerelést igényel</p>
+                    <p class="mb-4 text-slate-300">A <strong class="text-white">Shelly Plus 1 Mini Gen3</strong> egy hihetetlenül sokoldalú, zsebméretű Wi-Fi relé, amellyel garázskapukat, elektromos kapubekötéseket vagy egyedi dugaljakat vezérelhetünk.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Száraz kontaktus (Dry Contact) kimenet:</strong> Nemcsak 230V hálózati feszültséget tud kapcsolni, hanem potenciálmentes zárójelzést is adhat gázkazánoknak vagy kapunyitóknak.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Okos és biztonságos helyi szkriptek:</strong> Támogatja az egyedi, helyi kis szkripteket, így a routeren belül internet-kapcsolat nélkül is önálló feladatokat képes ellátni.</div>
+                        </li>
+                    </ul>
+                `
             }
         };
 
@@ -1523,14 +2030,24 @@
             if (!data) return;
 
             const modal = document.getElementById('device-modal');
+            if (!modal) return;
             const innerModal = modal.querySelector('.transform');
+            if (!innerModal) return;
             
-            document.getElementById('modal-title').textContent = data.title;
-            document.getElementById('modal-badge').textContent = data.badge;
-            document.getElementById('modal-image').src = data.image;
-            document.getElementById('modal-image').alt = data.title;
-            document.getElementById('modal-content').innerHTML = data.content;
-            document.getElementById('modal-price').textContent = "Ár: " + data.price;
+            const titleEl = document.getElementById('modal-title');
+            const badgeEl = document.getElementById('modal-badge');
+            const imageEl = document.getElementById('modal-image');
+            const contentEl = document.getElementById('modal-content');
+            const priceEl = document.getElementById('modal-price');
+
+            if (titleEl) titleEl.textContent = data.title;
+            if (badgeEl) badgeEl.textContent = data.badge;
+            if (imageEl) {
+                imageEl.src = data.image;
+                imageEl.alt = data.title;
+            }
+            if (contentEl) contentEl.innerHTML = data.content;
+            if (priceEl) priceEl.textContent = "Ár: " + data.price;
             
             // Megjelenítés
             modal.classList.remove('opacity-0', 'pointer-events-none');
@@ -1547,7 +2064,9 @@
 
         function closeDeviceModal() {
             const modal = document.getElementById('device-modal');
+            if (!modal) return;
             const innerModal = modal.querySelector('.transform');
+            if (!innerModal) return;
             
             // Eltüntetés
             modal.classList.add('opacity-0', 'pointer-events-none');
@@ -1559,10 +2078,209 @@
             document.body.style.overflow = '';
         }
 
+        // ==========================================
+        // MODERN PROBLÉMAMEGOLDÓ SZEKCIÓ POPUP FÜGGVÉNYEI
+        // ==========================================
+        const problemsData = {
+            doorbell: {
+                title: "Lássam a telefonomon, hogy ki áll az ajtóban",
+                icon: "smartphone",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Azonnali távoli videókapcsolat és teljes biztonság</p>
+                    <p class="mb-4 text-slate-300 font-semibold leading-relaxed">Hogyan oldom meg ezt az Ön otthonában?</p>
+                    <p class="mb-4 text-slate-300">Felszerelek Önnek egy modern <strong class="text-white">intelligens videós kaputelefont</strong> CSAVAR ÉS PORMENTESEN, a belső terek bontása nélkül. A meglévő csengő kábelei vagy akkumulátoros megoldás révén is kivitelezhető.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Videóhívás a mobiljára:</strong> Ha valaki becsenget, a telefonja azonnal csörögni fog képpel együtt. Válaszolhat neki és beszélhet vele a világ bármely pontjáról.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Kapu- és ajtónyitás:</strong> Ha okos zárat vagy kapumotort is választ, a videóhívás közben egyetlen gombnyomással beengedheti a futárt vagy a váratlanul érkező családtagot.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Beépített mozgásérzékelő:</strong> A kaputelefon kamerája jelzi, ha valaki gyanúsan ólálkodik az ajtó előtt, és azonnal biztonsági mentést készít a felvételről privát, helyi tárhelyre.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            water: {
+                title: "Értesítést kérek a telefonomra, ha csőtörés van",
+                icon: "droplets",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Roncsolásmentes, azonnali automata vízelzárás és megnyugvás</p>
+                    <p class="mb-4 text-slate-300 font-semibold leading-relaxed">Hogyan oldom meg ezt az Ön otthonában?</p>
+                    <p class="mb-4 text-slate-300">Vezeték nélküli, apró és esztétikus <strong class="text-white">vízszivárgás-érzékelőket</strong> helyezek el a magas kockázatú helyeken: a mosógép mögött, a mosogatógép alatt, a gázkazán tövénél és a strangoknál. A főelzáró csapra pedig egy speciális szelepmotort rögzítek.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Másodperceken belüli önműködő védelem:</strong> Ha az egyik érzékelő vizet észlel, a rendszer azonnal (internet nélkül is!) parancsot küld a főcsap-elzáró motornak, ami 5-10 másodperc alatt teljesen elzárja a ház fővíznyomását.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Szerelésmentes elzárómotor:</strong> A meglévő karos golyóscsapra szerelhető fel a roncsolásmentes szerkezet, így nem igényel vezeték- vagy csőmegbontást.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Értesítés:</strong> Amint szivárgást észlel, a telefonjára azonnali vészjelzést küld a rendszer, pontosan megjelölve, hogy melyik helyiségben lépett fel a hiba.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            lighting: {
+                title: "Szeretném, ha a folyosón magától felkapcsolódna a fény éjszaka",
+                icon: "lightbulb",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Lágy fények az éjszaka leple alatt, anélkül hogy elvakítanák</p>
+                    <p class="mb-4 text-slate-300 font-semibold leading-relaxed">Hogyan oldom meg ezt az Ön otthonában?</p>
+                    <p class="mb-4 text-slate-300">Vezeték nélküli, dizájnos és pici <strong class="text-white">mozgás- és jelenlét-érzékelőt</strong> szerelek fel a falra vagy plafonra pormentesen, kétoldalú ragasztással. Az érintett helyiségbe pedig beállítható színhőmérsékletű <strong class="text-white">Prémium Okos Izzókat</strong> helyezek el.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Intelligens idősáv-érzékelés:</strong> Csupán akkor működik, amikor sötét van. Nappal vagy felkapcsolt csillár mellett a rendszer nem indítja újra az automatikát.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Éjszakai vakításmentes fény:</strong> Beállítom, hogy este 22:00 és reggel 06:00 között a lámpa ne teljes erőn, hanem csupán 8-10%-os, meleg sárgás hangulatfényben világítson, nehogy kiverje az álmot a szeméből.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Önműködő lekapcsolás:</strong> Miután Ön áthaladt a folyosón és az érzékelő már nem lát mozgást, 1-2 perc után finom elhalványulással magától lekapcsol, spórolva az árammal.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            heating: {
+                title: "Távolról akarom látni és szabályozni a hőmérsékletet",
+                icon: "thermometer",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Pontos szobánkénti hőszabályzás és komoly rezsimegtakarítás</p>
+                    <p class="mb-4 text-slate-300 font-semibold leading-relaxed">Hogyan oldom meg ezt az Ön otthonában?</p>
+                    <p class="mb-4 text-slate-300">A hagyományos radiátorszelepeket lecserélem stílusos, csendes és tartós <strong class="text-white">Okos Radiátorszelepekre</strong>. Ha fali termosztátot is szeretne, falba süllyesztett modern termosztátot építünk be (egyedileg, villanyszerelő bevonásával).</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Helyiségenkénti egyéni zónák:</strong> Minden szobát külön szabályozhat. A gyerekszoba melegebb lehet, míg a ritkábban használt vendégszoba vagy háló alacsonyabb hőfokon üzemel.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Okos heti menetrendek:</strong> Beprogramozom, hogy mikor Ön dolgozni megy, a fűtés automatikusan mérséklődjön 18 fokra, de mire hazaér, kellemes 21-22 fok meleg várja. Ezzel 15-30% energiát takaríthat meg!</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Ablaknyitás-érzékelés:</strong> Nyitásérzékelőkkel összekötve, ha szellőztetést észlel a rendszer az érintett szobában, azonnal lekapcsolja a radiátort, hogy ne fűtse feleslegesen az utcát.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            iron: {
+                title: "Elfelejtettem kihúzni a vasalót? Bárhonnan lekapcsolom",
+                icon: "zap",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Garantált biztonság, árammérés és balesetmegelőzés</p>
+                    <p class="mb-4 text-slate-300 font-semibold leading-relaxed">Hogyan oldom meg ezt az Ön otthonában?</p>
+                    <p class="mb-4 text-slate-300">Szerelésmentes, azonnali és falbontás nélküli <strong class="text-white">fogyasztásmérős okoskonnektort</strong> biztosítok Önnek. Csak be kell dugni a fali aljzatba, felprogramozom, és máris teljes mértékben helyi hálózatról felügyelhető.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Távoli észlelés és lekapcsolás:</strong> A telefonos Home Assistant alkalmazással bárhonnan ránézhet a konnektor állapotára, és egyetlen érintéssel áramtalaníthatja a vasalót, hajszárítót vagy egyéb fokozottan tűzveszélyes gépet.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Önműködő biztonsági időkapcsoló:</strong> Beállítom Önnek, hogy ha a vasaló aljzata több mint 45 percig folyamatosan áramot fogyaszt, a ház automatikusan és önállóan kapcsolja le az áramellátását a katasztrófák megelőzésére.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Precíz fogyasztásmérés:</strong> Látni fogja a rákötött eszközök (pl. hűtőszekrény, TV, számítógép) pontos, valós idejű és historikus watt-alapú áramfogyasztását, így kiszűrheti a rejtett rezsifogyasztókat.</div>
+                        </li>
+                    </ul>
+                `
+            },
+            kids: {
+                title: "Értesítést kérek, hogy a gyerekem épségben hazaért",
+                icon: "shield-check",
+                content: `
+                    <p class="font-bold text-sky-400 text-base md:text-lg mb-4">Megnyugtató, automatikus családi értesítések felesleges hívások nélkül</p>
+                    <p class="mb-4 text-slate-300 font-semibold leading-relaxed">Hogyan oldom meg ezt az Ön otthonában?</p>
+                    <p class="mb-4 text-slate-300">Felszerelek egy apró, vezeték nélküli mágneses <strong class="text-white">ajtónyitás-érzékelőt</strong> a bejárati ajtóra, és kívánság szerint a helyiség jelenlét-érzékelőit vagy az okos zárat is hozzákötjük.</p>
+                    <ul class="space-y-3 text-slate-300 text-sm md:text-base">
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Automatikus szülői értesítés:</strong> Amikor az iskola után a gyermek kinyitja az ajtót és megérkezik, a rendszer azonnal felismeri az eseményt a megadott idősávban és push értesítést küld Önnek: "Peti sikeresen hazaérkezett!".</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>Okoszár bevonása:</strong> Ha ujjlenyomatos okos zárat használ, a rendszer pontosan azt is tudja azonosítani, hogy a családtagok közül ki nyitotta ki az ajtót, így teljesen személyre szabott hazaérkező jelenetek és jelzések is futtathatóak.</div>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-emerald-400 font-bold shrink-0">✓</span> 
+                            <div><strong>100% vezetékmentes beépítés:</strong> Az érzékelők finom színei jól idomulnak az ajtókeretekhez, nincs fúrás-faragás, kosz és csúnya kábelezés.</div>
+                        </li>
+                    </ul>
+                `
+            }
+        };
+
+        window.openProblemModal = function(problemId) {
+            const data = problemsData[problemId];
+            if (!data) return;
+
+            const modal = document.getElementById('problem-modal');
+            if (!modal) return;
+            const innerModal = modal.querySelector('.transform');
+            if (!innerModal) return;
+            
+            const titleEl = document.getElementById('problem-title');
+            const contentEl = document.getElementById('problem-content');
+            if (titleEl) titleEl.textContent = data.title;
+            if (contentEl) contentEl.innerHTML = data.content;
+            
+            // Ikon cseréje
+            const iconContainer = document.getElementById('problem-icon-container');
+            if (iconContainer) {
+                iconContainer.innerHTML = `<i data-lucide="${data.icon}" class="w-6 h-6"></i>`;
+            }
+            
+            // Megjelenítés
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+            innerModal.classList.remove('scale-95');
+            innerModal.classList.add('scale-100');
+            
+            // Görgetés letiltása
+            document.body.style.overflow = 'hidden';
+            
+            // Ikonok frissítése az új tartalomhoz
+            lucide.createIcons();
+        };
+
+        window.closeProblemModal = function() {
+            const modal = document.getElementById('problem-modal');
+            if (!modal) return;
+            const innerModal = modal.querySelector('.transform');
+            if (!innerModal) return;
+            
+            // Eltüntetés
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.classList.remove('opacity-100');
+            innerModal.classList.add('scale-95');
+            innerModal.classList.remove('scale-100');
+            
+            // Görgetés visszaállítása
+            document.body.style.overflow = '';
+        };
+
         // Kattintás a modal háttérre bezárja azt
-        document.getElementById('device-modal').addEventListener('click', (e) => {
+        document.getElementById('device-modal')?.addEventListener('click', (e) => {
             if (e.target === e.currentTarget) {
                 closeDeviceModal();
+            }
+        });
+
+        document.getElementById('problem-modal')?.addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeProblemModal();
             }
         });
 
@@ -1570,143 +2288,376 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeDeviceModal();
+                closeProblemModal();
                 closeConfiguratorModal();
                 closeSuccessModal();
             }
         });
 
         // ==========================================
-        // INTERAKTÍV OKOSOTTHON KALKULÁTOR LOGIKA
+        // INTELLIGENS OKOSOTTHON TERVEZŐ (WIZARD) LOGIKA
         // ==========================================
-        const calculatorProducts = [
-            { id: 'aqara_u200', name: 'Okos Ajtózár', price: 109000, icon: 'lock', desc: 'A zár beszerelését, konfigurálását és egyedi üzembe helyezését tartalmazza ujjlenyomat-olvasóval és billentyűzettel együtt.' },
-            { id: 'lampa', name: 'Prémium Okos Izzó', price: 9900, icon: 'lightbulb', desc: 'Szerelésmentes, állítható színhőmérsékletű és fényerejű prémium fényforrás.' },
-            { id: 'sonoff_kapcsolo', name: 'Vezetéknélküli fali kapcsoló', price: 9900, icon: 'toggle-left', desc: 'Vezeték nélküli kapcsoló az okos izzók fali szerelés nélküli irányításához.' },
-            { id: 'szivargas', name: 'Vízszivárgás érzékelő', price: 10900, icon: 'droplets', desc: 'Csőtörések, beázások megelőzésére és riasztásra.' },
-            { id: 'kaputelefon', name: 'Intelligens kaputelefon és kamera', price: 74900, icon: 'bell', desc: 'Távoli videós beszélgetés kapunyitással.' },
-            { id: 'futes', name: 'Okos Fűtés (radiátor)', price: 23900, icon: 'thermometer', desc: 'Kizárólag hagyományos és kiegészítő radiátorok szobánkénti zónavezérlésére.' },
-            { id: 'klima', name: 'Klíma és hűtésvezérlés (klímánként)', price: 14900, icon: 'wind', desc: 'Összekötés a helyi hazaérkező hűsítéssel és távoli kezeléssel.' },
-            { id: 'konnektor', name: 'Okoskonnektor (4db)', price: 35000, icon: 'plug', desc: 'Biztonságos, kizárólag helyi hálózaton kommunikáló, fogyasztásmérős csomag.' },
-            { id: 'nyitas', name: 'Ajtó- és ablaknyitás érzékelő', price: 10900, icon: 'door-closed', desc: 'Behatolás-védelem és fűtési rákapcsolási kontroll.' },
-            { id: 'redony', name: 'Intelligens redőnyvezérlés (szerelésmentes)', price: 24900, icon: 'sliders', desc: 'Kizárólag meglévő gyöngyláncos/golyós láncos redőnyök utólagos, szerelésmentes okosítása.' },
-            { id: 'fofizcsap', name: 'Okos fővízcsap-elzáró szelep', price: 24900, icon: 'shield-alert', desc: 'Azonnali vízelzárás és védelem csőtöréskor.' },
-            { id: 'mozgas', name: 'Mozgás- és jelenlét-érzékelő', price: 16900, icon: 'eye', desc: 'Automatizált világításkapcsolás és biztonság.' },
-            { id: 'ha_zbt2', name: 'Home Assistant Connect ZBT-2 (Thread Border Router)', price: 31000, icon: 'cpu', desc: 'A megbízható helyi Thread hálózati működéshez szükséges koordinátor.' }
-        ];
+        let wizardCurrentStep = 1;
 
-        // Kiválasztott státuszok tárolása
-        const selectedCounts = {};
-        calculatorProducts.forEach(item => {
-            selectedCounts[item.id] = 0;
-        });
+        const wizardSelections = {
+            propertyType: "apartment", // apartment, house
+            rooms: 1, // 1, 2, 3, 4
+            goal: "security", // security, comfort, savings, control
+            functions: ["lighting", "heating", "sensors"], // tömb az aktív funkciókkal
+            counts: {
+                lights: 3,
+                radiators: 1,
+                shutters: 2,
+                sensors: 2
+            }
+        };
 
         // Ár formázó segédfüggvény
         function formatPrice(num) {
             return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
         }
 
-        // Eszközök dinamikus kirajzolása
-        function renderCalculatorDevices() {
-            const container = document.getElementById('calc-device-list');
-            if (!container) return;
-
-            container.innerHTML = calculatorProducts.map(item => {
-                let extraInfo = '';
-                if (item.id === 'aqara_u200') {
-                    extraInfo = `
-                        <div class="mt-2 text-[11px] text-sky-400 bg-sky-500/5 border border-sky-500/10 p-3 rounded-xl leading-relaxed">
-                            Az Okos Ajtózár teljes telepítéssel (109 000 Ft) tartalmazza a zár beszerelését, konfigurálását és üzembe helyezését.<br>
-                            A megbízható helyi működéshez szükséges a Home Assistant Connect ZBT-2 Thread koordinátor (+31 000 Ft).
-                        </div>
-                    `;
-                }
-                return `
-                <div class="p-4 bg-slate-950/40 border border-slate-800 rounded-2xl flex flex-col hover:border-slate-700 transition-all duration-300">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                        <div class="flex items-start gap-3 text-left">
-                            <div class="w-10 h-10 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="${item.icon}" class="w-5 h-5 text-sky-400"></i>
-                            </div>
-                            <div>
-                                <div class="text-sm md:text-base font-bold text-white">${item.name}</div>
-                                <p class="text-xs text-slate-400 leading-normal mt-0.5">${item.desc}</p>
-                                <span class="block text-sky-400 font-bold text-xs mt-1 font-mono">${formatPrice(item.price)} Ft</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Darabszám léptető -->
-                        <div class="flex items-center gap-1.5 self-end sm:self-center shrink-0">
-                            <button onclick="changeCount('${item.id}', -1)" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:border-sky-500/50 text-slate-300 hover:text-white flex items-center justify-center transition-colors font-bold select-none cursor-pointer">
-                                -
-                            </button>
-                            <div class="w-10 text-center font-bold text-white text-sm font-mono" id="calc-count-${item.id}">
-                                0
-                            </div>
-                            <button onclick="changeCount('${item.id}', 1)" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:border-sky-500/50 text-slate-300 hover:text-white flex items-center justify-center transition-colors font-bold select-none cursor-pointer">
-                                +
-                            </button>
-                        </div>
-                    </div>
-                    ${extraInfo}
-                </div>
-                `;
-            }).join('');
-        }
-
-        // Darabszám változtatás kezelő
-        window.changeCount = function(itemId, amount) {
-            const current = selectedCounts[itemId] || 0;
+        // Eszközdarabszámok módosítása +/- gombokkal
+        window.adjustCount = function(type, delta) {
+            if (!wizardSelections.counts) {
+                wizardSelections.counts = { lights: 3, radiators: 1, shutters: 2, sensors: 2 };
+            }
+            let current = wizardSelections.counts[type] || 0;
+            let newVal = current + delta;
+            if (newVal < 0) newVal = 0;
             
-            // Ha az Okos Ajtózár aktív (darabszám > 0), a ZBT-2 manuálisan nem csökkenthető 1 alá!
-            let minVal = 0;
-            if (itemId === 'ha_zbt2' && (selectedCounts['aqara_u200'] || 0) > 0) {
-                minVal = 1;
-            }
-
-            let newVal = Math.max(minVal, current + amount);
-            selectedCounts[itemId] = newVal;
-
-            const counterEl = document.getElementById(`calc-count-${itemId}`);
-            if (counterEl) {
-                counterEl.innerText = newVal;
-            }
-
-            // Automatikus függőségi logika az Okos Ajtózár és a ZBT-2 koordinátor között
-            if (itemId === 'aqara_u200') {
-                if (newVal > 0) {
-                    // Ha kiválasztja az U200-at, automatikusan hozzáadjuk a ZBT-2 Thread koordinátort is (legalább 1 darabot)
-                    if ((selectedCounts['ha_zbt2'] || 0) === 0) {
-                        selectedCounts['ha_zbt2'] = 1;
-                        const zbtEl = document.getElementById('calc-count-ha_zbt2');
-                        if (zbtEl) {
-                            zbtEl.innerText = 1;
-                        }
-                    }
-                } else {
-                    // Ha kiveszi az U200 csomagot (0 darab), a ZBT-2 is automatikusan teljesen kerüljön ki (0 darab)
-                    selectedCounts['ha_zbt2'] = 0;
-                    const zbtEl = document.getElementById('calc-count-ha_zbt2');
-                    if (zbtEl) {
-                        zbtEl.innerText = 0;
-                    }
-                }
-            }
-
-            recalculateTotal();
+            wizardSelections.counts[type] = newVal;
+            
+            // HTML-ben lévő érték frissítése
+            const el = document.getElementById(`count-${type}`);
+            if (el) el.innerText = newVal;
+            
+            // Újrakalkulálás
+            recalculateWizardBudget();
         };
 
-        let lastGeneratedMailBody = "";
-        let lastGeneratedMailSubject = "";
+        window.updatePropertySelection = function(radio) {
+            wizardSelections.propertyType = radio.value;
+            recalculateWizardBudget();
+        };
 
-        // Okosotthon Konfigurátor megnyitás és bezárás
-        window.openConfiguratorModal = function() {
-            const modal = document.getElementById('configurator-modal');
-            const innerModal = modal.querySelector('.transform');
+        window.updateRoomsSelection = function(radio) {
+            const r = parseInt(radio.value, 10);
+            wizardSelections.rooms = r;
             
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            modal.classList.add('opacity-100');
-            innerModal.classList.remove('scale-95');
-            innerModal.classList.add('scale-100');
+            // Alapértelmezett darabszámok beállítása a szobaszám szerint
+            let lights = 3;
+            let radiators = 1;
+            let shutters = 2;
+            let sensors = 2;
+            
+            if (r === 2) {
+                lights = 6;
+                radiators = 2;
+                shutters = 4;
+                sensors = 3;
+            } else if (r === 3) {
+                lights = 9;
+                radiators = 3;
+                shutters = 6;
+                sensors = 5;
+            } else if (r === 4) {
+                lights = 12;
+                radiators = 4;
+                shutters = 8;
+                sensors = 7;
+            }
+            
+            wizardSelections.counts = {
+                lights: lights,
+                radiators: radiators,
+                shutters: shutters,
+                sensors: sensors
+            };
+            
+            // HTML értékek frissítése
+            ['lights', 'radiators', 'shutters', 'sensors'].forEach(type => {
+                const el = document.getElementById(`count-${type}`);
+                if (el) el.innerText = wizardSelections.counts[type];
+            });
+            
+            recalculateWizardBudget();
+        };
+
+        window.updateGoalSelection = function(radio) {
+            wizardSelections.goal = radio.value;
+            recalculateWizardBudget();
+        };
+
+        // Lépés-váltó vezérlés
+        window.goNextStep = function() {
+            if (wizardCurrentStep >= 4) return;
+
+            // Lépés validálás a 3-as lépésben (Funkcióválasztó lépés)
+            if (wizardCurrentStep === 3) {
+                const checkedBoxes = document.querySelectorAll('input[name="desired_functions"]:checked');
+                wizardSelections.functions = Array.from(checkedBoxes).map(cb => cb.value);
+                
+                recalculateWizardBudget();
+            }
+
+            // Régi lépés elrejtése
+            const prevStepEl = document.getElementById(`wizard-step-${wizardCurrentStep}`);
+            if (prevStepEl) prevStepEl.classList.add('hidden');
+            
+            wizardCurrentStep++;
+            
+            // Új lépés mutatása
+            const nextStepEl = document.getElementById(`wizard-step-${wizardCurrentStep}`);
+            if (nextStepEl) nextStepEl.classList.remove('hidden');
+
+            // Progress bar elemek stílusának frissítése
+            updateWizardProgressBar();
+
+            // Gombok frissítése
+            updateWizardButtons();
+
+            // Automata felgördülés a tetejére a modalban
+            const modal = document.getElementById('configurator-modal');
+            if (modal) modal.scrollTop = 0;
+        };
+
+        window.goPrevStep = function() {
+            if (wizardCurrentStep <= 1) return;
+
+            const prevStepEl = document.getElementById(`wizard-step-${wizardCurrentStep}`);
+            if (prevStepEl) prevStepEl.classList.add('hidden');
+            wizardCurrentStep--;
+            const nextStepEl = document.getElementById(`wizard-step-${wizardCurrentStep}`);
+            if (nextStepEl) nextStepEl.classList.remove('hidden');
+
+            updateWizardProgressBar();
+            updateWizardButtons();
+
+            const modal = document.getElementById('configurator-modal');
+            if (modal) modal.scrollTop = 0;
+        };
+
+        function updateWizardProgressBar() {
+            for (let i = 1; i <= 4; i++) {
+                const stepEl = document.getElementById(`prog-step-${i}`);
+                if (!stepEl) continue;
+
+                const indicatorSpan = stepEl.querySelector('span');
+
+                if (i <= wizardCurrentStep) {
+                    stepEl.classList.remove('text-slate-400', 'text-slate-500');
+                    stepEl.classList.add('text-sky-450', 'font-black');
+                    
+                    if (indicatorSpan) {
+                        indicatorSpan.classList.remove('bg-slate-900', 'border-slate-800');
+                        indicatorSpan.classList.add('bg-sky-500/10', 'border-sky-400', 'text-sky-400');
+                    }
+                } else {
+                    stepEl.classList.add('text-slate-400');
+                    stepEl.classList.remove('text-sky-450', 'font-black');
+                    
+                    if (indicatorSpan) {
+                        indicatorSpan.classList.add('bg-slate-900', 'border-slate-800');
+                        indicatorSpan.classList.remove('bg-sky-500/10', 'border-sky-400', 'text-sky-400');
+                    }
+                }
+            }
+        }
+
+        function updateWizardButtons() {
+            const btnPrev = document.getElementById('wizard-btn-prev');
+            const btnNext = document.getElementById('wizard-btn-next');
+
+            if (!btnPrev || !btnNext) return;
+
+            // Vissza gomb állapota
+            if (wizardCurrentStep === 1) {
+                btnPrev.classList.add('opacity-50', 'pointer-events-none');
+            } else {
+                btnPrev.classList.remove('opacity-50', 'pointer-events-none');
+            }
+
+            // Következő / Eredmény megtekintése gomb állapota és felirata
+            if (wizardCurrentStep === 4) {
+                // A 4. lépés az eredmény és ajánlatkérő űrlap lapja, itt a "Következő" felesleges
+                btnNext.classList.add('hidden');
+            } else {
+                btnNext.classList.remove('hidden');
+                if (wizardCurrentStep === 3) {
+                    btnNext.innerHTML = `Kalkuláció elkészítése <i data-lucide="calculator" class="w-4 h-4"></i>`;
+                } else {
+                    btnNext.innerHTML = `Következő <i data-lucide="arrow-right" class="w-4 h-4"></i>`;
+                }
+            }
+            lucide.createIcons();
+        }
+
+        // Fő büdzsé számolási mechanizmus
+        window.recalculateWizardBudget = function() {
+            // Beolvassuk az aktív checkboxokat
+            const checkedBoxes = document.querySelectorAll('input[name="desired_functions"]:checked');
+            if (checkedBoxes.length > 0) {
+                wizardSelections.functions = Array.from(checkedBoxes).map(cb => cb.value);
+            } else {
+                wizardSelections.functions = [];
+            }
+
+            // counts biztonságos betöltése
+            if (!wizardSelections.counts) {
+                wizardSelections.counts = { lights: 3, radiators: 1, shutters: 2, sensors: 2 };
+            }
+            const counts = wizardSelections.counts;
+
+            let total = 100000; // Alapdíj mindig 100 000 Ft (helyi szerver, szoftverprogramozás, fizikai kisfeszültségű beépítés)
+            let deviceCount = 1; // 1 db Home Assistant központi egység alapból
+
+            // Ingatlan szorzók / plusz költségek
+            if (wizardSelections.propertyType === "house") {
+                total += 30000; // Plusz hatótáv-növelők és erősített routerek díja családi házakhoz
+                deviceCount += 1; // +1 extra jelerősítő modul
+            }
+
+            // Okos Világítás - Alapvető (Okos izzók és fali gombok)
+            if (wizardSelections.functions.includes("lighting_basic")) {
+                total += counts.lights * 12000; 
+                deviceCount += counts.lights; 
+            }
+
+            // Okos Világítás - Pro (230V fali világításkapcsolók és rejtett relék)
+            if (wizardSelections.functions.includes("lighting_pro")) {
+                total += counts.lights * 16000; 
+                deviceCount += counts.lights; 
+            }
+
+            // Zónánkénti Okos Fűtés - Alapvető (Okos radiátorszelepek)
+            if (wizardSelections.functions.includes("heating_basic")) {
+                total += counts.radiators * 22000;
+                deviceCount += counts.radiators; 
+            }
+
+            // Okos Fűtőrendszer fali vezérlés - Pro (230V fali termosztátok és szelepek)
+            if (wizardSelections.functions.includes("heating_pro")) {
+                total += 35000;
+                deviceCount += 1; 
+            }
+
+            // Okos Klíma szabályozás
+            if (wizardSelections.functions.includes("climate")) {
+                // Alapvető szoftveres párosítás és távvezérlő hardvermodul
+                total += 25000;
+                deviceCount += 1;
+            }
+
+            // Biztonsági érzékelők
+            if (wizardSelections.functions.includes("sensors")) {
+                total += counts.sensors * 12000;
+                deviceCount += counts.sensors;
+            }
+
+            // Bejárati okos Ajtózár (Aqara U200 komplett szett)
+            if (wizardSelections.functions.includes("lock")) {
+                total += 119000;
+                deviceCount += 2; // Okos zár + Kültéri ujjlenyomat-olvasó panel
+            }
+
+            // Vízvédelem (Szelepmozgató + 2 db szivárgásérzékelő)
+            if (wizardSelections.functions.includes("water_safety")) {
+                total += 45000; 
+                deviceCount += 3;
+            }
+
+            // Redőnyök (Sötétítés és redőnyvezérlés)
+            if (wizardSelections.functions.includes("shutters")) {
+                total += counts.shutters * 20000; 
+                deviceCount += counts.shutters;
+            }
+
+            // Okos garázskapu-nyitó (230V)
+            if (wizardSelections.functions.includes("garage_opener")) {
+                total += 29000;
+                deviceCount += 1;
+            }
+
+            // Okos ledszalag (3m)
+            if (wizardSelections.functions.includes("led_lighting")) {
+                total += 20000;
+                deviceCount += 1;
+            }
+
+            // Okos kisállat-etető
+            if (wizardSelections.functions.includes("pet_feeding")) {
+                total += 39000;
+                deviceCount += 1;
+            }
+
+            // Rendszernév finomítása az elsődleges cél alapján
+            let systemName = "HelyiOkos Premium Home Assistant Rendszer";
+            if (wizardSelections.goal === "security") {
+                systemName = "HelyiOkos Családi Biztonsági Rendszer";
+            } else if (wizardSelections.goal === "comfort") {
+                systemName = "HelyiOkos Premium Életminőség Rendszer";
+            } else if (wizardSelections.goal === "savings") {
+                systemName = "HelyiOkos Rezsicsökkentő Eco Rendszer";
+            } else if (wizardSelections.goal === "control") {
+                systemName = "HelyiOkos Személyre Szabott Offline Rendszer";
+            }
+
+            // Értékek beírása a HTML-be
+            const sysNameEl = document.getElementById('wizard-result-system-name');
+            const devCountEl = document.getElementById('wizard-result-device-count');
+            const totalEl = document.getElementById('wizard-result-grand-total');
+
+            if (sysNameEl) sysNameEl.innerText = systemName;
+            if (devCountEl) devCountEl.innerText = `${deviceCount} db hálózati okoseszköz`;
+            if (totalEl) totalEl.innerText = `${formatPrice(total)} Ft`;
+
+            // Dinamikus 230V villanyszerelési figyelmeztetés frissítése
+            const has230V = wizardSelections.functions.some(f => ["lighting_pro", "heating_pro", "garage_opener"].includes(f));
+            const inclusionNoteEl = document.getElementById('wizard-result-inclusion-note');
+            if (inclusionNoteEl) {
+                if (has230V) {
+                    inclusionNoteEl.innerHTML = `Tartalmazza az eszközöket, a lokális központot, a szoftverprogramozást és a fizikai beépítést!<br><span class="text-amber-400 font-bold block mt-1.5 leading-relaxed">⚡ Figyelem: A kiválasztott 235V/230V fali bekötések villanyszerelési munkadíját a helyszíni felmérés alapján külön számoljuk el.</span>`;
+                } else {
+                    inclusionNoteEl.innerHTML = `Tartalmazza az összes eszközt, a lokális központot, a fizikai tiszta beszerelést, szoftveres párosítást és az egyedi szabályok felprogramozását!`;
+                }
+            }
+
+            // Elmentjük globálisan a számított végösszeget és eszközszámot a beküldéshez
+            window.latestCalculatedTotal = total;
+            window.latestCalculatedDeviceCount = deviceCount;
+            window.latestCalculatedSystemName = systemName;
+        };
+
+        // Konfigurátor megnyitás
+        window.openConfiguratorModal = function() {
+            // Alaphelyzetbe állítás megnyitáskor
+            wizardCurrentStep = 1;
+            document.getElementById('wizard-buttons-bar')?.classList.remove('hidden');
+            document.getElementById('wizard-progress-bar-container')?.classList.remove('hidden');
+
+            for (let i = 1; i <= 5; i++) {
+                const pane = document.getElementById(`wizard-step-${i}`);
+                if (pane) {
+                    if (i === 1) pane.classList.remove('hidden');
+                    else pane.classList.add('hidden');
+                }
+            }
+
+            updateWizardProgressBar();
+            updateWizardButtons();
+            recalculateWizardBudget();
+
+            const modal = document.getElementById('configurator-modal');
+            if (modal) {
+                const innerModal = modal.querySelector('.transform');
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modal.classList.add('opacity-100');
+                if (innerModal) {
+                    innerModal.classList.remove('scale-95');
+                    innerModal.classList.add('scale-100');
+                }
+            }
             
             document.body.style.overflow = 'hidden';
             lucide.createIcons();
@@ -1714,190 +2665,200 @@
 
         window.closeConfiguratorModal = function() {
             const modal = document.getElementById('configurator-modal');
-            const innerModal = modal.querySelector('.transform');
-            
-            modal.classList.add('opacity-0', 'pointer-events-none');
-            modal.classList.remove('opacity-100');
-            innerModal.classList.add('scale-95');
-            innerModal.classList.remove('scale-100');
+            if (modal) {
+                const innerModal = modal.querySelector('.transform');
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modal.classList.remove('opacity-100');
+                if (innerModal) {
+                    innerModal.classList.add('scale-95');
+                    innerModal.classList.remove('scale-100');
+                }
+            }
             
             document.body.style.overflow = '';
         };
 
         // Kívülre kattintás a konfigurátor modal bezárásához
-        document.getElementById('configurator-modal').addEventListener('click', (e) => {
+        document.getElementById('configurator-modal')?.addEventListener('click', (e) => {
             if (e.target === e.currentTarget) {
                 closeConfiguratorModal();
             }
         });
 
-        // Összeg és részletek újraszámítása
-        function recalculateTotal() {
-            let total = 100000;
-            
-            let activeItemsHtml = `
-                <div class="flex justify-between items-center bg-sky-500/5 p-2.5 rounded-xl border border-sky-500/20">
-                    <span class="font-bold text-slate-300">Okosotthon Rendszer Alapcsomag</span>
-                    <span class="font-bold text-sky-400 font-mono text-right">100 000 Ft</span>
-                </div>
-            `;
-
-            calculatorProducts.forEach(item => {
-                const count = selectedCounts[item.id] || 0;
-                if (count > 0) {
-                    const rowPrice = item.price * count;
-                    total += rowPrice;
-
-                    activeItemsHtml += `
-                        <div class="flex justify-between items-center bg-slate-950/40 p-2.5 rounded-xl border border-slate-800/80">
-                            <div class="pr-2 leading-tight">
-                                <span class="font-bold text-slate-200 block text-[11px] mb-0.5">${item.name}</span>
-                                <span class="text-[10px] text-slate-500 font-mono">${count} db x ${formatPrice(item.price)} Ft</span>
-                            </div>
-                            <span class="font-bold text-sky-400 font-mono shrink-0">${formatPrice(rowPrice)} Ft</span>
-                        </div>
-                    `;
-                }
-            });
-
-            const summaryContainer = document.getElementById('calc-summary-items');
-            if (summaryContainer) {
-                summaryContainer.innerHTML = activeItemsHtml;
-            }
-
-            const grandTotalEl = document.getElementById('calc-live-grand-total');
-            if (grandTotalEl) {
-                grandTotalEl.innerText = `${formatPrice(total)} Ft`;
-            }
-
-            // Dinamikus bónusz ajánló doboz vezérlése (Izzó mellé fali kapcsoló)
-            const recBoxEl = document.getElementById('calc-recommendation-box');
-            if (recBoxEl) {
-                const hasIzzo = (selectedCounts['lampa'] || 0) > 0;
-                const hasKapcsolo = (selectedCounts['sonoff_kapcsolo'] || 0) > 0;
-                if (hasIzzo && !hasKapcsolo) {
-                    recBoxEl.classList.remove('hidden');
-                } else {
-                    recBoxEl.classList.add('hidden');
-                }
-            }
-        }
-
-        window.checkRecommendation = function() {
-            const recBoxEl = document.getElementById('calc-recommendation-box');
-            if (recBoxEl) {
-                const hasIzzo = (selectedCounts['lampa'] || 0) > 0;
-                const hasKapcsolo = (selectedCounts['sonoff_kapcsolo'] || 0) > 0;
-                if (hasIzzo && !hasKapcsolo) {
-                    recBoxEl.classList.remove('hidden');
-                } else {
-                    recBoxEl.classList.add('hidden');
-                }
-            }
-        };
+        let lastGeneratedMailBody = "";
+        let lastGeneratedMailSubject = "";
 
         // Messenger Overlay vezérlés
         window.openMessengerNotice = function() {
             const overlay = document.getElementById('messenger-notice-overlay');
-            const inner = overlay.querySelector('.transform');
-            overlay.classList.remove('opacity-0', 'pointer-events-none');
-            overlay.classList.add('opacity-100');
-            inner.classList.remove('scale-95');
-            inner.classList.add('scale-100');
+            if (overlay) {
+                const inner = overlay.querySelector('.transform');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                overlay.classList.add('opacity-100');
+                if (inner) {
+                    inner.classList.remove('scale-95');
+                    inner.classList.add('scale-100');
+                }
+            }
             lucide.createIcons();
         };
 
         window.closeMessengerNotice = function() {
             const overlay = document.getElementById('messenger-notice-overlay');
-            const inner = overlay.querySelector('.transform');
-            overlay.classList.add('opacity-0', 'pointer-events-none');
-            overlay.classList.remove('opacity-100');
-            inner.classList.add('scale-95');
-            inner.classList.remove('scale-100');
+            if (overlay) {
+                const inner = overlay.querySelector('.transform');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                overlay.classList.remove('opacity-100');
+                if (inner) {
+                    inner.classList.add('scale-95');
+                    inner.classList.remove('scale-100');
+                }
+            }
         };
 
-        // Egyedi konfigurációs e-mail megküldése kérése
+        // Új, lépésenkénti konfiguráció elküldése
         window.sendCustomConfiguration = function() {
             const nameInput = document.getElementById('calc-name');
             const phoneInput = document.getElementById('calc-phone');
             const emailInput = document.getElementById('calc-email');
+            const addressInput = document.getElementById('calc-survey-address');
 
-            const name = nameInput.value.trim();
-            const phone = phoneInput.value.trim();
-            const email = emailInput.value.trim();
+            const name = nameInput ? nameInput.value.trim() : '';
+            const phone = phoneInput ? phoneInput.value.trim() : '';
+            const email = emailInput ? emailInput.value.trim() : '';
+            const address = addressInput ? addressInput.value.trim() : '';
 
-            // Egyszerű validáció vörös kerettel
+            // Primitív validálás vörös keretekkel
             let valid = true;
 
-            [nameInput, phoneInput, emailInput].forEach(input => {
-                input.classList.remove('border-red-500');
-                input.classList.add('border-slate-800');
+            [nameInput, phoneInput, emailInput, addressInput].forEach(input => {
+                if (input) {
+                    input.classList.remove('border-red-500');
+                    input.classList.add('border-slate-800');
+                }
             });
 
             if (!name) {
-                nameInput.classList.remove('border-slate-800');
-                nameInput.classList.add('border-red-500');
+                if (nameInput) {
+                    nameInput.classList.remove('border-slate-800');
+                    nameInput.classList.add('border-red-500');
+                }
                 valid = false;
             }
             if (!email || !email.includes('@')) {
-                emailInput.classList.remove('border-slate-800');
-                emailInput.classList.add('border-red-500');
+                if (emailInput) {
+                    emailInput.classList.remove('border-slate-800');
+                    emailInput.classList.add('border-red-500');
+                }
+                valid = false;
+            }
+            if (!address) {
+                if (addressInput) {
+                    addressInput.classList.remove('border-slate-800');
+                    addressInput.classList.add('border-red-500');
+                }
                 valid = false;
             }
 
             if (!valid) {
-                const firstInvalid = !name ? nameInput : emailInput;
-                firstInvalid.focus();
+                const firstInvalid = !name ? nameInput : (!email || !email.includes('@') ? emailInput : addressInput);
+                if (firstInvalid) firstInvalid.focus();
                 return;
             }
 
-            // Szuper tiszta, rendkívül rövid és ütközésmentes 6-karakteres azonosító (Pl. #HO-4F9D2B)
-            // A Date.now() utolsó 4 karaktere base36-ban folyamatosan és gyorsan változik, mögötte egy 2-jegyű random kód, így összesen 6 szimbólum reprezentálja az egyedi kódot.
+            // trackingId generálás (6 szimbólumos, pl. #HO-ABCD44)
             const base36Time = Date.now().toString(36).slice(-4).toUpperCase();
             const randomChar = Math.floor(10 + Math.random() * 80).toString(36).toUpperCase();
             const trackingId = `#HO-${base36Time}${randomChar}`;
 
-            // Kigyűjtjük az eszközöket az API számára
-            let items = [];
-            let total = 100000;
-            let devicesText = "  - OKOSOTTHON RENDSZER ALAPCSOMAG (A rendszer agya): 1 db - 100 000 Ft\n";
+            // Választott jellemzők fordítása
+            const propTypeHu = wizardSelections.propertyType === "house" ? "Családi ház" : "Társasházi lakás";
+            
+            let goalHu = "Biztonság & Védelem";
+            if (wizardSelections.goal === "comfort") goalHu = "Prémium Kényelem & Automatizáció";
+            else if (wizardSelections.goal === "savings") goalHu = "Rezsicsökkentés & Zöld Energia";
+            else if (wizardSelections.goal === "control") goalHu = "Helyi Offline Vezérlés & Szerver";
 
-            calculatorProducts.forEach(item => {
-                const count = selectedCounts[item.id] || 0;
-                if (count > 0) {
-                    const rowPrice = item.price * count;
-                    total += rowPrice;
-                    devicesText += `  - ${item.name}: ${count} db - ${formatPrice(rowPrice)} Ft\n`;
-                    items.push({
-                        name: item.name,
-                        price: item.price,
-                        count: count
-                    });
+            const functionsHuMap = {
+                lighting_basic: "Okos izzók és fali gombok",
+                lighting_pro: "Okos fali fali- és rejtett kapcsolók (230V)",
+                heating_basic: "Fűtés zónásítás (Okos radiátorszelepek)",
+                heating_pro: "Okos fali fűtéstermosztátok és szelepek (230V)",
+                sensors: "Biztonsági Nyitás- és Mozgásszenzorok",
+                lock: "Ujjlenyomatos Okoszár (Aqara U200)",
+                water_safety: "Vízszivárgás- és Főcsapelzáró védelem",
+                shutters: "Automata Árnyékoló- és Redőnyvezérlés",
+                garage_opener: "Okos garázskapu & kapuvezérlés (235V/230V)",
+                led_lighting: "Okos ledszalag (3m)",
+                pet_feeding: "Okos kisállat-etető",
+                climate: "Okos Klíma szabályozás"
+            };
+
+            const selFunctionsHu = wizardSelections.functions.map(f => functionsHuMap[f] || f).join(", ");
+
+            const estimatedTotal = window.latestCalculatedTotal || 100000;
+            const estimatedDeviceCount = window.latestCalculatedDeviceCount || 1;
+            const systemName = window.latestCalculatedSystemName || "HelyiOkos Speciális Rendszer";
+
+            const emailSubject = `Új helyszíni felmérés kérés [Azonosító: #${trackingId}] - ${name}`;
+
+            // Különválasztás az e-mail sablonhoz: Alapvető vs 230V villanyszerelős funkciók
+            const basicFunctions = [];
+            const proFunctions = [];
+
+            wizardSelections.functions.forEach(f => {
+                const nameHu = functionsHuMap[f] || f;
+                if (["lighting_pro", "heating_pro", "garage_opener"].includes(f)) {
+                    proFunctions.push(nameHu);
+                } else {
+                    let desc = nameHu;
+                    if (f === "shutters") {
+                        desc += " (Meglévő redőny okosítása / Egyedi ár)";
+                    }
+                    basicFunctions.push(desc);
                 }
             });
 
-            const emailSubject = `Új ajánlatkérés [Azonosító: #${trackingId}] - ${name}`;
-            const emailBody = `HelyiOkos egyedi okosotthon kalkuláció
-Ajánlatszám: #${trackingId}
+            const has230V = proFunctions.length > 0;
 
-Kapcsolati adatok:
-----------------------------------------------
+            const emailBody = `HelyiOkos egyedi okosotthon kalkuláció & felmérési igény
+Ajánlatszám: ${trackingId}
+
+KAPCSOLATI ADATOK:
+------------------------------------
 Név: ${name}
 Telefonszám: ${phone || "Nincs megadva"}
 E-mail: ${email}
+Felmérés címe: ${address}
 
-Összeállított egyedi csomag:
-----------------------------------------------
-${devicesText}
-----------------------------------------------
-Várható teljes végösszeg beépítéssel együtt: ${formatPrice(total)} Ft
+INGATLAN ÉS FÓKUSZ:
+------------------------------------
+Ingatlan típusa: ${propTypeHu}
+Helyiségek száma: ${wizardSelections.rooms} szoba
+Elsődleges cél / fókusz: ${goalHu}
 
-Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
+KIVÁLASZTOTT ALAP FUNKCIÓK (Tiszta, roncsolásmentes beépítés):
+------------------------------------
+${basicFunctions.length > 0 ? basicFunctions.map(f => "- " + f).join("\n") : "- Nincs kiválasztva"}
+
+KIVÁLASZTOTT ERŐSÁRAMÚ FUNKCIÓK (230V villanyszerelés szükséges):
+------------------------------------
+${proFunctions.length > 0 ? proFunctions.map(f => "- " + f).join("\n") : "- Nincs kiválasztva"}
+${has230V ? "\n⚡ FIGYELEM: A 230V-os eszközök bekötéséhez fali villanyszerelési munkák szükségesek. A villanyszerelő munkadíjait a helyszíni felmérés alapján külön számoljuk el." : ""}
+
+AZ AJÁNLOTT RENDSZER RÉSZLETEI:
+------------------------------------
+Konfiguráció neve: ${systemName}
+Becsült modul darabszám: ${estimatedDeviceCount} db hálózati okoseszköz + Home Assistant lokális szerver
+Várható teljes végösszeg beépítéssel és konfigurálással: ${formatPrice(estimatedTotal)} Ft
+
+A megadott ár tartalmazza a helyi okosotthon központot (mini-PC alapú offline szerver), az összes kiválasztott okoseszközt, azok fizikai elhelyezését/beszerelését, szoftveres párosítását, a helyi hálózati lefedettség biztosítását, és az egyedi okos szabályok/automatizációk felprogramozását!
+${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizikai villanyszerelői munkadíját nem tartalmazza, ez a helyszíni felmérés során kerül pontosításra." : ""}`;
 
             lastGeneratedMailSubject = emailSubject;
             lastGeneratedMailBody = emailBody;
 
-            // Betöltési állapot vizuális visszajelzése
+            // Betöltési állapot visszajelzése
             const submitBtn = document.getElementById('calc-submit-btn');
             const origBtnHtml = submitBtn ? submitBtn.innerHTML : '';
             if (submitBtn) {
@@ -1906,17 +2867,12 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
                 lucide.createIcons();
             }
 
-            // =========================================================================
-            // PRÉMIUM E-MAIL INTEGRÁCIÓS BEÁLLÍTÁS (Google Apps Script - 100% White-Label)
-            // =========================================================================
-            // Az e-mail 100%-ban márkajelzés nélkül, gyönyörű egyedi dizájnnal
-            // és a saját Gmail fiókodról (profilképeddel) megy ki az ügyfeleknek és neked!
+            // Google Apps Script küldés
             const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwIu3kcAPtTSZjQ9o8KztX9z8bXHQsOT85BaEyUhMQxGsYgjVDl1DscToXp8wF863EP/exec";
-            // =========================================================================
 
             const emailPromise = fetch(GOOGLE_SCRIPT_URL.trim(), {
                 method: 'POST',
-                mode: 'no-cors', // CORS kompatibilis beküldés
+                mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -1925,74 +2881,104 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
                     name: name,
                     email: email,
                     phone: phone || "Nincs megadva",
-                    total: total,
-                    items: items
+                    address: address,
+                    total: estimatedTotal,
+                    propertyType: propTypeHu,
+                    rooms: wizardSelections.rooms,
+                    goal: goalHu,
+                    basicFunctions: basicFunctions,
+                    proFunctions: proFunctions,
+                    has230V: has230V,
+                    systemName: systemName,
+                    deviceCount: estimatedDeviceCount,
+                    items: [
+                        { name: "Csomagnév", price: estimatedTotal, count: 1 },
+                        { name: `Ingatlan: ${propTypeHu}, ${wizardSelections.rooms} szoba`, price: 0, count: 1 },
+                        { name: `Cél: ${goalHu}`, price: 0, count: 1 },
+                        { name: `Alap funkciók: ${basicFunctions.join(", ") || "nincs"}`, price: 0, count: 1 },
+                        { name: `230V funkciók: ${proFunctions.join(", ") || "nincs"}`, price: 0, count: 1 }
+                    ]
                 })
             })
             .then(() => {
-                console.log("[HelyiOkos API]: Sikeres küldés Google Apps Script segítségével!");
+                console.log("[HelyiOkos API]: Sikeres küldés!");
                 return { success: true };
             });
 
             emailPromise
             .catch(err => {
-                console.error("[HelyiOkos Küldés Sikertelen]:", err);
+                console.error("[HelyiOkos Küldés Hiba]:", err);
             })
             .finally(() => {
-                // Visszaállítjuk a gombot
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = origBtnHtml;
                     lucide.createIcons();
                 }
 
-                // Siker modal kitöltése és aktiválása
+                // Sikeres küldés modal adatok - prefill phone and address for Calendly too!
                 window.lastCalculatorData = {
                     name: name,
                     email: email,
+                    phone: phone,
+                    address: address,
                     trackingId: trackingId
                 };
 
-                document.getElementById('success-user-name').textContent = name;
-                document.getElementById('success-tracking-id').textContent = trackingId;
-                
-                // Beállítjuk a Messenger overlay-be is a számot azonosításra
+                const userEl = document.getElementById('success-user-name');
+                if (userEl) userEl.textContent = name;
+
+                const trackingEl = document.getElementById('success-tracking-id');
+                if (trackingEl) trackingEl.textContent = trackingId;
+
                 const msgNoticeIds = document.querySelectorAll('#messenger-notice-id');
                 msgNoticeIds.forEach(el => {
                     el.textContent = trackingId;
                 });
 
-                document.getElementById('success-copy-text').textContent = emailBody;
+                const copyTextEl = document.getElementById('success-copy-text');
+                if (copyTextEl) copyTextEl.textContent = emailBody;
 
-                // Bezárjuk a konfigurátor modalt és megnyitjuk a sikeres kalkuláció modalt
+                // Bezárjuk a tervező modalt, és megnyitjuk a befejező sikeres modalt
                 closeConfiguratorModal();
 
                 const successModal = document.getElementById('success-calculator-modal');
-                const innerModal = successModal.querySelector('.transform');
-                
-                successModal.classList.remove('opacity-0', 'pointer-events-none');
-                successModal.classList.add('opacity-100');
-                innerModal.classList.remove('scale-95');
-                innerModal.classList.add('scale-100');
-                document.body.style.overflow = 'hidden';
+                if (successModal) {
+                    const innerModal = successModal.querySelector('.transform');
+                    successModal.classList.remove('opacity-0', 'pointer-events-none');
+                    successModal.classList.add('opacity-100');
+                    if (innerModal) {
+                        innerModal.classList.remove('scale-95');
+                        innerModal.classList.add('scale-100');
+                    }
+                    document.body.style.overflow = 'hidden';
+                }
             });
         };
 
         window.closeSuccessModal = function() {
             const successModal = document.getElementById('success-calculator-modal');
-            const innerModal = successModal.querySelector('.transform');
-            
-            successModal.classList.add('opacity-0', 'pointer-events-none');
-            successModal.classList.remove('opacity-100');
-            innerModal.classList.add('scale-95');
-            innerModal.classList.remove('scale-100');
+            if (successModal) {
+                const innerModal = successModal.querySelector('.transform');
+                successModal.classList.add('opacity-0', 'pointer-events-none');
+                successModal.classList.remove('opacity-100');
+                if (innerModal) {
+                    innerModal.classList.add('scale-95');
+                    innerModal.classList.remove('scale-100');
+                }
+            }
             document.body.style.overflow = '';
         };
 
         window.openCalendlyPopup = function() {
+            // Close the success modal first so it doesn't mask the Calendly popup
+            closeSuccessModal();
+
             const data = window.lastCalculatorData || {};
             const name = data.name || '';
             const email = data.email || '';
+            const phone = data.phone || '';
+            const address = data.address || '';
             const trackingId = data.trackingId || '';
             const cleanTrackingId = trackingId.replace('#', ''); // Pl. HO-1024
 
@@ -2002,8 +2988,12 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
                     prefill: {
                         name: name,
                         email: email,
+                        phone: phone,
+                        location: address,
                         customAnswers: {
-                            a2: trackingId
+                            a1: address,
+                            a2: trackingId,
+                            a3: phone
                         }
                     },
                     utm: {
@@ -2016,16 +3006,25 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
         };
 
         window.openCalendlyPopupFull = function() {
+            // Close the success modal first so it doesn't mask anything
+            closeSuccessModal();
+
             const data = window.lastCalculatorData || {};
             const name = data.name || '';
             const email = data.email || '';
+            const phone = data.phone || '';
+            const address = data.address || '';
             const trackingId = data.trackingId || '';
             const cleanTrackingId = trackingId.replace('#', '');
 
             const url = `https://calendly.com/nagylevente-tech/30min?background_color=020617&text_color=ffffff&primary_color=7dd3fc` 
                 + (name ? `&name=${encodeURIComponent(name)}` : '')
                 + (email ? `&email=${encodeURIComponent(email)}` : '')
+                + (phone ? `&phone=${encodeURIComponent(phone)}` : '')
                 + `&a2=${encodeURIComponent(trackingId)}`
+                + (phone ? `&a3=${encodeURIComponent(phone)}` : '')
+                + (address ? `&location=${encodeURIComponent(address)}` : '')
+                + (address ? `&a1=${encodeURIComponent(address)}` : '')
                 + (cleanTrackingId ? `&utm_campaign=${encodeURIComponent(cleanTrackingId)}` : '');
             
             window.open(url, '_blank');
@@ -2072,9 +3071,8 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
             }
         };
 
-        // Renderelés futtatása betöltéskor
-        renderCalculatorDevices();
-        recalculateTotal();
+        // Tervező büdzsé kiszámítása betöltéskor
+        recalculateWizardBudget();
 
         // Inicializáljuk az ikonokat
         lucide.createIcons();
@@ -2111,21 +3109,25 @@ Hivatkozzon az ajánlatszámra a gyors egyeztetéshez!`;
         // Menü bezárása ha rákattintunk egy linkre
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+                if (mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
             });
         });
 
         // Navigációs háttér váltás görgetéskor
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('py-2', 'bg-slate-950/95');
-                nav.classList.remove('lg:h-20');
-                nav.classList.add('h-16');
-            } else {
-                nav.classList.remove('py-2', 'bg-slate-950/95');
-                nav.classList.add('lg:h-20');
-                nav.classList.remove('h-16');
+            if (nav) {
+                if (window.scrollY > 50) {
+                    nav.classList.add('py-2', 'bg-slate-950/95');
+                    nav.classList.remove('lg:h-20');
+                    nav.classList.add('h-16');
+                } else {
+                    nav.classList.remove('py-2', 'bg-slate-950/95');
+                    nav.classList.add('lg:h-20');
+                    nav.classList.remove('h-16');
+                }
             }
         });
     </script>
