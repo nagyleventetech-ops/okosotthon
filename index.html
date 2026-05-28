@@ -2991,9 +2991,9 @@ ${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizik
                         phone: phone,
                         location: address,
                         customAnswers: {
-                            a1: address,
+                            a1: phone,
                             a2: trackingId,
-                            a3: phone
+                            a3: address
                         }
                     },
                     utm: {
@@ -3022,9 +3022,9 @@ ${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizik
                 + (email ? `&email=${encodeURIComponent(email)}` : '')
                 + (phone ? `&phone=${encodeURIComponent(phone)}` : '')
                 + `&a2=${encodeURIComponent(trackingId)}`
-                + (phone ? `&a3=${encodeURIComponent(phone)}` : '')
+                + (address ? `&a3=${encodeURIComponent(address)}` : '')
                 + (address ? `&location=${encodeURIComponent(address)}` : '')
-                + (address ? `&a1=${encodeURIComponent(address)}` : '')
+                + (phone ? `&a1=${encodeURIComponent(phone)}` : '')
                 + (cleanTrackingId ? `&utm_campaign=${encodeURIComponent(cleanTrackingId)}` : '');
             
             window.open(url, '_blank');
