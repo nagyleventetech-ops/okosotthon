@@ -119,9 +119,9 @@
                 overflow-wrap: normal;
                 hyphens: none;
                 background-image: 
-                    linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
-                background-size: 40px 40px;
+                    radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.08) 0%, transparent 60%),
+                    radial-gradient(circle at 100% 40%, rgba(56, 189, 248, 0.06) 0%, transparent 50%),
+                    radial-gradient(circle at 0% 80%, rgba(30, 58, 138, 0.08) 0%, transparent 50%);
             }
             ::selection {
                 background-color: rgba(14, 165, 233, 0.3); /* selection:bg-sky-500/30 */
@@ -443,6 +443,7 @@
                 <a href="#usage" class="nav-link">Vezérlés</a>
                 <a href="#devices" class="nav-link">Eszközök</a>
                 <a href="javascript:void(0)" onclick="openConfiguratorModal()" class="nav-link text-sky-400 font-bold border border-sky-500/30 rounded-xl px-3 py-1 hover:bg-sky-500/10 transition-all">Kalkulátor</a>
+                <a href="#about" class="nav-link">Rólam</a>
                 <a href="#contact" class="nav-link">Kapcsolat</a>
             </div>
             <!-- Mobile Menu Toggle -->
@@ -458,6 +459,7 @@
                 <a href="#usage" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Vezérlés</a>
                 <a href="#devices" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Eszközök</a>
                 <a href="javascript:void(0)" onclick="openConfiguratorModal(); document.getElementById('mobile-menu')?.classList.add('hidden');" class="mobile-nav-link text-sky-400 font-bold">Kalkulátor</a>
+                <a href="#about" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Rólam</a>
                 <a href="#contact" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Kapcsolat</a>
             </div>
         </div>
@@ -473,20 +475,20 @@
     <div class="relative max-w-4xl mx-auto px-6 py-24 md:py-32 font-sans text-slate-100 z-10">
         
         <!-- Header Section -->
-        <header id="home" class="mb-4 md:mb-12 scroll-reveal transition-all duration-1000">
-            <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-4 text-center md:text-left">
-                <div class="flex-1">
+        <header id="home" class="mb-12 md:mb-20 scroll-reveal transition-all duration-1000">
+            <div class="flex flex-col gap-8 md:gap-10 text-center md:text-left">
+                <div class="max-w-3xl">
                     <h1 class="main-heading break-words">
-                        Okosotthon <br />
+                        Okosotthon Telepítés <br />
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-500 px-[0.1em] -mx-[0.1em]">
-                            Helyi Vezérléssel
+                            a Dunakanyarban és Budapesten
                         </span>
                     </h1>
                     <p class="text-2xl md:text-4xl text-sky-400 max-w-2xl mx-auto md:mx-0 leading-tight font-black tracking-normal md:tracking-tight mt-2">
-                        Modern élet, elérhető áron!
+                        Automatizálás Esztergomtól Budapestig!
                     </p>
                     <p class="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto md:mx-0 leading-relaxed font-semibold mt-4">
-                        A HelyiOkos célja, hogy olyan modern okosotthon rendszerek kiépítését biztosítsa helyi vezérléssel, amelyek kényelmes, biztonságos és energiatakarékos életminőséget garantálnak – mindezt felesleges bontás nélkül, vagy szakszerű, pormentes beépítéssel.
+                        Célom, hogy professzionális <strong>okosotthon telepítés és automatizálás</strong> révén olyan modern okosotthon rendszereket építsek ki Önnek Budapesten, Esztergomban és a teljes Dunakanyar régiójában, amelyek kényelmes, biztonságos és energiatakarékos életminőséget garantálnak – mindezt felesleges bontás nélkül, vagy szakszerű, pormentes beépítéssel.
                     </p>
                     <p class="text-base text-slate-400 max-w-2xl mx-auto md:mx-0 leading-relaxed mt-2">
                         Felejtse el a lassú felhős szervereket és a havidíjakat. Rendszerem internet-kimaradás esetén is villámgyors és 100%-ban helyben működik.
@@ -505,16 +507,21 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col items-center md:items-end shrink-0 gap-2">
-                    <div class="profile-avatar shadow-sky-500/50">
-                        <img 
-                            src="profil.jpg" 
-                            alt="Nagy Levente"
-                            class="w-full h-full object-cover object-top"
-                            onerror="this.src='https://ui-avatars.com/api/?name=Nagy+Levente&background=0ea5e9&color=fff&size=200'"
-                        >
+                <!-- Premium Hero image representing a modern smart home -->
+                <div class="relative w-full rounded-3xl overflow-hidden border border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group h-56 sm:h-[350px]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent z-10"></div>
+                    <img 
+                        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&h=550&q=80" 
+                        alt="Modern okosotthon a Dunakanyarban"
+                        class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700 ease-out"
+                    >
+                    <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 z-20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-left">
+                        <div>
+                            <span class="inline-flex px-2 py-0.5 rounded-md bg-sky-500/10 border border-sky-400/20 text-[10px] uppercase font-bold text-sky-400 tracking-wider mb-1">Műszaki biztonság</span>
+                            <p class="text-sm sm:text-lg font-black text-white leading-tight font-display">Otthon, ami Önre és a családjára vigyáz</p>
+                        </div>
+                        <span class="text-[10px] sm:text-xs text-slate-300 font-mono font-semibold shrink-0">100%-ban helyi vezérlés, zárt rendszerbővítéssel</span>
                     </div>
-                    <span class="name-badge">Nagy Levente</span>
                 </div>
             </div>
         </header>
@@ -1552,6 +1559,46 @@
                 </div>
             </div>
         </div>
+
+        <!-- SZEKCIÓ: Bemutatkozás (Rólam) -->
+        <section id="about" class="mb-24 scroll-reveal">
+            <h2 class="section-title">
+                <i data-lucide="user" class="w-10 h-10 text-sky-400"></i>
+                Bemutatkozás & Garancia
+            </h2>
+            <div class="p-6 md:p-8 bg-slate-900/40 border border-slate-800 rounded-3xl backdrop-blur-md flex flex-col md:flex-row items-center gap-8 md:gap-10">
+                <div class="flex flex-col items-center shrink-0 text-center gap-3 w-full md:w-auto">
+                    <div class="w-40 h-40 md:w-48 md:h-48 rounded-full border-2 border-sky-500/30 overflow-hidden shadow-lg shadow-sky-500/20 relative mx-auto">
+                        <img 
+                            src="profil.jpg" 
+                            alt="Nagy Levente"
+                            class="w-full h-full object-cover object-top"
+                            onerror="this.src='https://ui-avatars.com/api/?name=Nagy+Levente&background=0ea5e9&color=fff&size=200'"
+                        >
+                    </div>
+                    <div>
+                        <span class="name-badge px-3 py-1 text-xs font-bold">Nagy Levente</span>
+                        <p class="text-[10px] text-sky-400 font-bold uppercase tracking-wider mt-1.5 font-display">Okosotthon Integrátor</p>
+                    </div>
+                </div>
+                <div class="flex-1 space-y-4 text-left">
+                    <p class="text-lg font-bold text-white font-display">Szia! Nagy Levente vagyok.</p>
+                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                        Tahitótfalusi lakosként, helyi szakemberként építem ki és programozom fel az Ön okosotthonát. Az általam tervezett rendszerek lényege a <span class="text-sky-400 font-bold">100%-ban helyi (offline) vezérlésű Home Assistant technológia</span>, melynek köszönhetően adatai soha nem hagyják el a ház falait, és a rendszer internet-kimaradás esetén is villámgyors és rendkívül stabil marad.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                        Személyes célom, hogy felesleges falbontások és vésés nélkül, vagy teljesen szakszerű, pormentes beépítéssel modernizáljam otthonát. Budapesten, Esztergomban és a teljes Dunakanyar régiójában vállalok ingyenes helyszíni felmérést, ahol hozok magammal egy működő bemutató rendszert is, így Ön élőben is kipróbálhatja a jövő technológiáját.
+                    </p>
+                    <div class="flex items-start sm:items-center gap-3 bg-slate-950/60 p-4 border border-slate-800/80 rounded-2xl">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-emerald-400 shrink-0 mt-1 sm:mt-0"></i>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-normal">
+                            <strong class="text-emerald-400 block mb-0.5">Garancia & Megbízhatóság:</strong>
+                            Minden elvégzett munkámra és az általam beépített hálózati okoseszközökre teljes körű garanciát biztosítok, állandó helyi műszaki terméktámogatással!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Call to Action / Contact -->
         <section id="contact" class="scroll-reveal">
