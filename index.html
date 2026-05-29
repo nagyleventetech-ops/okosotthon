@@ -738,6 +738,46 @@
             </div>
         </section>
 
+        <!-- SZEKCIÓ: Bemutatkozás -->
+        <section id="about" class="mb-24 scroll-reveal">
+            <h2 class="section-title">
+                <i data-lucide="user" class="w-10 h-10 text-sky-400"></i>
+                Bemutatkozás
+            </h2>
+            <div class="p-6 md:p-8 bg-slate-900/40 border border-slate-800 rounded-3xl backdrop-blur-md flex flex-col md:flex-row items-center gap-8 md:gap-10">
+                <div class="flex flex-col items-center shrink-0 text-center gap-3 w-full md:w-auto">
+                    <div class="w-40 h-40 md:w-48 md:h-48 rounded-full border-2 border-sky-500/30 overflow-hidden shadow-lg shadow-sky-500/20 relative mx-auto">
+                        <img 
+                            src="profil.jpg" 
+                            alt="Nagy Levente"
+                            class="w-full h-full object-cover object-top"
+                            onerror="this.src='https://ui-avatars.com/api/?name=Nagy+Levente&background=0ea5e9&color=fff&size=200'"
+                        >
+                    </div>
+                    <div>
+                        <span class="name-badge px-3 py-1 text-xs font-bold font-sans">Nagy Levente</span>
+                        <p class="text-[10px] text-sky-400 font-bold uppercase tracking-wider mt-1.5 font-display">Okosotthon Integrátor</p>
+                    </div>
+                </div>
+                <div class="flex-1 space-y-4 text-left">
+                    <p class="text-lg font-bold text-white font-display">Üdvözlöm! Nagy Levente vagyok.</p>
+                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                        Tahitótfalusi lakosként, helyi szakemberként tervezem meg és programozom be az Ön okosotthonát. Az általam kiépített rendszerek lelke a 100%-ban helyi (offline) vezérlésű Home Assistant technológia. Ennek köszönhetően az adatai soha nem hagyják el a ház falait, a rendszer pedig internet-kimaradás esetén is villámgyors és rendkívül stabil marad.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                        Személyes célom, hogy felesleges falbontás és vésés nélkül, tiszta és pormentes beépítéssel modernizáljam otthonát. Budapesten, Esztergomban és a teljes Dunakanyar régiójában ingyenes helyszíni felmérést biztosítok, melyre egy működő bemutató rendszert is magammal hozok, így Ön élőben, a saját szemével láthatja és próbálhatja ki a jövő technológiáját.
+                    </p>
+                    <div class="flex items-start sm:items-center gap-3 bg-slate-950/60 p-4 border border-slate-800/80 rounded-2xl">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-emerald-400 shrink-0 mt-1 sm:mt-0"></i>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-normal">
+                            <strong class="text-emerald-400 block mb-0.5">Garancia & Megbízhatóság:</strong>
+                            Minden elvégzett munkámra és az általam beépített eszközökre teljes körű garanciát vállalok, folyamatos, helyi műszaki támogatás mellett!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Pricing Section (Okosotthon Rendszer Alapok) -->
         <section id="pricing" class="mb-24 scroll-reveal">
             <div class="pricing-card">
@@ -1559,46 +1599,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- SZEKCIÓ: Bemutatkozás (Rólam) -->
-        <section id="about" class="mb-24 scroll-reveal">
-            <h2 class="section-title">
-                <i data-lucide="user" class="w-10 h-10 text-sky-400"></i>
-                Bemutatkozás & Garancia
-            </h2>
-            <div class="p-6 md:p-8 bg-slate-900/40 border border-slate-800 rounded-3xl backdrop-blur-md flex flex-col md:flex-row items-center gap-8 md:gap-10">
-                <div class="flex flex-col items-center shrink-0 text-center gap-3 w-full md:w-auto">
-                    <div class="w-40 h-40 md:w-48 md:h-48 rounded-full border-2 border-sky-500/30 overflow-hidden shadow-lg shadow-sky-500/20 relative mx-auto">
-                        <img 
-                            src="profil.jpg" 
-                            alt="Nagy Levente"
-                            class="w-full h-full object-cover object-top"
-                            onerror="this.src='https://ui-avatars.com/api/?name=Nagy+Levente&background=0ea5e9&color=fff&size=200'"
-                        >
-                    </div>
-                    <div>
-                        <span class="name-badge px-3 py-1 text-xs font-bold">Nagy Levente</span>
-                        <p class="text-[10px] text-sky-400 font-bold uppercase tracking-wider mt-1.5 font-display">Okosotthon Integrátor</p>
-                    </div>
-                </div>
-                <div class="flex-1 space-y-4 text-left">
-                    <p class="text-lg font-bold text-white font-display">Szia! Nagy Levente vagyok.</p>
-                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                        Tahitótfalusi lakosként, helyi szakemberként építem ki és programozom fel az Ön okosotthonát. Az általam tervezett rendszerek lényege a <span class="text-sky-400 font-bold">100%-ban helyi (offline) vezérlésű Home Assistant technológia</span>, melynek köszönhetően adatai soha nem hagyják el a ház falait, és a rendszer internet-kimaradás esetén is villámgyors és rendkívül stabil marad.
-                    </p>
-                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                        Személyes célom, hogy felesleges falbontások és vésés nélkül, vagy teljesen szakszerű, pormentes beépítéssel modernizáljam otthonát. Budapesten, Esztergomban és a teljes Dunakanyar régiójában vállalok ingyenes helyszíni felmérést, ahol hozok magammal egy működő bemutató rendszert is, így Ön élőben is kipróbálhatja a jövő technológiáját.
-                    </p>
-                    <div class="flex items-start sm:items-center gap-3 bg-slate-950/60 p-4 border border-slate-800/80 rounded-2xl">
-                        <i data-lucide="shield-check" class="w-8 h-8 text-emerald-400 shrink-0 mt-1 sm:mt-0"></i>
-                        <p class="text-xs sm:text-sm text-slate-300 leading-normal">
-                            <strong class="text-emerald-400 block mb-0.5">Garancia & Megbízhatóság:</strong>
-                            Minden elvégzett munkámra és az általam beépített hálózati okoseszközökre teljes körű garanciát biztosítok, állandó helyi műszaki terméktámogatással!
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Call to Action / Contact -->
         <section id="contact" class="scroll-reveal">
