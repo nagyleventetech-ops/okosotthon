@@ -426,6 +426,213 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Bemutatkozás (About) Section Premium Redesign Styles */
+        .about-section {
+            display: block;
+            margin-bottom: 6rem;
+            position: relative;
+        }
+
+        .about-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background-color: rgba(15, 23, 42, 0.4);
+            border: 1px solid rgba(30, 41, 59, 0.8);
+            border-radius: 1.5rem;
+            backdrop-filter: blur(24px);
+            transition: all 0.5s;
+        }
+
+        @media (min-width: 768px) {
+            .about-container {
+                padding: 2.5rem;
+                gap: 2rem;
+                border-radius: 2rem;
+            }
+        }
+
+        /* Hero Text Contrast Enhancer */
+        .hero-title-shadow {
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.95), 0 0 35px rgba(15, 23, 42, 0.95);
+        }
+
+        .about-image-wrapper {
+            flex-shrink: 0;
+            width: 220px;
+            max-width: 220px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .about-image-wrapper {
+                width: 260px;
+                max-width: 260px;
+                margin: 0;
+            }
+        }
+
+        .about-profile-img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 20px;
+            border: 2px solid rgba(56, 189, 248, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.15);
+            transition: all 0.5s ease-out;
+        }
+
+        .about-profile-img:hover {
+            transform: scale(1.02);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 15px 40px rgba(0, 242, 254, 0.25);
+        }
+
+        .about-content {
+            flex: 1;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .about-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        @media (min-width: 768px) {
+            .about-title {
+                font-size: 2.25rem;
+            }
+        }
+
+        .about-lead {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #e2e8f0; /* text-slate-200 */
+        }
+
+        @media (min-width: 768px) {
+            .about-lead {
+                font-size: 1.05rem;
+            }
+        }
+
+        .about-features-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0.5rem 0 !important;
+            display: flex;
+            flex-direction: column;
+            gap: 0.875rem;
+        }
+
+        .about-features-list li {
+            position: relative;
+            padding-left: 1.75rem;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            color: #cbd5e1; /* text-slate-300 */
+        }
+
+        @media (min-width: 768px) {
+            .about-features-list li {
+                font-size: 0.95rem;
+            }
+        }
+
+        .about-features-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0.15rem;
+            color: #38bdf8; /* text-sky-400 */
+            font-weight: 900;
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        .about-badge {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background-color: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            padding: 1.25rem;
+            border-radius: 1rem;
+            backdrop-filter: blur(12px);
+        }
+
+        .badge-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .badge-text {
+            font-size: 0.875rem;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        .badge-text strong {
+            color: #34d399; /* emerald-400 */
+            display: block;
+            margin-bottom: 0.25rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        .badge-text p {
+            color: #94a3b8; /* text-slate-400 */
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .about-cta-container {
+            margin-top: 0.5rem;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .about-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .about-btn:hover {
+            background: linear-gradient(135deg, #38bdf8 0%, #3b82f6 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.4);
+            border-color: rgba(56, 189, 248, 0.5);
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .about-btn:active {
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="bg-slate-950">
@@ -475,54 +682,62 @@
     <div class="relative max-w-4xl mx-auto px-6 py-24 md:py-32 font-sans text-slate-100 z-10">
         
         <!-- Header Section -->
-        <header id="home" class="mb-12 md:mb-20 scroll-reveal transition-all duration-1000">
-            <div class="flex flex-col gap-8 md:gap-10 text-center md:text-left">
-                <div class="max-w-3xl">
-                    <h1 class="main-heading break-words">
-                        Okosotthon Telepítés <br />
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-500 px-[0.1em] -mx-[0.1em]">
-                            a Dunakanyarban és Budapesten
-                        </span>
+        <header id="home" class="mb-16 md:mb-24 scroll-reveal transition-all duration-1000 relative">
+            <!-- Premium Immersive Hero Card -->
+            <div class="relative w-full rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden border border-blue-500/35 shadow-[0_25px_60px_rgba(2,132,199,0.3)] min-h-[85vh] sm:min-h-[90vh] flex flex-col justify-between p-6 sm:p-12 md:p-16">
+                
+                <!-- Background Image -->
+                <div class="absolute inset-0 z-0">
+                    <img 
+                        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&h=900&q=90" 
+                        alt="Modern okosotthon éjszakai világítással"
+                        class="w-full h-full object-cover object-center"
+                    >
+                    <!-- Dark Solid / Gradient Overlay with 45-50% Opacity for Supreme Legibility while keeping the house clearly visible -->
+                    <div class="absolute inset-0 bg-slate-950/45 bg-gradient-to-b from-slate-950/30 via-slate-950/45 to-slate-950/65"></div>
+                </div>
+
+                <!-- Top Badge - Centered & Premium -->
+                <div class="relative z-10 flex justify-center w-full mb-6">
+                    <span class="inline-flex px-3 py-1 rounded-full bg-sky-500/10 border border-sky-400/30 text-[10px] sm:text-xs uppercase font-extrabold text-sky-450 tracking-widest backdrop-blur-md">
+                        🛡️ Helyi Vezérlés • Esztergom & Dunakanyar & Budapest
+                    </span>
+                </div>
+
+                <!-- Central Content Group (Airy, Larger Typography) -->
+                <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center justify-center text-center flex-1 py-8">
+                    <h1 class="text-3xl sm:text-5xl md:text-[3.65rem] font-display font-black text-white tracking-tight leading-[1.12] sm:leading-tight mb-4 hero-title-shadow">
+                        Okosotthon Telepítés <br class="hidden sm:inline" />
+                        <span class="text-white">a Dunakanyarban és Budapesten</span>
                     </h1>
-                    <p class="text-2xl md:text-4xl text-sky-400 max-w-2xl mx-auto md:mx-0 leading-tight font-black tracking-normal md:tracking-tight mt-2">
+                    
+                    <p class="text-xl sm:text-2xl md:text-3xl text-sky-400 font-extrabold tracking-normal leading-tight mt-1 hero-title-shadow">
                         Automatizálás Esztergomtól Budapestig!
                     </p>
-                    <p class="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto md:mx-0 leading-relaxed font-semibold mt-4">
-                        Célom, hogy professzionális <strong>okosotthon telepítés és automatizálás</strong> révén olyan modern okosotthon rendszereket építsek ki Önnek Budapesten, Esztergomban és a teljes Dunakanyar régiójában, amelyek kényelmes, biztonságos és energiatakarékos életminőséget garantálnak – mindezt felesleges bontás nélkül, vagy szakszerű, pormentes beépítéssel.
-                    </p>
-                    <p class="text-base text-slate-400 max-w-2xl mx-auto md:mx-0 leading-relaxed mt-2">
-                        Felejtse el a lassú felhős szervereket és a havidíjakat. Rendszerem internet-kimaradás esetén is villámgyors és 100%-ban helyben működik.
+                    
+                    <p class="text-[16px] sm:text-[17px] text-slate-100 mt-6 leading-[1.6] font-semibold max-w-2xl hero-title-shadow">
+                        Célom, hogy professzionális <strong>okosotthon telepítéssel</strong> olyan kiszámítható rendszert építsek ki Önnek, amely kényelmes, biztonságos és energiatakarékos életet biztosít – felesleges rombolás nélkül.
                     </p>
                     
-                    <!-- Hero CTAs -->
-                    <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
-                        <button onclick="openCalendlyPopup()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-sky-500 hover:bg-sky-400 text-slate-900 font-extrabold rounded-xl transition-all shadow-lg shadow-sky-500/15 hover:shadow-sky-500/30 hover:-translate-y-0.5 cursor-pointer text-sm md:text-base">
+                    <p class="text-xs sm:text-sm text-slate-300 mt-3 leading-[1.6] max-w-2xl hero-title-shadow font-medium">
+                        Felejtse el a lassú felhős szervereket és a havidíjakat. Rendszerem internet-kimaradás esetén is villámgyors és 100%-ban helyben működik.
+                    </p>
+                </div>
+
+                <!-- Bottom Centered CTAs -->
+                <div class="relative z-10 w-full mt-8 max-w-3xl mx-auto">
+                    <div class="flex flex-col sm:flex-row items-center gap-6 justify-center">
+                        <button onclick="openCalendlyPopup()" class="w-full sm:w-[290px] inline-flex items-center justify-center gap-2 px-10 py-5 bg-sky-500 hover:bg-sky-400 text-slate-900 font-black rounded-xl transition-all shadow-lg shadow-sky-500/20 hover:shadow-sky-500/40 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-sm md:text-base">
                             <i data-lucide="calendar" class="w-5 h-5"></i>
                             Ingyenes Helyszíni Felmérés
                         </button>
-                        <button onclick="openConfiguratorModal()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-950/80 hover:bg-slate-900 border border-slate-800 hover:border-slate-700 text-white font-bold rounded-xl transition-all hover:-translate-y-0.5 cursor-pointer text-sm md:text-base">
+                        <button onclick="openConfiguratorModal()" class="w-full sm:w-[280px] inline-flex items-center justify-center gap-2 px-10 py-5 bg-blue-950/80 hover:bg-blue-900 border border-blue-500/60 hover:border-blue-400 text-white font-bold rounded-xl transition-all shadow-lg shadow-blue-500/10 hover:shadow-blue-500/30 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-sm md:text-base">
                             <i data-lucide="calculator" class="w-5 h-5"></i>
                             Saját Okosotthon Tervező
                         </button>
                     </div>
                 </div>
 
-                <!-- Premium Hero image representing a modern smart home -->
-                <div class="relative w-full rounded-3xl overflow-hidden border border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group h-56 sm:h-[350px]">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent z-10"></div>
-                    <img 
-                        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&h=550&q=80" 
-                        alt="Modern okosotthon a Dunakanyarban"
-                        class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700 ease-out"
-                    >
-                    <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 z-20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-left">
-                        <div>
-                            <span class="inline-flex px-2 py-0.5 rounded-md bg-sky-500/10 border border-sky-400/20 text-[10px] uppercase font-bold text-sky-400 tracking-wider mb-1">Műszaki biztonság</span>
-                            <p class="text-sm sm:text-lg font-black text-white leading-tight font-display">Otthon, ami Önre és a családjára vigyáz</p>
-                        </div>
-                        <span class="text-[10px] sm:text-xs text-slate-300 font-mono font-semibold shrink-0">100%-ban helyi vezérlés, zárt rendszerbővítéssel</span>
-                    </div>
-                </div>
             </div>
         </header>
 
@@ -739,40 +954,37 @@
         </section>
 
         <!-- SZEKCIÓ: Bemutatkozás -->
-        <section id="about" class="mb-24 scroll-reveal">
+        <section id="about" class="about-section scroll-reveal">
             <h2 class="section-title">
                 <i data-lucide="user" class="w-10 h-10 text-sky-400"></i>
                 Bemutatkozás
             </h2>
-            <div class="p-6 md:p-8 bg-slate-900/40 border border-slate-800 rounded-3xl backdrop-blur-md flex flex-col md:flex-row items-center gap-8 md:gap-10">
-                <div class="flex flex-col items-center shrink-0 text-center gap-3 w-full md:w-auto">
-                    <div class="w-40 h-40 md:w-48 md:h-48 rounded-full border-2 border-sky-500/30 overflow-hidden shadow-lg shadow-sky-500/20 relative mx-auto">
-                        <img 
-                            src="profil.jpg" 
-                            alt="Nagy Levente"
-                            class="w-full h-full object-cover object-top"
-                            onerror="this.src='https://ui-avatars.com/api/?name=Nagy+Levente&background=0ea5e9&color=fff&size=200'"
-                        >
+            
+            <div class="about-container">
+                <h2 class="about-title mb-4 md:mb-6 text-center md:text-left w-full">Üdvözlöm! Nagy Levente vagyok.</h2>
+                
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-14 w-full">
+                    <div class="about-image-wrapper">
+                        <img src="profil.jpg" alt="Nagy Levente" class="about-profile-img">
                     </div>
-                    <div>
-                        <span class="name-badge px-3 py-1 text-xs font-bold font-sans">Nagy Levente</span>
-                        <p class="text-[10px] text-sky-400 font-bold uppercase tracking-wider mt-1.5 font-display">Okosotthon Integrátor</p>
-                    </div>
-                </div>
-                <div class="flex-1 space-y-4 text-left">
-                    <p class="text-lg font-bold text-white font-display">Üdvözlöm! Nagy Levente vagyok.</p>
-                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                        Tahitótfalusi lakosként, helyi szakemberként tervezem meg és programozom be az Ön okosotthonát. Az általam kiépített rendszerek lelke a 100%-ban helyi (offline) vezérlésű Home Assistant technológia. Ennek köszönhetően az adatai soha nem hagyják el a ház falait, a rendszer pedig internet-kimaradás esetén is villámgyors és rendkívül stabil marad.
-                    </p>
-                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                        Személyes célom, hogy felesleges falbontás és vésés nélkül, tiszta és pormentes beépítéssel modernizáljam otthonát. Budapesten, Esztergomban és a teljes Dunakanyar régiójában ingyenes helyszíni felmérést biztosítok, melyre egy működő bemutató rendszert is magammal hozok, így Ön élőben, a saját szemével láthatja és próbálhatja ki a jövő technológiáját.
-                    </p>
-                    <div class="flex items-start sm:items-center gap-3 bg-slate-950/60 p-4 border border-slate-800/80 rounded-2xl">
-                        <i data-lucide="shield-check" class="w-8 h-8 text-emerald-400 shrink-0 mt-1 sm:mt-0"></i>
-                        <p class="text-xs sm:text-sm text-slate-300 leading-normal">
-                            <strong class="text-emerald-400 block mb-0.5">Garancia & Megbízhatóság:</strong>
-                            Minden elvégzett munkámra és az általam beépített eszközökre teljes körű garanciát vállalok, folyamatos, helyi műszaki támogatás mellett!
-                        </p>
+    
+                    <div class="about-content">
+                        <p class="about-lead">Tahitótfalusi lakosként, helyi szakemberként tervezem meg és programozom be az Ön okosotthonát. Az általam kiépített rendszerek lelke a 100%-ban helyi (offline) vezérlésű Home Assistant technológia.</p>
+                        
+                        <ul class="about-features-list">
+                            <li><strong>Teljes Adatbiztonság:</strong> Az adatai soha nem hagyják el a ház falait.</li>
+                            <li><strong>Offline Működés:</strong> A rendszer internet-kimaradás esetén is villámgyors és rendkívül stabil marad.</li>
+                            <li><strong>Pormentes Modernizálás:</strong> Személyes célom a felesleges falbontás és vésés nélküli, tiszta beépítés.</li>
+                            <li><strong>Élő Kipróbálás:</strong> Budapesten és a Dunakanyarban a felmérésre egy működő bemutató rendszert is hozok, így élőben tesztelheti.</li>
+                        </ul>
+    
+                        <div class="about-badge">
+                            <span class="badge-icon">🛡️</span>
+                            <div class="badge-text">
+                                <strong>Garancia & Megbízhatóság:</strong>
+                                <p>Minden munkámra és a beépített eszközökre teljes körű garanciát vállalok, folyamatos helyi támogatással.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
