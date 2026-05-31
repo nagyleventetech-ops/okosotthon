@@ -1402,10 +1402,10 @@
                                 <!-- Okosított lámpák/kapcsolók -->
                                 <div class="bg-slate-900/60 border border-slate-800/60 p-4 rounded-xl flex items-center justify-between gap-4">
                                     <div>
-                                        <span class="text-xs font-bold text-white block">Okos lámpák / kapcsolók</span>
-                                        <span class="text-[9px] text-slate-550 block mt-1">Izzók, spotok vagy fali kapcsolók</span>
+                                        <span class="text-xs font-bold text-white block mt-0.5">Hány lámpát vagy kapcsolót szeretne okosítani?</span>
+                                        <span class="text-[9px] text-slate-550 block mt-1 leading-normal">Adja meg a vezérelni kívánt fényforrások vagy fali kapcsolók számát.</span>
                                     </div>
-                                    <div class="flex items-center gap-2.5">
+                                    <div class="flex items-center gap-2.5 shrink-0">
                                         <button type="button" onclick="adjustCount('lights', -1)" class="w-8 h-8 rounded-lg bg-slate-955 hover:bg-slate-800 border border-slate-800 text-white flex items-center justify-center font-bold font-display select-none transition-all active:scale-95 cursor-pointer">-</button>
                                         <span id="count-lights" class="text-sm font-bold text-sky-400 min-w-4 text-center">3</span>
                                         <button type="button" onclick="adjustCount('lights', 1)" class="w-8 h-8 rounded-lg bg-slate-955 hover:bg-slate-800 border border-slate-800 text-white flex items-center justify-center font-bold font-display select-none transition-all active:scale-95 cursor-pointer">+</button>
@@ -1415,10 +1415,10 @@
                                 <!-- Radiátorok / termosztátok -->
                                 <div class="bg-slate-900/60 border border-slate-800/60 p-4 rounded-xl flex items-center justify-between gap-4">
                                     <div>
-                                        <span class="text-xs font-bold text-white block">Okos fűtők / radiátorok</span>
-                                        <span class="text-[9px] text-slate-550 block mt-1">Okos fűtőszelepek, termosztátok</span>
+                                        <span class="text-xs font-bold text-white block mt-0.5">Hány radiátora vagy fűtési zónája van?</span>
+                                        <span class="text-[9px] text-slate-550 block mt-1 leading-normal">Ahány helyiségben külön szeretné szabályozni a hőmérsékletet.</span>
                                     </div>
-                                    <div class="flex items-center gap-2.5">
+                                    <div class="flex items-center gap-2.5 shrink-0">
                                         <button type="button" onclick="adjustCount('radiators', -1)" class="w-8 h-8 rounded-lg bg-slate-955 hover:bg-slate-800 border border-slate-800 text-white flex items-center justify-center font-bold font-display select-none transition-all active:scale-95 cursor-pointer">-</button>
                                         <span id="count-radiators" class="text-sm font-bold text-sky-400 min-w-4 text-center">1</span>
                                         <button type="button" onclick="adjustCount('radiators', 1)" class="w-8 h-8 rounded-lg bg-slate-955 hover:bg-slate-800 border border-slate-800 text-white flex items-center justify-center font-bold font-display select-none transition-all active:scale-95 cursor-pointer">+</button>
@@ -1428,10 +1428,10 @@
                                 <!-- Redőnyök -->
                                 <div class="bg-slate-900/60 border border-slate-800/60 p-4 rounded-xl flex items-center justify-between gap-4">
                                     <div>
-                                        <span class="text-xs font-bold text-white block">Okos redőnyök / motorok</span>
-                                        <span class="text-[9px] text-slate-550 block mt-1">Vezérlendő redőny- és relémodulok</span>
+                                        <span class="text-xs font-bold text-white block mt-0.5">Hány redőnyt vagy árnyékolót vezérelne?</span>
+                                        <span class="text-[9px] text-slate-550 block mt-1 leading-normal">Adja meg a motoros redőnyök vagy zsaluziák darabszámát.</span>
                                     </div>
-                                    <div class="flex items-center gap-2.5">
+                                    <div class="flex items-center gap-2.5 shrink-0">
                                         <button type="button" onclick="adjustCount('shutters', -1)" class="w-8 h-8 rounded-lg bg-slate-955 hover:bg-slate-800 border border-slate-800 text-white flex items-center justify-center font-bold font-display select-none transition-all active:scale-95 cursor-pointer">-</button>
                                         <span id="count-shutters" class="text-sm font-bold text-sky-400 min-w-4 text-center">2</span>
                                         <button type="button" onclick="adjustCount('shutters', 1)" class="w-8 h-8 rounded-lg bg-slate-955 hover:bg-slate-800 border border-slate-800 text-white flex items-center justify-center font-bold font-display select-none transition-all active:scale-95 cursor-pointer">+</button>
@@ -1441,13 +1441,26 @@
                                 <!-- Biztonsági ablak/ajtó érzékelők -->
                                 <div class="bg-slate-900/60 border border-slate-800/60 p-4 rounded-xl flex items-center justify-between gap-4">
                                     <div>
-                                        <span class="text-xs font-bold text-white block">Biztonsági érzékelők</span>
-                                        <span class="text-[9px] text-slate-550 block mt-1">Ablaknyitás és mozgásszenzorok</span>
+                                        <span class="text-xs font-bold text-white block mt-0.5">Hány ablakra, ajtóra vagy szobába kér érzékelőt?</span>
+                                        <span class="text-[9px] text-slate-550 block mt-1 leading-normal">Mozgásérzékelők és nyitásérzékelők a maximális biztonságért.</span>
                                     </div>
-                                    <div class="flex items-center gap-2.5">
+                                    <div class="flex items-center gap-2.5 shrink-0">
                                         <button type="button" onclick="adjustCount('sensors', -1)" class="w-8 h-8 rounded-lg bg-slate-955 hover:bg-slate-800 border border-slate-800 text-white flex items-center justify-center font-bold font-display select-none transition-all active:scale-95 cursor-pointer">-</button>
                                         <span id="count-sensors" class="text-sm font-bold text-sky-400 min-w-4 text-center">2</span>
                                         <button type="button" onclick="adjustCount('sensors', 1)" class="w-8 h-8 rounded-lg bg-slate-955 hover:bg-slate-800 border border-slate-800 text-white flex items-center justify-center font-bold font-display select-none transition-all active:scale-95 cursor-pointer">+</button>
+                                    </div>
+                                </div>
+
+                                <!-- Okos klímaegységek -->
+                                <div class="bg-slate-900/60 border border-slate-800/60 p-4 rounded-xl flex items-center justify-between gap-4">
+                                    <div>
+                                        <span class="text-xs font-bold text-white block mt-0.5">Hány klíma beltéri egységgel rendelkezik?</span>
+                                        <span class="text-[9px] text-slate-550 block mt-1 leading-normal">Minden klímához külön okos vezérlőmodul szükséges.</span>
+                                    </div>
+                                    <div class="flex items-center gap-2.5 shrink-0">
+                                        <button type="button" onclick="adjustCount('climates', -1)" class="w-8 h-8 rounded-lg bg-slate-955 hover:bg-slate-800 border border-slate-800 text-white flex items-center justify-center font-bold font-display select-none transition-all active:scale-95 cursor-pointer">-</button>
+                                        <span id="count-climates" class="text-sm font-bold text-sky-400 min-w-4 text-center">1</span>
+                                        <button type="button" onclick="adjustCount('climates', 1)" class="w-8 h-8 rounded-lg bg-slate-955 hover:bg-slate-800 border border-slate-800 text-white flex items-center justify-center font-bold font-display select-none transition-all active:scale-95 cursor-pointer">+</button>
                                     </div>
                                 </div>
                             </div>
@@ -1527,8 +1540,8 @@
                                 <label class="flex items-start gap-3 p-4 border border-slate-800 rounded-2xl bg-slate-950/40 hover:border-sky-500/20 cursor-pointer select-none transition-all">
                                     <input type="checkbox" name="desired_functions" value="led_lighting" onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
                                     <div>
-                                        <span class="text-xs sm:text-sm font-bold text-white block">Okos ledszalag (3m)</span>
-                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Prémium meleg-fehér és RGBIC hangulatvilágítás tápegységgel és szoftveres integrációval.</span>
+                                        <span class="text-xs sm:text-sm font-bold text-white block">Led Hangulatvilágítás</span>
+                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Helyszíni megbeszélés szerinti egyedi árazás (az ár a felmérés során egyeztetett hosszúság és igények alapján adódik hozzá, addig nem számolódik be a végösszegbe).</span>
                                     </div>
                                 </label>
 
@@ -2576,7 +2589,8 @@
                 lights: 3,
                 radiators: 1,
                 shutters: 2,
-                sensors: 2
+                sensors: 2,
+                climates: 1
             }
         };
 
@@ -2588,7 +2602,10 @@
         // Eszközdarabszámok módosítása +/- gombokkal
         window.adjustCount = function(type, delta) {
             if (!wizardSelections.counts) {
-                wizardSelections.counts = { lights: 3, radiators: 1, shutters: 2, sensors: 2 };
+                wizardSelections.counts = { lights: 3, radiators: 1, shutters: 2, sensors: 2, climates: 1 };
+            }
+            if (wizardSelections.counts[type] === undefined) {
+                wizardSelections.counts[type] = type === 'climates' ? 1 : 0;
             }
             let current = wizardSelections.counts[type] || 0;
             let newVal = current + delta;
@@ -2618,33 +2635,38 @@
             let radiators = 1;
             let shutters = 2;
             let sensors = 2;
+            let climates = 1;
             
             if (r === 2) {
                 lights = 6;
                 radiators = 2;
                 shutters = 4;
                 sensors = 3;
+                climates = 1;
             } else if (r === 3) {
                 lights = 9;
                 radiators = 3;
                 shutters = 6;
                 sensors = 5;
+                climates = 2;
             } else if (r === 4) {
                 lights = 12;
                 radiators = 4;
                 shutters = 8;
                 sensors = 7;
+                climates = 3;
             }
             
             wizardSelections.counts = {
                 lights: lights,
                 radiators: radiators,
                 shutters: shutters,
-                sensors: sensors
+                sensors: sensors,
+                climates: climates
             };
             
             // HTML értékek frissítése
-            ['lights', 'radiators', 'shutters', 'sensors'].forEach(type => {
+            ['lights', 'radiators', 'shutters', 'sensors', 'climates'].forEach(type => {
                 const el = document.getElementById(`count-${type}`);
                 if (el) el.innerText = wizardSelections.counts[type];
             });
@@ -2773,7 +2795,10 @@
 
             // counts biztonságos betöltése
             if (!wizardSelections.counts) {
-                wizardSelections.counts = { lights: 3, radiators: 1, shutters: 2, sensors: 2 };
+                wizardSelections.counts = { lights: 3, radiators: 1, shutters: 2, sensors: 2, climates: 1 };
+            }
+            if (wizardSelections.counts.climates === undefined) {
+                wizardSelections.counts.climates = 1;
             }
             const counts = wizardSelections.counts;
 
@@ -2806,15 +2831,15 @@
 
             // Okos Fűtőrendszer fali vezérlés - Pro (230V fali termosztátok és szelepek)
             if (wizardSelections.functions.includes("heating_pro")) {
-                total += 35000;
-                deviceCount += 1; 
+                total += counts.radiators * 35000;
+                deviceCount += counts.radiators; 
             }
 
             // Okos Klíma szabályozás
             if (wizardSelections.functions.includes("climate")) {
-                // Alapvető szoftveres párosítás és távvezérlő hardvermodul
-                total += 25000;
-                deviceCount += 1;
+                // Szoftveres párosítás és távvezérlő hardvermodulok darabszáma szerint
+                total += counts.climates * 25000;
+                deviceCount += counts.climates;
             }
 
             // Biztonsági érzékelők
@@ -2825,7 +2850,7 @@
 
             // Bejárati okos Ajtózár (Aqara U200 komplett szett)
             if (wizardSelections.functions.includes("lock")) {
-                total += 119000;
+                total += 139000;
                 deviceCount += 2; // Okos zár + Kültéri ujjlenyomat-olvasó panel
             }
 
@@ -2847,9 +2872,9 @@
                 deviceCount += 1;
             }
 
-            // Okos ledszalag (3m)
+            // LED Hangulatvilágítás (Helyszíni felmérés alapján, 0 Ft bemenet)
             if (wizardSelections.functions.includes("led_lighting")) {
-                total += 20000;
+                total += 0;
                 deviceCount += 1;
             }
 
@@ -2882,13 +2907,19 @@
 
             // Dinamikus 230V villanyszerelési figyelmeztetés frissítése
             const has230V = wizardSelections.functions.some(f => ["lighting_pro", "heating_pro", "garage_opener"].includes(f));
+            const hasLED = wizardSelections.functions.includes("led_lighting");
             const inclusionNoteEl = document.getElementById('wizard-result-inclusion-note');
             if (inclusionNoteEl) {
+                let noteText = "";
                 if (has230V) {
-                    inclusionNoteEl.innerHTML = `Tartalmazza az eszközöket, a lokális központot, a szoftverprogramozást és a fizikai beépítést!<br><span class="text-amber-400 font-bold block mt-1.5 leading-relaxed">⚡ Figyelem: A kiválasztott 235V/230V fali bekötések villanyszerelési munkadíját a helyszíni felmérés alapján külön számoljuk el.</span>`;
+                    noteText = `Tartalmazza az eszközöket, a lokális központot, a szoftverprogramozást és a fizikai beépítést!<br><span class="text-amber-400 font-bold block mt-1.5 leading-relaxed">⚡ Figyelem: A kiválasztott 230V fali bekötések villanyszerelési munkadíját a helyszíni felmérés alapján külön számoljuk el.</span>`;
                 } else {
-                    inclusionNoteEl.innerHTML = `Tartalmazza az összes eszközt, a lokális központot, a fizikai tiszta beszerelést, szoftveres párosítást és az egyedi szabályok felprogramozását!`;
+                    noteText = `Tartalmazza az összes eszközt, a lokális központot, a fizikai tiszta beszerelést, szoftveres párosítást és az egyedi szabályok felprogramozását!`;
                 }
+                if (hasLED) {
+                    noteText += `<br><span class="text-sky-400 font-bold block mt-1.5 leading-relaxed">✨ Megjegyzés: A választott LED Hangulatvilágítás egyedi hossza és igényei miatt a végösszeghez a helyszíni felmérés alkalmával adódik hozzá.</span>`;
+                }
+                inclusionNoteEl.innerHTML = noteText;
             }
 
             // Elmentjük globálisan a számított végösszeget és eszközszámot a beküldéshez
@@ -3056,8 +3087,8 @@
                 lock: "Ujjlenyomatos Okoszár (Aqara U200)",
                 water_safety: "Vízszivárgás- és Főcsapelzáró védelem",
                 shutters: "Automata Árnyékoló- és Redőnyvezérlés",
-                garage_opener: "Okos garázskapu & kapuvezérlés (235V/230V)",
-                led_lighting: "Okos ledszalag (3m)",
+                garage_opener: "Okos garázskapu & kapuvezérlés (230V)",
+                led_lighting: "LED Hangulatvilágítás",
                 pet_feeding: "Okos kisállat-etető",
                 climate: "Okos Klíma szabályozás"
             };
@@ -3082,6 +3113,9 @@
                     let desc = nameHu;
                     if (f === "shutters") {
                         desc += " (Meglévő redőny okosítása / Egyedi ár)";
+                    }
+                    if (f === "led_lighting") {
+                        desc += " (Helyszíni megbeszélés szerinti egyedi árazás)";
                     }
                     basicFunctions.push(desc);
                 }
