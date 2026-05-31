@@ -669,9 +669,9 @@
                 <a href="#features" class="nav-link">Előnyök</a>
                 <a href="#concept" class="nav-link">Működés</a>
                 <a href="#usage" class="nav-link">Vezérlés</a>
+                <a href="#about" class="nav-link">Rólam</a>
                 <a href="#devices" class="nav-link">Eszközök</a>
                 <a href="javascript:void(0)" onclick="openConfiguratorModal()" class="nav-link text-sky-400 font-bold border border-sky-500/30 rounded-xl px-3 py-1 hover:bg-sky-500/10 transition-all">Kalkulátor</a>
-                <a href="#about" class="nav-link">Rólam</a>
                 <a href="#contact" class="nav-link">Kapcsolat</a>
             </div>
             <!-- Mobile Menu Toggle -->
@@ -685,9 +685,9 @@
                 <a href="#features" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Előnyök</a>
                 <a href="#concept" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Működés</a>
                 <a href="#usage" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Vezérlés</a>
+                <a href="#about" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Rólam</a>
                 <a href="#devices" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Eszközök</a>
                 <a href="javascript:void(0)" onclick="openConfiguratorModal(); document.getElementById('mobile-menu')?.classList.add('hidden');" class="mobile-nav-link text-sky-400 font-bold">Kalkulátor</a>
-                <a href="#about" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Rólam</a>
                 <a href="#contact" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Kapcsolat</a>
             </div>
         </div>
@@ -1849,29 +1849,145 @@
 
         <!-- Call to Action / Contact -->
         <section id="contact" class="scroll-reveal">
-            <div class="px-6 py-12 md:p-20 bg-sky-500/10 border border-sky-400/20 rounded-[3rem] text-center backdrop-blur-xl shadow-2xl relative overflow-hidden">
+            <div class="p-6 sm:p-12 md:p-16 bg-slate-900/40 border border-slate-800 rounded-[3rem] backdrop-blur-xl shadow-2xl relative overflow-hidden">
                 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-50"></div>
                 
-                <h2 class="text-3xl md:text-5xl font-display font-black mb-6 text-white tracking-normal">
-                    Kezdjük el otthona okosítását!
-                </h2>
-                <p class="text-slate-300 text-xl mb-6 max-w-2xl mx-auto leading-relaxed">
-                    Kérjen ingyenes felmérést: a helyszíni konzultáció során személyesen átbeszélem Önnel az igényeket, és bemutatásra kerül egy működő mintarendszer is.
-                </p>
-                
-                <div class="phone-container" style="margin: 25px 0; display: flex; justify-content: center;">
-                    <a href="tel:+36202109008" class="phone-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px; margin-right: 10px;">
-                            <path d="M4.93 4.93a10 10 0 0114.14 0c.39.39.39 1.03 0 1.42l-1.42 1.42a.5.5 0 01-.71 0A7 7 0 005.12 17.1c-.2.2-.51.2-.71 0l-1.42-1.42a1 1 0 010-1.42A10 10 0 014.93 4.93z"/>
-                            <path d="M12 9a3 3 0 013 3v6a3 3 0 01-6 0v-6a3 3 0 013-3zm5.34 2.16a1 1 0 011.41 0 8 8 0 010 11.31 1 1 0 01-1.41-1.41 6 6 0 000-8.49 1 1 0 010-1.41z"/>
-                        </svg>
-                        06 20 210 9008
-                    </a>
-                </div>
+                <div class="grid lg:grid-cols-12 gap-10 items-stretch">
+                    
+                    <!-- Left Column: Primary Contact Methods -->
+                    <div class="lg:col-span-5 flex flex-col justify-between text-left">
+                        <div>
+                            <span class="inline-flex px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] sm:text-xs uppercase font-extrabold text-emerald-400 tracking-widest mb-4">
+                                Kapcsolat & Konzultáció
+                            </span>
+                            <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-black text-white leading-tight mb-4">
+                                Kezdjük el otthona okosítását!
+                            </h2>
+                            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                                Kérjen díjmentes felmérést vagy kérdezzen tőlem bátran! A helyszíni konzultáció során személyesen bemutatok egy működő mintarendszert is az Ön igényeinek megfelelően.
+                            </p>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex flex-col gap-3.5 my-6 sm:my-8">
+                            <!-- Ingyenes Helyszíni Felmérés gomb -->
+                            <button onclick="openCalendlyPopup()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs sm:text-sm uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:shadow-emerald-500/25 active:scale-98 font-display">
+                                <i data-lucide="calendar" class="w-5 h-5 text-slate-950"></i>
+                                Helyszíni felmérés igénylése
+                            </button>
 
-                <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 20px;" class="text-slate-400 font-medium">
-                    Vagy kattintson a jobb alsó sarokban lévő Messenger ikonra, és írjon üzenetet!
-                </p>
+                            <!-- Telefonos hívás -->
+                            <a href="tel:+36202109008" class="w-full py-4 bg-slate-950 hover:bg-slate-800 border border-slate-850 text-white font-black text-xs sm:text-sm uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98 font-display">
+                                <i data-lucide="phone" class="w-5 h-5 text-emerald-400"></i>
+                                Hívás: +36 20 210 9008
+                            </a>
+
+                            <!-- Messenger gomb -->
+                            <a href="https://m.me/61581849661468" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-[#0084FF] hover:bg-[#0072E0] text-white font-black text-xs sm:text-sm uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-blue-500/10 active:scale-98 font-display text-center">
+                                <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
+                                Messenger üzenet küldése
+                            </a>
+                        </div>
+
+                        <p class="text-[11px] text-slate-400/90 leading-normal">
+                            ★ Minden megkeresésre legkésőbb 24 órán belül válaszolok. A felmérés teljesen alkalmi kötelezettségektől mentes!
+                        </p>
+                    </div>
+
+                    <!-- Right Column: Interactive Mini-Calculator -->
+                    <div class="lg:col-span-7 bg-slate-950/60 border border-slate-800 rounded-2xl p-6 md:p-8 flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-transparent pointer-events-none"></div>
+                        
+                        <div class="relative z-10 text-left">
+                            <h3 class="text-lg sm:text-xl font-display font-black text-white mb-1">
+                                Gyors Költségkalkuláció
+                            </h3>
+                            <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+                                Válassza ki ingatlana alapadatait az azonnali becsült árkalkulációhoz!
+                            </p>
+
+                            <!-- Property Size Selection -->
+                            <div class="mb-5">
+                                <span class="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2.5">Ingatlan Jellege:</span>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <button onclick="selectMiniProperty('flat12', this)" class="mini-prop-btn py-2.5 px-3 bg-slate-900 border border-sky-500 text-sky-400 rounded-xl text-xs font-bold transition-all focus:outline-none cursor-pointer">
+                                        1-2 Szobás Lakás
+                                    </button>
+                                    <button onclick="selectMiniProperty('flat34', this)" class="mini-prop-btn py-2.5 px-3 bg-slate-950 border border-slate-800 text-slate-400 rounded-xl text-xs font-bold transition-all hover:bg-slate-900 cursor-pointer">
+                                        3-5 Szobás Lakás
+                                    </button>
+                                    <button onclick="selectMiniProperty('house', this)" class="mini-prop-btn py-2.5 px-3 bg-slate-950 border border-slate-800 text-slate-400 rounded-xl text-xs font-bold transition-all hover:bg-slate-900 cursor-pointer">
+                                        Családi Ház
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Function Selections -->
+                            <div class="mb-6">
+                                <span class="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2.5">Kért Okos funkciók:</span>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                                    <!-- Lighting -->
+                                    <label class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all cursor-pointer">
+                                        <input type="checkbox" id="minicalc-lighting" checked onchange="runMiniCalculator()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-950 w-4.5 h-4.5">
+                                        <div class="text-left leading-tight">
+                                            <span class="text-xs text-white font-bold block">Világítás</span>
+                                            <span class="text-[10px] text-slate-400 font-medium">Lámpák és kapcsolók</span>
+                                        </div>
+                                    </label>
+                                    
+                                    <!-- Heating / AC -->
+                                    <label class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all cursor-pointer">
+                                        <input type="checkbox" id="minicalc-heating" checked onchange="runMiniCalculator()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-950 w-4.5 h-4.5">
+                                        <div class="text-left leading-tight">
+                                            <span class="text-xs text-white font-bold block">Fűtés & Klíma</span>
+                                            <span class="text-[10px] text-slate-400 font-medium">Zónaszabályozás, klíma</span>
+                                        </div>
+                                    </label>
+
+                                    <!-- Shutters -->
+                                    <label class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all cursor-pointer">
+                                        <input type="checkbox" id="minicalc-shutters" onchange="runMiniCalculator()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-950 w-4.5 h-4.5">
+                                        <div class="text-left leading-tight">
+                                            <span class="text-xs text-white font-bold block">Redőnyök</span>
+                                            <span class="text-[10px] text-slate-400 font-medium">Sötétítésvezérlés</span>
+                                        </div>
+                                    </label>
+
+                                    <!-- Security & Sensors -->
+                                    <label class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all cursor-pointer">
+                                        <input type="checkbox" id="minicalc-sensors" checked onchange="runMiniCalculator()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-950 w-4.5 h-4.5">
+                                        <div class="text-left leading-tight">
+                                            <span class="text-xs text-white font-bold block">Biztonság</span>
+                                            <span class="text-[10px] text-slate-400 font-medium font-semibold">Érzékelők, vízvédelem</span>
+                                        </div>
+                                    </label>
+                                    
+                                    <!-- Lock -->
+                                    <label class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all cursor-pointer sm:col-span-2">
+                                        <input type="checkbox" id="minicalc-lock" onchange="runMiniCalculator()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-950 w-4.5 h-4.5">
+                                        <div class="text-left leading-tight">
+                                            <span class="text-xs text-white font-bold block">Intelligens Okoszár</span>
+                                            <span class="text-[10px] text-slate-400 font-medium">Kültéri ujjlenyomat-olvasós panel, kulcs nélküli belépés</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Result Box & Launch detailed builder CTA -->
+                        <div class="relative z-10 p-5 rounded-2xl border border-sky-400/20 bg-sky-500/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div class="text-left">
+                                <span class="text-[9px] font-black uppercase tracking-widest text-sky-400 block mb-0.5">Várható komplett költség beépítéssel:</span>
+                                <strong id="mini-calc-total" class="font-display font-black text-white text-xl sm:text-2xl tracking-normal">--- Ft</strong>
+                                <span class="text-[9px] text-slate-400 block mt-0.5">*Tartalmazza az offline szervert és a programozást is</span>
+                            </div>
+                            <button onclick="launchDetailedBuilder()" class="w-full sm:w-auto px-4.5 py-3 bg-sky-500 hover:bg-sky-450 text-slate-950 font-black text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-lg active:scale-98">
+                                <i data-lucide="sparkles" class="w-4 h-4"></i> Részletes Tervező
+                            </button>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </section>
 
@@ -3445,6 +3561,139 @@ ${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizik
             }
         };
 
+        // --- INTERAKTÍV GYORSÁRKALKULÁTOR (MINI-CALCULATOR) LOGIKA ---
+        window.selectedMiniPropertyType = "flat12";
+
+        window.selectMiniProperty = function(type, element) {
+            window.selectedMiniPropertyType = type;
+            
+            // Stílusok frissítése a gombokon
+            const buttons = document.querySelectorAll('.mini-prop-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-slate-900', 'border-sky-500', 'text-sky-400');
+                btn.classList.add('bg-slate-950', 'border-slate-800', 'text-slate-400', 'hover:bg-slate-900');
+            });
+
+            element.classList.remove('bg-slate-950', 'border-slate-800', 'text-slate-400', 'hover:bg-slate-900');
+            element.classList.add('bg-slate-900', 'border-sky-500', 'text-sky-400');
+
+            runMiniCalculator();
+        };
+
+        window.runMiniCalculator = function() {
+            let total = 100000; // Alapdíj mindig 100 000 Ft (szerver + programozás)
+            const type = window.selectedMiniPropertyType;
+
+            if (type === "house") {
+                total += 30000; // Családi ház routerek/erősítők
+            }
+
+            const hasLighting = document.getElementById('minicalc-lighting').checked;
+            const hasHeating = document.getElementById('minicalc-heating').checked;
+            const hasShutters = document.getElementById('minicalc-shutters').checked;
+            const hasSensors = document.getElementById('minicalc-sensors').checked;
+            const hasLock = document.getElementById('minicalc-lock').checked;
+
+            if (hasLighting) {
+                if (type === 'flat12') total += 3 * 12000;
+                else if (type === 'flat34') total += 5 * 12000;
+                else if (type === 'house') total += 8 * 12000;
+            }
+
+            if (hasHeating) {
+                if (type === 'flat12') total += (1 * 22000) + (1 * 25000); // 1 db okos termoszelep + 1 db okos klíma okosítás
+                else if (type === 'flat34') total += (3 * 22000) + (2 * 25000);
+                else if (type === 'house') total += (5 * 22000) + (3 * 25000);
+            }
+
+            if (hasShutters) {
+                if (type === 'flat12') total += 2 * 20000;
+                else if (type === 'flat34') total += 4 * 20000;
+                else if (type === 'house') total += 6 * 20000;
+            }
+
+            if (hasSensors) {
+                if (type === 'flat12') total += 2 * 12000;
+                else if (type === 'flat34') total += 4 * 12000;
+                else if (type === 'house') total += 6 * 12000;
+            }
+
+            if (hasLock) {
+                total += 139000; // Aqara lock komplett szett
+            }
+
+            const totalEl = document.getElementById('mini-calc-total');
+            if (totalEl) {
+                totalEl.innerText = `${formatPrice(total)} Ft`;
+            }
+        };
+
+        window.launchDetailedBuilder = function() {
+            const minicalcLighting = document.getElementById('minicalc-lighting').checked;
+            const minicalcHeating = document.getElementById('minicalc-heating').checked;
+            const minicalcShutters = document.getElementById('minicalc-shutters').checked;
+            const minicalcSensors = document.getElementById('minicalc-sensors').checked;
+            const minicalcLock = document.getElementById('minicalc-lock').checked;
+
+            const syncCheckbox = (val, checked) => {
+                const cb = document.querySelector(`input[name="desired_functions"][value="${val}"]`);
+                if (cb) cb.checked = checked;
+            };
+
+            syncCheckbox('lighting_basic', minicalcLighting);
+            syncCheckbox('lighting_pro', false);
+            syncCheckbox('heating_basic', minicalcHeating);
+            syncCheckbox('heating_pro', false);
+            syncCheckbox('climate', minicalcHeating);
+            syncCheckbox('shutters', minicalcShutters);
+            syncCheckbox('sensors', minicalcSensors);
+            syncCheckbox('lock', minicalcLock);
+
+            // Sync property type
+            const propVal = (window.selectedMiniPropertyType === 'house') ? 'house' : 'flat';
+            const propRadio = document.querySelector(`input[name="property_type"][value="${propVal}"]`);
+            if (propRadio) propRadio.checked = true;
+            wizardSelections.propertyType = propVal;
+
+            let roomsVal = '1';
+            let lights = 3, radiators = 1, shutters = 2, sensors = 2, climates = 1;
+            if (window.selectedMiniPropertyType === 'flat12') {
+                roomsVal = '1';
+                lights = 3; radiators = 1; shutters = 2; sensors = 2; climates = 1;
+            } else if (window.selectedMiniPropertyType === 'flat34') {
+                roomsVal = '3';
+                lights = 9; radiators = 3; shutters = 6; sensors = 5; climates = 2;
+            } else if (window.selectedMiniPropertyType === 'house') {
+                roomsVal = '4';
+                lights = 12; radiators = 4; shutters = 8; sensors = 7; climates = 3;
+            }
+
+            const roomsRadio = document.querySelector(`input[name="rooms_count"][value="${roomsVal}"]`);
+            if (roomsRadio) roomsRadio.checked = true;
+            wizardSelections.rooms = parseInt(roomsVal, 10);
+
+            wizardSelections.counts = {
+                lights: lights,
+                radiators: radiators,
+                shutters: shutters,
+                sensors: sensors,
+                climates: climates
+            };
+
+            ['lights', 'radiators', 'shutters', 'sensors', 'climates'].forEach(type => {
+                const el = document.getElementById(`count-${type}`);
+                if (el) el.innerText = wizardSelections.counts[type];
+            });
+
+            recalculateWizardBudget();
+            openConfiguratorModal();
+        };
+
+        // Futtatás betöltéskor
+        setTimeout(() => {
+            runMiniCalculator();
+        }, 300);
+
         // Tervező büdzsé kiszámítása betöltéskor
         recalculateWizardBudget();
 
@@ -3552,7 +3801,11 @@ ${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizik
         }
 
         // Ellenőrzés futtatása betöltéskor
-        checkCookieConsent();
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', checkCookieConsent);
+        } else {
+            checkCookieConsent();
+        }
     </script>
 
     <!-- UI: Minimalista és Modern Süti Hozzájárulás Banner -->
