@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQCCB36C3T"></script>
+    <!-- Google tag (gtag.js) - Dinamikus betöltés cookie hozzájárulás után -->
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag(){window.dataLayer.push(arguments);}
+      
+      function initGoogleAnalytics() {
+        if (window.googleAnalyticsInitialized) return;
+        window.googleAnalyticsInitialized = true;
+        
+        // Google Analytics script dinamikus betöltése
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-CQCCB36C3T";
+        document.head.appendChild(script);
 
-      gtag('config', 'G-CQCCB36C3T');
+        gtag('js', new Date());
+        gtag('config', 'G-CQCCB36C3T');
+        console.log("Google Analytics sikeresen elindítva.");
+      }
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1766,12 +1777,17 @@
                 </div>
 
                 <!-- Prominent Calendly Trigger Section -->
-                <div class="mb-5 p-2 bg-white rounded-2xl relative overflow-hidden text-center shadow-xl border border-slate-100" id="calendly-trigger-section">
-                    <p class="text-xs text-slate-900 font-black mb-3 mt-2 tracking-wider">IDŐPONTFOGLALÁS AZ INGYENES HELYSZÍNI FELMÉRÉSHEZ:</p>
-                    <div class="calendly-inline-widget" id="calendly-container" data-url="https://calendly.com/nagylevente-tech/felmeres?background_color=ffffff&text_color=1a1a1a&primary_color=00f2fe" style="min-width:320px;height:700px;border-radius:12px;overflow:hidden;"></div>
-                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                    <div class="mt-3.5 pt-3.5 border-t border-slate-100 text-center">
-                        <a href="#" onclick="event.preventDefault(); openCalendlyPopupFull();" class="inline-flex items-center gap-1 text-[11px] font-bold text-sky-600 hover:text-sky-700 hover:underline transition-all">
+                <div class="mb-5 p-5 border border-emerald-500/20 bg-emerald-500/5 rounded-2xl text-center" id="calendly-trigger-section">
+                    <p class="text-xs text-emerald-400 font-bold uppercase tracking-widest mb-3.5 font-display">Személyes helyszíni egyeztetés</p>
+                    <button onclick="openCalendlyPopup()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs sm:text-sm uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:shadow-emerald-500/25 active:scale-98 animate-pulse font-display">
+                        <i data-lucide="calendar" class="w-5 h-5 text-slate-950"></i>
+                        INGYENES helyszíni felmérés igénylése
+                    </button>
+                    <p class="text-[10px] text-emerald-400/90 mt-2.5 font-medium leading-normal">
+                        ★ Foglaljon szabad időpontot a fenti gombra kattintva! (Az adatai automatikusan átkerülnek)
+                    </p>
+                    <div class="mt-3.5 pt-3.5 border-t border-emerald-500/10 text-center">
+                        <a href="#" onclick="event.preventDefault(); openCalendlyPopupFull();" class="inline-flex items-center gap-1 text-[11px] font-bold text-sky-400 hover:text-sky-300 hover:underline transition-all">
                             Megnyitás külön teljes ablakban (új lapon) <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
@@ -3281,30 +3297,95 @@ ${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizik
             document.body.style.overflow = '';
         };
 
+        window.getCalendlyUrl = function() {
+            const data = window.lastCalculatorData || {};
+            const cleanTrackingId = data.trackingId ? data.trackingId.replace('#', '') : '';
+            
+            const params = new URLSearchParams();
+            params.append('background_color', 'ffffff');
+            params.append('text_color', '1a1a1a');
+            params.append('primary_color', '0052cc');
+            
+            if (data.name) {
+                params.append('name', data.name);
+            }
+            if (data.email) {
+                params.append('email', data.email);
+            }
+            if (data.phone) {
+                let cleaned = data.phone.trim().replace(/[\s\-\(\)]/g, '');
+                let formattedPhone = data.phone;
+                if (cleaned.startsWith('+')) {
+                    formattedPhone = cleaned;
+                } else if (cleaned.startsWith('0036')) {
+                    formattedPhone = '+' + cleaned.substring(2);
+                } else if (cleaned.startsWith('06')) {
+                    formattedPhone = '+36' + cleaned.substring(2);
+                } else if (cleaned.startsWith('36')) {
+                    formattedPhone = '+' + cleaned;
+                } else if (/^[12357]0/.test(cleaned)) {
+                    formattedPhone = '+36' + cleaned;
+                }
+                params.append('a1', formattedPhone);
+            }
+            if (data.address) {
+                params.append('a2', data.address);
+            }
+            if (cleanTrackingId) {
+                params.append('a3', cleanTrackingId);
+            }
+            
+            return `https://calendly.com/nagylevente-tech/felmeres?${params.toString()}`;
+        };
+
         window.updateCalendlyInlineWidget = function(trackingId) {
-            const cleanTrackingId = trackingId ? trackingId.replace('#', '') : '';
-            const baseUrl = "https://calendly.com/nagylevente-tech/felmeres?background_color=ffffff&text_color=1a1a1a&primary_color=00f2fe";
-            const targetUrl = cleanTrackingId ? `${baseUrl}&utm_campaign=${encodeURIComponent(cleanTrackingId)}` : baseUrl;
+            if (trackingId) {
+                if (!window.lastCalculatorData) {
+                    window.lastCalculatorData = {};
+                }
+                window.lastCalculatorData.trackingId = trackingId;
+            }
+            const targetUrl = window.getCalendlyUrl();
             
             const calendlyContainer = document.getElementById('calendly-container');
             if (calendlyContainer) {
+                // Clear any existing contents (like stale or partially loaded iframes)
+                calendlyContainer.innerHTML = '';
                 calendlyContainer.setAttribute('data-url', targetUrl);
-                const iframe = calendlyContainer.querySelector('iframe');
-                if (iframe) {
-                    iframe.src = targetUrl;
+                
+                // If official Calendly script is loaded, use its inline widget builder
+                if (typeof Calendly !== 'undefined' && typeof Calendly.initInlineWidget === 'function') {
+                    try {
+                        Calendly.initInlineWidget({
+                            url: targetUrl,
+                            parentElement: calendlyContainer
+                        });
+                    } catch (e) {
+                        console.error("Calendly.initInlineWidget failed, using iframe fallback:", e);
+                        createFallbackIframe(calendlyContainer, targetUrl);
+                    }
+                } else {
+                    // Fail-proof dynamic iframe injection fallback
+                    createFallbackIframe(calendlyContainer, targetUrl);
                 }
             }
         };
+
+        function createFallbackIframe(container, url) {
+            const iframe = document.createElement('iframe');
+            iframe.src = url;
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.border = 'none';
+            iframe.setAttribute('frameborder', '0');
+            container.appendChild(iframe);
+        }
 
         window.openCalendlyPopup = function() {
             // Close success modal if open so it doesn't overlap
             closeSuccessModal();
 
-            const data = window.lastCalculatorData || {};
-            let trackingId = data.trackingId || '';
-            const cleanTrackingId = trackingId.replace('#', '');
-            const baseUrl = "https://calendly.com/nagylevente-tech/felmeres?background_color=ffffff&text_color=1a1a1a&primary_color=00f2fe";
-            const targetUrl = cleanTrackingId ? `${baseUrl}&utm_campaign=${encodeURIComponent(cleanTrackingId)}` : baseUrl;
+            const targetUrl = window.getCalendlyUrl();
 
             if (typeof Calendly !== 'undefined' && typeof Calendly.initPopupWidget === 'function') {
                 Calendly.initPopupWidget({
@@ -3318,11 +3399,7 @@ ${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizik
         window.openCalendlyPopupFull = function() {
             closeSuccessModal();
 
-            const data = window.lastCalculatorData || {};
-            let trackingId = data.trackingId || '';
-            const cleanTrackingId = trackingId.replace('#', '');
-            const baseUrl = "https://calendly.com/nagylevente-tech/felmeres?background_color=ffffff&text_color=1a1a1a&primary_color=00f2fe";
-            const targetUrl = cleanTrackingId ? `${baseUrl}&utm_campaign=${encodeURIComponent(cleanTrackingId)}` : baseUrl;
+            const targetUrl = window.getCalendlyUrl();
 
             window.open(targetUrl, '_blank');
         };
@@ -3427,6 +3504,78 @@ ${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizik
                 }
             }
         });
+
+        // --- SÜTI (COOKIE BANNER LOGIKA) ---
+        window.acceptCookies = function() {
+            localStorage.setItem('cookie_consent', 'accepted');
+            initGoogleAnalytics();
+            hideCookieBanner();
+        };
+
+        window.rejectCookies = function() {
+            localStorage.setItem('cookie_consent', 'rejected');
+            hideCookieBanner();
+        };
+
+        function showCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            if (banner) {
+                banner.classList.remove('hidden');
+                setTimeout(() => {
+                    banner.classList.remove('translate-y-full');
+                    banner.classList.add('translate-y-0');
+                    if (typeof lucide !== 'undefined') {
+                        lucide.createIcons();
+                    }
+                }, 100);
+            }
+        }
+
+        function hideCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            if (banner) {
+                banner.classList.remove('translate-y-0');
+                banner.classList.add('translate-y-full');
+                setTimeout(() => {
+                    banner.classList.add('hidden');
+                }, 500);
+            }
+        }
+
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('cookie_consent');
+            if (consent === 'accepted') {
+                initGoogleAnalytics();
+            } else if (consent !== 'rejected') {
+                showCookieBanner();
+            }
+        }
+
+        // Ellenőrzés futtatása betöltéskor
+        checkCookieConsent();
     </script>
+
+    <!-- UI: Minimalista és Modern Süti Hozzájárulás Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 translate-y-full transition-all duration-500 ease-out hidden">
+        <div class="max-w-4xl mx-auto bg-slate-950 border border-slate-800 rounded-2xl shadow-2xl p-5 md:p-6 flex flex-col md:flex-row items-center justify-between gap-4 backdrop-blur-xl bg-opacity-95">
+            <div class="flex-1 text-center md:text-left">
+                <h4 class="text-white text-sm font-bold tracking-wider uppercase mb-1.5 flex items-center justify-center md:justify-start gap-2 font-display">
+                    <i data-lucide="cookie" class="w-4 h-4 text-emerald-400"></i>
+                    Sütik (Cookie-k) használata
+                </h4>
+                <p class="text-xs text-slate-300 leading-relaxed max-w-2xl">
+                    Weboldalunk fejlesztése és a felhasználói élmény optimalizálása céljából anonim látogatottsági adatokat mérünk a Google Analytics segítségével. Kérjük, járuljon hozzá a statisztikai sütik futtatásához!
+                </p>
+            </div>
+            <div class="flex items-center gap-3 w-full md:w-auto justify-center md:justify-end shrink-0">
+                <button onclick="rejectCookies()" class="px-4 py-2.5 text-xs text-slate-400 hover:text-white transition-colors cursor-pointer font-bold uppercase tracking-wider">
+                    Elutasítom
+                </button>
+                <button onclick="acceptCookies()" style="background-color: #0052cc;" class="px-6 py-2.5 hover:bg-opacity-90 text-white font-black text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-lg shadow-blue-900/10 active:scale-98">
+                    Elfogadom
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
