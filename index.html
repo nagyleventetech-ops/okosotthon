@@ -1290,25 +1290,6 @@
             </div>
         </section>
 
-        <!-- SZEKCIÓ: Konfigurátor hívógomb (Rakd össze a saját csomagod) -->
-        <section class="mb-24 text-center scroll-reveal">
-            <div class="bg-slate-900/30 border border-slate-800/40 rounded-3xl p-8 max-w-4xl mx-auto backdrop-blur-md">
-                <div class="w-16 h-16 bg-sky-500/10 border border-sky-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4 text-sky-400">
-                    <i data-lucide="calculator" class="w-8 h-8"></i>
-                </div>
-                <h2 class="text-2xl md:text-3xl font-display font-black text-white mb-3">
-                    Állítsa össze saját csomagját
-                </h2>
-                <p class="text-slate-300 text-sm md:text-base mb-6 max-w-xl mx-auto leading-relaxed">
-                    Tervezze meg okosotthonát interaktívan! Válassza ki az eszközök darabszámát, és a rendszerem azonnal kiszámolja a várható végösszeget a beépítési munkadíjakkal együtt.
-                </p>
-                <button onclick="openConfiguratorModal()" class="inline-flex items-center gap-2 px-8 py-4 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-all shadow-lg shadow-sky-500/10 hover:shadow-sky-500/25 hover:-translate-y-0.5 cursor-pointer text-sm md:text-base">
-                    <i data-lucide="sliders" class="w-4 h-4"></i>
-                    Saját okosotthon tervező megnyitása
-                </button>
-            </div>
-        </section>
-
         <!-- Interaktív Okosotthon Kalkulátor Modal (A "Rakd össze a saját csomagod" konfigurátor) -->
         <div id="configurator-modal" class="fixed inset-0 bg-slate-950/95 backdrop-blur-md z-[9999] opacity-0 pointer-events-none transition-all duration-300 overflow-y-auto flex items-start justify-center p-4 md:p-6" style="scroll-behavior: smooth;">
             <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-4xl w-full my-8 p-6 md:p-8 shadow-2xl transform scale-95 transition-all duration-300 relative flex flex-col gap-6 text-left">
@@ -1552,7 +1533,7 @@
                                 <label class="flex items-start gap-3 p-4 border border-slate-800 rounded-2xl bg-slate-950/40 hover:border-sky-500/20 cursor-pointer select-none transition-all">
                                     <input type="checkbox" name="desired_functions" value="lock" onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
                                     <div>
-                                        <span class="text-xs sm:text-sm font-bold text-white block">Okos Ajtózár (Aqara U200 komplett szett)</span>
+                                        <span class="text-xs sm:text-sm font-bold text-white block">Intelligens Okos Ajtózár (komplett szett)</span>
                                         <span class="text-[10px] text-slate-450 leading-normal block mt-1">Ujjlenyomat-olvasós, PIN-kódos, kulcsnélküli biztonsági beléptető rendszer, amely meglévő zárbetétre építhető.</span>
                                     </div>
                                 </label>
@@ -2986,7 +2967,7 @@
                 deviceCount += counts.sensors;
             }
 
-            // Bejárati okos Ajtózár (Aqara U200 komplett szett)
+            // Bejárati okos Ajtózár (Ujjlenyomat-olvasós komplett szett)
             if (wizardSelections.functions.includes("lock")) {
                 total += 139000;
                 deviceCount += 2; // Okos zár + Kültéri ujjlenyomat-olvasó panel
@@ -3222,7 +3203,7 @@
                 heating_basic: "Fűtés zónásítás (Okos radiátorszelepek)",
                 heating_pro: "Okos fali fűtéstermosztátok és szelepek (230V)",
                 sensors: "Biztonsági Nyitás- és Mozgásszenzorok",
-                lock: "Ujjlenyomatos Okoszár (Aqara U200)",
+                lock: "Intelligens Ujjlenyomatos Okoszár",
                 water_safety: "Vízszivárgás- és Főcsapelzáró védelem",
                 shutters: "Automata Árnyékoló- és Redőnyvezérlés",
                 garage_opener: "Okos garázskapu & kapuvezérlés (230V)",
@@ -3619,7 +3600,7 @@ ${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizik
             }
 
             if (hasLock) {
-                total += 139000; // Aqara lock komplett szett
+                total += 139000; // Okoszár komplett szett
             }
 
             const totalEl = document.getElementById('mini-calc-total');
@@ -3755,14 +3736,33 @@ ${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizik
         });
 
         // --- SÜTI (COOKIE BANNER LOGIKA) ---
+        // Biztonságos localStorage wrapper (Pl. ha az inkognitó mód korlátozza a hozzáférést)
+        function safeGetItem(key) {
+            try {
+                return localStorage.getItem(key);
+            } catch (e) {
+                console.warn("localStorage elérése sikertelen inkognitóban:", e);
+                return window._cookie_consent_fallback || null;
+            }
+        }
+
+        function safeSetItem(key, value) {
+            try {
+                localStorage.setItem(key, value);
+            } catch (e) {
+                console.warn("localStorage mentése sikertelen inkognitóban:", e);
+                window._cookie_consent_fallback = value;
+            }
+        }
+
         window.acceptCookies = function() {
-            localStorage.setItem('cookie_consent', 'accepted');
+            safeSetItem('cookie_consent', 'accepted');
             initGoogleAnalytics();
             hideCookieBanner();
         };
 
         window.rejectCookies = function() {
-            localStorage.setItem('cookie_consent', 'rejected');
+            safeSetItem('cookie_consent', 'rejected');
             hideCookieBanner();
         };
 
@@ -3792,7 +3792,7 @@ ${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizik
         }
 
         function checkCookieConsent() {
-            const consent = localStorage.getItem('cookie_consent');
+            const consent = safeGetItem('cookie_consent');
             if (consent === 'accepted') {
                 initGoogleAnalytics();
             } else if (consent !== 'rejected') {
