@@ -126,6 +126,16 @@
             ::selection {
                 background-color: rgba(14, 165, 233, 0.3); /* selection:bg-sky-500/30 */
             }
+            /* Webkit Autofill Styling to force white background and dark text on browser autocomplete fields */
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover, 
+            input:-webkit-autofill:focus, 
+            input:-webkit-autofill:active {
+                -webkit-text-fill-color: #0f172a !important;
+                -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+                box-shadow: 0 0 0 1000px #ffffff inset !important;
+                transition: background-color 5000s ease-in-out 0s;
+            }
         }
 
         @layer components {
@@ -1686,23 +1696,23 @@
                             
                             <div class="grid sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label for="calc-name" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Név *</label>
-                                    <input type="text" id="calc-name" required placeholder="Pl. Nagy Andrea" class="w-full px-4 py-3 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:border-sky-500/50 focus:outline-none transition-all">
+                                    <label for="calc-name" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Teljes Név *</label>
+                                    <input type="text" id="calc-name" required placeholder="Pl. Kovács Andrea" class="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-slate-900 placeholder:text-slate-450 text-xs sm:text-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:outline-none transition-all">
                                 </div>
                                 <div>
                                     <label for="calc-phone" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Telefonszám *</label>
-                                    <input type="tel" id="calc-phone" required placeholder="Pl. 06 30 123 4567" class="w-full px-4 py-3 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:border-sky-500/50 focus:outline-none transition-all">
+                                    <input type="tel" id="calc-phone" required placeholder="Pl. 06 30 123 4567" class="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-slate-900 placeholder:text-slate-450 text-xs sm:text-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:outline-none transition-all">
                                 </div>
                             </div>
 
                             <div class="grid sm:grid-cols-2 gap-4">
                                 <div>
                                     <label for="calc-email" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">E-mail cím *</label>
-                                    <input type="email" id="calc-email" required placeholder="Pl. andrea@okosotthon.hu" class="w-full px-4 py-3 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:border-sky-500/50 focus:outline-none transition-all">
+                                    <input type="email" id="calc-email" required placeholder="Pl. andrea@okosotthon.hu" class="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-slate-900 placeholder:text-slate-450 text-xs sm:text-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:outline-none transition-all">
                                 </div>
                                 <div>
                                     <label for="calc-survey-address" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Felmérés pontos címe *</label>
-                                    <input type="text" id="calc-survey-address" required placeholder="Pl. 2021 Tahitótfalu, Fő út 44." class="w-full px-4 py-3 bg-slate-950/80 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:border-sky-500/50 focus:outline-none transition-all">
+                                    <input type="text" id="calc-survey-address" required placeholder="Pl. 2021 Tahitótfalu, Fő út 44." class="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-slate-900 placeholder:text-slate-450 text-xs sm:text-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:outline-none transition-all">
                                 </div>
                             </div>
 
@@ -2977,12 +2987,12 @@
             document.body.style.overflow = '';
         };
 
-        // Kívülre kattintás a konfigurátor modal bezárásához
-        document.getElementById('configurator-modal')?.addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) {
-                closeConfiguratorModal();
-            }
-        });
+        // Kívülre kattintás a konfigurátor modal bezárásához letiltva a felhasználó kérésére
+        // document.getElementById('configurator-modal')?.addEventListener('click', (e) => {
+        //     if (e.target === e.currentTarget) {
+        //         closeConfiguratorModal();
+        //     }
+        // });
 
         let lastGeneratedMailBody = "";
         let lastGeneratedMailSubject = "";
@@ -3281,22 +3291,23 @@ ${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizik
             const email = data.email || '';
             const phone = data.phone || '';
             const address = data.address || '';
-            const trackingId = data.trackingId || '';
-            const cleanTrackingId = trackingId.replace('#', ''); // Pl. HO-1024
+            
+            let trackingId = data.trackingId || '';
+            if (!trackingId) {
+                const base36Time = Date.now().toString(36).slice(-4).toUpperCase();
+                const randomChar = Math.floor(10 + Math.random() * 80).toString(36).toUpperCase();
+                trackingId = `#HO-DIRECT-${base36Time}${randomChar}`;
+            }
+            const cleanTrackingId = trackingId.replace('#', ''); // Pl. HO-DIRECT-1024
 
             if (typeof Calendly !== 'undefined' && typeof Calendly.initPopupWidget === 'function') {
                 Calendly.initPopupWidget({
-                    url: 'https://calendly.com/nagylevente-tech/30min?background_color=020617&text_color=ffffff&primary_color=7dd3fc',
+                    url: 'https://calendly.com/nagylevente-tech/felmeres?background_color=000000&text_color=ffffff&primary_color=00f2fe' + (cleanTrackingId ? `&utm_campaign=${encodeURIComponent(cleanTrackingId)}` : ''),
                     prefill: {
                         name: name,
                         email: email,
                         phone: phone,
-                        location: address,
-                        customAnswers: {
-                            a1: phone,
-                            a2: trackingId,
-                            a3: address
-                        }
+                        location: address
                     },
                     utm: {
                         utmCampaign: cleanTrackingId
@@ -3316,17 +3327,20 @@ ${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizik
             const email = data.email || '';
             const phone = data.phone || '';
             const address = data.address || '';
-            const trackingId = data.trackingId || '';
+            
+            let trackingId = data.trackingId || '';
+            if (!trackingId) {
+                const base36Time = Date.now().toString(36).slice(-4).toUpperCase();
+                const randomChar = Math.floor(10 + Math.random() * 80).toString(36).toUpperCase();
+                trackingId = `#HO-DIRECT-${base36Time}${randomChar}`;
+            }
             const cleanTrackingId = trackingId.replace('#', '');
 
-            const url = `https://calendly.com/nagylevente-tech/30min?background_color=020617&text_color=ffffff&primary_color=7dd3fc` 
+            const url = `https://calendly.com/nagylevente-tech/felmeres?background_color=000000&text_color=ffffff&primary_color=00f2fe` 
                 + (name ? `&name=${encodeURIComponent(name)}` : '')
                 + (email ? `&email=${encodeURIComponent(email)}` : '')
                 + (phone ? `&phone=${encodeURIComponent(phone)}` : '')
-                + `&a2=${encodeURIComponent(trackingId)}`
-                + (address ? `&a3=${encodeURIComponent(address)}` : '')
                 + (address ? `&location=${encodeURIComponent(address)}` : '')
-                + (phone ? `&a1=${encodeURIComponent(phone)}` : '')
                 + (cleanTrackingId ? `&utm_campaign=${encodeURIComponent(cleanTrackingId)}` : '');
             
             window.open(url, '_blank');
