@@ -1766,16 +1766,12 @@
                 </div>
 
                 <!-- Prominent Calendly Trigger Section -->
-                <div class="mb-5 p-4 border border-emerald-500/20 bg-emerald-500/5 rounded-2xl text-center" id="calendly-trigger-section">
-                    <button onclick="openCalendlyPopup()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs sm:text-sm uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-3 cursor-pointer shadow-lg hover:shadow-emerald-500/25 active:scale-98 animate-pulse font-display">
-                        <i data-lucide="calendar" class="w-5 h-5 text-slate-950"></i>
-                        INGYENES helyszíni felmérés igénylése
-                    </button>
-                    <p class="text-[10px] text-emerald-400 mt-2 font-medium leading-normal">
-                        ★ Foglaljon ingyenes felmérést a fenti gombra kattintva!
-                    </p>
-                    <div class="mt-3.5 pt-3.5 border-t border-emerald-500/10">
-                        <a href="#" onclick="event.preventDefault(); openCalendlyPopupFull();" class="inline-flex items-center gap-1 text-[11px] font-bold text-sky-450 hover:text-sky-400 hover:underline transition-all">
+                <div class="mb-5 p-2 bg-white rounded-2xl relative overflow-hidden text-center shadow-xl border border-slate-100" id="calendly-trigger-section">
+                    <p class="text-xs text-slate-900 font-black mb-3 mt-2 tracking-wider">IDŐPONTFOGLALÁS AZ INGYENES HELYSZÍNI FELMÉRÉSHEZ:</p>
+                    <div class="calendly-inline-widget" id="calendly-container" data-url="https://calendly.com/nagylevente-tech/felmeres?background_color=ffffff&text_color=1a1a1a&primary_color=00f2fe" style="min-width:320px;height:700px;border-radius:12px;overflow:hidden;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                    <div class="mt-3.5 pt-3.5 border-t border-slate-100 text-center">
+                        <a href="#" onclick="event.preventDefault(); openCalendlyPopupFull();" class="inline-flex items-center gap-1 text-[11px] font-bold text-sky-600 hover:text-sky-700 hover:underline transition-all">
                             Megnyitás külön teljes ablakban (új lapon) <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
@@ -3228,7 +3224,7 @@ ${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizik
                     lucide.createIcons();
                 }
 
-                // Sikeres küldés modal adatok - prefill phone and address for Calendly too!
+                // Sikeres küldés modal adatok
                 window.lastCalculatorData = {
                     name: name,
                     email: email,
@@ -3253,6 +3249,9 @@ ${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizik
 
                 // Bezárjuk a tervező modalt, és megnyitjuk a befejező sikeres modalt
                 closeConfiguratorModal();
+
+                // Frissítjük a beágyazott Calendly inline widget URL-jét az ajánlatszámmal
+                updateCalendlyInlineWidget(trackingId);
 
                 const successModal = document.getElementById('success-calculator-modal');
                 if (successModal) {
@@ -3282,36 +3281,34 @@ ${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizik
             document.body.style.overflow = '';
         };
 
+        window.updateCalendlyInlineWidget = function(trackingId) {
+            const cleanTrackingId = trackingId ? trackingId.replace('#', '') : '';
+            const baseUrl = "https://calendly.com/nagylevente-tech/felmeres?background_color=ffffff&text_color=1a1a1a&primary_color=00f2fe";
+            const targetUrl = cleanTrackingId ? `${baseUrl}&utm_campaign=${encodeURIComponent(cleanTrackingId)}` : baseUrl;
+            
+            const calendlyContainer = document.getElementById('calendly-container');
+            if (calendlyContainer) {
+                calendlyContainer.setAttribute('data-url', targetUrl);
+                const iframe = calendlyContainer.querySelector('iframe');
+                if (iframe) {
+                    iframe.src = targetUrl;
+                }
+            }
+        };
+
         window.openCalendlyPopup = function() {
-            // Close the success modal first so it doesn't mask the Calendly popup
+            // Close success modal if open so it doesn't overlap
             closeSuccessModal();
 
             const data = window.lastCalculatorData || {};
-            const name = data.name || '';
-            const email = data.email || '';
-            const phone = data.phone || '';
-            const address = data.address || '';
-            
             let trackingId = data.trackingId || '';
-            if (!trackingId) {
-                const base36Time = Date.now().toString(36).slice(-4).toUpperCase();
-                const randomChar = Math.floor(10 + Math.random() * 80).toString(36).toUpperCase();
-                trackingId = `#HO-DIRECT-${base36Time}${randomChar}`;
-            }
-            const cleanTrackingId = trackingId.replace('#', ''); // Pl. HO-DIRECT-1024
+            const cleanTrackingId = trackingId.replace('#', '');
+            const baseUrl = "https://calendly.com/nagylevente-tech/felmeres?background_color=ffffff&text_color=1a1a1a&primary_color=00f2fe";
+            const targetUrl = cleanTrackingId ? `${baseUrl}&utm_campaign=${encodeURIComponent(cleanTrackingId)}` : baseUrl;
 
             if (typeof Calendly !== 'undefined' && typeof Calendly.initPopupWidget === 'function') {
                 Calendly.initPopupWidget({
-                    url: 'https://calendly.com/nagylevente-tech/felmeres?background_color=000000&text_color=ffffff&primary_color=00f2fe' + (cleanTrackingId ? `&utm_campaign=${encodeURIComponent(cleanTrackingId)}` : ''),
-                    prefill: {
-                        name: name,
-                        email: email,
-                        phone: phone,
-                        location: address
-                    },
-                    utm: {
-                        utmCampaign: cleanTrackingId
-                    }
+                    url: targetUrl
                 });
             } else {
                 window.openCalendlyPopupFull();
@@ -3319,31 +3316,15 @@ ${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizik
         };
 
         window.openCalendlyPopupFull = function() {
-            // Close the success modal first so it doesn't mask anything
             closeSuccessModal();
 
             const data = window.lastCalculatorData || {};
-            const name = data.name || '';
-            const email = data.email || '';
-            const phone = data.phone || '';
-            const address = data.address || '';
-            
             let trackingId = data.trackingId || '';
-            if (!trackingId) {
-                const base36Time = Date.now().toString(36).slice(-4).toUpperCase();
-                const randomChar = Math.floor(10 + Math.random() * 80).toString(36).toUpperCase();
-                trackingId = `#HO-DIRECT-${base36Time}${randomChar}`;
-            }
             const cleanTrackingId = trackingId.replace('#', '');
+            const baseUrl = "https://calendly.com/nagylevente-tech/felmeres?background_color=ffffff&text_color=1a1a1a&primary_color=00f2fe";
+            const targetUrl = cleanTrackingId ? `${baseUrl}&utm_campaign=${encodeURIComponent(cleanTrackingId)}` : baseUrl;
 
-            const url = `https://calendly.com/nagylevente-tech/felmeres?background_color=000000&text_color=ffffff&primary_color=00f2fe` 
-                + (name ? `&name=${encodeURIComponent(name)}` : '')
-                + (email ? `&email=${encodeURIComponent(email)}` : '')
-                + (phone ? `&phone=${encodeURIComponent(phone)}` : '')
-                + (address ? `&location=${encodeURIComponent(address)}` : '')
-                + (cleanTrackingId ? `&utm_campaign=${encodeURIComponent(cleanTrackingId)}` : '');
-            
-            window.open(url, '_blank');
+            window.open(targetUrl, '_blank');
         };
 
         window.triggerMailSender = function() {
