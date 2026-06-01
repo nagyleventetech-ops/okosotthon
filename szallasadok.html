@@ -777,7 +777,7 @@
                     </div>
                     <h3 class="text-3xl font-display font-black text-white mb-2">Köszönjük a megkeresést!</h3>
                     <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                        Sikeresen elküldtük az Airbnb/Booking apartmanjára kalkulált ajánlati konfigurációt az Ön e-mail címére.
+                        Sikeresen kalkuláltuk az Airbnb/Booking apartmanjára a konfigurációt.
                     </p>
 
                     <div class="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 my-6 max-w-md mx-auto">
@@ -787,6 +787,25 @@
                         <div class="text-slate-300 text-xs leading-relaxed">
                             A rendszer azonosítója beépítésre került a Calendly naptárba, így Nagy Levente megkapja ezt a kódot az integrált foglaláskor.
                         </div>
+                    </div>
+
+                    <!-- Host custom summary and copy section -->
+                    <div class="bg-slate-950/45 border border-slate-800/80 rounded-2xl p-5 mb-6 text-left max-w-md mx-auto">
+                        <div class="flex justify-between items-center mb-3">
+                            <p class="text-[10px] text-slate-500 uppercase font-black tracking-wider">A kalkulált konfiguráció adatai:</p>
+                            <button id="host-copy-text-btn" onclick="copyHostSummaryToClipboard()" class="flex items-center gap-1.5 text-[11px] font-bold text-sky-450 hover:text-sky-400 transition-colors cursor-pointer bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-lg">
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i> Kimásolás
+                            </button>
+                        </div>
+                        <div class="max-h-[140px] overflow-y-auto custom-scrollbar">
+                            <pre class="text-[11px] text-slate-400 font-mono whitespace-pre-wrap select-all leading-normal" id="host-success-copy-text"></pre>
+                        </div>
+                    </div>
+
+                    <div class="text-center mb-6">
+                        <button onclick="triggerHostMailSender()" class="text-slate-400 hover:text-sky-400 text-xs font-bold transition-all underline cursor-pointer">
+                            E-mail piszkozat kézi megnyitása levelezőben →
+                        </button>
                     </div>
 
                     <div class="mb-5 p-5 border border-emerald-500/20 bg-emerald-500/5 rounded-2xl text-center">
@@ -997,6 +1016,8 @@
         let currentHostPropertyType = 'studio';
         window.latestHostCalculatedTotal = 100000;
         window.latestHostTrackingId = null;
+        window.lastGeneratedHostMailSubject = "";
+        window.lastGeneratedHostMailBody = "";
 
         window.selectHostPropertyType = function(type) {
             currentHostPropertyType = type;
@@ -1046,6 +1067,30 @@
             }
             
             window.latestHostCalculatedTotal = total;
+        };
+
+        window.triggerHostMailSender = function() {
+            const recipient = "nagylevente.tech@gmail.com";
+            const mailtoUri = `mailto:${recipient}?subject=${encodeURIComponent(window.lastGeneratedHostMailSubject)}&body=${encodeURIComponent(window.lastGeneratedHostMailBody)}`;
+            window.location.href = mailtoUri;
+        };
+
+        window.copyHostSummaryToClipboard = function() {
+            const pre = document.getElementById('host-success-copy-text');
+            if (pre) {
+                navigator.clipboard.writeText(pre.textContent).then(() => {
+                    const btn = document.getElementById('host-copy-text-btn');
+                    const origContent = btn.innerHTML;
+                    btn.innerHTML = `<i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Másolva!`;
+                    if (typeof lucide !== 'undefined') lucide.createIcons();
+                    setTimeout(() => {
+                        btn.innerHTML = origContent;
+                        if (typeof lucide !== 'undefined') lucide.createIcons();
+                    }, 2000);
+                }).catch(err => {
+                    console.error("Nem sikerült a vágólapra másolás:", err);
+                });
+            }
         };
 
         window.submitHostInquiry = function() {
@@ -1119,6 +1164,41 @@
                 inquiryItems.push({ name: `Gépelt egyedi igény: ${customProblem}`, price: 0, count: 1 });
             }
 
+            // Generate dedicated, high-quality, customized host email body & subject
+            const formatPrice = (p) => new Intl.NumberFormat('hu-HU').format(p);
+            const hostEmailSubject = `Új szállásadói okosítás igény [Azonosító: #${trackingId}] - ${name}`;
+            const hostEmailBody = `Tisztelt Nagy Levente!
+
+Új Airbnb/Booking szállásadói okoskonfiguráció érkezett a kalkulátorból.
+
+AJÁNLATKÉRŐ ADATAI:
+-------------------------------------
+Név: ${name}
+Telefonszám: ${phone}
+E-mail: ${email}
+Ingatlan címe: ${address}
+
+INGATLAN ÉS FELSZERELTSÉG:
+-------------------------------------
+Ingatlan mérete / típusa: ${propNameHu}
+Választott kiegészítő okosítások:
+${selectedExtras.length > 0 ? selectedExtras.map(e => "- " + e).join("\n") : "- Csak a Smart Host Alapcsomag (helyi szerver + szoftver)"}
+
+EGYEDI IGÉNYEK / PROBLÉMÁK:
+-------------------------------------
+${customProblem ? customProblem : "Nincs egyedi igény megadva."}
+
+AJÁNLOTT RENDSZER ÖSSZESÍTŐ:
+-------------------------------------
+Azonosító kód: #${trackingId}
+Becsült darabszám: 1 db offline szerver + ${selectedExtras.length} egyéb okos modul/eszköz
+Várható egyszeri végösszeg (beépítéssel együtt): ${formatPrice(window.latestHostCalculatedTotal)} Ft
+
+(Minden ár tartalmazza a 100 000 Ft-os okosotthon központ és szoftveres beállítás díját. Egyszeri díj, 1 év garanciával, rejtett költségek nélkül.)`;
+
+            window.lastGeneratedHostMailSubject = hostEmailSubject;
+            window.lastGeneratedHostMailBody = hostEmailBody;
+
             // POST query to Google Sheets endpoint
             const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwIu3kcAPtTSZjQ9o8KztX9z8bXHQsOT85BaEyUhMQxGsYgjVDl1DscToXp8wF863EP/exec";
             
@@ -1144,7 +1224,9 @@
                     has230V: true,
                     systemName: `Smart Host ${propNameHu} Rendszer`,
                     deviceCount: 3 + selectedExtras.length,
-                    items: inquiryItems
+                    items: inquiryItems,
+                    mailSubject: hostEmailSubject,
+                    mailBody: hostEmailBody
                 })
             })
             .then(() => {
@@ -1166,6 +1248,11 @@
                 const successTrackingIdEl = document.getElementById('host-success-tracking-id');
                 if (successTrackingIdEl) {
                     successTrackingIdEl.textContent = "#" + trackingId;
+                }
+
+                const hostSuccessCopyTextEl = document.getElementById('host-success-copy-text');
+                if (hostSuccessCopyTextEl) {
+                    hostSuccessCopyTextEl.textContent = hostEmailBody;
                 }
                 
                 document.getElementById('host-calculator-success')?.classList.remove('hidden');
