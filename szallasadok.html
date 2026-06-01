@@ -23,11 +23,52 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Okosotthon Airbnb & Booking Szállásadóknak | HelyiOkos</title>
-    <meta name="description" content="Okosotthon automatizálás és rezsipazarlás elleni megoldások guesthouse, Airbnb és Booking tulajdonosoknak Budapesten és a Dunakanyarban. Fix árak.">
+    <title>Okosotthon Szállásadóknak | Airbnb, Booking & Szallas.hu Rezsicsökkentés | HelyiOkos</title>
+    <meta name="description" content="Okosotthon automatizálás és távvezérelt rezsicsökkentés Airbnb, Booking.com és Szallas.hu partnereknek. Okos zár, távozáskori automatikus fűtésleállítás és naptárszinkronizáció Budapesten és a Dunakanyarban.">
+    <meta name="keywords" content="okosotthon szállásadóknak, airbnb okosotthon, booking okos zár, szallas.hu naptár szinkronizáció, rezsicsökkentés apartman, okos fűtés kiadó lakás, okos bojler vezérlés, automatikus takarék mód, vendégélmény okosotthon, helyiokos szállásadó megoldások">
     
-    <link rel="icon" type="image/png" href="/helyiokos.png">
-    <link rel="apple-touch-icon" href="/helyiokos.png">
+    <!-- Structured Data (JSON-LD) for Accommodations Smart Solutions -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Okosotthon automatizálás szállásadóknak",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "HelyiOkos",
+        "image": "https://helyiokos.com/HelyiOkos.png",
+        "telephone": "+36202109008",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tahitótfalu",
+          "postalCode": "2021",
+          "addressCountry": "HU"
+        }
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Budapest"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Pest megye"
+        }
+      ],
+      "description": "Energiamegtakarítás, távvezérlés és automatizálás rövid távú lakáskiadók részére. Foglalási naptárral összekötött fűtés, hűtés, bojler és világítás menedzsment Airbnb, Booking.com és Szallas.hu platformokhoz."
+    }
+    </script>
+
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="Okosotthon és Automatizálás Szállásadóknak | Airbnb & Booking | HelyiOkos">
+    <meta property="og:description" content="Automatikus rezsicsökkentés a kijelentkezés pillanatától. Kapcsolja össze naptárát okos megoldásainkkal!">
+    <meta property="og:image" content="https://helyiokos.com/HelyiOkos.png">
+    <meta property="og:url" content="https://helyiokos.com/szallasadok.html">
+    <meta property="og:type" content="website">
+    
+    <link rel="icon" type="image/png" href="HelyiOkos.png">
+    <link rel="apple-touch-icon" href="HelyiOkos.png">
     
     <!-- Calendly Widget Script & style for gorgeous desktop popup overlay -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -696,11 +737,13 @@
             setTimeout(initCalendly, 400);
         }
 
-        // Cookie Consent Logic (Matching index.html to guarantee consistency)
+        // --- SÜTI (COOKIE BANNER LOGIKA) ---
+        // Biztonságos localStorage wrapper (Pl. ha az inkognitó mód korlátozza a hozzáférést)
         function safeGetItem(key) {
             try {
                 return localStorage.getItem(key);
             } catch (e) {
+                console.warn("localStorage elérése sikertelen inkognitóban:", e);
                 return window._cookie_consent_fallback || null;
             }
         }
@@ -709,7 +752,52 @@
             try {
                 localStorage.setItem(key, value);
             } catch (e) {
+                console.warn("localStorage mentése sikertelen inkognitóban:", e);
                 window._cookie_consent_fallback = value;
+            }
+        }
+
+        window.initMetaPixel = function() {
+            if (window.metaPixelInitialized) return;
+            window.metaPixelInitialized = true;
+            console.log("Meta Pixel előkészítve (hirdetési kampányhoz aktiválásra kész).");
+            // Későbbi Meta Pixel ID-hoz ide illeszthető be az 'fbq' kód
+        };
+
+        window.acceptCookies = function() {
+            safeSetItem('cookie_consent', 'accepted');
+            initGoogleAnalytics();
+            window.initMetaPixel();
+            hideCookieBanner();
+        };
+
+        window.rejectCookies = function() {
+            safeSetItem('cookie_consent', 'rejected');
+            hideCookieBanner();
+        };
+
+        function showCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            if (banner) {
+                banner.classList.remove('hidden');
+                setTimeout(() => {
+                    banner.classList.remove('translate-y-full');
+                    banner.classList.add('translate-y-0');
+                    if (typeof lucide !== 'undefined') {
+                        lucide.createIcons();
+                    }
+                }, 100);
+            }
+        }
+
+        function hideCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            if (banner) {
+                banner.classList.remove('translate-y-0');
+                banner.classList.add('translate-y-full');
+                setTimeout(() => {
+                    banner.classList.add('hidden');
+                }, 500);
             }
         }
 
@@ -717,13 +805,43 @@
             const consent = safeGetItem('cookie_consent');
             if (consent === 'accepted') {
                 initGoogleAnalytics();
+                window.initMetaPixel();
             } else if (consent !== 'rejected') {
-                // We don't display the cookie banner on this campaign landing page, 
-                // but we initialize Google Analytics silently if already accepted on parent index
+                showCookieBanner();
             }
         }
 
-        checkCookieConsent();
+        // Ellenőrzés futtatása betöltéskor
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                checkCookieConsent();
+            });
+        } else {
+            checkCookieConsent();
+        }
     </script>
+
+    <!-- UI: Minimalista és Modern Süti Hozzájárulás Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 translate-y-full transition-all duration-500 ease-out hidden">
+        <div class="max-w-4xl mx-auto bg-slate-950 border border-slate-800 rounded-2xl shadow-2xl p-5 md:p-6 flex flex-col md:flex-row items-center justify-between gap-4 backdrop-blur-xl bg-opacity-95">
+            <div class="flex-1 text-center md:text-left">
+                <h4 class="text-white text-sm font-bold tracking-wider uppercase mb-1.5 flex items-center justify-center md:justify-start gap-2 font-display">
+                    <i data-lucide="cookie" class="w-4 h-4 text-emerald-400"></i>
+                    Sütik (Cookie-k) használata
+                </h4>
+                <p class="text-xs text-slate-300 leading-relaxed max-w-2xl">
+                    Weboldalunk fejlesztése és a felhasználói élmény optimalizálása céljából anonim látogatottsági adatokat mérünk a Google Analytics segítségével. Kérjük, járuljon hozzá a statisztikai sütik futtatásához!
+                </p>
+            </div>
+            <div class="flex items-center gap-3 w-full md:w-auto justify-center md:justify-end shrink-0">
+                <button onclick="rejectCookies()" class="px-4 py-2.5 text-xs text-slate-400 hover:text-white transition-colors cursor-pointer font-bold uppercase tracking-wider">
+                    Elutasítom
+                </button>
+                <button onclick="acceptCookies()" style="background-color: #0052cc;" class="px-6 py-2.5 hover:bg-opacity-90 text-white font-black text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-lg shadow-blue-900/10 active:scale-98">
+                    Elfogadom
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
