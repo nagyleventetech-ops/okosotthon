@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <!-- Google tag (gtag.js) - Dinamikus betöltés cookie hozzájárulás után -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      
+      function initGoogleAnalytics() {
+        if (window.googleAnalyticsInitialized) return;
+        window.googleAnalyticsInitialized = true;
+        
+        // Google Analytics script dinamikus betöltése
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-CQCCB36C3T";
+        document.head.appendChild(script);
+
+        gtag('js', new Date());
+        gtag('config', 'G-CQCCB36C3T');
+        console.log("Google Analytics sikeresen elindítva.");
+      }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okosotthon Airbnb & Booking Szállásadóknak | HelyiOkos</title>
+    <meta name="description" content="Okosotthon automatizálás és rezsipazarlás elleni megoldások guesthouse, Airbnb és Booking tulajdonosoknak Budapesten és a Dunakanyarban. Fix árak.">
+    
+    <link rel="icon" type="image/png" href="/helyiokos.png">
+    <link rel="apple-touch-icon" href="/helyiokos.png">
+    
+    <!-- Calendly Widget Script & style for gorgeous desktop popup overlay -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script shadow>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151e2f',
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                background-color: #020617; /* bg-slate-950 */
+                color: #f8fafc; /* text-slate-50 */
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                overflow-x: hidden;
+                overflow-wrap: normal;
+                hyphens: none;
+                background-image: 
+                    radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.08) 0%, transparent 60%),
+                    radial-gradient(circle at 100% 40%, rgba(56, 189, 248, 0.06) 0%, transparent 50%),
+                    radial-gradient(circle at 0% 80%, rgba(30, 58, 138, 0.08) 0%, transparent 50%);
+            }
+            ::selection {
+                background-color: rgba(14, 165, 233, 0.3); /* selection:bg-sky-500/30 */
+            }
+        }
+
+        @layer components {
+            .nav-link {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+                font-weight: 600;
+                color: #cbd5e1;
+                transition: color 0.15s;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                display: flex;
+                align-items: center;
+            }
+            .nav-link:hover {
+                color: #38bdf8;
+            }
+
+            .mobile-nav-link {
+                padding: 1rem 1.5rem;
+                font-size: 1.125rem;
+                font-weight: 700;
+                color: #f8fafc;
+                border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+                display: block;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+
+            .glow-orb {
+                position: absolute;
+                width: 70%;
+                height: 70%;
+                filter: blur(160px);
+                border-radius: 9999px;
+                opacity: 0.3;
+                mix-blend-mode: screen;
+                animation: pulse 10s infinite alternate ease-in-out;
+            }
+
+            @keyframes pulse {
+                from { transform: scale(1) translate(0, 0); opacity: 0.2; }
+                to { transform: scale(1.1) translate(20px, 20px); opacity: 0.4; }
+            }
+
+            .hero-title {
+                font-family: 'Outfit', sans-serif;
+                font-weight: 900;
+                line-height: 1.3 !important;
+                letter-spacing: -0.02em;
+            }
+
+            .main-heading {
+                font-family: 'Outfit', sans-serif;
+                font-weight: 800;
+                font-size: 2.25rem;
+                line-height: 1.3;
+                letter-spacing: -0.02em;
+                color: white;
+                margin-bottom: 2rem;
+                word-wrap: break-word;
+            }
+
+            .section-title {
+                font-size: 1.875rem; /* 3xl */
+                font-family: 'Outfit', sans-serif;
+                font-weight: 900;
+                color: white;
+                margin-bottom: 2.5rem;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                line-height: 1.3 !important;
+            }
+            @media (min-width: 768px) {
+                .section-title { font-size: 2.25rem; } /* 4xl */
+            }
+
+            .feature-card {
+                position: relative;
+                padding: 1.5rem;
+                background-color: rgba(8, 12, 24, 0.9);
+                border: 1px solid rgba(56, 189, 248, 0.2);
+                border-radius: 1.25rem;
+                backdrop-filter: blur(12px);
+                transition: all 0.5s;
+                box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            }
+
+            .feature-card:hover {
+                border-color: rgba(56, 189, 248, 0.6);
+                background-color: rgba(10, 15, 30, 0.95);
+                transform: translateY(-6px) scale(1.02);
+                box-shadow: 0 30px 60px -12px rgba(14, 165, 233, 0.15);
+            }
+
+            .feature-icon {
+                margin-top: 0.125rem;
+                padding: 0.625rem;
+                background-color: rgba(30, 41, 59, 0.5);
+                border-radius: 0.75rem;
+                transition: all 0.5s;
+                border: 1px solid rgba(51, 65, 85, 0.3);
+            }
+
+            .feature-card:hover .feature-icon {
+                background-color: rgba(14, 165, 233, 0.2);
+                border-color: rgba(56, 189, 248, 0.3);
+                color: white;
+                transform: scale(1.1) rotate(3deg);
+            }
+
+            .hero-title-shadow {
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 1), 0 4px 12px rgba(0, 0, 0, 0.95), 0 0 25px rgba(0, 0, 0, 0.9);
+            }
+
+            .floating-messenger {
+                position: fixed;
+                bottom: 1.25rem;
+                right: 1.25rem;
+                width: 60px;
+                height: 60px;
+                background-color: #0084FF;
+                color: white;
+                border-radius: 9999px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                z-index: 50;
+                transition: all 0.3s ease;
+                padding: 0.75rem;
+            }
+            @media (min-width: 768px) {
+                .floating-messenger {
+                    bottom: 2rem;
+                    right: 2rem;
+                }
+            }
+            .floating-messenger:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 20px 25px -5px rgba(0, 84, 255, 0.3);
+            }
+            .floating-messenger svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-950">
+
+    <!-- Sticky Navigation (Custom Accommodations Host Specific Navbar) -->
+    <nav class="fixed top-0 left-0 w-full h-16 lg:h-20 bg-slate-950/80 backdrop-blur-xl border-b border-slate-900 z-50 transition-all duration-300">
+        <div class="max-w-4xl mx-auto px-6 h-full flex items-center justify-between lg:justify-start lg:gap-10">
+            <a href="index.html" class="flex items-center gap-2 text-white font-display font-black text-lg sm:text-xl tracking-tighter shrink-0 hover:text-sky-400 transition-colors">
+                <img src="HelyiOkos.png" alt="HelyiOkos Logó" class="w-8 h-8 object-contain">
+                <span>HelyiOkos</span>
+            </a>
+            <div class="hidden lg:flex items-center gap-1">
+                <a href="#funkciok" class="nav-link">Megoldások</a>
+                <a href="#rolam" class="nav-link">Rólam</a>
+                <a href="#foglalas" class="nav-link">Időpontfoglalás</a>
+                <a href="#kapcsolat" class="nav-link">Kapcsolat</a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="lg:hidden p-2 text-white hover:text-sky-400 transition-colors" aria-label="Menü">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-slate-900 shadow-2xl">
+            <div class="flex flex-col py-2">
+                <a href="#funkciok" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Megoldások</a>
+                <a href="#rolam" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Rólam</a>
+                <a href="#foglalas" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Időpontfoglalás</a>
+                <a href="#kapcsolat" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Kapcsolat</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Visual Decoration -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="glow-orb top-[-10%] left-[-10%] bg-sky-500/20" style="animation-delay: 0s;"></div>
+        <div class="glow-orb bottom-[-20%] right-[-10%] bg-blue-600/20" style="animation-delay: -2s;"></div>
+    </div>
+
+    <!-- Main Content Container (Proportional to index.html with luxurious spaces) -->
+    <div class="relative max-w-4xl mx-auto px-6 py-24 md:py-32 font-sans text-slate-100 z-10">
+        
+        <!-- SECTION 1: HERO CONTAINER -->
+        <header class="mb-16 md:mb-24 scroll-reveal transition-all duration-1000 relative">
+            <div class="relative w-full rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden border border-sky-500/35 shadow-[0_25px_60px_rgba(2,132,199,0.25)] min-h-[75vh] flex flex-col justify-between p-6 sm:p-12 md:p-16">
+                
+                <!-- Background Image -->
+                <div class="absolute inset-0 z-0">
+                    <img 
+                        src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&h=900&q=90" 
+                        alt="Modern apartman"
+                        class="w-full h-full object-cover object-center"
+                    >
+                    <!-- Dark Solid / Gradient Overlay with 65% Opacity for Supreme Legibility -->
+                    <div class="absolute inset-0 bg-slate-950/65 bg-gradient-to-b from-slate-950/45 via-slate-950/65 to-slate-950/85"></div>
+                </div>
+
+                <!-- Top Badge - Centered & Premium -->
+                <div class="relative z-10 flex justify-center w-full mb-6">
+                    <span class="inline-flex px-3 py-1 rounded-full bg-slate-950/80 border border-sky-500/30 text-[10px] sm:text-xs uppercase font-extrabold text-sky-400 tracking-widest backdrop-blur-md">
+                        REZSIMEGTAKARÍTÁS • VENDÉGÉLMÉNY • AIRBNB • BOOKING
+                    </span>
+                </div>
+
+                <!-- Central Content Group -->
+                <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center justify-center text-center flex-1 py-8">
+                    <h1 class="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] hero-title text-white tracking-tight mb-4 hero-title-shadow leading-tight">
+                        Amikor a vendég kijelentkezik,<br class="hidden sm:inline" />a rezsiszámlája is megáll?
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg md:text-xl text-slate-200 mt-6 leading-relaxed font-semibold max-w-2xl hero-title-shadow">
+                        Okosotthon rendszerek rövid távú kiadáshoz – automatikus rezsicsökkentés, kevesebb stressz, nagyobb profit.
+                    </p>
+                </div>
+
+                <!-- Bottom Centered CTAs -->
+                <div class="relative z-10 w-full mt-8 max-w-3xl mx-auto">
+                    <div class="flex flex-col sm:flex-row items-center gap-6 justify-center">
+                        <a href="#foglalas" class="inline-flex justify-center items-center text-center px-8 py-4 bg-[#0052cc] hover:bg-[#0042bb] text-white font-black rounded-xl transition-all shadow-lg hover:shadow-[#0052cc]/30 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-sm md:text-base w-full sm:w-auto min-w-[260px]">
+                            Kérjen ingyenes helyszíni felmérést →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- Section Divider -->
+        <div class="flex items-center gap-4 mb-20 md:mb-32 opacity-50 scroll-reveal">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <div class="w-2 h-2 rounded-full bg-sky-500 shadow-[0_0_15px_rgba(56,189,248,0.8)]"></div>
+            <div class="h-px w-12 bg-slate-800"></div>
+        </div>
+
+        <!-- SECTION 2: FUNKCIÓK SZEKCIÓ -->
+        <section id="funkciok" class="mb-24 scroll-reveal">
+            <h2 class="section-title">
+                <i data-lucide="sparkles" class="w-10 h-10 text-sky-400"></i>
+                Házvezérlési & Hatékonysági megoldások szállásadóknak
+            </h2>
+            <p class="text-slate-300 text-lg mb-10 leading-relaxed font-normal">
+                Rendszereim kifejezetten rövid távú lakáskiadókra lettek optimalizálva. Segítenek Önnek visszavenni az irányítást az apartmanja felett, csökkenteni a rezsit és jobb vendégélményt nyújtani.
+            </p>
+            
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Card 1 -->
+                <div class="feature-card group flex flex-col justify-between border border-slate-800">
+                    <div class="flex flex-col gap-4">
+                        <div class="feature-icon w-fit group-hover:bg-sky-500/20 group-hover:scale-105 transition-all">
+                            <i data-lucide="snowflake" class="w-7 h-7 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl text-white font-black leading-tight mb-2 tracking-tight group-hover:text-sky-400 transition-colors">
+                                Intelligens Klímakontroll
+                            </h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Ha a vendég kinyitja az ablakot vagy az erkélyajtót, a klíma 3 perc után magától leáll. Ezzel megakadályozható, hogy a nyitott ablak mellett 18 fokra járatott légkondi megterhelje a rendszert és csillagászati villanyszámlát generáljon.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="feature-card group flex flex-col justify-between border border-slate-800">
+                    <div class="flex flex-col gap-4">
+                        <div class="feature-icon w-fit group-hover:bg-sky-500/20 group-hover:scale-105 transition-all">
+                            <i data-lucide="calendar" class="w-7 h-7 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl text-white font-black leading-tight mb-2 tracking-tight group-hover:text-sky-400 transition-colors">
+                                Automatikus Check-out Mód
+                            </h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                A rendszert közvetlenül összekötjük az Ön Airbnb vagy Booking naptárával. Amint elérkezik a hivatalos távozási idő (pl. délelőtt 10:00), a lakás automatikusan "takarékos" üzemmódba vált: lekapcsol minden ottfelejtett lámpát, TV-t, és lejjebb veszi a fűtést vagy hűtést a következő vendég érkezéséig.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="feature-card group flex flex-col justify-between border border-slate-800">
+                    <div class="flex flex-col gap-4">
+                        <div class="feature-icon w-fit group-hover:bg-sky-500/20 group-hover:scale-105 transition-all">
+                            <i data-lucide="key" class="w-7 h-7 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl text-white font-black leading-tight mb-2 tracking-tight group-hover:text-sky-400 transition-colors">
+                                Okos Zár & PIN Kódos Beléptetés
+                            </h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Felejtse el a kulcshurcolást és a késő éjszakai személyes találkozókat. A vendég egy egyedi, előre legyártott ajtónyitó kódot kap, amely automatikusan csak a foglalása időtartama alatt (a check-in és check-out között) lesz aktív. Utána magától törlődik.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="feature-card group flex flex-col justify-between border border-slate-800">
+                    <div class="flex flex-col gap-4">
+                        <div class="feature-icon w-fit group-hover:bg-sky-500/20 group-hover:scale-105 transition-all">
+                            <i data-lucide="droplet" class="w-7 h-7 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl text-white font-black leading-tight mb-2 tracking-tight group-hover:text-sky-400 transition-colors">
+                                Vízszivárgás Védelem & Kármegelőzés
+                            </h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Apró, diszkrét szenzorok a mosógép, a mosogatógép és a bojler alatt. Ha a rendszer nedvességet vagy csőtörést észlel, azonnal elzárja a lakás központi főcsapját, és riasztást küld az Ön telefonjára – megelőzve ezzel az alsó szomszédok többmilliós áztatási kárát.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="feature-card group flex flex-col justify-between border border-slate-800">
+                    <div class="flex flex-col gap-4">
+                        <div class="feature-icon w-fit group-hover:bg-sky-500/20 group-hover:scale-105 transition-all">
+                            <i data-lucide="volume-2" class="w-7 h-7 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl text-white font-black leading-tight mb-2 tracking-tight group-hover:text-sky-400 transition-colors">
+                                Zajszint Figyelés (Buli-gátló)
+                            </h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                100%-ig GDPR-barát, beszédhangot vagy beszélgetést NEM rögzítő intelligens decibelmérő. Ha a lakásban a zajszint éjszaka átlép egy kritikus határt, a rendszer automatikusan és azonnal figyelmeztető SMS-t küld a vendégnek, megelőzve a lakóközösségi konfliktusokat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="feature-card group flex flex-col justify-between border border-slate-800">
+                    <div class="flex flex-col gap-4">
+                        <div class="feature-icon w-fit group-hover:bg-sky-500/20 group-hover:scale-105 transition-all">
+                            <i data-lucide="thermometer" class="w-7 h-7 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl text-white font-black leading-tight mb-2 tracking-tight group-hover:text-sky-400 transition-colors">
+                                Távvezérelt Bojler és Fűtésmenedzsment
+                            </h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Az üresen álló napokon a rendszer nem fűti feleslegesen a vizet és a szobákat. Az új vendég érkezése előtt azonban az Ön naptára alapján időzítve automatikusan felfűti a bojlert és tökéletes hőmérsékletet teremt, mire a vendég belép az ajtón.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="flex items-center gap-4 mb-20 md:mb-32 opacity-50 scroll-reveal">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <div class="w-2 h-2 rounded-full bg-sky-500 shadow-[0_0_15px_rgba(56,189,248,0.8)]"></div>
+            <div class="h-px w-12 bg-slate-800"></div>
+        </div>
+
+        <!-- SECTION 3: RÓLAM SZEKCIÓ -->
+        <section id="rolam" class="mb-24 scroll-reveal">
+            <h2 class="section-title">
+                <i data-lucide="user" class="w-10 h-10 text-sky-400"></i>
+                Bemutatkozás
+            </h2>
+            
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-14 w-full bg-slate-900/40 border border-slate-800 rounded-[2.5rem] p-6 sm:p-10 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-30"></div>
+                
+                <div class="flex-shrink-0 w-[200px] sm:w-[240px] aspect-[3/4]">
+                    <img src="profil.jpg" alt="Nagy Levente" class="w-full h-full object-cover rounded-2xl border-2 border-sky-500/20 shadow-lg hover:scale-[1.02] transition-transform duration-300">
+                </div>
+
+                <div class="flex-1 text-left">
+                    <h3 class="text-2xl font-display font-black text-white leading-tight mb-4">
+                        Aki a rendszereket tervezi és telepíti: Nagy Levente
+                    </h3>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4 font-normal">
+                        Okosotthon-specialistaként küldetésem, hogy a legmodernebb technológiát állítsam az üzleti hatékonyság szolgálatába. Nem sablonos megoldásokat értékesítek: minden apartman egyedi adottságait felmérem, és olyan stabil, ipari szintű automatizációt építek ki, amely a házigazda kezébe adja a teljes kontrollt.
+                    </p>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
+                        A célom egyszerű: az Ön ingatlana termeljen több profitot, miközben az üzemeltetési feladatok és a stressz a töredékére csökkennek. A helyszíni konzultáció során egy teljesen működőképes mintarendszeren mutatom be Önnek, hogyan fog működni a saját apartmanja.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Divider -->
+          <!-- SECTION 4: IDŐPONTFOGLALÁS (CALENDLY) -->
+        <section id="foglalas" class="scroll-reveal mb-20 text-center">
+            <div class="mb-10">
+                <span class="inline-flex px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] sm:text-xs uppercase font-extrabold text-emerald-400 tracking-widest mb-4">
+                    Időpontfoglalás
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-display font-black text-white leading-tight mb-4">
+                    Időpontfoglalás
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+                    Kérjen ingyenes helyszíni felmérést és egyedi megtakarítási tervet! Az alábbi naptárban válassza ki az Önnek megfelelő időpontot.
+                </p>
+            </div>
+
+            <!-- Calendly Inline Widget Card - Full width -->
+            <div class="bg-slate-900/40 border border-slate-800 rounded-[2.5rem] p-4 sm:p-6 md:p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden mb-16 text-left">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent opacity-30"></div>
+                
+                <!-- White background Calendly container -->
+                <div class="w-full bg-white rounded-2xl overflow-hidden shadow-lg p-2 sm:p-4 min-h-[660px]" style="background-color: #ffffff;">
+                    <!-- Embedded inline widget wrapper target -->
+                    <div id="calendly-inline-widget" style="min-width:320px;height:650px;" data-url="https://calendly.com/nagylevente-tech/felmeres?background_color=ffffff&text_color=1a1a1a&primary_color=0052cc">
+                        <!-- fallback loading text -->
+                        <div class="flex items-center justify-center h-[600px] text-slate-800">
+                            <div class="animate-pulse font-bold">Calendly naptár betöltése...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="flex items-center gap-4 mb-20 md:mb-24 opacity-50 scroll-reveal">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <div class="w-2 h-2 rounded-full bg-sky-500 shadow-[0_0_15px_rgba(56,189,248,0.8)]"></div>
+            <div class="h-px w-12 bg-slate-800"></div>
+        </div>
+
+        <!-- SECTION 5: AZONNALI KAPCSOLAT -->
+        <section id="kapcsolat" class="scroll-reveal mb-20">
+            <div class="bg-slate-900/40 border border-slate-800 rounded-[2.5rem] p-6 sm:p-10 md:p-12 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-30"></div>
+                
+                <div class="max-w-3xl mx-auto text-center">
+                    <h3 class="text-2xl sm:text-3xl font-display font-black text-white leading-tight mb-4">
+                        Azonnali kérdése van?
+                    </h3>
+                    <p class="text-sky-400 text-base sm:text-lg font-semibold mb-8">
+                        Keressen közvetlenül, szívesen válaszolok minden felmerülő kérdésére!
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-2xl mx-auto">
+                        <!-- Telefon -->
+                        <a href="tel:+36202109008" class="flex items-center gap-5 group p-5 bg-slate-950/60 border border-slate-800/80 hover:border-sky-500/35 rounded-2xl transition-all shadow-lg">
+                            <div class="w-14 h-14 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 group-hover:scale-105 transition-transform shrink-0">
+                                <i data-lucide="phone" class="w-7 h-7"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Telefon</p>
+                                <p class="text-lg md:text-xl font-black text-white group-hover:text-sky-400 transition-colors">+36 20 210 9008</p>
+                            </div>
+                        </a>
+
+                        <!-- Email -->
+                        <a href="mailto:nagylevente.tech@gmail.com" class="flex items-center gap-5 group p-5 bg-slate-950/60 border border-slate-800/80 hover:border-sky-500/35 rounded-2xl transition-all shadow-lg">
+                            <div class="w-14 h-14 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400 group-hover:scale-105 transition-transform shrink-0">
+                                <i data-lucide="mail" class="w-7 h-7"></i>
+                            </div>
+                            <div class="overflow-hidden">
+                                <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Email</p>
+                                <p class="text-base sm:text-lg font-black text-white group-hover:text-sky-400 transition-colors truncate">nagylevente.tech@gmail.com</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-slate-800/60 max-w-2xl mx-auto">
+                        <p class="text-xs text-slate-400 italic leading-relaxed">
+                            Bármilyen kérdés esetén keressen bizalommal! Ha a naptári időpontok helyett inkább telefonon egyeztetne, szívesen állok rendelkezésére.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standard Footer -->
+        <footer class="mt-32 pt-12 border-t border-slate-900 text-center text-sm text-slate-600 flex flex-col items-center gap-4">
+            <a href="index.html" class="inline-flex items-center gap-1.5 text-slate-400 hover:text-sky-400 transition-colors font-semibold py-1">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Vissza a főoldalra
+            </a>
+            <p class="text-slate-600">© 2026 Nagy Levente EV. | Rendszerüzemeltetési pontosság az Ön otthonában.</p>
+        </footer>
+    </div>
+
+    <!-- Floating Messenger -->
+    <a href="https://m.me/61581849661468" class="floating-messenger" target="_blank" rel="noopener noreferrer" title="Írjon nekem Messengeren!">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 0a8 8 0 0 0-8 8c0 1.48.4 2.87 1.1 4.07L0 16l4.05-1.07A7.95 7.95 0 0 0 8 16a8 8 0 0 0 8-8 8 8 0 0 0-8-8zm.75 10.32l-1.8-1.92-3.5 1.92 3.85-4.1 1.8 1.92 3.5-1.92-3.85 4.1z"/>
+        </svg>
+    </a>
+
+    <!-- Page Scripts (Preserves look, navigability and cookie banner falling back safely) -->
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+
+        // Scroll Reveal Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobil menü kezelése
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Navigációs háttér váltás görgetéskor
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (nav) {
+                if (window.scrollY > 40) {
+                    nav.classList.add('bg-slate-950/95', 'shadow-lg');
+                    nav.classList.remove('bg-slate-950/80');
+                } else {
+                    nav.classList.remove('bg-slate-950/95', 'shadow-lg');
+                    nav.classList.add('bg-slate-950/80');
+                }
+            }
+        });
+
+        // --- DINAMIKUS CALENDLY WIDGET LOGIKA ---
+        function initCalendly() {
+            // Build direct target URL with a3 field parameter as "Szállásadó"
+            const baseUrl = "https://calendly.com/nagylevente-tech/felmeres";
+            const params = new URLSearchParams({
+                background_color: "ffffff",
+                text_color: "1a1a1a",
+                primary_color: "0052cc",
+                a3: "Szállásadó" // Ezzel jelöljük a szállásadó honlapról érkező foglalásokat
+            });
+            const widgetUrl = `${baseUrl}?${params.toString()}`;
+
+            const container = document.getElementById('calendly-inline-widget');
+            if (container) {
+                container.innerHTML = ''; // Loading text clear
+                
+                // If official Calendly widget script is loaded in head, initialize inline helper
+                if (typeof Calendly !== 'undefined' && typeof Calendly.initInlineWidget === 'function') {
+                    try {
+                        Calendly.initInlineWidget({
+                            url: widgetUrl,
+                            parentElement: container
+                        });
+                        console.log("Calendly inline widget successfully loaded with custom partner query parameter (Szállásadó).");
+                    } catch (e) {
+                        console.error("Calendly.initInlineWidget failed, using fallback:", e);
+                        createFallbackIframe(container, widgetUrl);
+                    }
+                } else {
+                    createFallbackIframe(container, widgetUrl);
+                }
+            }
+        }
+
+        function createFallbackIframe(container, url) {
+            container.innerHTML = '';
+            const iframe = document.createElement('iframe');
+            iframe.src = url;
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.border = 'none';
+            iframe.setAttribute('frameborder', '0');
+            container.appendChild(iframe);
+        }
+
+        // Run after DOM content is loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(initCalendly, 400);
+            });
+        } else {
+            setTimeout(initCalendly, 400);
+        }
+
+        // Cookie Consent Logic (Matching index.html to guarantee consistency)
+        function safeGetItem(key) {
+            try {
+                return localStorage.getItem(key);
+            } catch (e) {
+                return window._cookie_consent_fallback || null;
+            }
+        }
+
+        function safeSetItem(key, value) {
+            try {
+                localStorage.setItem(key, value);
+            } catch (e) {
+                window._cookie_consent_fallback = value;
+            }
+        }
+
+        function checkCookieConsent() {
+            const consent = safeGetItem('cookie_consent');
+            if (consent === 'accepted') {
+                initGoogleAnalytics();
+            } else if (consent !== 'rejected') {
+                // We don't display the cookie banner on this campaign landing page, 
+                // but we initialize Google Analytics silently if already accepted on parent index
+            }
+        }
+
+        checkCookieConsent();
+    </script>
+</body>
+</html>
