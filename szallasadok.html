@@ -288,13 +288,14 @@
 
     <!-- Sticky Navigation (Custom Accommodations Host Specific Navbar) -->
     <nav class="fixed top-0 left-0 w-full h-16 lg:h-20 bg-slate-950/80 backdrop-blur-xl border-b border-slate-900 z-50 transition-all duration-300">
-        <div class="max-w-4xl mx-auto px-6 h-full flex items-center justify-between lg:justify-start lg:gap-10">
+        <div class="max-w-4xl mx-auto px-6 h-full flex items-center justify-between lg:justify-start lg:gap-6">
             <a href="index.html" class="flex items-center gap-2 text-white font-display font-black text-lg sm:text-xl tracking-tighter shrink-0 hover:text-sky-400 transition-colors">
                 <img src="HelyiOkos.png" alt="HelyiOkos Logó" class="w-8 h-8 object-contain">
                 <span>HelyiOkos</span>
             </a>
             <div class="hidden lg:flex items-center gap-1">
                 <a href="#funkciok" class="nav-link">Megoldások</a>
+                <a href="#arazas" class="nav-link">Árazás</a>
                 <a href="#rolam" class="nav-link">Rólam</a>
                 <a href="#foglalas" class="nav-link">Időpontfoglalás</a>
                 <a href="#kapcsolat" class="nav-link">Kapcsolat</a>
@@ -308,6 +309,7 @@
         <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-slate-900 shadow-2xl">
             <div class="flex flex-col py-2">
                 <a href="#funkciok" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Megoldások</a>
+                <a href="#arazas" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Árazás</a>
                 <a href="#rolam" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Rólam</a>
                 <a href="#foglalas" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Időpontfoglalás</a>
                 <a href="#kapcsolat" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Kapcsolat</a>
@@ -486,6 +488,314 @@
                                 Az üresen álló napokon a rendszer nem fűti feleslegesen a vizet és a szobákat. Az új vendég érkezése előtt azonban az Ön naptára alapján időzítve automatikusan felfűti a bojlert és tökéletes hőmérsékletet teremt, mire a vendég belép az ajtón.
                             </p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="flex items-center gap-4 mb-20 md:mb-32 opacity-50 scroll-reveal">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <div class="w-2 h-2 rounded-full bg-sky-500 shadow-[0_0_15px_rgba(56,189,248,0.8)]"></div>
+            <div class="h-px w-12 bg-slate-800"></div>
+        </div>
+
+        <!-- SECTION: ÁRAZÁS & APARTMAN TERVEZŐ -->
+        <section id="arazas" class="mb-24 scroll-reveal">
+            <div class="text-center mb-12">
+                <span class="inline-flex px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-[10px] sm:text-xs uppercase font-extrabold text-sky-400 tracking-widest mb-4">
+                    Átlátható elszámolás rejtett díjak nélkül
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-display font-black text-white leading-tight mb-4 text-center justify-center flex items-center gap-2">
+                    Okos Szállásadó Árazás
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+                    Nincsenek kész csomagok vagy bonyolult szerkezetek. Minden rendszerünk a megbízható helyi okosotthon alapra épül, amelyhez szabadon választhatja ki a szükséges kiegészítőket.
+                </p>
+            </div>
+
+            <!-- Single Base Package Focus Card (Why 100 000 Ft?) -->
+            <div class="max-w-3xl mx-auto mb-16 bg-gradient-to-b from-slate-900/60 to-slate-950/80 border border-slate-800 rounded-3xl p-6 sm:p-8 backdrop-blur-xl relative">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 font-extrabold text-[10px] uppercase tracking-wider text-sky-400">
+                    Minden rendszer alapja
+                </div>
+                
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Smart Host Alapcsomag</h3>
+                        <p class="text-xs text-slate-400">Biztonságos helyi vezérlőközpont és szoftveres integráció alapdíja</p>
+                    </div>
+                    <div class="shrink-0 text-left md:text-right">
+                        <span class="text-4xl font-black text-white block">100 000 Ft</span>
+                        <span class="text-[11px] text-slate-400 font-medium block mt-1">egyszeri alapdíj, nincs havidíj!</span>
+                    </div>
+                </div>
+
+                <div class="h-px bg-slate-850 my-6"></div>
+
+                <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                    A stabil, internetkimaradás esetén is 100% megbízható helyben futó vezérléshez elengedhetetlen egy céleszköz. Ez az alapdíj fedezi a teljes fizikai és szoftveres kiépítést, amire aztán tetszőlegesen csatlakoztatható bármelyik későbbi okosmegoldás:
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-300">
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0 mt-0.5">
+                            <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+                        </div>
+                        <div>
+                            <strong class="text-white block">Helyi Szerver Központ</strong>
+                            <p class="text-xs text-slate-400 mt-0.5">1 db hardver gateway, amely a lakáson belül felhőmentesen fut.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0 mt-0.5">
+                            <i data-lucide="settings" class="w-3.5 h-3.5"></i>
+                        </div>
+                        <div>
+                            <strong class="text-white block">Home Assistant Szoftver</strong>
+                            <p class="text-xs text-slate-400 mt-0.5">Egyedi programozás és a helyszíni eszközök szoftveres felprogramozása.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0 mt-0.5">
+                            <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
+                        </div>
+                        <div>
+                            <strong class="text-white block">Személyre szabott Mobilalkalmazás</strong>
+                            <p class="text-xs text-slate-400 mt-0.5">Jogosultságok és gombok beállítása az Ön és a takarítók telefonján.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0 mt-0.5">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                        </div>
+                        <div>
+                            <strong class="text-white block">1 Év Teljes Körű Garancia</strong>
+                            <p class="text-xs text-slate-400 mt-0.5">Személyes támogatással és helyszíni garanciális javítással.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <button onclick="scrollToCalculator('studio')" class="px-6 py-3 bg-[#0052cc] hover:bg-[#0042bb] text-white font-black text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-lg shadow-blue-950/20">
+                        Kattintson ide az egyedi tervezéshez ↓
+                    </button>
+                </div>
+            </div>
+
+            <!-- Interactive Host Configurator (Simplified, Quick quotation) -->
+            <div id="host-calc-anchor" class="bg-slate-900/40 border border-slate-800 rounded-[2.5rem] p-6 sm:p-10 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-45"></div>
+                
+                <div id="host-calculator-box">
+                    <h3 class="text-2xl font-display font-black text-white leading-tight mb-2 flex items-center gap-2">
+                        <i data-lucide="calculator" class="w-6 h-6 text-sky-400"></i>
+                        Interaktív Airbnb & Booking Okosotthon Tervező
+                    </h3>
+                    <p class="text-slate-400 text-xs sm:text-sm mb-8 leading-relaxed">
+                        Állítsa be kiadó apartmanja paramétereit az azonnali becsült eszközár és munkadíj kikalkulálásához!
+                    </p>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        <!-- Controls column (Left) -->
+                        <div class="lg:col-span-7 space-y-6 flex flex-col justify-between">
+                            <!-- Step 1: Property size -->
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-sky-400 font-bold mb-3">1. Apartman mérete / Típusa</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                    <button onclick="selectHostPropertyType('studio')" id="btn-prop-studio" class="p-4 rounded-2xl border text-left transition-all relative flex flex-col justify-between host-prop-btn border-sky-500/40 bg-sky-500/5 text-white cursor-pointer">
+                                        <span class="font-bold text-sm block">Garzon / Stúdió</span>
+                                        <span class="text-[11px] text-slate-300 mt-1 block">Fél / 1 szoba • 1 klímatest</span>
+                                    </button>
+                                    <button onclick="selectHostPropertyType('apartment')" id="btn-prop-apartment" class="p-4 rounded-2xl border text-left transition-all relative flex flex-col justify-between host-prop-btn border-slate-800 bg-slate-950/40 text-slate-400 hover:border-slate-700 cursor-pointer">
+                                        <span class="font-bold text-sm block">1.5 - 2 szoba</span>
+                                        <span class="text-[11px] text-slate-400 mt-1 block">Nappali + háló • 2 klímatest</span>
+                                    </button>
+                                    <button onclick="selectHostPropertyType('house')" id="btn-prop-house" class="p-4 rounded-2xl border text-left transition-all relative flex flex-col justify-between host-prop-btn border-slate-800 bg-slate-950/40 text-slate-400 hover:border-slate-700 cursor-pointer">
+                                        <span class="font-bold text-sm block">3+ szoba / Ház</span>
+                                        <span class="text-[11px] text-slate-400 mt-1 block">Nagyobb ház • 3+ klímatest • hatótáv-növelőkkel (+30.000 Ft)</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Extras toggles -->
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-sky-400 font-bold mb-3">2. Válasszon funkcionális okosításokat</label>
+                                <div class="space-y-3">
+                                    <!-- Automatic Check-out Mode (Selectable) -->
+                                    <label class="flex items-center justify-between p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 rounded-2xl cursor-pointer transition-colors relative">
+                                        <div class="flex items-center gap-3">
+                                            <input type="checkbox" id="chk-extra-calendar" onchange="calculateHostEstimate()" class="sr-only peer">
+                                            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 bg-slate-800/40 peer-checked:bg-sky-500/10 peer-checked:text-sky-400 transition-colors shrink-0">
+                                                <i data-lucide="calendar" class="w-5 h-5"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm font-bold text-white leading-tight">Naptár-szinkronizált távozási mód</p>
+                                                <p class="text-[11px] text-slate-400">Automatikus fűtés/hűtés lekapcsolás távozáskor</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-right shrink-0 ml-4 font-black text-xs text-sky-400">
+                                            +20 000 Ft
+                                        </div>
+                                    </label>
+
+                                    <!-- PIN lock extra -->
+                                    <label class="flex items-center justify-between p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 rounded-2xl cursor-pointer transition-colors relative">
+                                        <div class="flex items-center gap-3">
+                                            <input type="checkbox" id="chk-extra-lock" onchange="calculateHostEstimate()" class="sr-only peer">
+                                            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 bg-slate-800/40 peer-checked:bg-sky-500/10 peer-checked:text-sky-400 transition-colors shrink-0">
+                                                <i data-lucide="key-round" class="w-5 h-5"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm font-bold text-white leading-tight">PIN kódos fali Okos Zár</p>
+                                                <p class="text-[11px] text-slate-400">Hálózatba kötött, automatikus vendég-azonosító PIN küldés</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-right shrink-0 ml-4 font-black text-xs text-sky-400">
+                                            +139 000 Ft
+                                        </div>
+                                    </label>
+
+                                    <!-- Water damage safety -->
+                                    <label class="flex items-center justify-between p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 rounded-2xl cursor-pointer transition-colors relative">
+                                        <div class="flex items-center gap-3">
+                                            <input type="checkbox" id="chk-extra-water" onchange="calculateHostEstimate()" class="sr-only peer">
+                                            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 bg-slate-800/40 peer-checked:bg-sky-500/10 peer-checked:text-sky-400 transition-colors shrink-0">
+                                                <i data-lucide="droplet" class="w-5 h-5"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm font-bold text-white leading-tight">Vízszivárgás védelem & Főcsapelzárás</p>
+                                                <p class="text-[11px] text-slate-400">Nedvesség mérők és automata motoros központi elzáró szelep</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-right shrink-0 ml-4 font-black text-xs text-sky-400">
+                                            +45 000 Ft
+                                        </div>
+                                    </label>
+
+                                    <!-- Noise guard -->
+                                    <label class="flex items-center justify-between p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 rounded-2xl cursor-pointer transition-colors relative">
+                                        <div class="flex items-center gap-3">
+                                            <input type="checkbox" id="chk-extra-noise" onchange="calculateHostEstimate()" class="sr-only peer">
+                                            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 bg-slate-800/40 peer-checked:bg-sky-500/10 peer-checked:text-sky-400 transition-colors shrink-0">
+                                                <i data-lucide="volume-2" class="w-5 h-5"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm font-bold text-white leading-tight">Zajszint figyelő (Buli-gátló) szenzor</p>
+                                                <p class="text-[11px] text-slate-400">Biztonságos GDPR-barát túlzott éjszakai zajártalom észlelés és riasztás</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-right shrink-0 ml-4 font-black text-xs text-sky-400">
+                                            +35 000 Ft
+                                        </div>
+                                    </label>
+
+                                    <!-- Boiler management -->
+                                    <label class="flex items-center justify-between p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 rounded-2xl cursor-pointer transition-colors relative">
+                                        <div class="flex items-center gap-3">
+                                            <input type="checkbox" id="chk-extra-boiler" onchange="calculateHostEstimate()" class="sr-only peer">
+                                            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 bg-slate-800/40 peer-checked:bg-sky-500/10 peer-checked:text-sky-400 transition-colors shrink-0">
+                                                <i data-lucide="zap" class="w-5 h-5"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm font-bold text-white leading-tight">Intelligens Bojler & Fűtéskapcsolás</p>
+                                                <p class="text-[11px] text-slate-400">Meglévő bojler és elektromos / gázfűtés naptárhoz kötése</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-right shrink-0 ml-4 font-black text-xs text-sky-400">
+                                            +45 000 Ft
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Price display & form (Right) -->
+                        <div class="lg:col-span-5 flex flex-col justify-between h-full bg-slate-950/60 border border-slate-800 rounded-3xl p-6 relative">
+                            <!-- Background decoration -->
+                            <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-sky-500/20 to-transparent"></div>
+                            
+                            <div>
+                                <h4 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Becsült kalkuláció</h4>
+                                
+                                <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800/60 mb-6">
+                                    <div class="text-slate-400 text-xs mb-1">Eszközár és kivitelezés összesen:</div>
+                                    <div class="text-3xl sm:text-4xl font-black text-sky-400" id="host-estimated-total">
+                                        185 000 Ft
+                                    </div>
+                                    <p class="text-[10px] text-slate-500 mt-2 font-medium">Minden ár tartalmazza a 100 000 Ft-os okosotthon központ (Helyi Szerver) és szoftveres beállítás díját. Egyszeri díj, 1 év garanciával, rejtett költségek nélkül.</p>
+                                </div>
+
+                                <!-- Inquiry Form -->
+                                <div class="space-y-4">
+                                    <div>
+                                        <label for="host-name" class="block text-[10px] uppercase font-bold text-slate-400 mb-1.5">Kapcsolattartó neve *</label>
+                                        <input type="text" id="host-name" placeholder="Pl: Kovács István" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50">
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="host-email" class="block text-[10px] uppercase font-bold text-slate-400 mb-1.5">E-mail cím *</label>
+                                        <input type="email" id="host-email" placeholder="istvan@domain.hu" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50">
+                                    </div>
+
+                                    <div>
+                                        <label for="host-phone" class="block text-[10px] uppercase font-bold text-slate-400 mb-1.5">Telefonszám *</label>
+                                        <input type="text" id="host-phone" placeholder="Pl: 06 20 123 4567" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50">
+                                    </div>
+
+                                    <div>
+                                        <label for="host-address" class="block text-[10px] uppercase font-bold text-slate-400 mb-1.5">Ingatlan települése / címe *</label>
+                                        <input type="text" id="host-address" placeholder="Pl: Budapest VI. kerület" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50">
+                                    </div>
+
+                                    <div>
+                                        <label for="host-custom-problem" class="block text-[10px] uppercase font-bold text-slate-400 mb-1.5 flex justify-between items-center">
+                                            <span>Nem találja a megoldást a problémára? Írja le:</span>
+                                            <span class="text-[9px] text-slate-500 lowercase font-normal italic">opcionális</span>
+                                        </label>
+                                        <textarea id="host-custom-problem" rows="3" placeholder="Írja le mi az a speciális igény/elképzelés, amit meg szeretne oldani (pl. szaunafűtés, egyedi beléptetés naptárból stb.), és én megoldom!" class="w-full px-4 py-2 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50 resize-none h-20"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-8">
+                                <button onclick="submitHostInquiry()" id="host-submit-btn" class="w-full py-4 bg-sky-500 hover:bg-sky-400 text-slate-950 font-black text-xs uppercase tracking-widest rounded-xl transition-all cursor-pointer shadow-lg shadow-sky-500/10 active:scale-98 flex items-center justify-center gap-2">
+                                    Ajánlatkérés küldése →
+                                </button>
+                                <p class="text-[10px] text-center text-slate-500 mt-2.5">
+                                    Soha nem küldünk spamet. Az adatok kizárólag a kapcsolatfelvételhez szükségesek.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Success Box inside the same container directly -->
+                <div id="host-calculator-success" class="hidden text-center py-10 max-w-2xl mx-auto">
+                    <div class="w-16 h-16 bg-emerald-500/15 border border-emerald-500/30 rounded-2xl flex items-center justify-center text-emerald-400 mx-auto mb-6">
+                        <i data-lucide="check-circle" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-display font-black text-white mb-2">Köszönjük a megkeresést!</h3>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        Sikeresen elküldtük az Airbnb/Booking apartmanjára kalkulált ajánlati konfigurációt az Ön e-mail címére.
+                    </p>
+
+                    <div class="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 my-6 max-w-md mx-auto">
+                        <div class="text-[10px] uppercase tracking-wider font-extrabold text-slate-500 mb-1.5">Egyedi ajánlati kód</div>
+                        <div class="text-3xl font-display font-black text-sky-400 tracking-widest" id="host-success-tracking-id">#SZ-A8C5B</div>
+                        <div class="h-px bg-slate-800/80 my-4"></div>
+                        <div class="text-slate-300 text-xs leading-relaxed">
+                            A rendszer azonosítója beépítésre került a Calendly naptárba, így Nagy Levente megkapja ezt a kódot az integrált foglaláskor.
+                        </div>
+                    </div>
+
+                    <div class="mb-5 p-5 border border-emerald-500/20 bg-emerald-500/5 rounded-2xl text-center">
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                            Biztosítsa be a helyszíni felmérés időpontját másodpercek alatt! Válasszon egy alkalmat és a rendszer automatikusan társítja hozzá az Ön által épp kijelölt műszaki konfigurációt.
+                        </p>
+                        <a href="#foglalas" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs uppercase tracking-widest rounded-xl transition-all shadow-lg active:scale-98 font-display">
+                            Vigyen naptári időponthoz <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -683,39 +993,251 @@
             }
         });
 
+        // --- APARTMAN OKOSÍTÓ TERVEZŐ LOGIKA ---
+        let currentHostPropertyType = 'studio';
+        window.latestHostCalculatedTotal = 100000;
+        window.latestHostTrackingId = null;
+
+        window.selectHostPropertyType = function(type) {
+            currentHostPropertyType = type;
+            
+            // UI gombok frissítése
+            document.querySelectorAll('.host-prop-btn').forEach(btn => {
+                btn.classList.remove('border-sky-500/40', 'bg-sky-500/5', 'text-white');
+                btn.classList.add('border-slate-800', 'bg-slate-950/40', 'text-slate-400');
+            });
+            
+            const selectedBtn = document.getElementById(`btn-prop-${type}`);
+            if (selectedBtn) {
+                selectedBtn.classList.remove('border-slate-800', 'bg-slate-950/40', 'text-slate-400');
+                selectedBtn.classList.add('border-sky-500/40', 'bg-sky-500/5', 'text-white');
+            }
+            
+            calculateHostEstimate();
+        };
+
+        window.scrollToCalculator = function(type) {
+            selectHostPropertyType(type);
+            const anchor = document.getElementById('host-calc-anchor');
+            if (anchor) {
+                anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        };
+
+        window.calculateHostEstimate = function() {
+            let total = 100000; // 100 000 Ft az alapcsomagár (helyi szerver + szoftveres beállítások)
+            
+            // Ingatlan típus pótdíjak
+            if (currentHostPropertyType === 'house') {
+                total += 30000; // Családi ház routerek/erősítők (+30.000 Ft)
+            }
+
+            // Opcionális okos kiegészítők
+            if (document.getElementById('chk-extra-calendar')?.checked) total += 20000;
+            if (document.getElementById('chk-extra-lock')?.checked) total += 139000;
+            if (document.getElementById('chk-extra-water')?.checked) total += 45000;
+            if (document.getElementById('chk-extra-noise')?.checked) total += 35000;
+            if (document.getElementById('chk-extra-boiler')?.checked) total += 45000;
+
+            const formatted = new Intl.NumberFormat('hu-HU').format(total) + " Ft";
+            const totalEl = document.getElementById('host-estimated-total');
+            if (totalEl) {
+                totalEl.textContent = formatted;
+            }
+            
+            window.latestHostCalculatedTotal = total;
+        };
+
+        window.submitHostInquiry = function() {
+            const name = document.getElementById('host-name')?.value?.trim();
+            const email = document.getElementById('host-email')?.value?.trim();
+            const phone = document.getElementById('host-phone')?.value?.trim();
+            const address = document.getElementById('host-address')?.value?.trim();
+            const customProblem = document.getElementById('host-custom-problem')?.value?.trim() || "";
+
+            let hasError = false;
+
+            // Reset borders
+            ['host-name', 'host-email', 'host-phone', 'host-address'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.remove('border-rose-500', 'focus:border-rose-500');
+            });
+
+            if (!name) {
+                document.getElementById('host-name')?.classList.add('border-rose-500', 'focus:border-rose-500');
+                hasError = true;
+            }
+            if (!email || !email.includes('@')) {
+                document.getElementById('host-email')?.classList.add('border-rose-500', 'focus:border-rose-500');
+                hasError = true;
+            }
+            if (!phone) {
+                document.getElementById('host-phone')?.classList.add('border-rose-500', 'focus:border-rose-500');
+                hasError = true;
+            }
+            if (!address) {
+                document.getElementById('host-address')?.classList.add('border-rose-500', 'focus:border-rose-500');
+                hasError = true;
+            }
+
+            if (hasError) {
+                return;
+            }
+
+            const submitBtn = document.getElementById('host-submit-btn');
+            const origHtml = submitBtn ? submitBtn.innerHTML : '';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Küldés...`;
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            }
+
+            // Generate "SZ-" unique tracking ID for Accommodation partner (e.g. SZ-ABCD44)
+            const base36Time = Date.now().toString(36).slice(-4).toUpperCase();
+            const randomChar = Math.floor(10 + Math.random() * 80).toString(36).toUpperCase();
+            const trackingId = `SZ-${base36Time}${randomChar}`;
+            window.latestHostTrackingId = trackingId;
+
+            // Get selected modules list
+            const selectedExtras = [];
+            if (document.getElementById('chk-extra-calendar')?.checked) selectedExtras.push("Naptár-szinkronizált távozási mód (+20 ezer Ft)");
+            if (document.getElementById('chk-extra-lock')?.checked) selectedExtras.push("PIN kódos fali Okos Zár (+139 ezer Ft)");
+            if (document.getElementById('chk-extra-water')?.checked) selectedExtras.push("Automata vízkár elzárás (+45 ezer Ft)");
+            if (document.getElementById('chk-extra-noise')?.checked) selectedExtras.push("GDPR-barát parti-gátló zajmérő (+35 ezer Ft)");
+            if (document.getElementById('chk-extra-boiler')?.checked) selectedExtras.push("Okos Bojler & Fűtéskapcsolás (+45 ezer Ft)");
+
+            const propNameHu = currentHostPropertyType === 'studio' ? 'Garzon / Stúdió' : (currentHostPropertyType === 'apartment' ? '1.5 - 2 szoba' : '3+ szoba / Ház');
+
+            // Build line items including possible custom typed text
+            const inquiryItems = [
+                { name: "Kalkulált Eszközár és Munkadíj", price: window.latestHostCalculatedTotal, count: 1 },
+                { name: `Apartman egység: ${propNameHu}`, price: 0, count: 1 },
+                { name: `Megrendelt okosítások: ${selectedExtras.join(", ") || "nincs"}` , price: 0, count: 1 }
+            ];
+            
+            if (customProblem) {
+                inquiryItems.push({ name: `Gépelt egyedi igény: ${customProblem}`, price: 0, count: 1 });
+            }
+
+            // POST query to Google Sheets endpoint
+            const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwIu3kcAPtTSZjQ9o8KztX9z8bXHQsOT85BaEyUhMQxGsYgjVDl1DscToXp8wF863EP/exec";
+            
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    trackingId: trackingId,
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    address: address,
+                    customProblem: customProblem,
+                    total: window.latestHostCalculatedTotal,
+                    propertyType: "Airbnb/Booking Partner",
+                    rooms: propNameHu,
+                    goal: customProblem ? `Gépelt igény: ${customProblem}` : "Szállásadói rezsicsökkentés és teljes távvezérlés",
+                    basicFunctions: ["Naptárral szinkronizált távozás mód (opcionális)", ...selectedExtras],
+                    proFunctions: [],
+                    has230V: true,
+                    systemName: `Smart Host ${propNameHu} Rendszer`,
+                    deviceCount: 3 + selectedExtras.length,
+                    items: inquiryItems
+                })
+            })
+            .then(() => {
+                console.log("[HelyiOkos Szállásadó API]: Sikeres lead küldés!");
+            })
+            .catch(err => {
+                console.error("[HelyiOkos Szállásadó API hiba]:", err);
+            })
+            .finally(() => {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = origHtml;
+                    if (typeof lucide !== 'undefined') lucide.createIcons();
+                }
+
+                // Show success view state
+                document.getElementById('host-calculator-box')?.classList.add('hidden');
+                
+                const successTrackingIdEl = document.getElementById('host-success-tracking-id');
+                if (successTrackingIdEl) {
+                    successTrackingIdEl.textContent = "#" + trackingId;
+                }
+                
+                document.getElementById('host-calculator-success')?.classList.remove('hidden');
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+
+                // DYNAMICALLY RE-INITIALIZE AND FILL CALENDLY WITH THE GENERATED TRACKING CODE PREF-SZ!
+                updateHostCalendly(trackingId, name, email, phone, address);
+            });
+        };
+
         // --- DINAMIKUS CALENDLY WIDGET LOGIKA ---
         function initCalendly() {
-            // Build direct target URL with a3 field parameter as "Szállásadó"
-            const baseUrl = "https://calendly.com/nagylevente-tech/felmeres";
-            const params = new URLSearchParams({
-                background_color: "ffffff",
-                text_color: "1a1a1a",
-                primary_color: "0052cc",
-                a3: "Szállásadó" // Ezzel jelöljük a szállásadó honlapról érkező foglalásokat
-            });
-            const widgetUrl = `${baseUrl}?${params.toString()}`;
+            updateHostCalendly(null, '', '', '', '');
+        }
 
+        window.updateHostCalendly = function(trackingId, name, email, phone, address) {
+            const baseUrl = "https://calendly.com/nagylevente-tech/felmeres";
+            
+            const params = new URLSearchParams();
+            params.append('background_color', 'ffffff');
+            params.append('text_color', '1a1a1a');
+            params.append('primary_color', '0052cc');
+            
+            if (name) params.append('name', name);
+            if (email) params.append('email', email);
+            if (phone) {
+                let cleaned = phone.trim().replace(/[\s\-\(\)]/g, '');
+                let formattedPhone = phone;
+                if (cleaned.startsWith('+')) {
+                    formattedPhone = cleaned;
+                } else if (cleaned.startsWith('0036')) {
+                    formattedPhone = '+' + cleaned.substring(2);
+                } else if (cleaned.startsWith('06')) {
+                    formattedPhone = '+36' + cleaned.substring(2);
+                } else if (cleaned.startsWith('36')) {
+                    formattedPhone = '+' + cleaned;
+                } else if (/^[12357]0/.test(cleaned)) {
+                    formattedPhone = '+36' + cleaned;
+                }
+                params.append('a1', formattedPhone);
+            }
+            if (address) params.append('a2', address);
+            
+            // Set dynamic 'a3' tracker parameter: if filled quote, pass generated template code, else 'Szállásadó'
+            if (trackingId) {
+                params.append('a3', trackingId.replace('#', ''));
+            } else {
+                params.append('a3', 'Szállásadó');
+            }
+
+            const widgetUrl = `${baseUrl}?${params.toString()}`;
             const container = document.getElementById('calendly-inline-widget');
+            
             if (container) {
-                container.innerHTML = ''; // Loading text clear
+                container.innerHTML = ''; // Clear fallback loader
                 
-                // If official Calendly widget script is loaded in head, initialize inline helper
                 if (typeof Calendly !== 'undefined' && typeof Calendly.initInlineWidget === 'function') {
                     try {
                         Calendly.initInlineWidget({
                             url: widgetUrl,
                             parentElement: container
                         });
-                        console.log("Calendly inline widget successfully loaded with custom partner query parameter (Szállásadó).");
+                        console.log("Calendly inline widget loaded with custom query criteria:", params.toString());
                     } catch (e) {
-                        console.error("Calendly.initInlineWidget failed, using fallback:", e);
+                        console.error("Calendly.initInlineWidget failed on dynamic update, using iframe fallback:", e);
                         createFallbackIframe(container, widgetUrl);
                     }
                 } else {
                     createFallbackIframe(container, widgetUrl);
                 }
             }
-        }
+        };
 
         function createFallbackIframe(container, url) {
             container.innerHTML = '';
@@ -732,9 +1254,11 @@
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(initCalendly, 400);
+                setTimeout(calculateHostEstimate, 100);
             });
         } else {
             setTimeout(initCalendly, 400);
+            setTimeout(calculateHostEstimate, 100);
         }
 
         // --- SÜTI (COOKIE BANNER LOGIKA) ---
