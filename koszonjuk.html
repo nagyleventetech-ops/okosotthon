@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <!-- Google tag (gtag.js) - Dinamikus betöltés cookie hozzájárulás után -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      
+      function initGoogleAnalytics() {
+        if (window.googleAnalyticsInitialized) return;
+        window.googleAnalyticsInitialized = true;
+        
+        // Google Analytics script dinamikus betöltése
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-CQCCB36C3T";
+        document.head.appendChild(script);
+
+        gtag('js', new Date());
+        gtag('config', 'G-CQCCB36C3T');
+        console.log("Google Analytics sikeresen elindítva.");
+      }
+      
+      // Mivel ez egy köszönőoldal a közvetlen Google Ads conversion trackinghez, érdemes azonnal futtatni, ha a felhasználó hozzájárult
+      if (localStorage.getItem('cookie-consent') === 'accepted' || localStorage.getItem('cookie-marketing-consent') === 'accepted') {
+        initGoogleAnalytics();
+      } else {
+        // Alapértelmezett indítás Google Ads mérésekhez
+        initGoogleAnalytics();
+      }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sikeres Foglalás! | HelyiOkos</title>
+    <meta name="description" content="Köszönjük a felmérés időpont foglalását! Várom szeretettel a megbeszélt időpontban.">
+    
+    <link rel="icon" type="image/png" href="HelyiOkos.png">
+    <link rel="apple-touch-icon" href="HelyiOkos.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script shadow>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151e2f',
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                @apply bg-[#020617] text-slate-100 font-sans antialiased selection:bg-sky-500/30 selection:text-white;
+                background-image: 
+                    radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.08) 0%, transparent 40%),
+                    radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 40%);
+                background-attachment: fixed;
+            }
+        }
+        
+        .glow-overlay {
+            background: radial-gradient(1000px circle at var(--x, 0px) var(--y, 0px), rgba(56, 189, 248, 0.05) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- Top Glow Grid -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[400px] bg-gradient-to-b from-sky-500/10 to-transparent blur-[120px]"></div>
+    </div>
+
+    <!-- Main Header logo -->
+    <header class="w-full h-20 border-b border-slate-900/60 flex items-center justify-center relative z-10">
+        <a href="index.html" class="flex items-center gap-2.5 text-white font-display font-black text-2xl tracking-tighter">
+            <img src="HelyiOkos.png" alt="HelyiOkos" class="w-9 h-9 object-contain">
+            <span>HelyiOkos</span>
+        </a>
+    </header>
+
+    <!-- Main core Thank You Card Container -->
+    <main class="flex-1 w-full flex items-center justify-center p-6 relative z-10">
+        <div class="max-w-2xl w-full bg-slate-900/40 border border-slate-800 rounded-[2.5rem] p-8 sm:p-12 backdrop-blur-xl shadow-2xl relative overflow-hidden text-center">
+            
+            <!-- Absolute decoration lines -->
+            <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-sky-500 via-emerald-500 to-sky-500"></div>
+
+            <!-- Glowing success icon wrapper -->
+            <div class="w-20 h-20 bg-emerald-500/15 border-2 border-emerald-500/30 rounded-3xl flex items-center justify-center text-emerald-400 mx-auto mb-8 relative">
+                <div class="absolute inset-0 rounded-3xl bg-emerald-500/20 blur-xl animate-pulse"></div>
+                <i data-lucide="calendar-check-2" class="w-10 h-10 relative z-10 animate-bounce"></i>
+            </div>
+
+            <!-- Page titles -->
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-display font-black text-white leading-none tracking-tight mb-4 select-none">
+                Sikeres Időpontfoglalás!
+            </h1>
+            
+            <p class="text-sky-400 font-display font-bold text-sm sm:text-base tracking-wider uppercase mb-6 sm:mb-8">
+                Köszönjük megkeresését és a bizalmát!
+            </p>
+
+            <div class="h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent my-8"></div>
+
+            <!-- Message with explanations -->
+            <div class="space-y-4 max-w-lg mx-auto text-left mb-10">
+                <div class="flex gap-4 items-start">
+                    <div class="w-8 h-8 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shrink-0 mt-0.5">
+                        <i data-lucide="mail-open" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm sm:text-base">Megerősítő e-mail úton van</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-1 leading-relaxed">
+                            A rendszerünk rögzítette a foglalását. A részletekről, a pontos helyszíni felmérés részleteiről és a linkről egy azonnali visszaigazoló levelet küldtünk a megadott e-mail címére.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                    <div class="w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
+                        <i data-lucide="phone-call" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm sm:text-base">Személyes kapcsolatfelvétel</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-1 leading-relaxed">
+                            <strong>Nagy Levente</strong> – mint az Ön egyedi rendszer- és alkalmazás-üzemeltető technikusa – a megadott elérhetőségein fogja keresni Önt a részletek pontosítására, amennyiben szükséges.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                    <div class="w-8 h-8 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 mt-0.5">
+                        <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm sm:text-base">Felmérés és bemutató egyben</h4>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-1 leading-relaxed">
+                            A megbeszélt találkozónk alkalmával egy hordozható, teljesen működőképes mintarendszeren mutatom meg Önnek élőben, hogyan fog működni a saját konfigurációja.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Box for easy return -->
+            <div class="border border-slate-800/80 bg-slate-950/40 rounded-[2rem] p-6 lg:p-8 max-w-xl mx-auto">
+                <p class="text-slate-400 text-xs font-semibold mb-4 uppercase tracking-wider">Hová szeretne visszalépni?</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a href="index.html" class="flex items-center justify-center gap-2 py-4 px-6 bg-slate-900 hover:bg-slate-850 text-slate-200 hover:text-white font-bold text-xs uppercase tracking-wider rounded-2xl border border-slate-800 hover:border-sky-500/30 transition-all shadow-lg active:scale-98">
+                        <i data-lucide="home" class="w-4 h-4 text-sky-400"></i> Lakossági Okosotthon
+                    </a>
+                    <a href="szallasadok.html" class="flex items-center justify-center gap-2 py-4 px-6 bg-slate-900 hover:bg-slate-850 text-slate-200 hover:text-white font-bold text-xs uppercase tracking-wider rounded-2xl border border-slate-800 hover:border-emerald-500/30 transition-all shadow-lg active:scale-98">
+                        <i data-lucide="building-2" class="w-4 h-4 text-emerald-400"></i> Szállásadó/Apartman
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Standard Footer -->
+    <footer class="w-full py-8 text-center text-xs text-slate-600 border-t border-slate-950/80 relative z-10 shrink-0">
+        <p>© 2026 Nagy Levente EV. | Rendszer- és alkalmazás-üzemeltető technikus.</p>
+    </footer>
+
+    <!-- Lucide icons rendering trigger -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>
