@@ -3833,6 +3833,14 @@ ${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizik
             }
         }
 
+        // Calendly sikeres foglalás eseményfigyelő az automatikus köszönőoldal átirányításhoz
+        window.addEventListener('message', function(e) {
+            if (e.data.event && e.data.event === 'calendly.event_scheduled') {
+                console.log("Calendly foglalás sikeres, átirányítás a köszönőoldalra...");
+                window.location.href = 'koszonjuk.html';
+            }
+        });
+
         // Ellenőrzés futtatása betöltéskor
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => {
