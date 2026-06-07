@@ -29,10 +29,19 @@
         initGoogleAnalytics();
       }
     </script>
+
+    <!-- Google tag (gtag.js) event -->
+    <script>
+      gtag('event', 'conversion_event_book_appointment', {
+        // <event_parameters>
+      });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sikeres Foglalás! | HelyiOkos</title>
     <link rel="canonical" href="https://helyiokos.com/koszonjuk.html">
+    <link rel="alternate" hreflang="hu" href="https://helyiokos.com/koszonjuk.html">
+    <link rel="alternate" hreflang="en" href="https://helyiokos.com/koszonjuk-en.html">
     <meta name="description" content="Köszönöm a felmérés időpontjának lefoglalását! Várom Önt szeretettel a megbeszélt időpontban.">
     
     <link rel="icon" type="image/png" href="HelyiOkos.png">
@@ -73,11 +82,19 @@
                 scroll-behavior: smooth;
             }
             body {
-                @apply bg-[#020617] text-slate-100 font-sans antialiased selection:bg-sky-500/30 selection:text-white;
+                background-color: #020617;
+                color: #cbd5e1;
+                font-family: 'Inter', sans-serif;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
                 background-image: 
                     radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.08) 0%, transparent 40%),
                     radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 40%);
                 background-attachment: fixed;
+            }
+            ::selection {
+                background-color: rgba(14, 165, 233, 0.3);
+                color: white;
             }
         }
         
@@ -94,10 +111,13 @@
     </div>
 
     <!-- Main Header logo -->
-    <header class="w-full h-20 border-b border-slate-900/60 flex items-center justify-center relative z-10">
+    <header class="w-full h-20 border-b border-slate-900/60 flex items-center justify-between px-6 max-w-2xl mx-auto relative z-10">
         <a href="index.html" class="flex items-center gap-2.5 text-white font-display font-black text-2xl tracking-tighter">
             <img src="HelyiOkos.png" alt="HelyiOkos" class="w-9 h-9 object-contain">
             <span>HelyiOkos</span>
+        </a>
+        <a href="koszonjuk-en.html" class="flex items-center gap-2 px-3 py-1 bg-slate-900 hover:bg-slate-850 border border-slate-800 rounded-xl text-xs font-bold transition-all transition-colors cursor-pointer" title="Switch to English">
+            <img src="flag-en.svg" alt="English flag" class="w-5 h-3.5 object-cover rounded-xs"> <span class="text-[11px] text-slate-300 uppercase tracking-wider font-extrabold text-sky-400">EN</span>
         </a>
     </header>
 
