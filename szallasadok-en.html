@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) - Dynamic load after cookie consent if available -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      
+      function initGoogleAnalytics() {
+        if (window.googleAnalyticsInitialized) return;
+        window.googleAnalyticsInitialized = true;
+        
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-CQCCB36C3T";
+        document.head.appendChild(script);
+
+        gtag('js', new Date());
+        gtag('config', 'G-CQCCB36C3T');
+        console.log("Google Analytics successfully initialized.");
+      }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home for Short-Term Rentals & Hosts | Automated Utility Savings | HelyiOkos</title>
+    <meta name="description" content="Automate your rental's utility costs! Remote climate control, smart lock integration, and automated calendar sync for Airbnb and Booking.com hosts. Save time and money with HelyiOkos!">
+    <link rel="canonical" href="https://helyiokos.com/szallasadok-en.html">
+    <link rel="alternate" hreflang="hu" href="https://helyiokos.com/szallasadok.html">
+    <link rel="alternate" hreflang="en" href="https://helyiokos.com/szallasadok-en.html">
+    <meta name="keywords" content="smart home for hosts, airbnb smart home, booking smart lock, calendar synchronization, rental utility reduction, smart heating apartment, smart boiler control, automatic guest mode, HelyiOkos host solutions, airbnb automation hungary">
+    
+    <!-- Structured Data (JSON-LD) for Accommodations Smart Solutions -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Smart home automation for short-term rentals and hosts",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "HelyiOkos",
+        "image": "https://helyiokos.com/HelyiOkos.png",
+        "telephone": "+36202109008",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tahitótfalu",
+          "postalCode": "2021",
+          "addressCountry": "HU"
+        }
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Budapest"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Pest county"
+        }
+      ],
+      "description": "Energy conservation, remote control, and automation solutions for short-term rental hosts. Heating, cooling, hot water boiler, and lighting management linked with booking calendars for Airbnb, Booking.com, and Szallas.hu platforms."
+    }
+    </script>
+
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="Smart Home & Automation for Hosts | Airbnb & Booking | HelyiOkos">
+    <meta property="og:description" content="Automatic utility cost savings from the very minute of guest check-out. Connect your bookings with our smart home solutions!">
+    <meta property="og:image" content="https://helyiokos.com/HelyiOkos.png">
+    <meta property="og:url" content="https://helyiokos.com/szallasadok-en.html">
+    <meta property="og:type" content="website">
+    
+    <link rel="icon" type="image/png" href="HelyiOkos.png">
+    <link rel="apple-touch-icon" href="HelyiOkos.png">
+    
+    <!-- Calendly Widget Script & style -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script shadow>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151e2f',
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                background-color: #020617; /* bg-slate-950 */
+                color: #f8fafc; /* text-slate-50 */
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                overflow-x: hidden;
+                overflow-wrap: normal;
+                hyphens: none;
+                background-image: 
+                    radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.08) 0%, transparent 60%),
+                    radial-gradient(circle at 100% 40%, rgba(56, 189, 248, 0.06) 0%, transparent 50%),
+                    radial-gradient(circle at 0% 80%, rgba(30, 58, 138, 0.08) 0%, transparent 50%);
+            }
+            ::selection {
+                background-color: rgba(14, 165, 233, 0.3); /* selection:bg-sky-500/30 */
+            }
+        }
+
+        @layer components {
+            .nav-link {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+                font-weight: 600;
+                color: #cbd5e1;
+                transition: color 0.15s;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                display: flex;
+                align-items: center;
+            }
+            .nav-link:hover {
+                color: #38bdf8;
+            }
+
+            .mobile-nav-link {
+                padding: 1rem 1.5rem;
+                font-size: 1.125rem;
+                font-weight: 700;
+                color: #f8fafc;
+                border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+                display: block;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+
+            .glow-orb {
+                position: absolute;
+                width: 70%;
+                height: 70%;
+                filter: blur(160px);
+                border-radius: 9999px;
+                opacity: 0.3;
+                mix-blend-mode: screen;
+                animation: pulse 10s infinite alternate ease-in-out;
+            }
+
+            @keyframes pulse {
+                from { transform: scale(1) translate(0, 0); opacity: 0.2; }
+                to { transform: scale(1.1) translate(20px, 20px); opacity: 0.4; }
+            }
+
+            .hero-title {
+                font-family: 'Outfit', sans-serif;
+                font-weight: 900;
+                line-height: 1.3 !important;
+                letter-spacing: -0.02em;
+            }
+
+            .main-heading {
+                font-family: 'Outfit', sans-serif;
+                font-weight: 800;
+                font-size: 2.25rem;
+                line-height: 1.3;
+                letter-spacing: -0.02em;
+                color: white;
+                margin-bottom: 2rem;
+                word-wrap: break-word;
+            }
+
+            .section-title {
+                font-size: 1.875rem; /* 3xl */
+                font-family: 'Outfit', sans-serif;
+                font-weight: 900;
+                color: white;
+                margin-bottom: 2.5rem;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                line-height: 1.3 !important;
+            }
+
+            .feature-card {
+                background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(2, 6, 23, 0.8) 100%);
+                border-radius: 1.5rem;
+                padding: 1.75rem;
+                transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .feature-card:hover {
+                transform: translateY(-4px);
+                border-color: rgba(56, 189, 248, 0.3);
+                box-shadow: 0 12px 30px -10px rgba(14, 165, 233, 0.15);
+            }
+
+            .feature-icon {
+                width: 3.25rem;
+                height: 3.25rem;
+                border-radius: 1rem;
+                background-color: rgba(14, 165, 233, 0.1);
+                color: #38bdf8;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .scroll-reveal {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .scroll-reveal.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .hero-title-shadow {
+                text-shadow: 0 4px 20px rgba(2, 6, 23, 0.6);
+            }
+
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 5px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: rgba(15, 23, 42, 0.2);
+                border-radius: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: rgba(56, 189, 248, 0.2);
+                border-radius: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: rgba(56, 189, 248, 0.4);
+            }
+
+            .floating-messenger {
+                position: fixed;
+                bottom: 24px;
+                right: 24px;
+                background-color: #0084FF;
+                color: white;
+                width: 56px;
+                height: 56px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 8px 24px rgba(0, 132, 255, 0.3);
+                z-index: 40;
+                transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .floating-messenger:hover {
+                transform: scale(1.08) translateY(-2px);
+                background-color: #0074e4;
+                box-shadow: 0 12px 28px rgba(0, 132, 255, 0.4);
+            }
+            .floating-messenger svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- Sticky Navigation (Custom Accommodations Host Specific Navbar) -->
+    <nav class="fixed top-0 left-0 w-full h-16 lg:h-20 bg-slate-950/80 backdrop-blur-xl border-b border-slate-900 z-50 transition-all duration-300">
+        <div class="max-w-4xl mx-auto px-6 h-full flex items-center justify-between lg:justify-start lg:gap-6">
+            <a href="index-en.html" class="flex items-center gap-2 text-white font-display font-black text-lg sm:text-xl tracking-tighter shrink-0 hover:text-sky-400 transition-colors">
+                <img src="HelyiOkos.png" alt="HelyiOkos Logo" class="w-8 h-8 object-contain">
+                <span>HelyiOkos</span>
+            </a>
+            <div class="hidden lg:flex items-center gap-1">
+                <a href="#funkciok" class="nav-link">Solutions</a>
+                <a href="#arazas" class="nav-link">Pricing</a>
+                <a href="#rolam" class="nav-link">About Me</a>
+                <a href="#foglalas" class="nav-link">Consultation</a>
+                <a href="#kapcsolat" class="nav-link">Contact</a>
+                <a href="szallasadok.html" class="nav-link flex items-center gap-2 px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-xl text-xs font-bold transition-all transition-colors ml-4 cursor-pointer" title="Switch to Hungarian">
+                    <img src="flag-hu.svg" alt="Hungarian flag" class="w-5 h-3.5 object-cover rounded-xs"> <span class="text-[11px] text-slate-300 uppercase tracking-wider font-extrabold text-sky-400">HU</span>
+                </a>
+            </div>
+            <!-- Mobile Actions (Language Switcher + Hamburger) -->
+            <div class="flex lg:hidden items-center gap-2">
+                <a href="szallasadok.html" class="flex items-center gap-1.5 px-2 py-1 bg-slate-900 border border-slate-800 rounded-lg text-xs font-bold text-slate-300 hover:text-white cursor-pointer select-none" title="Change Language to Hungarian">
+                    <img src="flag-hu.svg" alt="Hungarian flag" class="w-4 h-3 object-cover rounded-xs"> <span class="text-[10px]">HU</span>
+                </a>
+                <button id="menu-btn" class="p-2 text-white hover:text-sky-400 transition-colors" aria-label="Menu">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-slate-900 shadow-2xl">
+            <div class="flex flex-col py-2">
+                <a href="#funkciok" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Solutions</a>
+                <a href="#arazas" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Pricing</a>
+                <a href="#rolam" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">About Me</a>
+                <a href="#foglalas" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Consultation</a>
+                <a href="#kapcsolat" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Contact</a>
+                <a href="szallasadok.html" class="mobile-nav-link flex items-center gap-2.5 text-slate-200" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">
+                    <img src="flag-hu.svg" alt="Hungarian flag" class="w-5 h-3.5 object-cover rounded-xs"> Change Language (HU)
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Visual Decoration -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="glow-orb top-[-10%] left-[-10%] bg-sky-500/20" style="animation-delay: 0s;"></div>
+        <div class="glow-orb bottom-[-20%] right-[-10%] bg-blue-600/20" style="animation-delay: -2s;"></div>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="relative max-w-4xl mx-auto px-6 py-24 md:py-32 font-sans text-slate-100 z-10">
+        
+        <!-- SECTION 1: HERO CONTAINER -->
+        <header class="mb-16 md:mb-24 scroll-reveal transition-all duration-1000 relative">
+            <div class="relative w-full rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden border border-sky-500/35 shadow-[0_25px_60px_rgba(2,132,199,0.25)] min-h-[75vh] flex flex-col justify-between p-6 sm:p-12 md:p-16">
+                
+                <!-- Background Image -->
+                <div class="absolute inset-0 z-0">
+                    <img 
+                        src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&h=900&q=90" 
+                        alt="Modern apartment"
+                        class="w-full h-full object-cover object-center"
+                    >
+                    <div class="absolute inset-0 bg-slate-950/65 bg-gradient-to-b from-slate-950/45 via-slate-950/65 to-slate-950/85"></div>
+                </div>
+
+                <!-- Top Badge -->
+                <div class="relative z-10 flex justify-center w-full mb-6">
+                    <span class="inline-flex px-3 py-1 rounded-full bg-slate-950/80 border border-sky-500/30 text-[10px] sm:text-xs uppercase font-extrabold text-sky-400 tracking-widest backdrop-blur-md text-center">
+                        ENERGY SAVINGS • GUEST EXPERIENCE • AIRBNB • BOOKING
+                    </span>
+                </div>
+
+                <!-- Central Content Group -->
+                <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center justify-center text-center flex-1 py-8">
+                    <h1 class="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] hero-title text-white tracking-tight mb-4 hero-title-shadow leading-tight">
+                        When guests check out,<br class="hidden sm:inline" />does their utility bill stop too?
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg md:text-xl text-slate-200 mt-6 leading-relaxed font-semibold max-w-2xl hero-title-shadow">
+                        Professional <strong>smart home for short-term rental hosts</strong>. With <strong>automated utility savings</strong> management, you can effortlessly control your apartment's overhead, eliminate wasted heating or cooling, and maximize your profit.
+                    </p>
+                </div>
+
+                <!-- Bottom Centered CTAs -->
+                <div class="relative z-10 w-full mt-8 max-w-3xl mx-auto">
+                    <div class="flex flex-col sm:flex-row items-center gap-6 justify-center">
+                        <a href="#foglalas" class="inline-flex justify-center items-center text-center px-8 py-4 bg-[#0052cc] hover:bg-[#0042bb] text-white font-black rounded-xl transition-all shadow-lg hover:shadow-[#0052cc]/30 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-sm md:text-base w-full sm:w-auto min-w-[260px]">
+                            Request Free Site Assessment →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- Section Divider -->
+        <div class="flex items-center gap-4 mb-20 md:mb-32 opacity-50 scroll-reveal">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <div class="w-2 h-2 rounded-full bg-sky-500 shadow-[0_0_15px_rgba(56,189,248,0.8)]"></div>
+            <div class="h-px w-12 bg-slate-800"></div>
+        </div>
+
+        <!-- SECTION 2: SOLUTIONS SZEKCIÓ -->
+        <section id="funkciok" class="mb-24 scroll-reveal">
+            <h2 class="section-title">
+                <i data-lucide="sparkles" class="w-10 h-10 text-sky-400"></i>
+                Control & Savings Solutions for Landlords
+            </h2>
+            <p class="text-slate-300 text-lg mb-10 leading-relaxed font-normal">
+                My systems are custom-engineered for vacation rental owners. They help you regain absolute control of your property, cut utility spikes, and elevate the overall guest experience.
+            </p>
+            
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Card 1 -->
+                <div class="feature-card group flex flex-col justify-between border border-slate-800">
+                    <div class="flex flex-col gap-4">
+                        <div class="feature-icon w-fit group-hover:bg-sky-500/20 group-hover:scale-105 transition-all">
+                            <i data-lucide="snowflake" class="w-7 h-7 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl text-white font-black leading-tight mb-2 tracking-tight group-hover:text-sky-400 transition-colors">
+                                Intelligent A/C Interlock
+                            </h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                If a guest leaves a window or terrace door open, the air conditioning system automatically shuts down after 3 minutes. This prevents running the AC at 18°C next to open windows, safeguarding your appliances and avoiding astronomical electricity bills.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="feature-card group flex flex-col justify-between border border-slate-800">
+                    <div class="flex flex-col gap-4">
+                        <div class="feature-icon w-fit group-hover:bg-sky-500/20 group-hover:scale-105 transition-all">
+                            <i data-lucide="calendar" class="w-7 h-7 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl text-white font-black leading-tight mb-2 tracking-tight group-hover:text-sky-400 transition-colors">
+                                Automated Check-out Mode
+                            </h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                The apartment syncs directly with your Airbnb or Booking.com calendar. The exact minute check-out passes (e.g., 10:00 AM), the entire property goes into "Eco Mode": turning off left-on TVs, lighting, and adjusting heating or cooling until the next guest arrives.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="feature-card group flex flex-col justify-between border border-slate-800">
+                    <div class="flex flex-col gap-4">
+                        <div class="feature-icon w-fit group-hover:bg-sky-500/20 group-hover:scale-105 transition-all">
+                            <i data-lucide="key" class="w-7 h-7 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl text-white font-black leading-tight mb-2 tracking-tight group-hover:text-sky-450 transition-colors">
+                                Smart Lock & PIN Access
+                            </h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Eliminate physical handovers, lockboxes, and late-night check-ins. Guests receive a unique code active exclusively during the duration of their reserve (from check-in to check-out) that automatically deletes upon departure.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="feature-card group flex flex-col justify-between border border-slate-800">
+                    <div class="flex flex-col gap-4">
+                        <div class="feature-icon w-fit group-hover:bg-sky-500/20 group-hover:scale-105 transition-all">
+                            <i data-lucide="droplet" class="w-7 h-7 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl text-white font-black leading-tight mb-2 tracking-tight group-hover:text-sky-400 transition-colors">
+                                Leak Detection & Isolation
+                            </h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Discreet smart moisture sensors placed under washing machines, dishwashers, and water boilers. If a threshold leak is registered, the central main valve shuts off water instantly, notifying your phone and shielding you from major insurance damage.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="feature-card group flex flex-col justify-between border border-slate-800">
+                    <div class="flex flex-col gap-4">
+                        <div class="feature-icon w-fit group-hover:bg-sky-500/20 group-hover:scale-105 transition-all">
+                            <i data-lucide="volume-2" class="w-7 h-7 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl text-white font-black leading-tight mb-2 tracking-tight group-hover:text-sky-400 transition-colors">
+                                Noise-Monitoring (Party Prevention)
+                            </h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                100% GDPR-compliant noise level tracking. It does NOT record speech or audio. If levels exceed critical thresholds at night, an immediate automated SMS warns guests, saving you from residential blocks and housing committee complaints.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="feature-card group flex flex-col justify-between border border-slate-800">
+                    <div class="flex flex-col gap-4">
+                        <div class="feature-icon w-fit group-hover:bg-sky-500/20 group-hover:scale-105 transition-all">
+                            <i data-lucide="thermometer" class="w-7 h-7 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl text-white font-black leading-tight mb-2 tracking-tight group-hover:text-sky-400 transition-colors">
+                                Intelligent Boiler & Heating Control
+                            </h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                On days with no incoming guests, water boilers and space heaters run at minimum levels. Hours prior to guest arrivals, the booking calendar automatically signals the boiler and HVAC to prepare a perfectly comfortable environment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="flex items-center gap-4 mb-20 md:mb-32 opacity-50 scroll-reveal">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <div class="w-2 h-2 rounded-full bg-sky-500 shadow-[0_0_15px_rgba(56,189,248,0.8)]"></div>
+            <div class="h-px w-12 bg-slate-800"></div>
+        </div>
+
+        <!-- SECTION: PRICING & CONFIGURATOR -->
+        <section id="arazas" class="mb-24 scroll-reveal">
+            <div class="text-center mb-12">
+                <span class="inline-flex px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-[10px] sm:text-xs uppercase font-extrabold text-sky-400 tracking-widest mb-4">
+                    Transparent pricing without hidden fees
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-display font-black text-white leading-tight mb-4 text-center justify-center flex items-center gap-2">
+                    Smart Hosting Pricing & Estimator
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+                    No complicated subscription structures. All configurations are built upon our localized, fail-safe offline hub, upon which you customize add-ons according to your exact needs.
+                </p>
+            </div>
+
+            <!-- Single Base Package Focus Card -->
+            <div class="max-w-3xl mx-auto mb-16 bg-gradient-to-b from-slate-900/60 to-slate-950/80 border border-slate-800 rounded-3xl p-6 sm:p-8 backdrop-blur-xl relative">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 font-extrabold text-[10px] uppercase tracking-wider text-sky-400">
+                    Foundation of every setup
+                </div>
+                
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Smart Host Base Gateway</h3>
+                        <p class="text-xs text-slate-400">Primary localized server hub, custom software integration, and initial setup fee</p>
+                    </div>
+                    <div class="shrink-0 text-left md:text-right">
+                        <span class="text-4xl font-black text-white block">100,000 HUF</span>
+                        <span class="text-[11px] text-slate-400 font-medium block mt-1">one-time setup cost, zero monthly dues!</span>
+                    </div>
+                </div>
+
+                <div class="h-px bg-slate-850 my-6"></div>
+
+                <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                    Having an dedicated offline physical core is vital for stable automations that run even if your internet connection goes down. This base cost covers physical installation, initial system design, and software programming:
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-300">
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0 mt-0.5">
+                            <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+                        </div>
+                        <div>
+                            <strong class="text-white block">Offline Edge Gateway Core</strong>
+                            <p class="text-xs text-slate-400 mt-0.5">1 hardware gateway running entirely local, cloud-free inside the apartment.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0 mt-0.5">
+                            <i data-lucide="settings" class="w-3.5 h-3.5"></i>
+                        </div>
+                        <div>
+                            <strong class="text-white block">Home Assistant Programming</strong>
+                            <p class="text-xs text-slate-400 mt-0.5">Custom software programming, device configurations, and scenario logic definitions.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0 mt-0.5">
+                            <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
+                        </div>
+                        <div>
+                            <strong class="text-white block">Tailored App Experience</strong>
+                            <p class="text-xs text-slate-400 mt-0.5">Custom layout configuration, dashboards, and role permissions for you and cleaning staff.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0 mt-0.5">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                        </div>
+                        <div>
+                            <strong class="text-white block">1-Year Comprehensive Warranty</strong>
+                            <p class="text-xs text-slate-400 mt-0.5">Including personalized tech support and on-site repair dispatch at no cost.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <button onclick="scrollToCalculator('studio')" class="px-6 py-3 bg-[#0052cc] hover:bg-[#0042bb] text-white font-black text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-lg shadow-blue-950/20">
+                        Try Short-Term Rental Custom Estimator ↓
+                    </button>
+                </div>
+            </div>
+
+            <!-- Interactive Host Configurator -->
+            <div id="host-calc-anchor" class="bg-slate-900/40 border border-slate-800 rounded-[2.5rem] p-6 sm:p-10 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-45"></div>
+                
+                <div id="host-calculator-box">
+                    <h3 class="text-2xl font-display font-black text-white leading-tight mb-2 flex items-center gap-2">
+                        <i data-lucide="calculator" class="w-6 h-6 text-sky-400"></i>
+                        Interactive Airbnb & Booking Smart Home Estimator
+                    </h3>
+                    <p class="text-slate-400 text-xs sm:text-sm mb-8 leading-relaxed">
+                        Customize your apartment features to calculate an instant on-site estimate of smart devices coupled with direct labor!
+                    </p>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        <!-- Controls column -->
+                        <div class="lg:col-span-7 space-y-6 flex flex-col justify-between">
+                            <!-- Step 1 -->
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-sky-400 font-bold mb-3">1. Apartment Size / Type</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                    <button onclick="selectHostPropertyType('studio')" id="btn-prop-studio" class="p-4 rounded-2xl border text-left transition-all relative flex flex-col justify-between host-prop-btn border-sky-500/40 bg-sky-500/5 text-white cursor-pointer">
+                                        <span class="font-bold text-sm block">Garcon / Studio</span>
+                                        <span class="text-[11px] text-slate-300 mt-1 block">1 Room • 1 A/C controller</span>
+                                    </button>
+                                    <button onclick="selectHostPropertyType('apartment')" id="btn-prop-apartment" class="p-4 rounded-2xl border text-left transition-all relative flex flex-col justify-between host-prop-btn border-slate-800 bg-slate-950/40 text-slate-400 hover:border-slate-700 cursor-pointer">
+                                        <span class="font-bold text-sm block">1.5 - 2 Rooms</span>
+                                        <span class="text-[11px] text-slate-400 mt-1 block">Living + 1 Bedroom • 2 A/Cs</span>
+                                    </button>
+                                    <button onclick="selectHostPropertyType('house')" id="btn-prop-house" class="p-4 rounded-2xl border text-left transition-all relative flex flex-col justify-between host-prop-btn border-slate-800 bg-slate-950/40 text-slate-400 hover:border-slate-700 cursor-pointer">
+                                        <span class="font-bold text-sm block">3+ Rooms / House</span>
+                                        <span class="text-[11px] text-slate-400 mt-1 block">Larger house • 3+ A/Cs • includes signal range expanders (+30k HUF)</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-sky-400 font-bold mb-3">2. Choose Smart Features</label>
+                                <div class="space-y-3">
+                                    <!-- Extra calendar -->
+                                    <label class="flex items-center justify-between p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 rounded-2xl cursor-pointer transition-colors relative">
+                                        <div class="flex items-center gap-3">
+                                            <input type="checkbox" id="chk-extra-calendar" onchange="calculateHostEstimate()" class="sr-only peer">
+                                            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 bg-slate-800/40 peer-checked:bg-sky-500/10 peer-checked:text-sky-400 transition-colors shrink-0">
+                                                <i data-lucide="calendar" class="w-5 h-5"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm font-bold text-white leading-tight">Booking-Synced Eco Mode</p>
+                                                <p class="text-[11px] text-slate-400">Automatic power/utility shutdown directly at checkout times</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-right shrink-0 ml-4 font-black text-xs text-sky-400">
+                                            +20,000 HUF
+                                        </div>
+                                    </label>
+
+                                    <!-- PIN lock extra -->
+                                    <label class="flex items-center justify-between p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 rounded-2xl cursor-pointer transition-colors relative">
+                                        <div class="flex items-center gap-3">
+                                            <input type="checkbox" id="chk-extra-lock" onchange="calculateHostEstimate()" class="sr-only peer">
+                                            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 bg-slate-800/40 peer-checked:bg-sky-500/10 peer-checked:text-sky-400 transition-colors shrink-0">
+                                                <i data-lucide="key-round" class="w-5 h-5"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm font-bold text-white leading-tight">PIN Lock Integration</p>
+                                                <p class="text-[11px] text-slate-400">Auto guest security code provisioning linked to the reservation</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-right shrink-0 ml-4 font-black text-xs text-sky-400">
+                                            +139,000 HUF
+                                        </div>
+                                    </label>
+
+                                    <!-- Water damage safety -->
+                                    <label class="flex items-center justify-between p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 rounded-2xl cursor-pointer transition-colors relative">
+                                        <div class="flex items-center gap-3">
+                                            <input type="checkbox" id="chk-extra-water" onchange="calculateHostEstimate()" class="sr-only peer">
+                                            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 bg-slate-800/40 peer-checked:bg-sky-500/10 peer-checked:text-sky-400 transition-colors shrink-0">
+                                                <i data-lucide="droplet" class="w-5 h-5"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm font-bold text-white leading-tight">Water Leakage Protection</p>
+                                                <p class="text-[11px] text-slate-400">Moisture sensors & primary motorized automatic central shutoff valve</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-right shrink-0 ml-4 font-black text-xs text-sky-400">
+                                            +45,000 HUF
+                                        </div>
+                                    </label>
+
+                                    <!-- Noise guard -->
+                                    <label class="flex items-center justify-between p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 rounded-2xl cursor-pointer transition-colors relative">
+                                        <div class="flex items-center gap-3">
+                                            <input type="checkbox" id="chk-extra-noise" onchange="calculateHostEstimate()" class="sr-only peer">
+                                            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 bg-slate-800/40 peer-checked:bg-sky-500/10 peer-checked:text-sky-400 transition-colors shrink-0">
+                                                <i data-lucide="volume-2" class="w-5 h-5"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm font-bold text-white leading-tight">Decibel Decorum Sensor</p>
+                                                <p class="text-[11px] text-slate-400">GDPR-safe excessive night sound detection and mobile alerts</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-right shrink-0 ml-4 font-black text-xs text-sky-400">
+                                            +35,000 HUF
+                                        </div>
+                                    </label>
+
+                                    <!-- Boiler management -->
+                                    <label class="flex items-center justify-between p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 rounded-2xl cursor-pointer transition-colors relative">
+                                        <div class="flex items-center gap-3">
+                                            <input type="checkbox" id="chk-extra-boiler" onchange="calculateHostEstimate()" class="sr-only peer">
+                                            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 bg-slate-800/40 peer-checked:bg-sky-500/10 peer-checked:text-sky-400 transition-colors shrink-0">
+                                                <i data-lucide="zap" class="w-5 h-5"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm font-bold text-white leading-tight">Smart Boiler HVAC Link</p>
+                                                <p class="text-[11px] text-slate-400">Existing water boiler & HVAC/gas heating wired directly to the calendar</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-right shrink-0 ml-4 font-black text-xs text-sky-400">
+                                            +45,000 HUF
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Price display & form -->
+                        <div class="lg:col-span-5 flex flex-col justify-between h-full bg-slate-950/60 border border-slate-800 rounded-3xl p-6 relative">
+                            <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-sky-500/20 to-transparent"></div>
+                            
+                            <div>
+                                <h4 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Estimated Total</h4>
+                                
+                                <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800/60 mb-6">
+                                    <div class="text-slate-400 text-xs mb-1">Total One-time Cost:</div>
+                                    <div class="text-3xl sm:text-4xl font-black text-sky-400" id="host-estimated-total">
+                                        185,000 HUF
+                                    </div>
+                                    <p class="text-[10px] text-slate-500 mt-2 font-medium">All estimates include the 100,000 HUF localized gateway controller and software configuration. One-off purchase, 1-year local warranty, absolute transparency.</p>
+                                </div>
+
+                                <!-- Inquiry Form -->
+                                <div class="space-y-4">
+                                    <div>
+                                        <label for="host-name" class="block text-[10px] uppercase font-bold text-slate-400 mb-1.5">Your Name *</label>
+                                        <input type="text" id="host-name" placeholder="E.g. James Wilson" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50">
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="host-email" class="block text-[10px] uppercase font-bold text-slate-400 mb-1.5">Email Address *</label>
+                                        <input type="email" id="host-email" placeholder="james@example.com" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50">
+                                    </div>
+
+                                    <div>
+                                        <label for="host-phone" class="block text-[10px] uppercase font-bold text-slate-400 mb-1.5">Phone Number *</label>
+                                        <input type="text" id="host-phone" placeholder="E.g. +36 20 123 4567" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50">
+                                    </div>
+
+                                    <div>
+                                        <label for="host-address" class="block text-[10px] uppercase font-bold text-slate-400 mb-1.5">Property Location / Address *</label>
+                                        <input type="text" id="host-address" placeholder="E.g. Budapest 6th district" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50">
+                                    </div>
+
+                                    <div>
+                                        <label for="host-custom-problem" class="block text-[10px] uppercase font-bold text-slate-400 mb-1.5 flex justify-between items-center">
+                                            <span>Specific concerns / unique needs?</span>
+                                            <span class="text-[9px] text-slate-500 lowercase font-normal italic">optional</span>
+                                        </label>
+                                        <textarea id="host-custom-problem" rows="3" placeholder="Describe any custom integrations (e.g. sauna control, complex lock systems, separate meters) and I will build it for you!" class="w-full px-4 py-2 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50 resize-none h-20"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-8">
+                                <button onclick="submitHostInquiry()" id="host-submit-btn" class="w-full py-4 bg-sky-500 hover:bg-sky-400 text-slate-950 font-black text-xs uppercase tracking-widest rounded-xl transition-all cursor-pointer shadow-lg shadow-sky-500/10 active:scale-98 flex items-center justify-center gap-2">
+                                    Submit Quote Request →
+                                </button>
+                                <p class="text-[10px] text-center text-slate-500 mt-2.5">
+                                    We respect your data privacy. Information is strictly used for arranging consultation meetings.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Success Box -->
+                <div id="host-calculator-success" class="hidden text-center py-10 max-w-2xl mx-auto">
+                    <div class="w-16 h-16 bg-emerald-500/15 border border-emerald-500/30 rounded-2xl flex items-center justify-center text-emerald-400 mx-auto mb-6">
+                        <i data-lucide="check-circle" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-display font-black text-white mb-2">Thank you!</h3>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        We have successfully computed the configuration for your vacation apartment.
+                    </p>
+
+                    <div class="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 my-6 max-w-md mx-auto">
+                        <div class="text-[10px] uppercase tracking-wider font-extrabold text-slate-500 mb-1.5">Quote Reference Hash</div>
+                        <div class="text-3xl font-display font-black text-sky-400 tracking-widest" id="host-success-tracking-id">#SZ-A8C5B</div>
+                        <div class="h-px bg-slate-800/80 my-4"></div>
+                        <div class="text-slate-300 text-xs leading-relaxed">
+                            This custom technical code has been attached to your Calendly session parameters, giving Nagy Levente direct insight upon booking.
+                        </div>
+                    </div>
+
+                    <!-- Host custom summary and copy section -->
+                    <div class="bg-slate-950/45 border border-slate-800/80 rounded-2xl p-5 mb-6 text-left max-w-md mx-auto">
+                        <div class="flex justify-between items-center mb-3">
+                            <p class="text-[10px] text-slate-500 uppercase font-black tracking-wider">Estimated Configuration Details:</p>
+                            <button id="host-copy-text-btn" onclick="copyHostSummaryToClipboard()" class="flex items-center gap-1.5 text-[11px] font-bold text-sky-450 hover:text-sky-400 transition-colors cursor-pointer bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-lg">
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Summary
+                            </button>
+                        </div>
+                        <div class="max-h-[140px] overflow-y-auto custom-scrollbar">
+                            <pre class="text-[11px] text-slate-400 font-mono whitespace-pre-wrap select-all leading-normal" id="host-success-copy-text"></pre>
+                        </div>
+                    </div>
+
+                    <div class="text-center mb-6">
+                        <button onclick="triggerHostMailSender()" class="text-slate-400 hover:text-sky-400 text-xs font-bold transition-all underline cursor-pointer">
+                            Open manual draft in email client instead →
+                        </button>
+                    </div>
+
+                    <div class="mb-5 p-5 border border-emerald-500/20 bg-emerald-500/5 rounded-2xl text-center">
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                            Secure your priority on-site assessment slot in seconds! Select an open day in our calendar below; your custom configuration is already pre-filled.
+                        </p>
+                        <a href="#foglalas" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs uppercase tracking-widest rounded-xl transition-all shadow-lg active:scale-98 font-display">
+                            Go to Calendar <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="flex items-center gap-4 mb-20 md:mb-32 opacity-50 scroll-reveal">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <div class="w-2 h-2 rounded-full bg-sky-500 shadow-[0_0_15px_rgba(56,189,248,0.8)]"></div>
+            <div class="h-px w-12 bg-slate-800"></div>
+        </div>
+
+        <!-- SECTION 3: ABOUT ME SZEKCIÓ -->
+        <section id="rolam" class="mb-24 scroll-reveal">
+            <h2 class="section-title">
+                <i data-lucide="user" class="w-10 h-10 text-sky-400"></i>
+                About Me
+            </h2>
+            
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-14 w-full bg-slate-900/40 border border-slate-800 rounded-[2.5rem] p-6 sm:p-10 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-30"></div>
+                
+                <div class="flex-shrink-0 w-[200px] sm:w-[240px] aspect-[3/4]">
+                    <img src="profil.jpg" alt="Levente Nagy" class="w-full h-full object-cover rounded-2xl border-2 border-sky-500/20 shadow-lg hover:scale-[1.02] transition-transform duration-300">
+                </div>
+
+                <div class="flex-1 text-left">
+                    <h3 class="text-2xl font-display font-black text-white leading-tight mb-2">
+                        System and Application Operations Specialist: Levente Nagy
+                    </h3>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-xs font-black text-sky-450 uppercase tracking-widest text-[#0ea5e9]">
+                            <i data-lucide="shield-check" class="w-4 h-4 shrink-0"></i> System & application operations technician
+                        </span>
+                    </div>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4 font-normal font-sans">
+                        As a **registered system and application operations technician** and smart home integration specialist, my core mission is guiding advanced physical technologies directly to service your commercial gains and administrative stability. I represent tailor-made engineering over quick retail configurations: assessing every landlord's layout parameters personally to deploy reliable, robust, and local offline automation.
+                    </p>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-normal font-sans">
+                        My goal is direct: driving the financial profitability of your rental properties up while cutting technical worries and guest overhead down. During our scheduled onsite consultations, I always demo a fully operational physical display model to show you exactly how system inputs trigger.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: CALENDLY -->
+        <section id="foglalas" class="scroll-reveal mb-20 text-center">
+            <div class="mb-10">
+                <span class="inline-flex px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] sm:text-xs uppercase font-extrabold text-emerald-400 tracking-widest mb-4">
+                    Online Scheduling
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-display font-black text-white leading-tight mb-4">
+                    Book On-Site Assessment
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+                    Secure your personal site consultation and save on monthly overhead! Choose a vacant slot that suits your schedule from the interactive calendar below.
+                </p>
+            </div>
+
+            <!-- Calendly Inline Widget Card -->
+            <div class="bg-slate-900/40 border border-slate-800 rounded-[2.5rem] p-4 sm:p-6 md:p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden mb-16 text-left">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent opacity-30"></div>
+                
+                <div class="w-full bg-white rounded-2xl overflow-hidden shadow-lg p-2 sm:p-4 min-h-[660px]" style="background-color: #ffffff;">
+                    <div id="calendly-inline-widget" style="min-width:320px;height:650px;" data-url="https://calendly.com/nagylevente-tech/felmeres?background_color=ffffff&text_color=1a1a1a&primary_color=0052cc">
+                        <div class="flex items-center justify-center h-[600px] text-slate-800">
+                            <div class="animate-pulse font-bold">Loading Calendly Calendar...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="flex items-center gap-4 mb-20 md:mb-24 opacity-50 scroll-reveal">
+            <div class="h-px flex-1 bg-slate-800"></div>
+            <div class="w-2 h-2 rounded-full bg-sky-500 shadow-[0_0_15px_rgba(56,189,248,0.8)]"></div>
+            <div class="h-px w-12 bg-slate-800"></div>
+        </div>
+
+        <!-- SECTION 5: CONTACT -->
+        <section id="kapcsolat" class="scroll-reveal mb-20">
+            <div class="bg-slate-900/40 border border-slate-800 rounded-[2.5rem] p-6 sm:p-10 md:p-12 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-30"></div>
+                
+                <div class="max-w-3xl mx-auto text-center">
+                    <h3 class="text-2xl sm:text-3xl font-display font-black text-white leading-tight mb-4">
+                        Have Immediate Questions?
+                    </h3>
+                    <p class="text-sky-400 text-base sm:text-lg font-semibold mb-8">
+                        Get in touch directly – I am happy to discuss any smart home concerns!
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-2xl mx-auto">
+                        <!-- Phone -->
+                        <a href="tel:+36202109008" class="flex items-center gap-5 group p-5 bg-slate-950/60 border border-slate-800/80 hover:border-sky-500/35 rounded-2xl transition-all shadow-lg">
+                            <div class="w-14 h-14 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 group-hover:scale-105 transition-transform shrink-0">
+                                <i data-lucide="phone" class="w-7 h-7"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Phone</p>
+                                <p class="text-lg md:text-xl font-black text-white group-hover:text-sky-400 transition-colors">+36 20 210 9008</p>
+                            </div>
+                        </a>
+
+                        <!-- Email -->
+                        <a href="mailto:nagylevente.tech@gmail.com" class="flex items-center gap-5 group p-5 bg-slate-950/60 border border-slate-800/80 hover:border-sky-500/35 rounded-2xl transition-all shadow-lg">
+                            <div class="w-14 h-14 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400 group-hover:scale-105 transition-transform shrink-0">
+                                <i data-lucide="mail" class="w-7 h-7"></i>
+                            </div>
+                            <div class="overflow-hidden">
+                                <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Email</p>
+                                <p class="text-base sm:text-lg font-black text-white group-hover:text-sky-400 transition-colors truncate">nagylevente.tech@gmail.com</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-slate-800/60 max-w-2xl mx-auto">
+                        <p class="text-xs text-slate-400 italic leading-relaxed">
+                            Feel free to contact me at any time! If you would prefer to schedule a consultation directly via phone instead of the online booking widget, I am fully at your disposal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standard Footer -->
+        <footer class="mt-32 pt-12 border-t border-slate-900 text-center text-sm text-slate-600 flex flex-col items-center gap-4">
+            <a href="index-en.html" class="inline-flex items-center gap-1.5 text-slate-400 hover:text-sky-400 transition-colors font-semibold py-1">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Main Page
+            </a>
+            <p class="text-slate-600">© 2026 Levente Nagy EV. | Registered system and application operations technician.</p>
+        </footer>
+    </div>
+
+    <!-- Floating Messenger -->
+    <a href="https://m.me/61581849661468" class="floating-messenger" target="_blank" rel="noopener noreferrer" title="Message me on Messenger!">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 0a8 8 0 0 0-8 8c0 1.48.4 2.87 1.1 4.07L0 16l4.05-1.07A7.95 7.95 0 0 0 8 16a8 8 0 0 0 8-8 8 8 0 0 0-8-8zm.75 10.32l-1.8-1.92-3.5 1.92 3.85-4.1 1.8 1.92 3.5-1.92-3.85 4.1z"/>
+        </svg>
+    </a>
+
+    <!-- Page Scripts -->
+    <script>
+        lucide.createIcons();
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // --- APARTMENT OKOSOTTHON CONFIGURATOR LOGIC ---
+        let currentHostPropertyType = 'studio';
+
+        window.latestHostCalculatedTotal = 120000;
+        window.latestHostTrackingId = null;
+        window.lastGeneratedHostMailSubject = "";
+        window.lastGeneratedHostMailBody = "";
+
+        window.selectHostPropertyType = function(type) {
+            currentHostPropertyType = type;
+            
+            document.querySelectorAll('.host-prop-btn').forEach(btn => {
+                btn.classList.remove('border-sky-500/40', 'bg-sky-500/5', 'text-white');
+                btn.classList.add('border-slate-800', 'bg-slate-950/40', 'text-slate-400');
+            });
+            
+            const selectedBtn = document.getElementById(`btn-prop-${type}`);
+            if (selectedBtn) {
+                selectedBtn.classList.remove('border-slate-800', 'bg-slate-950/40', 'text-slate-400');
+                selectedBtn.classList.add('border-sky-500/40', 'bg-sky-500/5', 'text-white');
+            }
+            
+            calculateHostEstimate();
+        };
+
+        window.scrollToCalculator = function(type) {
+            selectHostPropertyType(type);
+            const anchor = document.getElementById('host-calc-anchor');
+            if (anchor) {
+                anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        };
+
+        window.calculateHostEstimate = function() {
+            let total = 100000; // Base package price
+            
+            if (currentHostPropertyType === 'house') {
+                total += 30000; // Plus signal range expanders
+            }
+
+            if (document.getElementById('chk-extra-calendar')?.checked) total += 20000;
+            if (document.getElementById('chk-extra-lock')?.checked) total += 139000;
+            if (document.getElementById('chk-extra-water')?.checked) total += 45000;
+            if (document.getElementById('chk-extra-noise')?.checked) total += 35000;
+            if (document.getElementById('chk-extra-boiler')?.checked) total += 45000;
+
+            const formatted = new Intl.NumberFormat('en-US').format(total) + " HUF";
+            const totalEl = document.getElementById('host-estimated-total');
+            if (totalEl) {
+                totalEl.textContent = formatted;
+            }
+            
+            window.latestHostCalculatedTotal = total;
+        };
+
+        window.triggerHostMailSender = function() {
+            const recipient = "nagylevente.tech@gmail.com";
+            const mailtoUri = `mailto:${recipient}?subject=${encodeURIComponent(window.lastGeneratedHostMailSubject)}&body=${encodeURIComponent(window.lastGeneratedHostMailBody)}`;
+            window.location.href = mailtoUri;
+        };
+
+        window.copyHostSummaryToClipboard = function() {
+            const pre = document.getElementById('host-success-copy-text');
+            if (pre) {
+                navigator.clipboard.writeText(pre.textContent).then(() => {
+                    const btn = document.getElementById('host-copy-text-btn');
+                    const origContent = btn.innerHTML;
+                    btn.innerHTML = `<i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Copied!`;
+                    if (typeof lucide !== 'undefined') lucide.createIcons();
+                    setTimeout(() => {
+                        btn.innerHTML = origContent;
+                        if (typeof lucide !== 'undefined') lucide.createIcons();
+                    }, 2000);
+                }).catch(err => {
+                    console.error("Failed to copy details to clipboard:", err);
+                });
+            }
+        };
+
+        window.submitHostInquiry = function() {
+            const name = document.getElementById('host-name')?.value?.trim();
+            const email = document.getElementById('host-email')?.value?.trim();
+            const phone = document.getElementById('host-phone')?.value?.trim();
+            const address = document.getElementById('host-address')?.value?.trim();
+            const customProblem = document.getElementById('host-custom-problem')?.value?.trim() || "";
+
+            let hasError = false;
+
+            ['host-name', 'host-email', 'host-phone', 'host-address'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.remove('border-rose-500', 'focus:border-rose-500');
+            });
+
+            if (!name) {
+                document.getElementById('host-name')?.classList.add('border-rose-500', 'focus:border-rose-500');
+                hasError = true;
+            }
+            if (!email || !email.includes('@')) {
+                document.getElementById('host-email')?.classList.add('border-rose-500', 'focus:border-rose-500');
+                hasError = true;
+            }
+            if (!phone) {
+                document.getElementById('host-phone')?.classList.add('border-rose-500', 'focus:border-rose-500');
+                hasError = true;
+            }
+            if (!address) {
+                document.getElementById('host-address')?.classList.add('border-rose-500', 'focus:border-rose-500');
+                hasError = true;
+            }
+
+            if (hasError) {
+                return;
+            }
+
+            const submitBtn = document.getElementById('host-submit-btn');
+            const origHtml = submitBtn ? submitBtn.innerHTML : '';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Submitting...`;
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            }
+
+            const base36Time = Date.now().toString(36).slice(-4).toUpperCase();
+            const randomChar = Math.floor(10 + Math.random() * 80).toString(36).toUpperCase();
+            const trackingId = `SZ-${base36Time}${randomChar}`;
+            window.latestHostTrackingId = trackingId;
+
+            const selectedExtras = [];
+            if (document.getElementById('chk-extra-calendar')?.checked) selectedExtras.push("Booking-Synced Eco Mode (+20k HUF)");
+            if (document.getElementById('chk-extra-lock')?.checked) selectedExtras.push("PIN Lock Integration (+139k HUF)");
+            if (document.getElementById('chk-extra-water')?.checked) selectedExtras.push("Central Water Isolation (+45k HUF)");
+            if (document.getElementById('chk-extra-noise')?.checked) selectedExtras.push("GDPR Noise Decorum Sensor (+35k HUF)");
+            if (document.getElementById('chk-extra-boiler')?.checked) selectedExtras.push("Smart Boiler HVAC Link (+45k HUF)");
+
+            const propNameEn = currentHostPropertyType === 'studio' ? 'Studio / Garcon' : (currentHostPropertyType === 'apartment' ? '1.5 - 2 Rooms' : '3+ Rooms / House');
+
+            const inquiryItems = [
+                { name: "Estimated Hardware & Installation", price: window.latestHostCalculatedTotal, count: 1 },
+                { name: `Apartment Type: ${propNameEn}`, price: 0, count: 1 },
+                { name: `Selected Add-ons: ${selectedExtras.join(", ") || "none"}` , price: 0, count: 1 }
+            ];
+            
+            if (customProblem) {
+                inquiryItems.push({ name: `Genuinely typed requests: ${customProblem}`, price: 0, count: 1 });
+            }
+
+            const formatPrice = (p) => new Intl.NumberFormat('en-US').format(p);
+            const hostEmailSubject = `New Accommodations Smart Config [ID: #${trackingId}] - ${name}`;
+            const hostEmailBody = `Dear Levente Nagy,
+            
+A new Airbnb/Booking host custom smart configurator lead has been generated.
+
+INQUIRER CONTACT INFO:
+-------------------------------------
+Name: ${name}
+Phone Number: ${phone}
+Email Address: ${email}
+Apartment Address: ${address}
+
+PROPERTY DETAILS & ADD-ONS:
+-------------------------------------
+Type of Property: ${propNameEn}
+Selected Add-on Automations:
+${selectedExtras.length > 0 ? selectedExtras.map(e => "- " + e).join("\n") : "- Smart Host Base Gateway Core Only (hardware server + setup)"}
+
+CUSTOM PROBLEMS / SPECIAL REQUESTS:
+-------------------------------------
+${customProblem ? customProblem : "No specific parameters described."}
+
+PROPOSED CONFIGURATION SUMMARY:
+-------------------------------------
+Reference Code Hash: #${trackingId}
+Estimated Count of Devices: 1 Local Offline Gateway Hub + ${selectedExtras.length} Custom Smart Modules
+Proposed One-time Cost (with direct craft placement): ${formatPrice(window.latestHostCalculatedTotal)} HUF
+
+(All calculations incorporate the base 100,000 HUF Local Offline Server Hub and primary software deployment fees. No recurring software dues, local tech support warranty for 1-year included.)`;
+
+            window.lastGeneratedHostMailSubject = hostEmailSubject;
+            window.lastGeneratedHostMailBody = hostEmailBody;
+
+            const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwIu3kcAPtTSZjQ9o8KztX9z8bXHQsOT85BaEyUhMQxGsYgjVDl1DscToXp8wF863EP/exec";
+            
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    trackingId: trackingId,
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    address: address,
+                    customProblem: customProblem,
+                    total: window.latestHostCalculatedTotal,
+                    propertyType: "Airbnb/Booking Partner (EN)",
+                    rooms: propNameEn,
+                    goal: customProblem ? `Typed need: ${customProblem}` : "Accommodations energy reduction and total remote custody",
+                    basicFunctions: ["Booking-calendar synced auto check-out (optional)", ...selectedExtras],
+                    proFunctions: [],
+                    has230V: true,
+                    systemName: `Smart Host ${propNameEn} System (EN)`,
+                    deviceCount: 3 + selectedExtras.length,
+                    items: inquiryItems,
+                    mailSubject: hostEmailSubject,
+                    mailBody: hostEmailBody
+                })
+            })
+            .then(() => {
+                console.log("[HelyiOkos Host API]: Lead submitted successfully!");
+            })
+            .catch(err => {
+                console.error("[HelyiOkos Host API Error]:", err);
+            })
+            .finally(() => {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = origHtml;
+                    if (typeof lucide !== 'undefined') lucide.createIcons();
+                }
+
+                document.getElementById('host-calculator-box')?.classList.add('hidden');
+                
+                const successTrackingIdEl = document.getElementById('host-success-tracking-id');
+                if (successTrackingIdEl) {
+                    successTrackingIdEl.textContent = "#" + trackingId;
+                }
+
+                const hostSuccessCopyTextEl = document.getElementById('host-success-copy-text');
+                if (hostSuccessCopyTextEl) {
+                    hostSuccessCopyTextEl.textContent = hostEmailBody;
+                }
+                
+                document.getElementById('host-calculator-success')?.classList.remove('hidden');
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+
+                updateHostCalendly(trackingId, name, email, phone, address);
+            });
+        };
+
+        // --- CALENDLY WIDGET INTEGRATION ---
+        function initCalendly() {
+            updateHostCalendly(null, '', '', '', '');
+        }
+
+        window.updateHostCalendly = function(trackingId, name, email, phone, address) {
+            const baseUrl = "https://calendly.com/nagylevente-tech/felmeres";
+            
+            const params = new URLSearchParams();
+            params.append('background_color', 'ffffff');
+            params.append('text_color', '1a1a1a');
+            params.append('primary_color', '0052cc');
+            params.append('locale', 'en');
+            
+            if (name) params.append('name', name);
+            if (email) params.append('email', email);
+            if (phone) {
+                let cleaned = phone.trim().replace(/[\s\-\(\)]/g, '');
+                let formattedPhone = phone;
+                if (cleaned.startsWith('+')) {
+                    formattedPhone = cleaned;
+                } else if (cleaned.startsWith('0036')) {
+                    formattedPhone = '+' + cleaned.substring(2);
+                } else if (cleaned.startsWith('06')) {
+                    formattedPhone = '+36' + cleaned.substring(2);
+                } else if (cleaned.startsWith('36')) {
+                    formattedPhone = '+' + cleaned;
+                }
+                params.append('a1', formattedPhone);
+            }
+            if (address) params.append('a2', address);
+            
+            if (trackingId) {
+                params.append('a3', trackingId.replace('#', ''));
+            } else {
+                params.append('a3', 'Szállásadó EN');
+            }
+
+            const widgetUrl = `${baseUrl}?${params.toString()}`;
+            const container = document.getElementById('calendly-inline-widget');
+            
+            if (container) {
+                container.innerHTML = '';
+                
+                if (typeof Calendly !== 'undefined' && typeof Calendly.initInlineWidget === 'function') {
+                    try {
+                        Calendly.initInlineWidget({
+                            url: widgetUrl,
+                            parentElement: container
+                        });
+                        console.log("Calendly logic loaded:", params.toString());
+                    } catch (e) {
+                        console.error("Calendly fallback activated:", e);
+                        createFallbackIframe(container, widgetUrl);
+                    }
+                } else {
+                    createFallbackIframe(container, widgetUrl);
+                }
+            }
+        };
+
+        function createFallbackIframe(container, url) {
+            container.innerHTML = '';
+            const iframe = document.createElement('iframe');
+            iframe.src = url;
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.border = 'none';
+            iframe.setAttribute('frameborder', '0');
+            container.appendChild(iframe);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(initCalendly, 400);
+                setTimeout(calculateHostEstimate, 100);
+            });
+        } else {
+            setTimeout(initCalendly, 400);
+            setTimeout(calculateHostEstimate, 100);
+        }
+
+        // --- COOKIE BANNER ---
+        function safeGetItem(key) {
+            try { return localStorage.getItem(key); }
+            catch (e) { return window._cookie_consent_fallback || null; }
+        }
+
+        function safeSetItem(key, value) {
+            try { localStorage.setItem(key, value); }
+            catch (e) { window._cookie_consent_fallback = value; }
+        }
+
+        window.initMetaPixel = function() {
+            if (window.metaPixelInitialized) return;
+            window.metaPixelInitialized = true;
+            console.log("Meta Pixel prepared.");
+        };
+
+        window.acceptCookies = function() {
+            safeSetItem('cookie_consent', 'accepted');
+            initGoogleAnalytics();
+            window.initMetaPixel();
+            hideCookieBanner();
+        };
+
+        window.rejectCookies = function() {
+            safeSetItem('cookie_consent', 'rejected');
+            hideCookieBanner();
+        };
+
+        function showCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            if (banner) {
+                banner.classList.remove('hidden');
+                setTimeout(() => {
+                    banner.classList.remove('translate-y-full');
+                    banner.classList.add('translate-y-0');
+                    if (typeof lucide !== 'undefined') lucide.createIcons();
+                }, 100);
+            }
+        }
+
+        function hideCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            if (banner) {
+                banner.classList.remove('translate-y-0');
+                banner.classList.add('translate-y-full');
+                setTimeout(() => { banner.classList.add('hidden'); }, 500);
+            }
+        }
+
+        function checkCookieConsent() {
+            const consent = safeGetItem('cookie_consent');
+            if (consent === 'accepted') {
+                initGoogleAnalytics();
+                window.initMetaPixel();
+            } else if (consent !== 'rejected') {
+                showCookieBanner();
+            }
+        }
+
+        // Calendly successful booking redirection
+        window.addEventListener('message', function(e) {
+            if (e.data.event && e.data.event === 'calendly.event_scheduled') {
+                console.log("Calendly booking completed, redirecting...");
+                window.location.href = 'koszonjuk-en.html';
+            }
+        });
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => { checkCookieConsent(); });
+        } else {
+            checkCookieConsent();
+        }
+    </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 translate-y-full transition-all duration-500 ease-out hidden">
+        <div class="max-w-4xl mx-auto bg-slate-950 border border-slate-800 rounded-2xl shadow-2xl p-5 md:p-6 flex flex-col md:flex-row items-center justify-between gap-4 backdrop-blur-xl bg-opacity-95">
+            <div class="flex-1 text-center md:text-left">
+                <h4 class="text-white text-sm font-bold tracking-wider uppercase mb-1.5 flex items-center justify-center md:justify-start gap-2 font-display">
+                    <i data-lucide="cookie" class="w-4 h-4 text-emerald-400"></i>
+                    Cookie Preferences
+                </h4>
+                <p class="text-xs text-slate-300 leading-relaxed max-w-2xl">
+                    We use cookies to analyze website traffic and optimize your user experience in accordance with GDPR regulations. By clicking "Accept", you agree to our use of analytics cookies.
+                </p>
+            </div>
+            <div class="flex items-center gap-3 w-full md:w-auto justify-center md:justify-end shrink-0">
+                <button onclick="rejectCookies()" class="px-4 py-2.5 text-xs text-slate-400 hover:text-white transition-colors cursor-pointer font-bold uppercase tracking-wider">
+                    Decline
+                </button>
+                <button onclick="acceptCookies()" style="background-color: #0052cc;" class="px-6 py-2.5 hover:bg-opacity-90 text-white font-black text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-lg shadow-blue-900/10 active:scale-98">
+                    Accept All
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

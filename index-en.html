@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) - Loaded after cookie consent -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      
+      function initGoogleAnalytics() {
+        if (window.googleAnalyticsInitialized) return;
+        window.googleAnalyticsInitialized = true;
+        
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-CQCCB36C3T";
+        document.head.appendChild(script);
+
+        gtag('js', new Date());
+        gtag('config', 'G-CQCCB36C3T');
+        console.log("Google Analytics initialized in English.");
+      }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home Installation Budapest & Danube Bend | HelyiOkos</title>
+    <link rel="canonical" href="https://helyiokos.com/index-en.html">
+    <link rel="alternate" hreflang="hu" href="https://helyiokos.com/">
+    <link rel="alternate" hreflang="en" href="https://helyiokos.com/index-en.html">
+    <link rel="alternate" hreflang="x-default" href="https://helyiokos.com/">
+    <meta name="description" content="Professional smart home automation in Budapest and the Danube Bend. Private, offline local servers at a fixed price. Free on-site assessment and consultation!">
+    <meta name="keywords" content="smart home, local server, Home Assistant, smart lock, automatic heating, smart lighting, Danube Bend, Budapest, local control, home automation">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "HelyiOkos",
+      "image": "https://helyiokos.com/HelyiOkos.png", 
+      "@id": "https://helyiokos.com/index-en.html",
+      "url": "https://helyiokos.com/index-en.html",
+      "telephone": "+36202109008",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tahitótfalu",
+        "postalCode": "2021",
+        "addressCountry": "HU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 47.7512,
+        "longitude": 19.0772
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "19:00"
+      },
+      "areaServed": [
+        {"@type": "AdministrativeArea", "name": "Pest County"},
+        {"@type": "AdministrativeArea", "name": "Budapest"}
+      ]
+    }
+    </script>
+    
+    <meta property="og:title" content="HelyiOkos - Private Smart Home Solutions with Local Control">
+    <meta property="og:description" content="Forget slow remote clouds. My systems run 100% offline within your walls for ultimate reliability and privacy.">
+    <meta property="og:image" content="https://helyiokos.com/HelyiOkos.png"> 
+    <meta property="og:url" content="https://helyiokos.com/index-en.html">
+    <meta property="og:type" content="website">
+    
+    <link rel="icon" type="image/png" href="HelyiOkos.png">
+    <link rel="apple-touch-icon" href="HelyiOkos.png">
+    
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script shadow>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151e2f',
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            html { scroll-behavior: smooth; }
+            body {
+                background-color: #020617;
+                color: #f8fafc;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                overflow-x: hidden;
+                overflow-wrap: normal;
+                hyphens: none;
+                background-image: 
+                    radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.08) 0%, transparent 60%),
+                    radial-gradient(circle at 100% 40%, rgba(56, 189, 248, 0.06) 0%, transparent 50%),
+                    radial-gradient(circle at 0% 80%, rgba(30, 58, 138, 0.08) 0%, transparent 50%);
+            }
+            ::selection { background-color: rgba(14, 165, 233, 0.3); }
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover, 
+            input:-webkit-autofill:focus, 
+            input:-webkit-autofill:active {
+                -webkit-text-fill-color: #0f172a !important;
+                -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+                box-shadow: 0 0 0 1000px #ffffff inset !important;
+                transition: background-color 5000s ease-in-out 0s;
+            }
+            .nav-link {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+                font-weight: 600;
+                color: #cbd5e1;
+                transition: color 0.15s;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+            }
+            .nav-link:hover {
+                color: #38bdf8;
+            }
+            .mobile-nav-link {
+                padding: 1rem 1.5rem;
+                font-size: 1.125rem;
+                font-weight: 700;
+                color: #f8fafc;
+                border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+                display: block;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                text-align: left;
+            }
+            .section-title {
+                font-size: 1.875rem; /* 3xl */
+                font-family: 'Outfit', sans-serif;
+                font-weight: 900;
+                color: white;
+                margin-bottom: 2.5rem;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+            @media (min-width: 768px) {
+                .section-title { font-size: 2.25rem; } /* 4xl */
+            }
+            .glow-orb {
+                position: absolute;
+                width: 70%;
+                height: 70%;
+                filter: blur(160px);
+                border-radius: 9999px;
+                opacity: 0.3;
+                mix-blend-mode: screen;
+                animation: pulse-float 10s infinite alternate ease-in-out;
+            }
+            @keyframes pulse-float {
+                from { transform: scale(1) translate(0, 0); opacity: 0.2; }
+                to { transform: scale(1.1) translate(20px, 20px); opacity: 0.4; }
+            }
+            .problem-card {
+                position: relative;
+                padding: 1.5rem;
+                background-color: rgba(8, 12, 24, 0.9);
+                border: 1px solid rgba(56, 189, 248, 0.2);
+                border-radius: 1.25rem;
+                backdrop-filter: blur(12px);
+                transition: all 0.5s;
+                box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+                cursor: pointer;
+                display: flex;
+                flex-col: true;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+                text-align: left;
+            }
+            .problem-card:hover {
+                border-color: rgba(56, 189, 248, 0.6);
+                background-color: rgba(10, 15, 30, 0.95);
+                transform: translateY(-4px) scale(1.02);
+                box-shadow: 0 30px 60px -12px rgba(14, 165, 233, 0.15);
+            }
+            .pricing-card {
+                background: linear-gradient(160deg, rgba(15, 23, 42, 0.95), rgba(2, 6, 23, 0.98));
+                border: 2px solid rgba(56, 189, 248, 0.4);
+                padding: 2rem;
+                border-radius: 2.5rem;
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(40px);
+                transition: all 0.5s;
+            }
+            @media (min-width: 768px) {
+                .pricing-card { padding: 3rem; }
+            }
+            .pricing-card:hover {
+                border-color: #38bdf8;
+                box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.4);
+                transform: translateY(-0.25rem);
+            }
+            .scroll-reveal {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: all 0.8s ease-out;
+            }
+            .scroll-reveal.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .name-badge {
+                display: inline-flex;
+                padding: 0.5rem 1.25rem;
+                font-size: 0.875rem;
+                font-weight: 700;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: #38bdf8;
+                background-color: rgba(14, 165, 233, 0.1);
+                border: 1px solid rgba(56, 189, 248, 0.2);
+                border-radius: 9999px;
+                backdrop-filter: blur(24px);
+            }
+            .floating-messenger {
+                position: fixed;
+                bottom: 1.25rem;
+                right: 1.25rem;
+                width: 60px;
+                height: 60px;
+                background-color: #0084FF;
+                color: white;
+                border-radius: 9999px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                z-index: 50;
+                transition: all 0.3s ease;
+                padding: 0.75rem;
+            }
+            @media (min-width: 768px) {
+                .floating-messenger {
+                    bottom: 2rem;
+                    right: 2rem;
+                }
+            }
+            .floating-messenger:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 20px 25px -5px rgba(0, 84, 255, 0.3);
+            }
+            .floating-messenger svg {
+                width: 100%;
+                height: 100%;
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                w-width: 6px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: rgba(15, 23, 42, 0.4);
+                border-radius: 99px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: rgba(14, 165, 233, 0.2);
+                border-radius: 99px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: rgba(14, 165, 233, 0.4);
+            }
+            .hero-title-shadow {
+                text-shadow: 0 4px 12px rgba(2, 6, 23, 0.9), 0 2px 4px rgba(2, 6, 23, 0.8);
+            }
+        }
+        @keyframes orb-float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(5%, 8%) scale(1.1); }
+        }
+    </style>
+</head>
+<body class="bg-slate-950">
+
+    <!-- Sticky Navigation -->
+    <nav class="fixed top-0 left-0 w-full h-16 lg:h-20 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800 z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-full flex items-center justify-between lg:justify-start lg:gap-11">
+            <a href="#home" class="flex items-center gap-2 text-white font-display font-black text-xl tracking-tighter shrink-0">
+                <img src="HelyiOkos.png" alt="HelyiOkos Logo" class="w-8 h-8 object-contain">
+                <span>HelyiOkos</span>
+            </a>
+            <div class="hidden lg:flex items-center gap-1">
+                <a href="#features" class="nav-link">Benefits</a>
+                <a href="#concept" class="nav-link">System</a>
+                <a href="#usage" class="nav-link">Control</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#devices" class="nav-link">Devices</a>
+                <a href="javascript:void(0)" onclick="openConfiguratorModal()" class="nav-link text-sky-400 font-bold border border-sky-500/30 rounded-xl px-3 py-1 hover:bg-sky-500/10 transition-all">Estimator</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="szallasadok-en.html" class="nav-link text-emerald-450 font-bold hover:text-emerald-450">For Hosts</a>
+                <a href="index.html" class="nav-link flex items-center gap-2 px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-xl text-xs font-bold transition-all ml-4 cursor-pointer" title="Switch to Hungarian">
+                    <img src="flag-hu.svg" alt="Hungarian flag" class="w-5 h-3.5 object-cover rounded-xs"> <span class="text-[11px] text-slate-300 uppercase tracking-wider font-extrabold text-sky-400">HU</span>
+                </a>
+            </div>
+            <!-- Mobile Actions (Language Switcher + Hamburger) -->
+            <div class="flex lg:hidden items-center gap-2">
+                <a href="index.html" class="flex items-center gap-1.5 px-2 py-1 bg-slate-900 border border-slate-800 rounded-lg text-xs font-bold text-slate-300 hover:text-white cursor-pointer select-none" title="Change Language to Hungarian">
+                    <img src="flag-hu.svg" alt="Hungarian flag" class="w-4 h-3 object-cover rounded-xs"> <span class="text-[10px]">HU</span>
+                </a>
+                <button id="menu-btn" class="p-2 text-white hover:text-sky-400 transition-colors" aria-label="Menu">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-slate-800 shadow-2xl">
+            <div class="flex flex-col py-2">
+                <a href="#features" class="mobile-nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Benefits</a>
+                <a href="#concept" class="mobile-nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">System</a>
+                <a href="#usage" class="mobile-nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Control</a>
+                <a href="#about" class="mobile-nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
+                <a href="#devices" class="mobile-nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Devices</a>
+                <a href="javascript:void(0)" onclick="openConfiguratorModal(); document.getElementById('mobile-menu').classList.add('hidden');" class="mobile-nav-link text-sky-400 font-bold">Estimator</a>
+                <a href="#contact" class="mobile-nav-link" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
+                <a href="szallasadok-en.html" class="mobile-nav-link text-emerald-400 font-bold" onclick="document.getElementById('mobile-menu').classList.add('hidden')">For Hosts</a>
+                <a href="index.html" class="mobile-nav-link flex items-center gap-2.5 text-slate-200" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
+                    <img src="flag-hu.svg" alt="Hungarian flag" class="w-5 h-3.5 object-cover rounded-xs"> Change Language (HU)
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Background Orbs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="glow-orb top-[-10%] left-[-10%] bg-sky-500/20"></div>
+        <div class="glow-orb bottom-[-20%] right-[-10%] bg-blue-600/20" style="animation-delay: -2s;"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="relative max-w-4xl mx-auto px-6 py-24 md:py-32 font-sans text-slate-100 z-10">
+        
+        <!-- Premium Hero Header -->
+        <header id="home" class="mb-16 md:mb-24 scroll-reveal transition-all duration-1000 relative">
+            <div class="relative w-full rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden border border-blue-500/35 shadow-[0_25px_60px_rgba(2,132,199,0.3)] min-h-[85vh] sm:min-h-[90vh] flex flex-col justify-between p-6 sm:p-12 md:p-16">
+                <!-- Background Image & Dark Overlay -->
+                <div class="absolute inset-0 z-0">
+                    <img 
+                        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&h=900&q=90" 
+                        alt="Modern smart home night lighting"
+                        class="w-full h-full object-cover object-center"
+                    >
+                    <div class="absolute inset-0 bg-slate-950/55 bg-gradient-to-b from-slate-950/35 via-slate-950/55 to-slate-950/80"></div>
+                </div>
+
+                <div class="relative z-10 flex justify-center w-full mb-6">
+                    <span class="inline-flex px-3 py-1 rounded-full bg-sky-500/10 border border-sky-400/30 text-[10px] sm:text-xs uppercase font-extrabold text-sky-400 tracking-widest backdrop-blur-md">
+                        🛡️ 100% Local Control • Esztergom, Danube Bend & Budapest
+                    </span>
+                </div>
+
+                <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center justify-center text-center flex-1 py-8">
+                    <h1 class="text-3xl sm:text-5xl md:text-[3.65rem] font-display font-black text-white tracking-tight leading-[1.12] sm:leading-tight mb-4 hero-title-shadow">
+                        Smart Home Installation <br class="hidden sm:inline" />
+                        <span class="text-white">Budapest & Danube Bend</span>
+                    </h1>
+                    
+                    <p class="text-xl sm:text-2xl md:text-3xl text-sky-400 font-extrabold tracking-normal leading-tight mt-1 hero-title-shadow">
+                        Automation from Esztergom to Budapest!
+                    </p>
+                    
+                    <p class="text-[16px] text-slate-100 mt-6 leading-[1.65] font-semibold max-w-2xl hero-title-shadow">
+                        My goal is to design and install comfortable, safe, and highly energy-efficient <strong>smart homes</strong> without unnecessary wall demolition or dusty, messy construction.
+                    </p>
+                    
+                    <p class="text-xs sm:text-sm text-slate-300 mt-3 leading-[1.6] max-w-2xl hero-title-shadow font-medium">
+                        Forget buggy remote clouds and monthly recurring subscription fees. My bespoke systems run lightning-fast and are 100% locally-managed, working even during internet outages.
+                    </p>
+                </div>
+
+                <div class="relative z-10 w-full mt-8 max-w-3xl mx-auto">
+                    <div class="flex flex-col sm:flex-row items-center gap-4 justify-center">
+                        <button onclick="openCalendlyPopup()" class="w-full sm:w-[290px] inline-flex items-center justify-center gap-2 px-10 py-5 bg-sky-500 hover:bg-sky-400 text-slate-900 font-black rounded-xl transition-all shadow-lg shadow-sky-500/20 cursor-pointer text-sm md:text-base">
+                            <i data-lucide="calendar" class="w-5 h-5"></i>
+                            Free On-Site Assessment
+                        </button>
+                        <button onclick="openConfiguratorModal()" class="w-full sm:w-[280px] inline-flex items-center justify-center gap-2 px-10 py-5 bg-blue-950/80 hover:bg-blue-900 border border-blue-500/60 hover:border-blue-400 text-white font-bold rounded-xl transition-all shadow-lg cursor-pointer text-sm md:text-base">
+                            <i data-lucide="calculator" class="w-5 h-5"></i>
+                            Bespoke System Estimator
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Airbnb / Booking Host Banner -->
+        <div class="airbnb-banner scroll-reveal mb-16 md:mb-24 bg-gradient-to-r from-emerald-950/30 via-slate-900/40 to-emerald-950/30 border border-emerald-500/30 rounded-[2rem] p-6 sm:p-10 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent opacity-60"></div>
+            <div class="absolute -right-16 -top-16 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left font-sans">
+                <div class="flex-1">
+                    <div class="inline-flex px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/35 text-[10px] sm:text-xs uppercase font-extrabold text-emerald-400 tracking-widest mb-4">
+                        🏨 For Short-Term Rentals / Airbnb & Booking
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-display font-black text-white leading-tight mb-2">
+                        Do you host or manage rental apartments?
+                    </h3>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl font-medium">
+                        Automated heating, smart lock codes, calendar synchronization, and auto-checks. Optimize your energy costs starting today.
+                    </p>
+                </div>
+                <div class="shrink-0 w-full md:w-auto">
+                    <a href="szallasadok-en.html" class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0052cc] hover:bg-[#0042bb] text-white font-black rounded-xl transition-all shadow-lg text-sm md:text-base">
+                        View Specialized Host Offer →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Life Situations Section -->
+        <section id="features" class="mb-24 scroll-reveal">
+            <h2 class="section-title">
+                <i data-lucide="sparkles" class="w-10 h-10 text-sky-400"></i>
+                Comfortable Life Situations
+            </h2>
+            <p class="text-slate-300 text-lg mb-10 leading-relaxed text-left">
+                I don't just sell you hardware modules; I build a stress-free, secure, and energy-preserving lifestyle. Click on any of the common card setups below to view exactly how I solve each challenge in your home.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Card 1 -->
+                <div onclick="openProblemModal('doorbell')" class="problem-card">
+                    <div class="w-full">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="name-badge">Camera & Pass</span>
+                            <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
+                                <i data-lucide="smartphone"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-display font-black text-white tracking-tight mb-2 group-hover:text-sky-450 transition-colors">
+                            See who is at the door directly on my phone
+                        </h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Get live video and talk to courier drivers or welcome family members on your phone from anywhere in the world.
+                        </p>
+                    </div>
+                    <span class="text-xs text-sky-400 font-bold group-hover:underline">→ Smart doorbell solutions</span>
+                </div>
+
+                <!-- Card 2 -->
+                <div onclick="openProblemModal('water')" class="problem-card">
+                    <div class="w-full">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="name-badge">Property Protection</span>
+                            <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
+                                <i data-lucide="droplets"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-display font-black text-white tracking-tight mb-2 group-hover:text-sky-450 transition-colors">
+                            Get alerted on my phone if there's a water leak
+                        </h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Autonomous damp pads shut down the main home water valve instantly in case of laundry pipe breaks, preventing massive structural damage.
+                        </p>
+                    </div>
+                    <span class="text-xs text-sky-400 font-bold group-hover:underline">→ Active water protection setup</span>
+                </div>
+
+                <!-- Card 3 -->
+                <div onclick="openProblemModal('lighting')" class="problem-card">
+                    <div class="w-full">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="name-badge">Lighting</span>
+                            <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
+                                <i data-lucide="lightbulb"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-display font-black text-white tracking-tight mb-2 group-hover:text-sky-450 transition-colors">
+                            Automatic soft pathway lighting at night
+                        </h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Presence sensors illuminate hallways with rich, golden, glare-free dim lighting at 8% during late hours, preserving your sleep state.
+                        </p>
+                    </div>
+                    <span class="text-xs text-sky-400 font-bold group-hover:underline">→ Automated passageway automation</span>
+                </div>
+
+                <!-- Card 4 -->
+                <div onclick="openProblemModal('heating')" class="problem-card">
+                    <div class="w-full">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="name-badge">Climate CONTROL</span>
+                            <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
+                                <i data-lucide="thermometer"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-display font-black text-white tracking-tight mb-2 group-hover:text-sky-450 transition-colors">
+                            View and control current room temperature remotely
+                        </h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Set fine-tuned target temps per room. Lower empty room radiators while you are away, reducing home heating bills by 15-30% automatically.
+                        </p>
+                    </div>
+                    <span class="text-xs text-sky-400 font-bold group-hover:underline">→ Intelligent zoned heating details</span>
+                </div>
+
+                <!-- Card 5 -->
+                <div onclick="openProblemModal('iron')" class="problem-card">
+                    <div class="w-full">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="name-badge">Safety & Power</span>
+                            <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
+                                <i data-lucide="zap"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-display font-black text-white tracking-tight mb-2 group-hover:text-sky-450 transition-colors">
+                            Forgot to unplug the iron? Cut power from anywhere
+                        </h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Shut off hazardous appliances remotely or set protective timers that auto-kill power if devices draw heavy wattage for long periods.
+                        </p>
+                    </div>
+                    <span class="text-xs text-sky-400 font-bold group-hover:underline">→ Smart plug protection profiles</span>
+                </div>
+
+                <!-- Card 6 -->
+                <div onclick="openProblemModal('kids')" class="problem-card">
+                    <div class="w-full">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="name-badge">Family Care</span>
+                            <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
+                                <i data-lucide="shield-check"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-display font-black text-white tracking-tight mb-2 group-hover:text-sky-450 transition-colors">
+                            Get notified as soon as my child arrives home
+                        </h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Front door magnetic context toggles send reassuring push reminders to work phones during after-school hours.
+                        </p>
+                    </div>
+                    <span class="text-xs text-sky-400 font-bold group-hover:underline">→ Clean entry door automation</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Architecture Concept -->
+        <section id="concept" class="mb-24 scroll-reveal">
+            <h2 class="section-title">
+                <i data-lucide="cpu" class="w-10 h-10 text-sky-400"></i>
+                Private, Local-First Infrastructure
+            </h2>
+            <p class="text-slate-300 text-lg mb-8 leading-relaxed text-left">
+                My systems are engineered around absolute data privacy and offline operational safety. I do not rely on remote servers located in foreign cloud grids. Everything stays inside your home.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6 text-left">
+                <div class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl">
+                    <div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-4">
+                        <i data-lucide="brain"></i>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-bold text-white mb-2">Automated Synergy</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Rather than jumping between dozens of mismatched, sluggish individual apps, all your lights, locks, heating zones, and sensors operate as a single unified ecosystem.
+                    </p>
+                </div>
+                <div class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl">
+                    <div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-4">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-bold text-white mb-2">100% Data Privacy</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        The central controller acts as a small physical computer server tucked away in your home. Your cameras, credentials, and records never leave your physical walls.
+                    </p>
+                </div>
+                <div class="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl">
+                    <div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-4">
+                        <i data-lucide="wifi-off"></i>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-bold text-white mb-2">Offline Independence</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        The localized smart micro-network handles triggers and sensor inputs directly. If your internet service goes down, your smart home schedules function perfectly with zero lag.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Control Channels -->
+        <section id="usage" class="mb-24 scroll-reveal">
+            <h2 class="section-title">
+                <i data-lucide="layout" class="w-10 h-10 text-sky-400"></i>
+                How Will You Control It?
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6 text-left">
+                <div class="p-6 bg-slate-900/30 border border-slate-850 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-9 h-9 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-3"><i data-lucide="smartphone"></i></div>
+                        <h4 class="text-sm sm:text-base font-bold text-white mb-1.5">Mobile Application</h4>
+                    </div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">Control everything from a single sleek, personalized client panel (Home Assistant companion app) across all iOS, Android, and tablet units.</p>
+                </div>
+                <div class="p-6 bg-slate-900/30 border border-slate-850 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-9 h-9 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-3"><i data-lucide="globe"></i></div>
+                        <h4 class="text-sm sm:text-base font-bold text-white mb-1.5">Custom Private URL</h4>
+                    </div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">Securely access your home from anywhere via a personalized sub-domain (e.g., yourname.helyiokos.com) utilizing fully encrypted SSL protocols.</p>
+                </div>
+                <div class="p-6 bg-slate-900/30 border border-slate-850 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-9 h-9 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-3"><i data-lucide="mic"></i></div>
+                        <h4 class="text-sm sm:text-base font-bold text-white mb-1.5">Vocal Control</h4>
+                    </div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">100% cloud-neutral or compatible with your choice of Google Assistant or Amazon Alexa voice controllers for easy hands-free commands.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About section -->
+        <section id="about" class="mb-24 scroll-reveal">
+            <div class="p-6 sm:p-10 bg-slate-900/40 border border-slate-800 rounded-3xl backdrop-blur-md">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <img 
+                        src="profil.jpg" 
+                        alt="Nagy Levente - HelyiOkos Owner" 
+                        class="w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover border-2 border-sky-500 shadow-xl shrink-0"
+                    >
+                    <div class="flex-1 text-left">
+                        <span class="inline-flex px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[9px] font-black text-emerald-400 tracking-wider mb-2">
+                            🛡️ Certified Systems & Technical Support Engineer
+                        </span>
+                        <h3 class="text-2xl sm:text-3xl font-display font-black text-white mb-1">Meet Levente</h3>
+                        <p class="text-sky-400 text-xs font-bold mb-4">Hello! I am Levente Nagy.</p>
+                        
+                        <div class="text-slate-300 text-xs sm:text-sm leading-relaxed space-y-3 font-medium">
+                            <p>
+                                As an experienced systems engineer and localized installation specialist, I design, assemble, and calibrate custom smart homes. My creations rely entirely on open-source Home Assistant technologies, operating locally within your walls.
+                            </p>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-300 pt-2 font-semibold">
+                                <li class="flex items-center gap-1.5"><span class="text-sky-400">✓</span> 100% Private local systems</li>
+                                <li class="flex items-center gap-1.5"><span class="text-sky-400">✓</span> Works offline without internet</li>
+                                <li class="flex items-center gap-1.5"><span class="text-sky-400">✓</span> No wall cutting or drilling</li>
+                                <li class="flex items-center gap-1.5"><span class="text-sky-400">✓</span> High-power network antennas</li>
+                            </ul>
+                            <p class="pt-2 text-xs text-slate-400 font-bold">
+                                💡 Live Experience: I bring a fully-functional live demo kit directly to our on-site survey so you can test smart switches, locks, and sensors live before committing!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing structure section -->
+        <section id="pricing" class="mb-24 scroll-reveal">
+            <div class="pricing-card">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 mb-8">
+                    <div class="flex-1 text-left">
+                        <span class="text-sky-400 text-xs sm:text-sm font-black tracking-widest uppercase block mb-1">Transparent Pricing</span>
+                        <h2 class="text-2xl md:text-4xl font-display font-black text-white mb-3">
+                            How is our pricing structured?
+                        </h2>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+                            No hidden costs, recurring software licensing fees, or surprise monthly subscriptions. Your custom localized smart home consists of two transparent items:
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 my-8 text-left">
+                    <!-- 1. Base cost -->
+                    <div class="p-6 bg-slate-950/50 border border-slate-800 rounded-2xl relative flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
+                                    <i data-lucide="cpu" class="w-5 h-5"></i>
+                                </div>
+                                <p class="text-base sm:text-lg font-black text-white">1. Local Central Server & Coordination</p>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-350 leading-relaxed mb-4">
+                                The brain of your smart home. Includes your secure physical mini-computer local server, strong network antenna arrays, custom software logic definitions, tailored companion UI layouts, secure external SSL routing, and our complete face-to-face on-site analysis.
+                            </p>
+                        </div>
+                        <div class="text-base sm:text-lg font-black text-emerald-450 mt-2">
+                            Fixed 100,000 HUF
+                        </div>
+                    </div>
+
+                    <!-- 2. Modules add-ons -->
+                    <div class="p-6 bg-slate-950/50 border border-slate-800 rounded-2xl relative flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
+                                    <i data-lucide="plus-circle" class="w-5 h-5"></i>
+                                </div>
+                                <p class="text-base sm:text-lg font-black text-white">2. Tailored Smart Modules of Choice</p>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-350 leading-relaxed mb-4">
+                                Pay only for the features you truly want. From automatic smart radiator sashes and motor shades to biometric door handles, our responsive calculator adjusts counts matching your real property size, including clean physically-fitted mounting support!
+                            </p>
+                        </div>
+                        <div class="text-base sm:text-lg font-black text-sky-400 mt-2">
+                            Fully customized modular price
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wizard CTA -->
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-6 p-6 bg-slate-950/60 border border-sky-500/10 rounded-2xl text-left">
+                    <div>
+                        <strong class="text-white block text-sm sm:text-base mb-1">Experiment with your system layout in minutes!</strong>
+                        <span class="text-xs text-slate-400">Launch our interactive, multi-step smart home planner and preview estimated pricing instantly.</span>
+                    </div>
+                    <button onclick="openConfiguratorModal()" class="w-full sm:w-auto shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 bg-sky-500 hover:bg-sky-450 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer">
+                        <i data-lucide="calculator" class="w-4 h-4"></i>
+                        Open System Estimator
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Devices catalog -->
+        <section id="devices" class="mb-24 scroll-reveal">
+            <h2 class="section-title text-left">
+                <i data-lucide="cpu" class="w-10 h-10 text-sky-400"></i>
+                Compatible Smart Devices & Modules
+            </h2>
+            <p class="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed text-left">
+                On top of the local central server hub, the following high-grade wireless devices and modules integrate seamlessly into your home. This list covers procurement, offline pairing, and automation logic.
+            </p>
+
+            <!-- Categorization 1 -->
+            <div class="mb-12 text-left">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <p class="text-[15px] sm:text-lg font-display font-black text-white">
+                        Battery-Powered & Low Voltage Modules
+                        <span class="text-xs text-sky-400 font-semibold block md:inline md:ml-2">(mess-free, requires zero wall drilling or electrician callouts)</span>
+                    </p>
+                </div>
+
+                <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+                    <div onclick="openDeviceModal('lampa')" class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 group cursor-pointer">
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="lightbulb" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <span class="text-sm sm:text-base font-bold text-white group-hover:text-sky-400 transition-all leading-tight">Premium Smart Bulb</span>
+                    </div>
+
+                    <div onclick="openDeviceModal('sonoff_kapcsolo')" class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 group cursor-pointer">
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="toggle-right" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <span class="text-sm sm:text-base font-bold text-white group-hover:text-sky-400 transition-all leading-tight">Wireless Switch Button</span>
+                    </div>
+
+                    <div onclick="openDeviceModal('mozgas')" class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 group cursor-pointer">
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="eye" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <span class="text-sm sm:text-base font-bold text-white group-hover:text-sky-400 transition-all leading-tight">Motion & Presence Sensor</span>
+                    </div>
+
+                    <div onclick="openDeviceModal('nyitas')" class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 group cursor-pointer">
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="door-closed" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <span class="text-sm sm:text-base font-bold text-white group-hover:text-sky-400 transition-all leading-tight">Door & Window Contact</span>
+                    </div>
+
+                    <div onclick="openDeviceModal('futes')" class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 group cursor-pointer">
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="thermometer" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <span class="text-sm sm:text-base font-bold text-white group-hover:text-sky-400 transition-all leading-tight">Smart Radiator Valve</span>
+                    </div>
+
+                    <div onclick="openDeviceModal('szivargas')" class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-sky-500/20 hover:bg-slate-900/80 transition-all duration-300 group cursor-pointer">
+                        <div class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-all">
+                            <i data-lucide="droplets" class="w-6 h-6 text-sky-400"></i>
+                        </div>
+                        <span class="text-sm sm:text-base font-bold text-white group-hover:text-sky-400 transition-all leading-tight">Water Leak & Auto Shutdown</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categorization 2 (electrician) -->
+            <div class="mb-12 border-t border-slate-800/80 pt-10 text-left">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500">
+                        <i data-lucide="zap" class="w-5 h-5"></i>
+                    </div>
+                    <p class="text-[15px] sm:text-lg font-display font-black text-white">
+                        ⚠️ High-Voltage (230V) Smart Modules
+                        <span class="text-xs text-amber-500 font-bold block md:inline md:ml-2">❗ Physical wiring must be prepared by a licensed electrician!</span>
+                    </p>
+                </div>
+
+                <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+                    <div class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-amber-500/20 transition-all group">
+                        <div class="w-12 h-12 bg-amber-500/10 border border-amber-500/20 rounded-xl flex items-center justify-center shrink-0">
+                            <i data-lucide="thermometer-snowflake" class="w-6 h-6 text-amber-550"></i>
+                        </div>
+                        <span class="text-sm sm:text-base font-bold text-white group-hover:text-amber-500 transition-all leading-tight">Wired Wall Thermostat</span>
+                    </div>
+
+                    <div class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-amber-500/20 transition-all group">
+                        <div class="w-12 h-12 bg-amber-500/10 border border-amber-500/20 rounded-xl flex items-center justify-center shrink-0">
+                            <i data-lucide="cpu" class="w-6 h-6 text-amber-550"></i>
+                        </div>
+                        <span class="text-sm sm:text-base font-bold text-white group-hover:text-amber-500 transition-all leading-tight">In-Wall Hidden Smart Relay</span>
+                    </div>
+
+                    <div class="p-5 bg-slate-900/40 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-amber-500/20 transition-all group">
+                        <div class="w-12 h-12 bg-amber-500/10 border border-amber-500/20 rounded-xl flex items-center justify-center shrink-0">
+                            <i data-lucide="layers" class="w-6 h-6 text-amber-550"></i>
+                        </div>
+                        <span class="text-sm sm:text-base font-bold text-white group-hover:text-amber-500 transition-all leading-tight">Gate & Garage Door Relays</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disclaimer warning bubble -->
+            <div class="mt-10 p-5 md:p-6 bg-sky-500/5 border border-sky-500/15 rounded-3xl flex items-start gap-4 backdrop-blur-md text-left">
+                <i data-lucide="info" class="w-6 h-6 text-sky-400 shrink-0 mt-0.5"></i>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    <span class="font-bold text-white">💡 Seamless Pricing Details:</span> All prices are inclusive of high-durability module sourcing, calibration, offline server sync, and dynamic routine programming. Physical mounting of 230V components in-wall must be performed by your electrician of choice, for whom I supply accurate wiring templates and telephone support entirely for free.
+                </p>
+            </div>
+        </section>
+
+        <!-- Electrician section -->
+        <section id="electrician" class="mb-24 scroll-reveal">
+            <div class="p-8 bg-amber-500/5 border border-amber-500/20 rounded-3xl relative overflow-hidden text-left">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-14 h-14 bg-amber-500/10 border border-amber-500/35 rounded-2xl flex items-center justify-center text-amber-500 shrink-0">
+                        <i data-lucide="zap" class="w-8 h-8"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h2 class="text-lg md:text-xl font-display font-black text-white mb-3 flex items-center gap-2">
+                            ⚠️ 230V Mains / Electrician Cooperation Rules
+                        </h2>
+                        <div class="text-slate-350 text-xs sm:text-sm leading-relaxed space-y-3">
+                            <p>
+                                <span class="text-white font-semibold">HelyiOkos</span> prioritizes safety above all else. While the bulk of our sensors and switches operate off harmless low-volt button batteries (incorporating no dust, drills, or cables), in-wall relays, floor thermostats, and heavy garage openers run on standard <span class="text-amber-400 font-semibold">230V high-voltage lines</span>.
+                            </p>
+                            <p class="font-bold text-white">
+                                ❗ For your safety and warranty verification, 230V mains high-voltage electrical mounts must only be conducted by a licensed, certified electrician.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-4 mt-4 bg-slate-950/40 p-4 rounded-2xl border border-slate-800/60">
+                                <div>
+                                    <p class="text-amber-400 font-bold mb-1.5 flex items-center gap-1 text-xs sm:text-sm font-display">
+                                         What your electrician does:
+                                    </p>
+                                    <p class="text-[11px] text-slate-400">
+                                         Physically fits süllyesztett (in-wall) modules behind switches, wires 230V cables on boiler terminals, and hooks mains power to smart assets.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="text-sky-400 font-bold mb-1.5 flex items-center gap-1 text-xs sm:text-sm font-display">
+                                         What HelyiOkos does:
+                                    </p>
+                                    <p class="text-[11px] text-slate-400">
+                                         I construct complete schematic diagrams and assist your contractor. Once hooked up, I carry out the entire software config, offline central key pairings, and custom routines.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic pricing calculator CTA / Footer contact -->
+        <section id="contact" class="scroll-reveal">
+            <div class="p-6 sm:p-12 md:p-16 bg-slate-900/40 border border-slate-800 rounded-[3rem] backdrop-blur-xl shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-50"></div>
+                
+                <div class="grid lg:grid-cols-12 gap-10 items-stretch">
+                    <!-- Left Column: Contact Methods -->
+                    <div class="lg:col-span-5 flex flex-col justify-between text-left">
+                        <div>
+                            <span class="inline-flex px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] sm:text-xs uppercase font-extrabold text-emerald-400 tracking-widest mb-4">
+                                Contact & Coordination
+                            </span>
+                            <h2 class="text-2xl sm:text-3xl font-display font-black text-white leading-tight mb-4">
+                                Let's automate your home!
+                            </h2>
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
+                                Request a completely free, obligation-free on-site consultation or ask any questions! During the visit, I will present our live smart home demonstration kit so you can see how everything works in person.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col gap-3 my-6">
+                            <button onclick="openCalendlyPopup()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-405 text-slate-950 font-black text-xs uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer">
+                                <i data-lucide="calendar" class="w-5 h-5"></i> Book Free Consultation
+                            </button>
+                            <a href="tel:+36202109008" class="w-full py-4 bg-slate-950 hover:bg-slate-850 border border-slate-850 text-white font-black text-xs uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 text-center">
+                                <i data-lucide="phone" class="w-5 h-5 text-emerald-400"></i> Call: +36 20 210 9008
+                            </a>
+                            <a href="https://m.me/61581849661468" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-[#0084FF] hover:bg-[#0072E2] text-white font-black text-xs uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 text-center">
+                                <i data-lucide="message-circle" class="w-5 h-5 text-white"></i> Chat on Messenger
+                            </a>
+                        </div>
+                        <p class="text-[10px] text-slate-400">
+                            ★ I reply to all messages within 24 hours. Booking has absolutely zero strings attached!
+                        </p>
+                    </div>
+
+                    <!-- Right Column: Micro calculator -->
+                    <div class="lg:col-span-7 bg-slate-950/60 border border-slate-800 rounded-2xl p-6 md:p-8 flex flex-col justify-between relative overflow-hidden text-left">
+                        <div class="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-transparent pointer-events-none"></div>
+                        <div class="relative z-10">
+                            <h3 class="text-base sm:text-lg font-display font-black text-white mb-1">Quick Cost Estimator</h3>
+                            <p class="text-xs text-slate-400 mb-5 leading-relaxed">Select your home parameters for an instant estimated cost blueprint!</p>
+
+                            <!-- Size selection -->
+                            <div class="mb-5">
+                                <span class="text-[9px] font-black uppercase tracking-widest text-slate-400 block mb-2">Property category:</span>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <button onclick="selectMiniProperty('flat12', this)" class="mini-prop-btn py-2 px-2.5 bg-slate-900 border border-sky-500 text-sky-400 rounded-lg text-[11px] font-bold transition-all cursor-pointer">
+                                        1-2 Room Condo
+                                    </button>
+                                    <button onclick="selectMiniProperty('flat34', this)" class="mini-prop-btn py-2 px-2.5 bg-slate-950 border border-slate-800 text-slate-400 rounded-lg text-[11px] font-bold transition-all hover:bg-slate-900 cursor-pointer">
+                                        3-4 Room Condo
+                                    </button>
+                                    <button onclick="selectMiniProperty('house', this)" class="mini-prop-btn py-2 px-2.5 bg-slate-950 border border-slate-800 text-slate-400 rounded-lg text-[11px] font-bold transition-all hover:bg-slate-900 cursor-pointer">
+                                        Detached House
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Functions -->
+                            <div class="mb-5">
+                                <span class="text-[9px] font-black uppercase tracking-widest text-slate-400 block mb-2">Select comfort features:</span>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                    <label class="flex items-center gap-2 p-2 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all cursor-pointer">
+                                        <input type="checkbox" id="minicalc-lighting" checked onchange="runMiniCalculator()" class="rounded border-slate-800 text-sky-500 w-4 h-4">
+                                        <div class="text-left leading-tight"><span class="text-xs text-white font-bold block">Smart Lights</span></div>
+                                    </label>
+                                    <label class="flex items-center gap-2 p-2 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all cursor-pointer">
+                                        <input type="checkbox" id="minicalc-heating" checked onchange="runMiniCalculator()" class="rounded border-slate-800 text-sky-500 w-4 h-4">
+                                        <div class="text-left leading-tight"><span class="text-xs text-white font-bold block">Heating & A/C</span></div>
+                                    </label>
+                                    <label class="flex items-center gap-2 p-2 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all cursor-pointer">
+                                        <input type="checkbox" id="minicalc-shutters" onchange="runMiniCalculator()" class="rounded border-slate-800 text-sky-500 w-4 h-4">
+                                        <div class="text-left leading-tight"><span class="text-xs text-white font-bold block">Smart Blinds</span></div>
+                                    </label>
+                                    <label class="flex items-center gap-2 p-2 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all cursor-pointer">
+                                        <input type="checkbox" id="minicalc-sensors" checked onchange="runMiniCalculator()" class="rounded border-slate-800 text-sky-500 w-4 h-4">
+                                        <div class="text-left leading-tight"><span class="text-xs text-white font-bold block">Security Sensors</span></div>
+                                    </label>
+                                    <label class="flex items-center gap-2 p-2 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all cursor-pointer sm:col-span-2">
+                                        <input type="checkbox" id="minicalc-lock" onchange="runMiniCalculator()" class="rounded border-slate-800 text-sky-500 w-4 h-4">
+                                        <div class="text-left leading-tight"><span class="text-xs text-white font-bold block">Biometric Lock (Fingerprint Handle)</span></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Result -->
+                        <div class="relative z-10 p-4 rounded-xl border border-sky-400/20 bg-sky-500/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div class="text-left">
+                                <span class="text-[9px] font-black uppercase tracking-widest text-sky-400 block">Total cost including mounting:</span>
+                                <strong id="mini-calc-total" class="font-display font-black text-white text-lg sm:text-xl leading-normal">--- Ft</strong>
+                                <span class="text-[9px] text-slate-400 block mt-0.5">*Includes offline server & software routines</span>
+                            </div>
+                            <button onclick="launchDetailedBuilder()" class="w-full sm:w-auto px-4 py-2.5 bg-sky-500 hover:bg-sky-450 text-slate-950 font-black text-xs uppercase tracking-wider rounded-lg transition-all flex items-center justify-center gap-1 cursor-pointer">
+                                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Detailed Builder
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="mt-32 pt-12 border-t border-slate-900 text-center text-xs text-slate-650">
+            <p>© 2026 Nagy Levente EV. | Local server automation for comfortable living.</p>
+        </footer>
+    </div>
+
+    <a href="https://m.me/61581849661468" class="floating-messenger" target="_blank" rel="noopener noreferrer" title="Contact me on Messenger!">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 0a8 8 0 0 0-8 8c0 1.48.4 2.87 1.1 4.07L0 16l4.05-1.07A7.95 7.95 0 0 0 8 16a8 8 0 0 0 8-8 8 8 0 0 0-8-8zm.75 10.32l-1.8-1.92-3.5 1.92 3.85-4.1 1.8 1.92 3.5-1.92-3.85 4.1z"/>
+        </svg>
+    </a>
+
+    <!-- CUSTOM BUILDER MODAL -->
+    <div id="configurator-modal" class="fixed inset-0 bg-slate-950/95 backdrop-blur-md z-[9999] opacity-0 pointer-events-none transition-all duration-300 overflow-y-auto flex items-start justify-center p-4 md:p-6">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-4xl w-full my-8 p-6 md:p-8 shadow-2xl relative flex flex-col gap-6 text-left">
+            <button onclick="closeConfiguratorModal()" class="absolute top-4 right-4 p-2 rounded-full bg-slate-950/60 border border-slate-800 text-slate-400 hover:text-white transition-all cursor-pointer z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="border-b border-slate-800/80 pb-4 pr-10">
+                <h2 class="text-xl sm:text-2xl font-display font-black text-white flex items-center gap-3">
+                    <i data-lucide="calculator" class="w-8 h-8 text-sky-400 animate-pulse"></i>
+                    Bespoke System Estimator
+                </h2>
+                <p class="text-slate-400 text-xs sm:text-sm mt-1">Configure your offline smart home. No wiring mess, no hidden subscriptions.</p>
+            </div>
+
+            <!-- Steps Progress bar -->
+            <div class="flex items-center justify-between gap-2.5 sm:gap-4 select-none relative pb-2 border-b border-slate-800/40">
+                <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[2px] bg-slate-850 z-0">
+                    <div id="step-progress-fill" class="h-full bg-sky-500 transition-all duration-350" style="width: 0%;"></div>
+                </div>
+                <div class="relative z-10 flex justify-between w-full">
+                    <div class="flex items-center gap-2 bg-slate-900 pr-2">
+                        <span id="indicator-step-1" class="w-6.5 h-6.5 sm:w-8 sm:h-8 rounded-full border bg-sky-500 border-sky-500 text-slate-950 flex items-center justify-center font-black text-xs sm:text-sm">1</span>
+                        <span class="text-[10px] sm:text-xs uppercase font-extrabold tracking-widest text-white hidden sm:inline">Property</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-slate-900 px-2">
+                        <span id="indicator-step-2" class="w-6.5 h-6.5 sm:w-8 sm:h-8 rounded-full border bg-slate-900 border-slate-800 text-slate-500 flex items-center justify-center font-black text-xs sm:text-sm">2</span>
+                        <span class="text-[10px] sm:text-xs uppercase font-extrabold tracking-widest text-slate-500 hidden sm:inline">Counts</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-slate-900 px-2">
+                        <span id="indicator-step-3" class="w-6.5 h-6.5 sm:w-8 sm:h-8 rounded-full border bg-slate-900 border-slate-800 text-slate-500 flex items-center justify-center font-black text-xs sm:text-sm">3</span>
+                        <span class="text-[10px] sm:text-xs uppercase font-extrabold tracking-widest text-slate-500 hidden sm:inline">Features</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-slate-900 pl-2">
+                        <span id="indicator-step-4" class="w-6.5 h-6.5 sm:w-8 sm:h-8 rounded-full border bg-slate-900 border-slate-800 text-slate-500 flex items-center justify-center font-black text-xs sm:text-sm">4</span>
+                        <span class="text-[10px] sm:text-xs uppercase font-extrabold tracking-widest text-slate-500 hidden sm:inline">Quote</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 1: Property Type -->
+            <div id="step-1" class="space-y-6">
+                <div>
+                    <h3 class="text-base sm:text-lg font-bold text-white mb-1">1. Choose your property category</h3>
+                    <p class="text-xs text-slate-400">This pre-configures standard network coverage and node placement plans.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <label class="p-6 bg-slate-950/40 border-2 border-sky-500 rounded-2xl flex items-start gap-4 cursor-pointer hover:bg-slate-950/80 transition-all select-none">
+                        <input type="radio" name="property_type" value="flat" checked onchange="updatePropertySelection('flat')" class="mt-1 border-slate-800 text-sky-500 focus:ring-sky-500">
+                        <div class="text-left">
+                            <span class="font-bold text-white block mb-1">Condo or Apartment</span>
+                            <span class="text-xs text-slate-450 leading-relaxed block">Clean, low-voltage, clutter-free wireless integration with excellent local coverage.</span>
+                        </div>
+                    </label>
+                    <label class="p-6 bg-slate-950/20 border-2 border-slate-850 rounded-2xl flex items-start gap-4 cursor-pointer hover:bg-slate-950/40 transition-all select-none">
+                        <input type="radio" name="property_type" value="house" onchange="updatePropertySelection('house')" class="mt-1 border-slate-800 text-sky-500 focus:ring-sky-500">
+                        <div class="text-left">
+                            <span class="font-bold text-white block mb-1">Detached / Multi-Story House</span>
+                            <span class="text-xs text-slate-450 leading-relaxed block">Configured with high-power antenna signal expanders to bridge garages, gardens, and floors neatly.</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- STEP 2: Counts and Quantities -->
+            <div id="step-2" class="space-y-6 hidden">
+                <div class="flex justify-between items-start gap-4 flex-wrap">
+                    <div>
+                        <h3 class="text-base sm:text-lg font-bold text-white mb-1">2. How large is your home?</h3>
+                        <p class="text-xs text-slate-400">Specifying rooms prefilled our best estimates. Customize quantities directly using + / - below.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                    <label class="p-3 bg-slate-950/40 rounded-xl border border-slate-850 flex items-center gap-2 cursor-pointer text-left">
+                        <input type="radio" name="rooms_count" value="1" onchange="updateRoomsSelection(1)" class="text-sky-500">
+                        <span class="text-xs text-white font-bold block">1 Room</span>
+                    </label>
+                    <label class="p-3 bg-slate-900 rounded-xl border border-sky-500/50 flex items-center gap-2 cursor-pointer text-left">
+                        <input type="radio" name="rooms_count" value="2" checked onchange="updateRoomsSelection(2)" class="text-sky-500">
+                        <span class="text-xs text-white font-bold block">2 Rooms</span>
+                    </label>
+                    <label class="p-3 bg-slate-950/40 rounded-xl border border-slate-850 flex items-center gap-2 cursor-pointer text-left">
+                        <input type="radio" name="rooms_count" value="3" onchange="updateRoomsSelection(3)" class="text-sky-500">
+                        <span class="text-xs text-white font-bold block">3 Rooms</span>
+                    </label>
+                    <label class="p-3 bg-slate-950/40 rounded-xl border border-slate-850 flex items-center gap-2 cursor-pointer text-left">
+                        <input type="radio" name="rooms_count" value="4" onchange="updateRoomsSelection(4)" class="text-sky-500">
+                        <span class="text-xs text-white font-bold block">4+ Rooms</span>
+                    </label>
+                </div>
+
+                <!-- Increments list -->
+                <div class="bg-slate-950/50 border border-slate-800/80 rounded-2xl p-4 sm:p-6 space-y-4">
+                    <span class="block text-[10px] font-black tracking-widest uppercase text-sky-400 mb-2">Adjust quantities for your spaces:</span>
+                    
+                    <!-- Lights -->
+                    <div class="flex items-center justify-between pb-3.5 border-b border-slate-850">
+                        <div class="text-left">
+                            <span class="text-xs sm:text-sm text-white font-bold block">Light lines or switches to automate?</span>
+                            <span class="text-[10px] text-slate-450 block font-medium">Bespoke smart bulbs and double-sided keypad triggers</span>
+                        </div>
+                        <div class="flex items-center gap-3 shrink-0">
+                            <button onclick="adjustCount('lights', 'down')" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 font-black cursor-pointer hover:bg-slate-800">-</button>
+                            <span id="count-lights" class="w-8 text-center text-sm font-black text-white">3</span>
+                            <button onclick="adjustCount('lights', 'up')" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 font-black cursor-pointer hover:bg-slate-800">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Radiators -->
+                    <div class="flex items-center justify-between pb-3.5 border-b border-slate-850">
+                        <div class="text-left">
+                            <span class="text-xs sm:text-sm text-white font-bold block">Radiators / heating valves</span>
+                            <span class="text-[10px] text-slate-450 block font-medium">Rooms with autonomous temperature scheduling hubs</span>
+                        </div>
+                        <div class="flex items-center gap-3 shrink-0">
+                            <button onclick="adjustCount('radiators', 'down')" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 font-black cursor-pointer hover:bg-slate-800">-</button>
+                            <span id="count-radiators" class="w-8 text-center text-sm font-black text-white">2</span>
+                            <button onclick="adjustCount('radiators', 'up')" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 font-black cursor-pointer hover:bg-slate-800">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Blinds -->
+                    <div class="flex items-center justify-between pb-3.5 border-b border-slate-850">
+                        <div class="text-left">
+                            <span class="text-xs sm:text-sm text-white font-bold block">Smart roller blinds / motors</span>
+                            <span class="text-[10px] text-slate-450 block font-medium">Automate sunrise/sunset window shading routines</span>
+                        </div>
+                        <div class="flex items-center gap-3 shrink-0">
+                            <button onclick="adjustCount('shutters', 'down')" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 font-black cursor-pointer hover:bg-slate-800">-</button>
+                            <span id="count-shutters" class="w-8 text-center text-sm font-black text-white">0</span>
+                            <button onclick="adjustCount('shutters', 'up')" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 font-black cursor-pointer hover:bg-slate-800">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Sensors -->
+                    <div class="flex items-center justify-between pb-3.5 border-b border-slate-850">
+                        <div class="text-left">
+                            <span class="text-xs sm:text-sm text-white font-bold block">Safety motion & contact sensors</span>
+                            <span class="text-[10px] text-slate-450 block font-medium">Presence and door magnetic contact units</span>
+                        </div>
+                        <div class="flex items-center gap-3 shrink-0">
+                            <button onclick="adjustCount('sensors', 'down')" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 font-black cursor-pointer hover:bg-slate-800">-</button>
+                            <span id="count-sensors" class="w-8 text-center text-sm font-black text-white">2</span>
+                            <button onclick="adjustCount('sensors', 'up')" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 font-black cursor-pointer hover:bg-slate-800">+</button>
+                        </div>
+                    </div>
+
+                    <!-- A/C units -->
+                    <div class="flex items-center justify-between">
+                        <div class="text-left">
+                            <span class="text-xs sm:text-sm text-white font-bold block">Smart indoor split A/C modules</span>
+                            <span class="text-[10px] text-slate-450 block font-medium">Calibrated local infrared cooling control sashes</span>
+                        </div>
+                        <div class="flex items-center gap-3 shrink-0">
+                            <button onclick="adjustCount('climates', 'down')" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 font-black cursor-pointer hover:bg-slate-800">-</button>
+                            <span id="count-climates" class="w-8 text-center text-sm font-black text-white">0</span>
+                            <button onclick="adjustCount('climates', 'up')" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 font-black cursor-pointer hover:bg-slate-800">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 3: Choice of Features -->
+            <div id="step-3" class="space-y-6 hidden">
+                <div>
+                    <h3 class="text-base sm:text-lg font-bold text-white mb-1">3. Select custom comfort features</h3>
+                    <p class="text-xs text-slate-400">Mix and match items matching your exact routine requirements.</p>
+                </div>
+
+                <div class="space-y-5">
+                    <div>
+                        <span class="text-[9px] font-black tracking-widest text-sky-400 uppercase block mb-3">No-wiring / Low-Voltage Features:</span>
+                        <div class="grid sm:grid-cols-2 gap-3">
+                            <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-800 bg-slate-950/30 cursor-pointer select-none">
+                                <input type="checkbox" name="desired_functions" value="lighting_basic" checked onchange="recalculateWizardBudget()" class="mt-1 transition-colors border-slate-850 text-sky-550 rounded w-4.5 h-4.5">
+                                <div class="text-left"><b class="text-xs text-white block">Smart Bulbs & Switch Buttons</b><p class="text-[10px] text-slate-450 mt-0.5 leading-relaxed">Wireless sticky switch keypads alongside color-shifting bulbs.</p></div>
+                            </label>
+                            
+                            <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-800 bg-slate-950/30 cursor-pointer select-none">
+                                <input type="checkbox" name="desired_functions" value="heating_basic" checked onchange="recalculateWizardBudget()" class="mt-1 transition-colors border-slate-850 text-sky-550 rounded w-4.5 h-4.5">
+                                <div class="text-left"><b class="text-xs text-white block">Autonomous Radiator Zones</b><p class="text-[10px] text-slate-450 mt-0.5 leading-relaxed">Intelligent screw-on digital thermostat sashes for room isolation.</p></div>
+                            </label>
+
+                            <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-800 bg-slate-950/30 cursor-pointer select-none">
+                                <input type="checkbox" name="desired_functions" value="climate" onchange="recalculateWizardBudget()" class="mt-1 transition-colors border-slate-850 text-sky-550 rounded w-4.5 h-4.5">
+                                <div class="text-left"><b class="text-xs text-white block">Smart A/C Integration</b><p class="text-[10px] text-slate-450 mt-0.5 leading-relaxed">Enables remote active pre-cooling triggers via your phone.</p></div>
+                            </label>
+
+                            <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-800 bg-slate-950/30 cursor-pointer select-none">
+                                <input type="checkbox" name="desired_functions" value="sensors" checked onchange="recalculateWizardBudget()" class="mt-1 transition-colors border-slate-850 text-sky-550 rounded w-4.5 h-4.5">
+                                <div class="text-left"><b class="text-xs text-white block">Presence & Contact Sensors</b><p class="text-[10px] text-slate-450 mt-0.5 leading-relaxed">Magnetic jamb meters and presence pucks for alarm scripts.</p></div>
+                            </label>
+
+                            <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-800 bg-slate-950/30 cursor-pointer select-none">
+                                <input type="checkbox" name="desired_functions" value="lock" onchange="recalculateWizardBudget()" class="mt-1 transition-colors border-slate-850 text-sky-550 rounded w-4.5 h-4.5">
+                                <div class="text-left"><b class="text-xs text-white block">Biometric Fingerprint Deadlock</b><p class="text-[10px] text-slate-450 mt-0.5 leading-relaxed">Keyless fingerprint and PIN entry locks fitted neatly over standard cores.</p></div>
+                            </label>
+
+                            <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-800 bg-slate-950/30 cursor-pointer select-none">
+                                <input type="checkbox" name="desired_functions" value="leak" onchange="recalculateWizardBudget()" class="mt-1 transition-colors border-slate-850 text-sky-550 rounded w-4.5 h-4.5">
+                                <div class="text-left"><b class="text-xs text-white block">Flood & Water Emergency Killswitch</b><p class="text-[10px] text-slate-450 mt-0.5 leading-relaxed">Shut off valve actuator paired to floor moisture indicators.</p></div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span class="text-[9px] font-black tracking-widest text-amber-500 uppercase block mb-3">⚠️ High Voltage Features (requires professional electrician):</span>
+                        <div class="grid sm:grid-cols-2 gap-3">
+                            <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-800 bg-slate-950/10 cursor-pointer select-none">
+                                <input type="checkbox" name="desired_functions" value="lighting_pro" onchange="recalculateWizardBudget()" class="mt-1 transition-colors border-slate-850 text-amber-500 rounded w-4.5 h-4.5">
+                                <div class="text-left"><b class="text-xs text-white block">In-Wall Smart Dimmer Relays</b><p class="text-[10px] text-slate-450 mt-0.5 leading-relaxed">Hidden Zigbee cores to automate legacy lamps & toggle buttons.</p></div>
+                            </label>
+
+                            <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-800 bg-slate-950/10 cursor-pointer select-none">
+                                <input type="checkbox" name="desired_functions" value="heating_pro" onchange="recalculateWizardBudget()" class="mt-1 transition-colors border-slate-850 text-amber-500 rounded w-4.5 h-4.5">
+                                <div class="text-left"><b class="text-xs text-white block">Floor/Boiler Thermostat Terminals</b><p class="text-[10px] text-slate-450 mt-0.5 leading-relaxed">Wired 235V digital smart wall controls for boilers.</p></div>
+                            </label>
+
+                            <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-800 bg-slate-950/10 cursor-pointer col-span-2 select-none">
+                                <input type="checkbox" name="desired_functions" value="gate" onchange="recalculateWizardBudget()" class="mt-1 transition-colors border-slate-850 text-amber-500 rounded w-4.5 h-4.5">
+                                <div class="text-left"><b class="text-xs text-white block">Smart Garage & Main Gate Relays</b><p class="text-[10px] text-slate-450 mt-0.5 leading-relaxed">Hooks smart dry contacts onto existing electric gates for automatic geo-opening.</p></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 4: Estimate & Lead capture -->
+            <div id="step-4" class="space-y-6 hidden">
+                <div class="p-5 rounded-2xl bg-sky-500/5 border border-sky-450/20 grid sm:grid-cols-2 gap-6 items-center">
+                    <div class="text-left">
+                        <span class="text-[9px] font-black uppercase tracking-widest text-sky-400 block mb-0.5">Indicative system total with installation:</span>
+                        <strong class="wizard-total font-display font-black text-2xl sm:text-3.5xl text-white tracking-tight">--- Ft</strong>
+                        <span id="wizard-items-count" class="text-xs text-slate-400 block mt-1">0 modules selected</span>
+                        <p class="text-[10px] text-slate-500 mt-2 leading-relaxed">Includes professional setup, hardware procurement, companion screens, and free localized assessments.</p>
+                    </div>
+                    <ul class="text-slate-300 text-[11px] leading-relaxed space-y-2 text-left font-semibold">
+                        <li class="flex items-center gap-1.5"><span class="text-sky-400">✓</span> No internet needed: stays 100% offline</li>
+                        <li class="flex items-center gap-1.5"><span class="text-sky-400">✓</span> No monthly software licensing subscriptions</li>
+                        <li class="flex items-center gap-1.5"><span class="text-sky-400">✓</span> Full layout hardware warranty</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Schedule Your Assessment & Secure Your Quote Code!</h4>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="text-left">
+                            <label class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Name *</label>
+                            <input type="text" id="form-name" required placeholder="John Doe" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white focus:border-sky-500 outline-none text-xs sm:text-sm">
+                        </div>
+                        <div class="text-left">
+                            <label class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Mobile number *</label>
+                            <input type="tel" id="form-phone" required placeholder="+44 7123 456789" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white focus:border-sky-500 outline-none text-xs sm:text-sm">
+                        </div>
+                        <div class="text-left">
+                            <label class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Email address *</label>
+                            <input type="email" id="form-email" required placeholder="john.doe@example.com" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white focus:border-sky-500 outline-none text-xs sm:text-sm">
+                        </div>
+                        <div class="text-left">
+                            <label class="text-[10px] uppercase font-bold text-slate-400 block mb-1">Installation city / address *</label>
+                            <input type="text" id="form-address" required placeholder="Budapest, 5th district" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-white focus:border-sky-500 outline-none text-xs sm:text-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wizard footer navigation buttons -->
+            <div class="border-t border-slate-800/80 pt-4 flex justify-between items-center shrink-0">
+                <button id="prev-step-btn" onclick="goPrevStep()" class="px-5 py-3 bg-slate-950 hover:bg-slate-850 border border-slate-850 hover:border-slate-800 text-slate-350 hover:text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all cursor-pointer opacity-0 pointer-events-none">
+                     &lt; Back
+                </button>
+                <div class="flex items-center gap-3">
+                    <span id="wizard-step-count-label" class="text-[11px] text-slate-500 font-bold uppercase tracking-wider">Step 1 of 4</span>
+                    <button id="next-step-btn" onclick="goNextStep()" class="px-6 py-3 bg-sky-500 hover:bg-sky-450 text-slate-950 text-xs font-black uppercase tracking-widest rounded-xl transition-all cursor-pointer">
+                         Next &gt;
+                    </button>
+                    <!-- Final Submit btn on wizard step 4 -->
+                    <button id="wizard-final-submit-btn" onclick="sendCustomConfiguration()" class="px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase tracking-widest rounded-xl transition-all cursor-pointer hidden">
+                         Submit Inquiry
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DEVICE DETAIL MODALS -->
+    <div id="device-modal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300" style="z-index: 99999;">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh]">
+            <button onclick="closeDeviceModal()" class="absolute top-4 right-4 z-50 p-2 rounded-full bg-slate-950/60 border border-slate-800 text-slate-400 hover:text-white transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="h-56 sm:h-64 w-full relative overflow-hidden shrink-0">
+                <img id="modal-image" src="" alt="Smart device" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+                <div class="absolute bottom-4 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4 w-[calc(100%-3rem)]">
+                    <div>
+                        <span id="modal-badge" class="name-badge mb-2 inline-block">Module</span>
+                        <h3 id="modal-title" class="text-xl sm:text-2xl md:text-3xl font-display font-black text-white leading-tight">Details</h3>
+                    </div>
+                    <div id="modal-price" class="text-sky-400 font-display font-black text-sm sm:text-base shrink-0 bg-slate-950/80 px-4 py-2 rounded-2xl border border-sky-500/30 self-start sm:self-end"></div>
+                </div>
+            </div>
+            <div class="p-6 sm:p-8 overflow-y-auto flex-1 text-left">
+                <div id="modal-content" class="text-slate-300 text-sm sm:text-base leading-relaxed space-y-4"></div>
+            </div>
+            <div class="p-4 sm:p-6 bg-slate-950/40 border-t border-slate-800/60 flex justify-end shrink-0">
+                <button onclick="closeDeviceModal()" class="px-6 py-2.5 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-all cursor-pointer">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROBLEM MODALS -->
+    <div id="problem-modal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300" style="z-index: 99999;">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh]">
+            <button onclick="closeProblemModal()" class="absolute top-4 right-4 z-50 p-2 rounded-full bg-slate-950/60 border border-slate-800 text-slate-400 hover:text-white transition-all cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="p-6 md:p-8 shrink-0 bg-gradient-to-r from-slate-950 to-slate-900 border-b border-slate-800 flex items-start gap-4 text-left">
+                <div id="problem-icon-container" class="w-12 h-12 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-center justify-center text-sky-400 shrink-0 mt-1">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-sky-400 font-bold tracking-wider text-xs uppercase block mb-1">Proactive Solutions</span>
+                    <h3 id="problem-title" class="text-lg sm:text-2xl font-display font-black text-white leading-tight">Comfort Trigger</h3>
+                </div>
+            </div>
+            <div class="p-6 md:p-8 overflow-y-auto flex-1 text-left">
+                <div id="problem-content" class="text-slate-350 text-xs sm:text-sm leading-relaxed space-y-4"></div>
+            </div>
+            <div class="p-4 sm:p-6 bg-slate-950/40 border-t border-slate-800/60 flex flex-col sm:flex-row sm:justify-between items-center gap-3 shrink-0">
+                <button onclick="openCalendlyPopup(); closeProblemModal();" class="w-full sm:w-auto px-6 py-2.5 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4"></i> Request Free Consultation
+                </button>
+                <button onclick="closeProblemModal()" class="w-full sm:w-auto px-6 py-2.5 bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-300 font-semibold rounded-xl transition-all cursor-pointer">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- INQUIRY SUBMISSION SUCCESS MODAL -->
+    <div id="success-modal" class="fixed inset-0 bg-slate-950/95 backdrop-blur-md z-[50000] overflow-y-auto flex items-start justify-center p-4 opacity-0 pointer-events-none transition-all duration-300" style="z-index: 50000;">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-3xl w-full my-8 p-6 sm:p-8 shadow-2xl relative">
+            <button onclick="closeSuccessModal()" class="absolute top-4 right-4 p-2 rounded-full bg-slate-950/60 border border-slate-800 text-slate-400 hover:text-white transition-all cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="text-center max-w-xl mx-auto mb-8">
+                <div class="w-16 h-16 bg-emerald-500/10 border border-emerald-550/30 rounded-full flex items-center justify-center mx-auto text-emerald-450 mb-4 shadow-lg">
+                    <i data-lucide="check-circle" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-xl sm:text-3xl font-display font-black text-white leading-tight mb-2">Quote Request Submitted!</h3>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-medium">
+                    Thank you <span id="success-friendly-name" class="font-bold text-white"></span>, I have successfully received your configuration! Your unique offer code is listed below. Refer to this code during our meeting.
+                </p>
+                <div class="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs text-sky-400 font-bold">
+                    Inquiry Code: <span id="success-offer-id" class="text-white">HO-0000</span>
+                </div>
+            </div>
+
+            <!-- Calendly inline integration -->
+            <div class="p-1 sm:p-2 bg-slate-950/65 border border-slate-800 rounded-2xl mb-6">
+                <p class="text-xs font-bold text-white uppercase text-center tracking-wide py-2 flex items-center justify-center gap-1.5 pt-4">
+                     🔒 Secure Your On-Site Consultation Slot below:
+                </p>
+                <div id="calendly-success-inline-container" class="min-h-[480px] bg-slate-900/40 rounded-xl overflow-hidden">
+                    <div class="p-12 text-center text-slate-450 text-xs">Loading calendar booking interface...</div>
+                </div>
+                <div class="text-center py-3">
+                    <button onclick="openCalendlyPopupFull()" class="text-slate-400 hover:text-sky-400 text-xs transition-all underline">
+                        Open booking in a full browser tab
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <button onclick="openMessengerNotice()" class="py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl transition-all font-bold text-xs flex items-center justify-center gap-2 cursor-pointer shadow-lg">
+                    <i data-lucide="message-square" class="w-4 h-4"></i> Message on Messenger
+                </button>
+                <button onclick="copyToClipboard()" id="copy-text-btn" class="py-3 bg-slate-950 hover:bg-slate-850 text-slate-300 border border-slate-800 text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+                    <i data-lucide="copy" class="w-4 h-4 text-sky-450"></i> Copy Layout Summary
+                </button>
+            </div>
+
+            <div class="bg-slate-950/40 border border-slate-800 rounded-xl p-4 mb-4 text-left">
+                <p class="text-[9px] text-slate-500 uppercase font-black tracking-wider mb-2">My Smart Configuration Outline:</p>
+                <div class="max-h-[85px] overflow-y-auto custom-scrollbar">
+                    <pre class="text-[10px] text-slate-450 font-mono whitespace-pre-wrap select-all leading-normal" id="success-copy-text"></pre>
+                </div>
+            </div>
+
+            <div class="text-center mb-4">
+                <button id="trigger-mail-btn" onclick="triggerMailSender()" class="text-slate-500 hover:text-sky-400 text-[11px] font-semibold transition-all underline cursor-pointer">
+                    Open email draft in local client manually
+                </button>
+            </div>
+
+            <button onclick="closeSuccessModal()" class="w-full py-3.5 bg-slate-850 hover:bg-slate-800 text-slate-300 hover:text-white font-black text-xs uppercase tracking-widest rounded-xl transition-all border border-slate-800/80 active:scale-98 text-center cursor-pointer">
+                Got it, close confirmation
+            </button>
+        </div>
+    </div>
+
+    <!-- MESSENGER OVERLAY notice -->
+    <div id="messenger-notice-overlay" class="fixed inset-0 bg-slate-950/95 backdrop-blur-md z-[110000] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300" style="z-index: 110000;">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative text-center">
+            <div class="w-14 h-14 bg-sky-500/10 border border-sky-500/30 rounded-full flex items-center justify-center mx-auto text-sky-400 mb-4 h-shadow">
+                <i data-lucide="message-square" class="w-7 h-7"></i>
+            </div>
+            <div class="text-lg font-display font-black text-white mb-2">Open Messenger Chat</div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+                Your layout has been locked under code <span id="messenger-notice-id" class="font-bold text-sky-400">#HO-0000</span>. Mention this code when clicking deep link below to open our direct conversation!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-2.5">
+                <button onclick="closeMessengerNotice()" class="flex-1 py-3 bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white rounded-xl transition-all font-bold text-xs cursor-pointer">Cancel</button>
+                <a id="messenger-direct-link" href="https://m.me/61581849661468" target="_blank" rel="noopener noreferrer" onclick="closeMessengerNotice()" class="flex-1 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl transition-all font-bold text-xs shadow-lg flex items-center justify-center gap-1.5 cursor-pointer text-center">
+                    Open Chat <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dynamic JavaScript Loader loaded locally -->
+    <script type="module" src="/index-logic-en.js"></script>
+
+    <!-- Global Layout Controllers & Dynamic Hook Script -->
+    <script>
+        // Synchronizing Wizard Navigation Step View triggers
+        function goPrevStep() {
+            if (typeof window.goPrevStep === 'function') window.goPrevStep();
+        }
+        function goNextStep() {
+            if (typeof window.goNextStep === 'function') window.goNextStep();
+        }
+
+        // Setup local cookie compliance modules in English
+        window.acceptCookies = function() {
+            try { localStorage.setItem('cookie_consent', 'accepted'); } catch(e) {}
+            initGoogleAnalytics();
+            hideCookieBanner();
+        };
+
+        window.rejectCookies = function() {
+            try { localStorage.setItem('cookie_consent', 'rejected'); } catch(e) {}
+            hideCookieBanner();
+        };
+
+        function showCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            if (banner) {
+                banner.classList.remove('hidden');
+                setTimeout(() => {
+                    banner.classList.remove('translate-y-full');
+                    banner.classList.add('translate-y-0');
+                    if (typeof lucide !== 'undefined') lucide.createIcons();
+                }, 100);
+            }
+        }
+
+        function hideCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            if (banner) {
+                banner.classList.remove('translate-y-0');
+                banner.classList.add('translate-y-full');
+                setTimeout(() => { banner.classList.add('hidden'); }, 500);
+            }
+        }
+
+        function checkCookieConsent() {
+            let consent = null;
+            try { consent = localStorage.getItem('cookie_consent'); } catch(e){}
+            if (consent === 'accepted') {
+                initGoogleAnalytics();
+            } else if (consent !== 'rejected') {
+                showCookieBanner();
+            }
+        }
+
+        // Scroll animations reveal controller
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle triggers
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu) mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Sticky main navigation sizing
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (nav) {
+                if (window.scrollY > 50) {
+                    nav.classList.add('py-2', 'bg-slate-950/95');
+                    nav.classList.remove('lg:h-20');
+                    nav.classList.add('h-16');
+                } else {
+                    nav.classList.remove('py-2', 'bg-slate-950/95');
+                    nav.classList.add('lg:h-20');
+                    nav.classList.remove('h-16');
+                }
+            }
+        });
+
+        // Calendly Booking Automatic Redirect hook pointing to koszonjuk-en.html
+        window.addEventListener('message', function(e) {
+            if (e.data.event && e.data.event === 'calendly.event_scheduled') {
+                console.log("Calendly appointment scheduled successfully. Redirecting to English thank-you page...");
+                window.location.href = 'koszonjuk-en.html';
+            }
+        });
+
+        // Run checking arrays upon launch
+        window.addEventListener('DOMContentLoaded', () => {
+            checkCookieConsent();
+            // Automatically open configurator details if requested
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.get('openCalc') === 'true') {
+                    setTimeout(() => {
+                        if (typeof openConfiguratorModal === 'function') openConfiguratorModal();
+                    }, 650);
+                }
+            } catch(e){}
+        });
+    </script>
+
+    <!-- UI Cookie Compliance Banner in English -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 translate-y-full transition-all duration-500 ease-out hidden">
+        <div class="max-w-4xl mx-auto bg-slate-950 border border-slate-800 rounded-2xl shadow-2xl p-5 md:p-6 flex flex-col md:flex-row items-center justify-between gap-4 backdrop-blur-xl bg-opacity-95">
+            <div class="flex-1 text-center md:text-left">
+                <h4 class="text-white text-sm font-bold tracking-wider uppercase mb-1.5 flex items-center justify-center md:justify-start gap-2 font-display">
+                    <i data-lucide="cookie" class="w-4 h-4 text-emerald-400"></i>
+                    Cookie Policy Consent
+                </h4>
+                <p class="text-xs text-slate-300 leading-relaxed max-w-2xl">
+                    To optimize our digital layout experience and compile anonymous statistics, we measure visits using Google Analytics logs. Please click accept below to enable standard cookie trackers!
+                </p>
+            </div>
+            <div class="flex items-center gap-3 w-full md:w-auto justify-center md:justify-end shrink-0">
+                <button onclick="rejectCookies()" class="px-4 py-2.5 text-xs text-slate-450 hover:text-white transition-colors cursor-pointer font-bold uppercase tracking-wider">Decline</button>
+                <button onclick="window.acceptCookies()" style="background-color: #0052cc;" class="px-6 py-2.5 hover:bg-opacity-90 text-white font-black text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-lg active:scale-98">Accept</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
