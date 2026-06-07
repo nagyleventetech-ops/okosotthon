@@ -25,6 +25,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Okosotthon Telepítés Budapest & Dunakanyar | HelyiOkos</title>
     <link rel="canonical" href="https://helyiokos.com/">
+    <link rel="alternate" hreflang="hu" href="https://helyiokos.com/">
+    <link rel="alternate" hreflang="en" href="https://helyiokos.com/index-en.html">
+    <link rel="alternate" hreflang="x-default" href="https://helyiokos.com/">
     <meta name="description" content="Okosotthon automatizálás Budapesten és a Dunakanyarban. Internet nélkül is működő, helyi vezérlésű rendszerek fix áron. Ingyenes felmérés!">
     <meta name="keywords" content="okosotthon, helyi vezérlés, helyiokos, intelligens otthon, okosotthon szerelés, árajánlat, helyszíni felmérés, automatizálás, okos otthon alapcsomag, épületautomatizálás, okos világítás, okos fűtés, tahitótfalu, okosotthon rendszer, biztonságos okosotthon">
     
@@ -675,11 +678,19 @@
                 <a href="javascript:void(0)" onclick="openConfiguratorModal()" class="nav-link text-sky-400 font-bold border border-sky-500/30 rounded-xl px-3 py-1 hover:bg-sky-500/10 transition-all">Kalkulátor</a>
                 <a href="#contact" class="nav-link">Kapcsolat</a>
                 <a href="szallasadok.html" class="nav-link text-emerald-400 font-bold hover:text-emerald-350">Szállásadóknak</a>
+                <a href="index-en.html" class="nav-link flex items-center gap-2 px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-xl text-xs font-bold transition-all transition-colors ml-4 cursor-pointer" title="Switch to English">
+                    <img src="flag-en.svg" alt="English flag" class="w-5 h-3.5 object-cover rounded-xs"> <span class="text-[11px] text-slate-300 uppercase tracking-wider font-extrabold text-sky-400">EN</span>
+                </a>
             </div>
-            <!-- Mobile Menu Toggle -->
-            <button id="menu-btn" class="lg:hidden p-2 text-white hover:text-sky-400 transition-colors" aria-label="Menü">
-                <i data-lucide="menu" class="w-7 h-7"></i>
-            </button>
+            <!-- Mobile Actions (Language Switcher + Hamburger) -->
+            <div class="flex lg:hidden items-center gap-2">
+                <a href="index-en.html" class="flex items-center gap-1.5 px-2 py-1 bg-slate-900 border border-slate-800 rounded-lg text-xs font-bold text-slate-300 hover:text-white cursor-pointer select-none" title="Change Language to English">
+                    <img src="flag-en.svg" alt="English flag" class="w-4 h-3 object-cover rounded-xs"> <span class="text-[10px]">EN</span>
+                </a>
+                <button id="menu-btn" class="p-2 text-white hover:text-sky-400 transition-colors" aria-label="Menü">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
         </div>
         <!-- Mobile Dropdown Menu -->
         <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-slate-800 shadow-2xl">
@@ -692,6 +703,9 @@
                 <a href="javascript:void(0)" onclick="openConfiguratorModal(); document.getElementById('mobile-menu')?.classList.add('hidden');" class="mobile-nav-link text-sky-400 font-bold">Kalkulátor</a>
                 <a href="#contact" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Kapcsolat</a>
                 <a href="szallasadok.html" class="mobile-nav-link text-emerald-400 font-bold" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Szállásadóknak</a>
+                <a href="index-en.html" class="mobile-nav-link flex items-center gap-2.5 text-slate-200" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">
+                    <img src="flag-en.svg" alt="English flag" class="w-5 h-3.5 object-cover rounded-xs"> Change Language (EN)
+                </a>
             </div>
         </div>
     </nav>
