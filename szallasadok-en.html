@@ -284,13 +284,16 @@
 <body class="min-h-screen flex flex-col justify-between">
 
     <!-- Sticky Navigation (Custom Accommodations Host Specific Navbar) -->
-    <nav class="fixed top-0 left-0 w-full h-16 lg:h-20 bg-slate-950/80 backdrop-blur-xl border-b border-slate-900 z-50 transition-all duration-300">
-        <div class="max-w-4xl mx-auto px-6 h-full flex items-center justify-between lg:justify-start lg:gap-6">
+    <nav class="fixed top-0 left-0 w-full h-16 xl:h-20 bg-slate-950/80 backdrop-blur-xl border-b border-slate-900 z-50 transition-all duration-300">
+        <div class="max-w-4xl mx-auto px-6 h-full flex items-center justify-between xl:justify-start xl:gap-6">
             <a href="index-en.html" class="flex items-center gap-2 text-white font-display font-black text-lg sm:text-xl tracking-tighter shrink-0 hover:text-sky-400 transition-colors">
                 <img src="HelyiOkos.png" alt="HelyiOkos Logo" class="w-8 h-8 object-contain">
                 <span>HelyiOkos</span>
             </a>
-            <div class="hidden lg:flex items-center gap-1">
+            <div class="hidden xl:flex items-center gap-1">
+                <a href="index-en.html" class="nav-link text-sky-400 hover:text-sky-300 font-extrabold flex items-center gap-1 bg-sky-950/40 border border-sky-900/30 px-3 py-1 rounded-lg mr-2 transition-all">
+                    ← Home
+                </a>
                 <a href="#funkciok" class="nav-link">Solutions</a>
                 <a href="#arazas" class="nav-link">Pricing</a>
                 <a href="#rolam" class="nav-link">About Me</a>
@@ -301,7 +304,7 @@
                 </a>
             </div>
             <!-- Mobile Actions (Language Switcher + Hamburger) -->
-            <div class="flex lg:hidden items-center gap-2">
+            <div class="flex xl:hidden items-center gap-2">
                 <a href="szallasadok.html" class="flex items-center gap-1.5 px-2 py-1 bg-slate-900 border border-slate-800 rounded-lg text-xs font-bold text-slate-300 hover:text-white cursor-pointer select-none" title="Change Language to Hungarian">
                     <img src="flag-hu.svg" alt="Hungarian flag" class="w-4 h-3 object-cover rounded-xs"> <span class="text-[10px]">HU</span>
                 </a>
@@ -311,8 +314,11 @@
             </div>
         </div>
         <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-slate-900 shadow-2xl">
+        <div id="mobile-menu" class="hidden xl:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-slate-900 shadow-2xl">
             <div class="flex flex-col py-2">
+                <a href="index-en.html" class="mobile-nav-link text-sky-450 font-extrabold flex items-center gap-2" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">
+                    ← Back to Home
+                </a>
                 <a href="#funkciok" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Solutions</a>
                 <a href="#arazas" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Pricing</a>
                 <a href="#rolam" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">About Me</a>
