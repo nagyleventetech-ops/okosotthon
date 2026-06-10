@@ -290,13 +290,16 @@
 <body class="bg-slate-950">
 
     <!-- Sticky Navigation (Custom Accommodations Host Specific Navbar) -->
-    <nav class="fixed top-0 left-0 w-full h-16 lg:h-20 bg-slate-950/80 backdrop-blur-xl border-b border-slate-900 z-50 transition-all duration-300">
-        <div class="max-w-4xl mx-auto px-6 h-full flex items-center justify-between lg:justify-start lg:gap-6">
+    <nav class="fixed top-0 left-0 w-full h-16 xl:h-20 bg-slate-950/80 backdrop-blur-xl border-b border-slate-900 z-50 transition-all duration-300">
+        <div class="max-w-4xl mx-auto px-6 h-full flex items-center justify-between xl:justify-start xl:gap-6">
             <a href="index.html" class="flex items-center gap-2 text-white font-display font-black text-lg sm:text-xl tracking-tighter shrink-0 hover:text-sky-400 transition-colors">
                 <img src="HelyiOkos.png" alt="HelyiOkos Logó" class="w-8 h-8 object-contain">
                 <span>HelyiOkos</span>
             </a>
-            <div class="hidden lg:flex items-center gap-1">
+            <div class="hidden xl:flex items-center gap-1">
+                <a href="index.html" class="nav-link text-sky-400 hover:text-sky-300 font-extrabold flex items-center gap-1 bg-sky-950/40 border border-sky-900/30 px-3 py-1 rounded-lg mr-2 transition-all">
+                    ← Főoldal
+                </a>
                 <a href="#funkciok" class="nav-link">Megoldások</a>
                 <a href="#arazas" class="nav-link">Árazás</a>
                 <a href="#rolam" class="nav-link">Rólam</a>
@@ -307,7 +310,7 @@
                 </a>
             </div>
             <!-- Mobile Actions (Language Switcher + Hamburger) -->
-            <div class="flex lg:hidden items-center gap-2">
+            <div class="flex xl:hidden items-center gap-2">
                 <a href="szallasadok-en.html" class="flex items-center gap-1.5 px-2 py-1 bg-slate-900 border border-slate-800 rounded-lg text-xs font-bold text-slate-300 hover:text-white cursor-pointer select-none" title="Change Language to English">
                     <img src="flag-en.svg" alt="English flag" class="w-4 h-3 object-cover rounded-xs"> <span class="text-[10px]">EN</span>
                 </a>
@@ -317,8 +320,11 @@
             </div>
         </div>
         <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-slate-900 shadow-2xl">
+        <div id="mobile-menu" class="hidden xl:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-slate-900 shadow-2xl">
             <div class="flex flex-col py-2">
+                <a href="index.html" class="mobile-nav-link text-sky-450 font-extrabold flex items-center gap-2" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">
+                    ← Vissza a főoldalra
+                </a>
                 <a href="#funkciok" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Megoldások</a>
                 <a href="#arazas" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Árazás</a>
                 <a href="#rolam" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Rólam</a>
