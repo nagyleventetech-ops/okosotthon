@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Időpontfoglalás | HelyiOkos</title>
+    <meta name="description" content="Foglaljon időpontot díjmentes helyszíni felmérésre vagy online konzultációra. Mutatok Önnek egy működő mintarendszert is!">
+    <link rel="icon" type="image/png" href="HelyiOkos.png">
+    
+    <!-- Calendly Widget Script & style -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script shadow>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151e2f',
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                background-color: #020617; /* bg-slate-950 */
+                color: #f8fafc; /* text-slate-50 */
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                overflow-x: hidden;
+                overflow-wrap: normal;
+                hyphens: none;
+                background-image: 
+                    radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.08) 0%, transparent 60%),
+                    radial-gradient(circle at 100% 40%, rgba(56, 189, 248, 0.06) 0%, transparent 50%),
+                    radial-gradient(circle at 0% 80%, rgba(30, 58, 138, 0.08) 0%, transparent 50%);
+            }
+            ::selection {
+                background-color: rgba(14, 165, 233, 0.3); /* selection:bg-sky-500/30 */
+            }
+        }
+
+        /* Ambient glow background orbs */
+        .glow-orb {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: 0;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .booking-card-shadow {
+            box-shadow: 0 25px 60px rgba(14, 165, 233, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-slate-950">
+
+    <!-- Ambient Glow Decoration -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="glow-orb top-[-10%] left-[-10%] bg-sky-500" style="animation: pulse 8s ease-in-out infinite alternate;"></div>
+        <div class="glow-orb bottom-[-20%] right-[-10%] bg-blue-600" style="animation: pulse 12s ease-in-out infinite alternate -2s;"></div>
+    </div>
+
+    <!-- Sticky Navigation -->
+    <nav class="fixed top-0 left-0 w-full h-16 xl:h-20 bg-slate-950/85 backdrop-blur-xl border-b border-slate-900 z-50 transition-all duration-300">
+        <div class="max-w-4xl mx-auto px-6 h-full flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 text-white font-display font-black text-lg sm:text-xl tracking-tighter shrink-0 hover:text-sky-400 transition-colors">
+                <img src="HelyiOkos.png" alt="HelyiOkos Logó" class="w-8 h-8 object-contain">
+                <span>HelyiOkos</span>
+            </a>
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-sky-400 border border-slate-850 hover:border-slate-800 text-xs font-extrabold rounded-xl transition-all flex items-center gap-1.5 cursor-pointer">
+                    <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> ← Főoldal
+                </a>
+                <a href="foglalas-en.html" class="flex items-center gap-1.5 px-3 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-xl text-xs font-bold transition-all cursor-pointer" title="Switch to English">
+                    <img src="flag-en.svg" alt="English flag" class="w-5 h-3.5 object-cover rounded-sm"> <span class="text-[11px] text-slate-300 uppercase tracking-wider font-extrabold text-sky-400">EN</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="relative max-w-4xl mx-auto px-6 pt-28 pb-16 font-sans text-slate-100 z-10 min-h-screen flex flex-col justify-between">
+        
+        <!-- Header text -->
+        <div class="text-center max-w-2xl mx-auto mb-8">
+            <span class="inline-flex px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] sm:text-xs uppercase font-extrabold text-emerald-400 tracking-widest mb-4">
+                Felmérés & Konzultáció
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-display font-black text-white leading-tight mb-3">
+                Kérjen ingyenes helyszíni felmérést!
+            </h1>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                Tervezzük meg együtt otthona okosítását személyesen, teljesen elköteleződés-mentesen. A helyszíni konzultációra egy működő mintarendszert is hozok, amit Ön is kipróbálhat!
+            </p>
+        </div>
+
+        <!-- Calendly Embedded Card -->
+        <div class="bg-slate-900/40 border border-slate-800 rounded-[2rem] p-4 sm:p-6 backdrop-blur-xl shadow-2xl relative overflow-hidden mb-12 booking-card-shadow">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-30"></div>
+            
+            <!-- White background Calendly container -->
+            <div class="w-full bg-white rounded-2xl overflow-hidden shadow-lg p-1 sm:p-4 min-h-[660px]" style="background-color: #ffffff;">
+                <div id="calendly-inline-widget" style="min-width:320px;height:650px;" data-url="https://calendly.com/nagylevente-tech/felmeres?background_color=ffffff&text_color=1a1a1a&primary_color=0052cc">
+                    <div class="flex items-center justify-center h-[600px] text-slate-800">
+                        <div class="animate-pulse font-bold flex items-center gap-2">
+                            <i data-lucide="loader-2" class="w-5 h-5 animate-spin text-sky-500"></i>
+                            Calendly naptár betöltése...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Info Footer -->
+        <p class="text-center text-xs text-slate-500 leading-relaxed max-w-lg mx-auto">
+            Amennyiben nem talál megfelelő időpontot vagy bármilyen kérdése lenne, keressen bizalommal a <a href="tel:+36202109008" class="text-sky-400 hover:underline">+36 20 210 9008</a>-as telefonszámon vagy Messengeren.
+        </p>
+    </div>
+
+    <!-- Script to handle events -->
+    <script>
+        lucide.createIcons();
+
+        // Safe query params parsing
+        const urlParams = new URLSearchParams(window.location.search);
+        const trackingId = urlParams.get('trackingId') || '';
+        const name = urlParams.get('name') || '';
+        const email = urlParams.get('email') || '';
+        const phone = urlParams.get('phone') || '';
+        const address = urlParams.get('address') || '';
+
+        // Dynamically pre-fill criteria in Calendly if they exist
+        function initCalendly() {
+            const baseUrl = "https://calendly.com/nagylevente-tech/felmeres";
+            const params = new URLSearchParams();
+            params.append('background_color', 'ffffff');
+            params.append('text_color', '1a1a1a');
+            params.append('primary_color', '0052cc');
+
+            if (trackingId) params.append('utm_source', trackingId); // Embed custom code in traffic analytics
+            if (name) params.append('name', name);
+            if (email) params.append('email', email);
+            if (phone) params.append('a1', phone); // Pre-fill phone if provided
+            if (address) params.append('a2', address); // Pre-fill address if provided
+
+            const targetUrl = `${baseUrl}?${params.toString()}`;
+            const container = document.getElementById('calendly-inline-widget');
+            if (container) {
+                container.innerHTML = '';
+                container.setAttribute('data-url', targetUrl);
+                if (typeof Calendly !== 'undefined' && typeof Calendly.initInlineWidget === 'function') {
+                    Calendly.initInlineWidget({
+                        url: targetUrl,
+                        parentElement: container
+                    });
+                } else {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = targetUrl;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '650px';
+                    iframe.style.border = '0';
+                    container.appendChild(iframe);
+                }
+            }
+        }
+
+        // Initialize on load
+        window.addEventListener('load', () => {
+            setTimeout(initCalendly, 300);
+        });
+
+        // Event listener for rescheduling or scheduling completes
+        window.addEventListener('message', function(e) {
+            if (e.data.event && e.data.event === 'calendly.event_scheduled') {
+                console.log("Calendly booking successful, redirecting to thank you page...");
+                window.location.href = 'koszonjuk.html' + window.location.search;
+            }
+        });
+    </script>
+</body>
+</html>
