@@ -677,7 +677,7 @@
                 <a href="#devices" class="nav-link">Eszközök</a>
                 <a href="javascript:void(0)" onclick="openConfiguratorModal()" class="nav-link text-sky-400 font-bold border border-sky-500/30 rounded-xl px-3 py-1 hover:bg-sky-500/10 transition-all">Kalkulátor</a>
                 <a href="#contact" class="nav-link">Kapcsolat</a>
-                <a href="szallasadok.html" class="nav-link text-emerald-400 font-bold hover:text-emerald-350">Szállásadóknak</a>
+                <a href="szallasadok.html" class="nav-link text-emerald-400 font-extrabold border border-emerald-500/30 rounded-xl px-3 py-1 bg-emerald-950/20 hover:bg-emerald-500/10 transition-all ml-2 flex items-center justify-center">Szállásadóknak</a>
                 <a href="index-en.html" class="nav-link flex items-center gap-2 px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-xl text-xs font-bold transition-all transition-colors ml-4 cursor-pointer" title="Switch to English">
                     <img src="flag-en.svg" alt="English flag" class="w-5 h-3.5 object-cover rounded-xs"> <span class="text-[11px] text-slate-300 uppercase tracking-wider font-extrabold text-sky-400">EN</span>
                 </a>
@@ -702,7 +702,7 @@
                 <a href="#devices" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Eszközök</a>
                 <a href="javascript:void(0)" onclick="openConfiguratorModal(); document.getElementById('mobile-menu')?.classList.add('hidden');" class="mobile-nav-link text-sky-400 font-bold">Kalkulátor</a>
                 <a href="#contact" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Kapcsolat</a>
-                <a href="szallasadok.html" class="mobile-nav-link text-emerald-400 font-bold" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Szállásadóknak</a>
+                <a href="szallasadok.html" class="mobile-nav-link text-emerald-400 font-bold bg-emerald-950/10 border border-emerald-500/20 px-3.5 py-2.5 rounded-xl block tracking-wide mt-1" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Szállásadóknak</a>
                 <a href="index-en.html" class="mobile-nav-link flex items-center gap-2.5 text-slate-200" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">
                     <img src="flag-en.svg" alt="English flag" class="w-5 h-3.5 object-cover rounded-xs"> Change Language (EN)
                 </a>
@@ -1546,7 +1546,7 @@
                                     <input type="checkbox" name="desired_functions" value="lighting_basic" checked onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
                                     <div>
                                         <span class="text-xs sm:text-sm font-bold text-white block">Okos izzók és vezeték nélküli okosgombok</span>
-                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Egyszerűen becsavarható intelligens fényforrások, vezeték nélküli, elemről működő fali gombokkal/vezérlőkkel, fali átvezetékezés nélkül.</span>
+                                        <span class="text-xs text-slate-300 font-medium leading-relaxed block mt-1">Egyszerűen becsavarható intelligens fényforrások, vezeték nélküli, elemről működő fali gombokkal/vezérlőkkel, fali átvezetékezés nélkül.</span>
                                     </div>
                                 </label>
 
@@ -1555,7 +1555,7 @@
                                     <input type="checkbox" name="desired_functions" value="heating_basic" checked onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
                                     <div>
                                         <span class="text-xs sm:text-sm font-bold text-white block">Meglévő fűtés zónásítása (Okos radiátorszelepek)</span>
-                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Meglévő radiátorok szelepeire csavarható akkumulátoros okos termosztátfejek, amik zónánként és időzítve szabályozzák a terek hőfokát.</span>
+                                        <span class="text-xs text-slate-300 font-medium leading-relaxed block mt-1">Meglévő radiátorok szelepeire csavarható akkumulátoros okos termosztátfejek, amik zónánként és időzítve szabályozzák a terek hőfokát.</span>
                                     </div>
                                 </label>
 
@@ -1564,7 +1564,7 @@
                                     <input type="checkbox" name="desired_functions" value="climate" checked onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
                                     <div>
                                         <span class="text-xs sm:text-sm font-bold text-white block">Okos Klímavezérlés</span>
-                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Split klímák távoli automatizált szabályozása és visszacsatolása a fűtés és hűtés abszolút rezsicsökkentéséhez.</span>
+                                        <span class="text-xs text-slate-300 font-medium leading-relaxed block mt-1">Split klímák távoli automatizált szabályozása és visszacsatolása a fűtés és hűtés abszolút rezsicsökkentéséhez.</span>
                                     </div>
                                 </label>
 
@@ -1573,7 +1573,7 @@
                                     <input type="checkbox" name="desired_functions" value="sensors" checked onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
                                     <div>
                                         <span class="text-xs sm:text-sm font-bold text-white block">Biztonsági nyitás- & mozgásszenzorok</span>
-                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Vezeték nélküli ablaknyitás- és radaros mozgásszenzorok, amelyek azonnali push értesítést küldenek telefonjára.</span>
+                                        <span class="text-xs text-slate-300 font-medium leading-relaxed block mt-1">Vezeték nélküli ablaknyitás- és radaros mozgásszenzorok, amelyek azonnali push értesítést küldenek telefonjára.</span>
                                     </div>
                                 </label>
 
@@ -1582,7 +1582,7 @@
                                     <input type="checkbox" name="desired_functions" value="lock" onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
                                     <div>
                                         <span class="text-xs sm:text-sm font-bold text-white block">Intelligens Okos Ajtózár (komplett szett)</span>
-                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Ujjlenyomat-olvasós, PIN-kódos, kulcsnélküli biztonsági beléptető rendszer, amely meglévő zárbetétre építhető.</span>
+                                        <span class="text-xs text-slate-300 font-medium leading-relaxed block mt-1">Ujjlenyomat-olvasós, PIN-kódos, kulcsnélküli biztonsági beléptető rendszer, amely meglévő zárbetétre építhető.</span>
                                     </div>
                                 </label>
 
@@ -1591,7 +1591,7 @@
                                     <input type="checkbox" name="desired_functions" value="led_lighting" onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
                                     <div>
                                         <span class="text-xs sm:text-sm font-bold text-white block">Led Hangulatvilágítás</span>
-                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Helyszíni megbeszélés szerinti egyedi árazás (az ár a felmérés során egyeztetett hosszúság és igények alapján adódik hozzá, addig nem számolódik be a végösszegbe).</span>
+                                        <span class="text-xs text-slate-300 font-medium leading-relaxed block mt-1">Helyszíni megbeszélés szerinti egyedi árazás (az ár a felmérés során egyeztetett hosszúság és igények alapján adódik hozzá, addig nem számolódik be a végösszegbe).</span>
                                     </div>
                                 </label>
 
@@ -1600,7 +1600,7 @@
                                     <input type="checkbox" name="desired_functions" value="water_safety" onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
                                     <div>
                                         <span class="text-xs sm:text-sm font-bold text-white block">Csőtörés elleni aktív Vízvédelem</span>
-                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Vezeték nélküli padlószenzorok és motorvezérelt gömbcsap-elzáró vészleállító automatizmussal.</span>
+                                        <span class="text-xs text-slate-300 font-medium leading-relaxed block mt-1">Vezeték nélküli padlószenzorok és motorvezérelt gömbcsap-elzáró vészleállító automatizmussal.</span>
                                     </div>
                                 </label>
 
@@ -1609,7 +1609,7 @@
                                     <input type="checkbox" name="desired_functions" value="pet_feeding" onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
                                     <div>
                                         <span class="text-xs sm:text-sm font-bold text-white block">Okos kisállat-etető</span>
-                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Adagoló- és beépített mozgásérzékelős kamera integrálása, kutyák / macskák automatizált táplálásához.</span>
+                                        <span class="text-xs text-slate-300 font-medium leading-relaxed block mt-1">Adagoló- és beépített mozgásérzékelős kamera integrálása, kutyák / macskák automatizált táplálásához.</span>
                                     </div>
                                 </label>
 
@@ -1618,8 +1618,8 @@
                                     <input type="checkbox" name="desired_functions" value="shutters" onchange="recalculateWizardBudget()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
                                     <div>
                                         <span class="text-xs sm:text-sm font-bold text-white block">Sötétítés és redőnyvezérlés</span>
-                                        <span class="text-[10px] text-slate-450 leading-normal block mt-1">Meglévő fali motoros redőnyök okosítása vagy új árnyékolók integrációja az automata napszak-alapú sötétítéshez.</span>
-                                        <span class="text-sky-355 font-semibold block mt-1.5 text-[9px] uppercase tracking-wider leading-relaxed">💡 Az ár függ a meglévő redőnyök típusától, vagy az esetleges új redőnyök beépítésétől!</span>
+                                        <span class="text-xs text-slate-300 font-medium leading-relaxed block mt-1">Meglévő fali motoros redőnyök okosítása vagy új árnyékolók integrációja az automata napszak-alapú sötétítéshez.</span>
+                                        <span class="text-sky-355 font-semibold block mt-1.5 text-[10px] uppercase tracking-wider leading-relaxed">💡 Az ár függ a meglévő redőnyök típusától, vagy az esetleges új redőnyök beépítésétől!</span>
                                     </div>
                                 </label>
                             </div>
@@ -1642,7 +1642,7 @@
                                     <input type="checkbox" name="desired_functions" value="lighting_pro" onchange="recalculateWizardBudget()" class="rounded border-amber-900/40 text-amber-500 focus:ring-amber-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
                                     <div>
                                         <span class="text-xs sm:text-sm font-bold text-white block">Okos fali világításkapcsolók és rejtett relék (230V)</span>
-                                        <span class="text-[10px] text-slate-400 leading-normal block mt-1">A meglévő fali kapcsolódobozok mögé rejtve beépített Zigbee/Wifi relémodulok, hogy a hagyományos dizájnú fali kapcsolóival is vezérelhesse az okosfényeket.</span>
+                                        <span class="text-xs text-slate-300 font-medium leading-relaxed block mt-1">A meglévő fali kapcsolódobozok mögé rejtve beépített Zigbee/Wifi relémodulok, hogy a hagyományos dizájnú fali kapcsolóival is vezérelhesse az okosfényeket.</span>
                                     </div>
                                 </label>
 
@@ -1651,7 +1651,7 @@
                                     <input type="checkbox" name="desired_functions" value="heating_pro" onchange="recalculateWizardBudget()" class="rounded border-amber-900/40 text-amber-500 focus:ring-amber-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
                                     <div>
                                         <span class="text-xs sm:text-sm font-bold text-white block">Okos fali termosztátok és szelepek (230V)</span>
-                                        <span class="text-[10px] text-slate-400 leading-normal block mt-1">230V-os hálózati termosztátok, padlófűtés-zónásítók, elektromos kazánindítók és fali szelepek integrációja közvetlen vezetékes bekötéssel.</span>
+                                        <span class="text-xs text-slate-300 font-medium leading-relaxed block mt-1">230V-os hálózati termosztátok, padlófűtés-zónásítók, elektromos kazánindítók és fali szelepek integrációja közvetlen vezetékes bekötéssel.</span>
                                     </div>
                                 </label>
 
@@ -1660,7 +1660,7 @@
                                     <input type="checkbox" name="desired_functions" value="garage_opener" onchange="recalculateWizardBudget()" class="rounded border-amber-900/40 text-amber-500 focus:ring-amber-500 focus:ring-offset-slate-900 w-4.5 h-4.5 mt-0.5">
                                     <div>
                                         <span class="text-xs sm:text-sm font-bold text-white block">Okos garázskapu-nyitó & kapuvezérlés (230V)</span>
-                                        <span class="text-[10px] text-slate-400 leading-normal block mt-1">Meglévő garázs- & kertkapu-motorok fali/vezérlő sorkapcsos, relés integrálása a kényelmes automata hazatérési kapunyitáshoz.</span>
+                                        <span class="text-xs text-slate-300 font-medium leading-relaxed block mt-1">Meglévő garázs- & kertkapu-motorok fali/vezérlő sorkapcsos, relés integrálása a kényelmes automata hazatérési kapunyitáshoz.</span>
                                     </div>
                                 </label>
                             </div>
@@ -1916,6 +1916,12 @@
                                 <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
                                 Messenger üzenet küldése
                             </a>
+
+                            <!-- Facebook gomb -->
+                            <a href="https://www.facebook.com/profile.php?id=61581849661468" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-[#1877F2] hover:bg-[#166FE5] text-white font-black text-xs sm:text-sm uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-blue-600/10 active:scale-98 font-display text-center">
+                                <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
+                                Facebook oldal felkeresése
+                            </a>
                         </div>
 
                         <p class="text-[11px] text-slate-400/90 leading-normal">
@@ -1939,13 +1945,13 @@
                             <div class="mb-5">
                                 <span class="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2.5">Ingatlan Jellege:</span>
                                 <div class="grid grid-cols-3 gap-2">
-                                    <button onclick="selectMiniProperty('flat12', this)" class="mini-prop-btn py-2.5 px-3 bg-slate-900 border border-sky-500 text-sky-400 rounded-xl text-xs font-bold transition-all focus:outline-none cursor-pointer">
+                                    <button onclick="selectMiniProperty('flat12', this)" class="mini-prop-btn py-2.5 px-3 bg-slate-900 border border-sky-500 text-sky-400 rounded-xl text-xs sm:text-sm font-bold transition-all focus:outline-none cursor-pointer">
                                         1-2 Szobás Lakás
                                     </button>
-                                    <button onclick="selectMiniProperty('flat34', this)" class="mini-prop-btn py-2.5 px-3 bg-slate-950 border border-slate-800 text-slate-400 rounded-xl text-xs font-bold transition-all hover:bg-slate-900 cursor-pointer">
+                                    <button onclick="selectMiniProperty('flat34', this)" class="mini-prop-btn py-2.5 px-3 bg-slate-950 border border-slate-800 text-slate-400 rounded-xl text-xs sm:text-sm font-bold transition-all hover:bg-slate-900 cursor-pointer">
                                         3-5 Szobás Lakás
                                     </button>
-                                    <button onclick="selectMiniProperty('house', this)" class="mini-prop-btn py-2.5 px-3 bg-slate-950 border border-slate-800 text-slate-400 rounded-xl text-xs font-bold transition-all hover:bg-slate-900 cursor-pointer">
+                                    <button onclick="selectMiniProperty('house', this)" class="mini-prop-btn py-2.5 px-3 bg-slate-950 border border-slate-800 text-slate-400 rounded-xl text-xs sm:text-sm font-bold transition-all hover:bg-slate-900 cursor-pointer">
                                         Családi Ház
                                     </button>
                                 </div>
@@ -1959,8 +1965,8 @@
                                     <label class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all cursor-pointer">
                                         <input type="checkbox" id="minicalc-lighting" checked onchange="runMiniCalculator()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-950 w-4.5 h-4.5">
                                         <div class="text-left leading-tight">
-                                            <span class="text-xs text-white font-bold block">Világítás</span>
-                                            <span class="text-[10px] text-slate-400 font-medium">Lámpák és kapcsolók</span>
+                                            <span class="text-sm text-white font-bold block">Világítás</span>
+                                            <span class="text-xs text-slate-400 font-medium">Lámpák és kapcsolók</span>
                                         </div>
                                     </label>
                                     
@@ -1968,8 +1974,8 @@
                                     <label class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all cursor-pointer">
                                         <input type="checkbox" id="minicalc-heating" checked onchange="runMiniCalculator()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-950 w-4.5 h-4.5">
                                         <div class="text-left leading-tight">
-                                            <span class="text-xs text-white font-bold block">Fűtés & Klíma</span>
-                                            <span class="text-[10px] text-slate-400 font-medium">Zónaszabályozás, klíma</span>
+                                            <span class="text-sm text-white font-bold block">Fűtés & Klíma</span>
+                                            <span class="text-xs text-slate-400 font-medium">Zónaszabályozás, klíma</span>
                                         </div>
                                     </label>
 
@@ -1977,8 +1983,8 @@
                                     <label class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all cursor-pointer">
                                         <input type="checkbox" id="minicalc-shutters" onchange="runMiniCalculator()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-950 w-4.5 h-4.5">
                                         <div class="text-left leading-tight">
-                                            <span class="text-xs text-white font-bold block">Redőnyök</span>
-                                            <span class="text-[10px] text-slate-400 font-medium">Sötétítésvezérlés</span>
+                                            <span class="text-sm text-white font-bold block">Redőnyök</span>
+                                            <span class="text-xs text-slate-400 font-medium">Sötétítésvezérlés</span>
                                         </div>
                                     </label>
 
@@ -1986,8 +1992,8 @@
                                     <label class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all cursor-pointer">
                                         <input type="checkbox" id="minicalc-sensors" checked onchange="runMiniCalculator()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-950 w-4.5 h-4.5">
                                         <div class="text-left leading-tight">
-                                            <span class="text-xs text-white font-bold block">Biztonság</span>
-                                            <span class="text-[10px] text-slate-400 font-medium font-semibold">Érzékelők, vízvédelem</span>
+                                            <span class="text-sm text-white font-bold block">Biztonság</span>
+                                            <span class="text-xs text-slate-400 font-medium font-semibold">Érzékelők, vízvédelem</span>
                                         </div>
                                     </label>
                                     
@@ -1995,8 +2001,8 @@
                                     <label class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all cursor-pointer sm:col-span-2">
                                         <input type="checkbox" id="minicalc-lock" onchange="runMiniCalculator()" class="rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-950 w-4.5 h-4.5">
                                         <div class="text-left leading-tight">
-                                            <span class="text-xs text-white font-bold block">Intelligens Okoszár</span>
-                                            <span class="text-[10px] text-slate-400 font-medium">Kültéri ujjlenyomat-olvasós panel, kulcs nélküli belépés</span>
+                                            <span class="text-sm text-white font-bold block">Intelligens Okoszár</span>
+                                            <span class="text-xs text-slate-400 font-medium">Kültéri ujjlenyomat-olvasós panel, kulcs nélküli belépés</span>
                                         </div>
                                     </label>
                                 </div>
@@ -2010,9 +2016,14 @@
                                 <strong id="mini-calc-total" class="font-display font-black text-white text-xl sm:text-2xl tracking-normal">--- Ft</strong>
                                 <span class="text-[9px] text-slate-400 block mt-0.5">*Tartalmazza az offline szervert és a programozást is</span>
                             </div>
-                            <button onclick="launchDetailedBuilder()" class="w-full sm:w-auto px-4.5 py-3 bg-sky-500 hover:bg-sky-450 text-slate-950 font-black text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-lg active:scale-98">
-                                <i data-lucide="sparkles" class="w-4 h-4"></i> Részletes Tervező
-                            </button>
+                            <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto shrink-0">
+                                <button onclick="openMiniCalcInquiryModal()" class="w-full sm:w-auto px-5 py-3 bg-emerald-500 hover:bg-emerald-450 text-slate-950 font-black text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-lg active:scale-98">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Küldés
+                                </button>
+                                <button onclick="launchDetailedBuilder()" class="w-full sm:w-auto px-5 py-3 bg-slate-900 hover:bg-slate-850 text-sky-400 border border-slate-800 rounded-xl text-xs font-black uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-lg active:scale-98">
+                                    <i data-lucide="sparkles" class="w-4 h-4"></i> Részletes Tervező
+                                </button>
+                            </div>
                         </div>
                     </div>
                     
@@ -2108,6 +2119,60 @@
                     Bezárás
                 </button>
             </div>
+        </div>
+    </div>
+
+    <!-- Mini Calculator Inquiry Modal -->
+    <div id="minicalc-inquiry-modal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300 shadow-2xl" style="z-index: 99999;">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full overflow-hidden shadow-2xl transform scale-95 transition-all duration-300 relative flex flex-col max-h-[90vh]">
+            <!-- Close button in top right -->
+            <button onclick="closeMiniCalcInquiryModal()" class="absolute top-4 right-4 z-50 p-2 rounded-full bg-slate-950/60 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer" aria-label="Bezárás">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            
+            <!-- Modal Header -->
+            <div class="p-6 shrink-0 bg-gradient-to-r from-slate-950 to-slate-900 border-b border-slate-800 flex items-start gap-4">
+                <div class="w-12 h-12 bg-emerald-500/10 border border-emerald-500/20 rounded-xl flex items-center justify-center text-emerald-400 shrink-0 mt-1">
+                    <i data-lucide="send" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-emerald-400 font-bold tracking-wider text-xs uppercase block mb-1">Gyors csomag-ajánlat</span>
+                    <h3 class="text-xl font-display font-black text-white leading-tight">Igény elküldése</h3>
+                </div>
+            </div>
+            
+            <!-- Modal Body Form -->
+            <form id="minicalc-inquiry-form" onsubmit="submitMiniCalcInquiry(event)" class="p-6 overflow-y-auto flex-1 text-left space-y-4">
+                <p class="text-xs text-slate-300 leading-relaxed">
+                    Kérlek add meg a nevedet, e-mailedet és telefonszámodat! Az összeállított igények és a kalkulált ár alapján azonnal felveszem veled a kapcsolatot a részletekkel.
+                </p>
+                
+                <div>
+                    <label for="mini-name" class="block text-[10px] font-bold text-slate-450 uppercase tracking-wider mb-1.5">Név *</label>
+                    <input type="text" id="mini-name" required placeholder="Az Ön neve" class="w-full bg-slate-955 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-emerald-500/50 transition-all">
+                </div>
+                
+                <div>
+                    <label for="mini-email" class="block text-[10px] font-bold text-slate-450 uppercase tracking-wider mb-1.5">E-mail cím *</label>
+                    <input type="email" id="mini-email" required placeholder="nev@pelda.com" class="w-full bg-slate-955 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-emerald-500/50 transition-all">
+                </div>
+                
+                <div>
+                    <label for="mini-phone" class="block text-[10px] font-bold text-slate-450 uppercase tracking-wider mb-1.5">Telefonszám *</label>
+                    <input type="tel" id="mini-phone" required placeholder="+36 20 123 4567" class="w-full bg-slate-955 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-emerald-500/50 transition-all">
+                </div>
+
+                <div class="p-3 bg-slate-950 rounded-xl border border-slate-850/50 space-y-1">
+                    <span class="text-[9px] uppercase font-bold text-slate-500 block">Kalkulált csomagérték:</span>
+                    <strong id="mini-form-total-display" class="text-emerald-400 font-display font-black text-base">--- Ft</strong>
+                </div>
+
+                <button type="submit" id="mini-submit-btn" class="w-full py-3.5 bg-emerald-500 hover:bg-emerald-450 text-slate-950 font-black text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg">
+                    <i data-lucide="send" class="w-4 h-4"></i> Ajánlatkérés gombnyomással
+                </button>
+            </form>
         </div>
     </div>
 
@@ -3656,6 +3721,149 @@ ${has230V ? "\n*A fenti ár a 230V fali bekötések és szelepek mögötti fizik
             if (totalEl) {
                 totalEl.innerText = `${formatPrice(total)} Ft`;
             }
+        };
+
+        window.openMiniCalcInquiryModal = function() {
+            const modal = document.getElementById('minicalc-inquiry-modal');
+            const totalText = document.getElementById('mini-calc-total').innerText;
+            const formTotal = document.getElementById('mini-form-total-display');
+            if (formTotal) {
+                formTotal.innerText = totalText;
+            }
+            if (modal) {
+                const innerModal = modal.querySelector('.transform');
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modal.classList.add('opacity-100');
+                if (innerModal) {
+                    innerModal.classList.remove('scale-95');
+                    innerModal.classList.add('scale-100');
+                }
+                document.body.style.overflow = 'hidden';
+            }
+        };
+
+        window.closeMiniCalcInquiryModal = function() {
+            const modal = document.getElementById('minicalc-inquiry-modal');
+            if (modal) {
+                const innerModal = modal.querySelector('.transform');
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modal.classList.remove('opacity-100');
+                if (innerModal) {
+                    innerModal.classList.remove('scale-100');
+                    innerModal.classList.add('scale-95');
+                }
+                document.body.style.overflow = '';
+            }
+        };
+
+        window.submitMiniCalcInquiry = function(event) {
+            event.preventDefault();
+            const name = document.getElementById('mini-name').value;
+            const email = document.getElementById('mini-email').value;
+            const phone = document.getElementById('mini-phone').value;
+            const totalVal = document.getElementById('mini-calc-total').innerText;
+            const typeText = window.selectedMiniPropertyType === "house" ? "Családi Ház" : (window.selectedMiniPropertyType === "flat34" ? "3-5 Szobás Lakás" : "1-2 Szobás Lakás");
+            
+            const features = [];
+            if (document.getElementById('minicalc-lighting').checked) features.push("Világítás");
+            if (document.getElementById('minicalc-heating').checked) features.push("Fűtés & Klíma");
+            if (document.getElementById('minicalc-shutters').checked) features.push("Redőnyök");
+            if (document.getElementById('minicalc-sensors').checked) features.push("Biztonság (Szenzorok)");
+            if (document.getElementById('minicalc-lock').checked) features.push("Intelligens Okoszár");
+
+            const trackingIdText = `#MINI-${Math.floor(Math.random() * 90000 + 10000)}`;
+
+            const payload = {
+                trackingId: trackingIdText.replace("#", ""),
+                name: name,
+                email: email,
+                phone: phone || "Nincs megadva",
+                address: "Kalkulátor gyors ajánlatkérés",
+                total: parseInt(totalVal.replace(/\s/g, '').replace('Ft', ''), 10) || 0,
+                propertyType: typeText,
+                rooms: window.selectedMiniPropertyType === "house" ? 4 : (window.selectedMiniPropertyType === "flat34" ? 3 : 1),
+                goal: "Gyors kalkulált csomag ajánlatkérés",
+                basicFunctions: features,
+                proFunctions: [],
+                has230V: false,
+                systemName: "Gyors Tervező",
+                deviceCount: features.length,
+                lang: "hu",
+                items: [
+                    { name: `Ingatlan: ${typeText}`, price: 0, count: 1 },
+                    { name: `Kért funkciók: ${features.join(", ")}`, price: 0, count: 1 }
+                ]
+            };
+
+            const submitBtn = document.getElementById('mini-submit-btn');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `<i data-lucide="loader-2" class="w-3.5 h-3.5 animate-spin"></i> Küldés folyamatban...`;
+                lucide.createIcons();
+            }
+
+            const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwIu3kcAPtTSZjQ9o8KztX9z8bXHQsOT85BaEyUhMQxGsYgjVDl1DscToXp8wF863EP/exec";
+
+            fetch(GOOGLE_SCRIPT_URL.trim(), {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                closeMiniCalcInquiryModal();
+
+                // Fill details on the success modal
+                const successFriendlyName = document.getElementById('success-friendly-name');
+                if (successFriendlyName) successFriendlyName.innerText = name;
+
+                const successOfferCode = document.getElementById('success-offer-code');
+                if (successOfferCode) successOfferCode.innerText = trackingIdText;
+
+                window.lastCalculatorData = {
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    address: "Gyors kalkulátor",
+                    trackingId: trackingIdText
+                };
+
+                // Create the email template output
+                const emailBody = `Kedves Levente!\n\nKalkuláltam egy gyors ajánlatot a weboldaladon a következő adatokkal:\n- Név: ${name}\n- Telefonszám: ${phone}\n- Ingatlan: ${typeText}\n- Kiválasztott opciók: ${features.join(", ") || "nincs"}\n- Kalkulált várható ár: ${totalVal}\n\nKérlek keress fel a részletekkel kapcsolatban!\n\nAjánlazonosító kód: ${trackingIdText}`;
+                const copyTextEl = document.getElementById('success-copy-text');
+                if (copyTextEl) copyTextEl.textContent = emailBody;
+
+                updateCalendlyInlineWidget(trackingIdText);
+
+                // Open Success Modal
+                const successModal = document.getElementById('success-calculator-modal');
+                if (successModal) {
+                    const innerModal = successModal.querySelector('.transform');
+                    successModal.classList.remove('opacity-0', 'pointer-events-none');
+                    successModal.classList.add('opacity-100');
+                    if (innerModal) {
+                        innerModal.classList.remove('scale-95');
+                        innerModal.classList.add('scale-100');
+                    }
+                    document.body.style.overflow = 'hidden';
+                }
+
+                document.getElementById('minicalc-inquiry-form').reset();
+            })
+            .catch(err => {
+                console.error("[HelyiOkos Gyors Küldés Hiba]:", err);
+                closeMiniCalcInquiryModal();
+                alert("Köszönöm! Az igényt elmentettem, hamarosan keresni foglak!");
+            })
+            .finally(() => {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = `<i data-lucide="send" class="w-4 h-4"></i> Ajánlatkérés gombnyomással`;
+                    lucide.createIcons();
+                }
+            });
         };
 
         window.launchDetailedBuilder = function() {
