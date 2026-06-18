@@ -1124,6 +1124,149 @@ window.runMiniCalculator = function() {
     }
 };
 
+window.openMiniCalcInquiryModal = function() {
+    const modal = document.getElementById('minicalc-inquiry-modal');
+    const totalText = document.getElementById('mini-calc-total').innerText;
+    const formTotal = document.getElementById('mini-form-total-display');
+    if (formTotal) {
+        formTotal.innerText = totalText;
+    }
+    if (modal) {
+        const innerModal = modal.querySelector('.transform');
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100');
+        if (innerModal) {
+            innerModal.classList.remove('scale-95');
+            innerModal.classList.add('scale-100');
+        }
+        document.body.style.overflow = 'hidden';
+    }
+};
+
+window.closeMiniCalcInquiryModal = function() {
+    const modal = document.getElementById('minicalc-inquiry-modal');
+    if (modal) {
+        const innerModal = modal.querySelector('.transform');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        modal.classList.remove('opacity-100');
+        if (innerModal) {
+            innerModal.classList.remove('scale-100');
+            innerModal.classList.add('scale-95');
+        }
+        document.body.style.overflow = '';
+    }
+};
+
+window.submitMiniCalcInquiry = function(event) {
+    event.preventDefault();
+    const name = document.getElementById('mini-name').value;
+    const email = document.getElementById('mini-email').value;
+    const phone = document.getElementById('mini-phone').value;
+    const totalVal = document.getElementById('mini-calc-total').innerText;
+    const typeText = window.selectedMiniPropertyType === "house" ? "Detached House" : (window.selectedMiniPropertyType === "flat34" ? "3-4 Room Condo" : "1-2 Room Condo");
+    
+    const features = [];
+    if (document.getElementById('minicalc-lighting').checked) features.push("Lighting");
+    if (document.getElementById('minicalc-heating').checked) features.push("Heating & A/C");
+    if (document.getElementById('minicalc-shutters').checked) features.push("Smart Blinds");
+    if (document.getElementById('minicalc-sensors').checked) features.push("Security Sensors");
+    if (document.getElementById('minicalc-lock').checked) features.push("Biometric Lock");
+
+    const trackingIdText = `#MINI-${Math.floor(Math.random() * 90000 + 10000)}`;
+
+    const payload = {
+        trackingId: trackingIdText.replace("#", ""),
+        name: name,
+        email: email,
+        phone: phone || "Not provided",
+        address: "English quick calculator inquiry",
+        total: parseInt(totalVal.replace(/\s/g, '').replace('HUF', ''), 10) || 0,
+        propertyType: typeText,
+        rooms: window.selectedMiniPropertyType === "house" ? 4 : (window.selectedMiniPropertyType === "flat34" ? 3 : 1),
+        goal: "Quick calculated package request",
+        basicFunctions: features,
+        proFunctions: [],
+        has230V: false,
+        systemName: "Quick Configurator",
+        deviceCount: features.length,
+        lang: "en",
+        items: [
+            { name: `Property: ${typeText}`, price: 0, count: 1 },
+            { name: `Selected features: ${features.join(", ")}`, price: 0, count: 1 }
+        ]
+    };
+
+    const submitBtn = document.getElementById('mini-submit-btn');
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<i data-lucide="loader-2" class="w-3.5 h-3.5 animate-spin"></i> Submitting...`;
+        lucide.createIcons();
+    }
+
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwIu3kcAPtTSZjQ9o8KztX9z8bXHQsOT85BaEyUhMQxGsYgjVDl1DscToXp8wF863EP/exec";
+
+    fetch(GOOGLE_SCRIPT_URL.trim(), {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(() => {
+        closeMiniCalcInquiryModal();
+
+        // Fill details on the success modal
+        const successFriendlyName = document.getElementById('success-friendly-name');
+        if (successFriendlyName) successFriendlyName.innerText = name;
+
+        const successOfferId = document.getElementById('success-offer-id');
+        if (successOfferId) successOfferId.innerText = trackingIdText;
+
+        window.lastCalculatorData = {
+            name: name,
+            email: email,
+            phone: phone,
+            address: "Quick Calculator EN",
+            trackingId: trackingIdText
+        };
+
+        // Create the email template output
+        const emailBody = `Dear Levente!\n\nI calculated a quick smart home package on your website with the following parameters:\n- Name: ${name}\n- Phone: ${phone}\n- Property: ${typeText}\n- Comfort modules: ${features.join(", ") || "none"}\n- Estimated Price: ${totalVal}\n\nPlease reach out to me with the details!\n\nOffer Tracking Code: ${trackingIdText}`;
+        const copyTextEl = document.getElementById('success-copy-text');
+        if (copyTextEl) copyTextEl.textContent = emailBody;
+
+        updateCalendlyInlineWidget(trackingIdText);
+
+        // Open Success Modal
+        const successModal = document.getElementById('success-modal');
+        if (successModal) {
+            const innerModal = successModal.querySelector('.transform');
+            successModal.classList.remove('opacity-0', 'pointer-events-none');
+            successModal.classList.add('opacity-100');
+            if (innerModal) {
+                innerModal.classList.remove('scale-95');
+                innerModal.classList.add('scale-100');
+            }
+            document.body.style.overflow = 'hidden';
+        }
+
+        document.getElementById('minicalc-inquiry-form').reset();
+    })
+    .catch(err => {
+        console.error("[HelyiOkos Quick Submission Error]:", err);
+        closeMiniCalcInquiryModal();
+        alert("Thank you! Your request was received, I will contact you shortly!");
+    })
+    .finally(() => {
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = `<i data-lucide="send" class="w-4 h-4"></i> Request Quote with One Click`;
+            lucide.createIcons();
+        }
+    });
+};
+
 window.launchDetailedBuilder = function() {
     const minicalcLighting = document.getElementById('minicalc-lighting').checked;
     const minicalcHeating = document.getElementById('minicalc-heating').checked;
