@@ -269,6 +269,14 @@
                 z-index: 40;
                 transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             }
+            .floating-messenger.mobile-lifted {
+                bottom: 88px;
+            }
+            @media (min-width: 768px) {
+                .floating-messenger.mobile-lifted {
+                    bottom: 24px;
+                }
+            }
             .floating-messenger:hover {
                 transform: scale(1.08) translateY(-2px);
                 background-color: #0074e4;
@@ -282,23 +290,22 @@
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between">
-
     <!-- Sticky Navigation (Custom Accommodations Host Specific Navbar) -->
     <nav class="fixed top-0 left-0 w-full h-16 xl:h-20 bg-slate-950/80 backdrop-blur-xl border-b border-slate-900 z-50 transition-all duration-300">
-        <div class="max-w-4xl mx-auto px-6 h-full flex items-center justify-between xl:justify-start xl:gap-6">
-            <a href="index-en.html" class="flex items-center gap-2 text-white font-display font-black text-lg sm:text-xl tracking-tighter shrink-0 hover:text-sky-400 transition-colors">
+        <div class="max-w-6xl mx-auto px-6 h-full flex items-center justify-between xl:justify-start xl:gap-11">
+            <a href="szallasadok-en.html" class="flex items-center gap-2 text-white font-display font-black text-lg sm:text-xl tracking-tighter shrink-0 hover:text-sky-400 transition-colors">
                 <img src="HelyiOkos.png" alt="HelyiOkos Logo" class="w-8 h-8 object-contain">
                 <span>HelyiOkos</span>
             </a>
             <div class="hidden xl:flex items-center gap-1">
-                <a href="index-en.html" class="nav-link text-sky-400 hover:text-sky-300 font-extrabold flex items-center gap-1 bg-sky-950/40 border border-sky-900/30 px-3 py-1 rounded-lg mr-2 transition-all">
-                    ← Home
-                </a>
                 <a href="#funkciok" class="nav-link">Solutions</a>
                 <a href="#arazas" class="nav-link">Pricing</a>
                 <a href="#rolam" class="nav-link">About Me</a>
                 <a href="#foglalas" class="nav-link">Consultation</a>
                 <a href="#kapcsolat" class="nav-link">Contact</a>
+                <a href="index-en.html" class="nav-link text-emerald-400 font-extrabold border border-emerald-500/30 rounded-xl px-3 py-1 bg-emerald-950/20 hover:bg-emerald-500/10 transition-all ml-4 text-xs tracking-wider flex items-center justify-center">
+                    For Homes / Private
+                </a>
                 <a href="szallasadok.html" class="nav-link flex items-center gap-2 px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-xl text-xs font-bold transition-all transition-colors ml-4 cursor-pointer" title="Switch to Hungarian">
                     <img src="flag-hu.svg" alt="Hungarian flag" class="w-5 h-3.5 object-cover rounded-xs"> <span class="text-[11px] text-slate-300 uppercase tracking-wider font-extrabold text-sky-400">HU</span>
                 </a>
@@ -316,14 +323,14 @@
         <!-- Mobile Dropdown Menu -->
         <div id="mobile-menu" class="hidden xl:hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-slate-900 shadow-2xl">
             <div class="flex flex-col py-2">
-                <a href="index-en.html" class="mobile-nav-link text-sky-450 font-extrabold flex items-center gap-2" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">
-                    ← Back to Home
-                </a>
                 <a href="#funkciok" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Solutions</a>
                 <a href="#arazas" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Pricing</a>
                 <a href="#rolam" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">About Me</a>
                 <a href="#foglalas" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Consultation</a>
                 <a href="#kapcsolat" class="mobile-nav-link" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">Contact</a>
+                <a href="index-en.html" class="mobile-nav-link text-emerald-400 font-bold" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">
+                    For Homes / Private
+                </a>
                 <a href="szallasadok.html" class="mobile-nav-link flex items-center gap-2.5 text-slate-200" onclick="document.getElementById('mobile-menu')?.classList.add('hidden')">
                     <img src="flag-hu.svg" alt="Hungarian flag" class="w-5 h-3.5 object-cover rounded-xs"> Change Language (HU)
                 </a>
@@ -344,41 +351,83 @@
         <header class="mb-16 md:mb-24 scroll-reveal transition-all duration-1000 relative">
             <div class="relative w-full rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden border border-sky-500/35 shadow-[0_25px_60px_rgba(2,132,199,0.25)] min-h-[75vh] flex flex-col justify-between p-6 sm:p-12 md:p-16">
                 
-                <!-- Background Image -->
+                <!-- Background Image & Glowing Backdrop -->
                 <div class="absolute inset-0 z-0">
                     <img 
-                        src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&h=900&q=90" 
-                        alt="Modern apartment"
-                        class="w-full h-full object-cover object-center"
+                        src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&h=900&q=90" 
+                        alt="Bright premium modern apartment"
+                        class="w-full h-full object-cover object-center scale-102 transition-transform duration-1000"
                     >
-                    <div class="absolute inset-0 bg-slate-950/65 bg-gradient-to-b from-slate-950/45 via-slate-950/65 to-slate-950/85"></div>
+                    <!-- Vibrant, bright gradient overlay to keep high-vibrancy and readability of text without being too dark -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-slate-950/75 via-slate-950/40 to-sky-950/30"></div>
+                    <div class="absolute inset-0 bg-[#060e22]/10 backdrop-blur-[1px]"></div>
+                    <!-- Glow mesh inside hero -->
+                    <div class="absolute -top-12 -left-12 w-96 h-96 bg-sky-500/20 rounded-full filter blur-[120px] mix-blend-screen pointer-events-none animate-pulse"></div>
+                    <div class="absolute -bottom-12 -right-12 w-96 h-96 bg-emerald-500/15 rounded-full filter blur-[120px] mix-blend-screen pointer-events-none animate-pulse" style="animation-delay: 2.5s;"></div>
                 </div>
 
                 <!-- Top Badge -->
                 <div class="relative z-10 flex justify-center w-full mb-6">
                     <span class="inline-flex px-3 py-1 rounded-full bg-slate-950/80 border border-sky-500/30 text-[10px] sm:text-xs uppercase font-extrabold text-sky-400 tracking-widest backdrop-blur-md text-center">
-                        ENERGY SAVINGS • GUEST EXPERIENCE • AIRBNB • BOOKING
+                        ENERGY SAVINGS • ACCOMMODATIONS • AIRBNB • BOOKING
                     </span>
                 </div>
 
                 <!-- Central Content Group -->
                 <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center justify-center text-center flex-1 py-8">
-                    <h1 class="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] hero-title text-white tracking-tight mb-4 hero-title-shadow leading-tight">
-                        When guests check out,<br class="hidden sm:inline" />does their utility bill stop too?
+                    <h1 class="text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[3rem] hero-title text-white tracking-tight mb-4 hero-title-shadow leading-tight font-black">
+                        30-40% automatic utility savings – even if the guest left the window open.
                     </h1>
                     
-                    <p class="text-base sm:text-lg md:text-xl text-slate-200 mt-6 leading-relaxed font-semibold max-w-2xl hero-title-shadow">
-                        Professional <strong>smart home for short-term rental hosts</strong>. With <strong>automated utility savings</strong> management, you can effortlessly control your apartment's overhead, eliminate wasted heating or cooling, and maximize your profit.
+                    <p class="text-base sm:text-lg md:text-xl text-slate-200 mt-6 leading-relaxed font-semibold max-w-2xl hero-title-shadow mb-8">
+                        Guarantee that heating and cooling won't run empty after guests check out or with windows left wide open. Intelligent protection for rentals with zero hidden monthly fees and no foreign servers.
                     </p>
+
+                    <!-- Trust Bullet Points -->
+                    <div class="w-full max-w-xl text-left space-y-3.5 bg-slate-950/60 backdrop-blur-md p-6 rounded-2xl border border-sky-500/10 shadow-lg mb-4">
+                        <div class="flex items-start gap-3">
+                            <span class="text-emerald-400 shrink-0 mt-0.5">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </span>
+                            <span class="text-xs sm:text-sm text-slate-200 font-medium leading-relaxed">
+                                <strong>Locally controlled system</strong> – no foreign servers, no hidden monthly fees.
+                            </span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-emerald-400 shrink-0 mt-0.5">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </span>
+                            <span class="text-xs sm:text-sm text-slate-200 font-medium leading-relaxed">
+                                <strong>2-year parts and configuration warranty</strong> on all smart home hardware.
+                            </span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-emerald-400 shrink-0 mt-0.5">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </span>
+                            <span class="text-xs sm:text-sm text-slate-200 font-medium leading-relaxed">
+                                <strong>Direct personalized support</strong> – consult directly with me whenever you require assistance.
+                            </span>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Bottom Centered CTAs -->
-                <div class="relative z-10 w-full mt-8 max-w-3xl mx-auto">
-                    <div class="flex flex-col sm:flex-row items-center gap-6 justify-center">
-                        <a href="#foglalas" class="inline-flex justify-center items-center text-center px-8 py-4 bg-[#0052cc] hover:bg-[#0042bb] text-white font-black rounded-xl transition-all shadow-lg hover:shadow-[#0052cc]/30 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-sm md:text-base w-full sm:w-auto min-w-[260px]">
-                            Request Free Site Assessment →
+                <div class="relative z-10 w-full mt-8 max-w-3xl mx-auto flex flex-col items-center gap-3">
+                    <div class="flex flex-col sm:flex-row items-center gap-6 justify-center w-full">
+                        <a href="#host-calc-anchor" class="inline-flex justify-center items-center text-center px-8 py-4 bg-[#0052cc] hover:bg-[#0042bb] text-white font-black rounded-xl transition-all shadow-lg hover:shadow-[#0052cc]/30 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-sm md:text-base w-full sm:w-auto min-w-[260px]">
+                            Find out how much I can save →
                         </a>
                     </div>
+                    <span class="text-[11px] sm:text-xs text-slate-300 font-semibold italic text-center mt-2 hero-title-shadow block max-w-xl leading-relaxed">
+                        "Home Assistant-based, real-world tested automations built personally and custom-tailored for each property. With a 2-year comprehensive warranty."
+                    </span>
                 </div>
 
             </div>
@@ -395,12 +444,93 @@
         <section id="funkciok" class="mb-24 scroll-reveal">
             <h2 class="section-title">
                 <i data-lucide="sparkles" class="w-10 h-10 text-sky-400"></i>
-                Control & Savings Solutions for Landlords
+                Apartment Automation for Hosts
             </h2>
             <p class="text-slate-300 text-lg mb-10 leading-relaxed font-normal">
-                My systems are custom-engineered for vacation rental owners. They help you regain absolute control of your property, cut utility spikes, and elevate the overall guest experience.
+                My systems are custom-engineered for vacation rental owners. They help you regain absolute control of your property, cut utility spikes, and elevate the overall guest experience. I personally design and configure each system with custom support guarantees!
             </p>
-            
+
+            <!-- Pain Points / Nightmare vs Solutions bento grid in English -->
+            <div class="grid md:grid-cols-2 gap-6 mb-16">
+                <!-- Red Alert: Host Pain Points in English -->
+                <div class="p-6 sm:p-8 rounded-[2rem] border border-red-500/15 bg-red-500/5 text-left relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full filter blur-xl"></div>
+                    <span class="inline-flex px-2.5 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-[10px] font-black uppercase text-red-400 tracking-wider mb-4 font-display">
+                        ⚠️ 4 Major Host Pain Points
+                    </span>
+                    <h3 class="text-2xl font-display font-black text-white leading-tight mb-6">What do almost all hosts suffer from?</h3>
+                    <ul class="space-y-5">
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">💸</span>
+                            <div>
+                                <strong class="text-white text-base sm:text-lg font-black block mb-1">Running AC with wide-open windows</strong>
+                                <span class="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed block">Guests crank the AC down to 18°C while leaving balcony doors wide open for hours, sending your electricity bills skyward.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">🔥</span>
+                            <div>
+                                <strong class="text-white text-base sm:text-lg font-black block mb-1">Wasted heating & boilers on empty days</strong>
+                                <span class="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed block">After check-out, properties stand empty for days, yet heaters maintain 23°C and water heaters keep boiling water for nobody.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-red-500/10 border border-red-500/20 text-red-300 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">🌊</span>
+                            <div>
+                                <strong class="text-white text-base sm:text-lg font-black block mb-1">Undetected water leaks & water damage</strong>
+                                <span class="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed block">A leaking boiler or burst pipe floods the downstairs neighbor. By the time it's detected, repairs cost thousands, shutting down bookings for weeks.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-red-500/10 border border-red-500/20 text-red-300 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">🔑</span>
+                            <div>
+                                <strong class="text-white text-base sm:text-lg font-black block mb-1">Lost keys & late-night emergency calls</strong>
+                                <span class="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed block">In-person handovers, lost physical keys, expensive lock replacements, or unreliable remote lock apps induce constant daily stress.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Green Alert: Solutions in English -->
+                <div class="p-6 sm:p-8 rounded-[2rem] border border-emerald-500/15 bg-emerald-500/5 text-left relative overflow-hidden">
+                    <div class="absolute bottom-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full filter blur-xl"></div>
+                    <span class="inline-flex px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[10px] font-black uppercase text-emerald-400 tracking-wider mb-4 font-display">
+                        🛡️ My Guaranteed Smart Solutions
+                    </span>
+                    <h3 class="text-2xl font-display font-black text-white leading-tight mb-6">How do I increase your yield & peace of mind?</h3>
+                    <ul class="space-y-5">
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">❄️</span>
+                            <div>
+                                <strong class="text-white text-base sm:text-lg font-black block mb-1">Automated Intelligent AC Interlock</strong>
+                                <span class="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed block">When open windows/doors are detected, the system shuts down AC after 3 mins. When closed, it safely resumes. Instant utility bills reduction!</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">📅</span>
+                            <div>
+                                <strong class="text-white text-base sm:text-lg font-black block mb-1">Calendar-Synchronized Eco Modes</strong>
+                                <span class="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed block">Direct integration with your Airbnb/Booking calendar: checkout automatically reverts heating, TVs, and lighting to eco mode, guaranteeing no waste.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">💧</span>
+                            <div>
+                                <strong class="text-white text-base sm:text-lg font-black block mb-1">Water Flood Automatic Shutoff</strong>
+                                <span class="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed block">If floor sensors detect a leak, a heavy-duty motorized valve shuts off the main line in 10 seconds. You receive instant push alerts. Zero flood damage, guaranteed.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">🔑</span>
+                            <div>
+                                <strong class="text-white text-base sm:text-lg font-black block mb-1">Keyless PIN Code Door Entry</strong>
+                                <span class="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed block">Guests receive personalized, temporary PIN codes automatically linked to their booking. Codes expire on checkout. True automated check-in.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 <!-- Card 1 -->
                 <div class="feature-card group flex flex-col justify-between border border-slate-800">
@@ -596,200 +726,259 @@
                 </div>
             </div>
 
-            <!-- Interactive Host Configurator -->
-            <div id="host-calc-anchor" class="bg-slate-900/40 border border-slate-800 rounded-[2.5rem] p-6 sm:p-10 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+            <!-- Interactive Host Configurator (Simplified, Quick quotation) -->
+            <div id="host-calc-anchor" class="bg-slate-900/40 border border-slate-800 rounded-3xl sm:rounded-[2.5rem] p-4 sm:p-10 backdrop-blur-xl shadow-2xl relative overflow-hidden w-full max-w-full">
                 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-45"></div>
                 
                 <div id="host-calculator-box">
                     <h3 class="text-2xl font-display font-black text-white leading-tight mb-2 flex items-center gap-2">
                         <i data-lucide="calculator" class="w-6 h-6 text-sky-400"></i>
-                        Interactive Airbnb & Booking Smart Home Estimator
+                        Savings Calculator & Smart Home Designer
                     </h3>
                     <p class="text-slate-400 text-xs sm:text-sm mb-8 leading-relaxed">
-                        Customize your apartment features to calculate an instant on-site estimate of smart devices coupled with direct labor!
+                        Find out in seconds how much wasted utility cost you can save with localized smart automation!
                     </p>
 
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                        <!-- Controls column -->
-                        <div class="lg:col-span-7 space-y-6 flex flex-col justify-between">
-                            <!-- Step 1 -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
+                        <!-- Controls column (Left) -->
+                        <div class="lg:col-span-7 space-y-4 sm:space-y-6">
+                            <!-- Step 1: Apartment count -->
                             <div>
-                                <label class="block text-xs uppercase tracking-widest text-sky-400 font-bold mb-3">1. Apartment Size / Type</label>
-                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                    <button onclick="selectHostPropertyType('studio')" id="btn-prop-studio" class="p-4 rounded-2xl border text-left transition-all relative flex flex-col justify-between host-prop-btn border-sky-500/40 bg-sky-500/5 text-white cursor-pointer">
-                                        <span class="font-bold text-sm block">Garcon / Studio</span>
-                                        <span class="text-[11px] text-slate-300 mt-1 block">1 Room • 1 A/C controller</span>
-                                    </button>
-                                    <button onclick="selectHostPropertyType('apartment')" id="btn-prop-apartment" class="p-4 rounded-2xl border text-left transition-all relative flex flex-col justify-between host-prop-btn border-slate-800 bg-slate-950/40 text-slate-400 hover:border-slate-700 cursor-pointer">
-                                        <span class="font-bold text-sm block">1.5 - 2 Rooms</span>
-                                        <span class="text-[11px] text-slate-400 mt-1 block">Living + 1 Bedroom • 2 A/Cs</span>
-                                    </button>
-                                    <button onclick="selectHostPropertyType('house')" id="btn-prop-house" class="p-4 rounded-2xl border text-left transition-all relative flex flex-col justify-between host-prop-btn border-slate-800 bg-slate-950/40 text-slate-400 hover:border-slate-700 cursor-pointer">
-                                        <span class="font-bold text-sm block">3+ Rooms / House</span>
-                                        <span class="text-[11px] text-slate-400 mt-1 block">Larger house • 3+ A/Cs • includes signal range expanders (+30k HUF)</span>
-                                    </button>
+                                <label class="block text-xs uppercase tracking-widest text-sky-400 font-bold mb-3">1. Number of rental apartments</label>
+                                <div class="flex items-center gap-3 w-full">
+                                    <button type="button" onclick="changeApartmentCount(-1)" class="flex-1 sm:flex-initial w-full sm:w-14 h-14 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 text-white text-xl font-bold flex items-center justify-center transition-colors cursor-pointer select-none">-</button>
+                                    <input type="number" id="host-calc-apartments" min="1" max="100" value="1" oninput="updateEstimatedAnnualCost()" class="flex-1 sm:flex-initial w-full sm:w-28 text-center py-4 bg-slate-900 border border-slate-800 rounded-xl text-base font-bold text-white focus:outline-none focus:border-sky-500/50">
+                                    <button type="button" onclick="changeApartmentCount(1)" class="flex-1 sm:flex-initial w-full sm:w-14 h-14 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 text-white text-xl font-bold flex items-center justify-center transition-colors cursor-pointer select-none">+</button>
+                                    <span class="text-xs text-slate-400 font-medium ml-2 shrink-0 hidden sm:inline">apartment unit(s)</span>
                                 </div>
                             </div>
 
-                            <!-- Step 2 -->
+                            <!-- Step 2: Average SQM -->
                             <div>
-                                <label class="block text-xs uppercase tracking-widest text-sky-400 font-bold mb-3">2. Choose Smart Features</label>
-                                <div class="space-y-3">
-                                    <!-- Extra calendar -->
-                                    <label class="flex items-center justify-between p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 rounded-2xl cursor-pointer transition-colors relative">
-                                        <div class="flex items-center gap-3">
-                                            <input type="checkbox" id="chk-extra-calendar" onchange="calculateHostEstimate()" class="sr-only peer">
-                                            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 bg-slate-800/40 peer-checked:bg-sky-500/10 peer-checked:text-sky-400 transition-colors shrink-0">
-                                                <i data-lucide="calendar" class="w-5 h-5"></i>
-                                            </div>
-                                            <div>
-                                                <p class="text-sm font-bold text-white leading-tight">Booking-Synced Eco Mode</p>
-                                                <p class="text-[11px] text-slate-400">Automatic power/utility shutdown directly at checkout times</p>
-                                            </div>
-                                        </div>
-                                        <div class="text-right shrink-0 ml-4 font-black text-xs text-sky-400">
-                                            +20,000 HUF
-                                        </div>
-                                    </label>
+                                <label class="block text-xs uppercase tracking-widest text-sky-400 font-bold mb-2">2. Average apartment floor area</label>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-3 w-full">
+                                    <input type="number" id="host-calc-sqm" min="10" max="300" value="45" oninput="updateEstimatedAnnualCost()" class="w-full sm:w-32 px-4 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-sm font-bold text-white focus:outline-none focus:border-sky-500/50">
+                                    <span class="text-xs text-slate-400 font-medium">square meters (m²) / apartment</span>
+                                </div>
+                            </div>
 
-                                    <!-- PIN lock extra -->
-                                    <label class="flex items-center justify-between p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 rounded-2xl cursor-pointer transition-colors relative">
-                                        <div class="flex items-center gap-3">
-                                            <input type="checkbox" id="chk-extra-lock" onchange="calculateHostEstimate()" class="sr-only peer">
-                                            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 bg-slate-800/40 peer-checked:bg-sky-500/10 peer-checked:text-sky-400 transition-colors shrink-0">
-                                                <i data-lucide="key-round" class="w-5 h-5"></i>
-                                            </div>
-                                            <div>
-                                                <p class="text-sm font-bold text-white leading-tight">PIN Lock Integration</p>
-                                                <p class="text-[11px] text-slate-400">Auto guest security code provisioning linked to the reservation</p>
-                                            </div>
-                                        </div>
-                                        <div class="text-right shrink-0 ml-4 font-black text-xs text-sky-400">
-                                            +139,000 HUF
-                                        </div>
+                            <!-- Step 3: Heating and cooling types grid of checkboxes -->
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-sky-400 font-bold mb-3">3. What heating/cooling systems are installed?</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="heating-types-container">
+                                    <label class="flex items-center gap-3.5 p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 hover:bg-slate-900/40 rounded-2xl cursor-pointer transition-colors">
+                                        <input type="checkbox" id="heat-gas" checked onchange="calculateHostSavings()" class="rounded bg-slate-900 border-slate-800 text-sky-500 focus:ring-0 focus:ring-offset-0">
+                                        <span class="text-xs text-slate-300 font-semibold select-none">Gas Heating (radiators)</span>
                                     </label>
-
-                                    <!-- Water damage safety -->
-                                    <label class="flex items-center justify-between p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 rounded-2xl cursor-pointer transition-colors relative">
-                                        <div class="flex items-center gap-3">
-                                            <input type="checkbox" id="chk-extra-water" onchange="calculateHostEstimate()" class="sr-only peer">
-                                            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 bg-slate-800/40 peer-checked:bg-sky-500/10 peer-checked:text-sky-400 transition-colors shrink-0">
-                                                <i data-lucide="droplet" class="w-5 h-5"></i>
-                                            </div>
-                                            <div>
-                                                <p class="text-sm font-bold text-white leading-tight">Water Leakage Protection</p>
-                                                <p class="text-[11px] text-slate-400">Moisture sensors & primary motorized automatic central shutoff valve</p>
-                                            </div>
-                                        </div>
-                                        <div class="text-right shrink-0 ml-4 font-black text-xs text-sky-400">
-                                            +45,000 HUF
-                                        </div>
+                                    <label class="flex items-center gap-3.5 p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 hover:bg-slate-900/40 rounded-2xl cursor-pointer transition-colors">
+                                        <input type="checkbox" id="heat-electric" onchange="calculateHostSavings()" class="rounded bg-slate-900 border-slate-800 text-sky-500 focus:ring-0 focus:ring-offset-0">
+                                        <span class="text-xs text-slate-300 font-semibold select-none">Electric heating panels</span>
                                     </label>
-
-                                    <!-- Noise guard -->
-                                    <label class="flex items-center justify-between p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 rounded-2xl cursor-pointer transition-colors relative">
-                                        <div class="flex items-center gap-3">
-                                            <input type="checkbox" id="chk-extra-noise" onchange="calculateHostEstimate()" class="sr-only peer">
-                                            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 bg-slate-800/40 peer-checked:bg-sky-500/10 peer-checked:text-sky-400 transition-colors shrink-0">
-                                                <i data-lucide="volume-2" class="w-5 h-5"></i>
-                                            </div>
-                                            <div>
-                                                <p class="text-sm font-bold text-white leading-tight">Decibel Decorum Sensor</p>
-                                                <p class="text-[11px] text-slate-400">GDPR-safe excessive night sound detection and mobile alerts</p>
-                                            </div>
-                                        </div>
-                                        <div class="text-right shrink-0 ml-4 font-black text-xs text-sky-400">
-                                            +35,000 HUF
-                                        </div>
+                                    <label class="flex items-center gap-3.5 p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 hover:bg-slate-900/40 rounded-2xl cursor-pointer transition-colors">
+                                        <input type="checkbox" id="heat-ac" checked onchange="calculateHostSavings()" class="rounded bg-slate-900 border-slate-800 text-sky-500 focus:ring-0 focus:ring-offset-0">
+                                        <span class="text-xs text-slate-300 font-semibold select-none">Air Conditioning (heat/cool)</span>
                                     </label>
-
-                                    <!-- Boiler management -->
-                                    <label class="flex items-center justify-between p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 rounded-2xl cursor-pointer transition-colors relative">
-                                        <div class="flex items-center gap-3">
-                                            <input type="checkbox" id="chk-extra-boiler" onchange="calculateHostEstimate()" class="sr-only peer">
-                                            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 bg-slate-800/40 peer-checked:bg-sky-500/10 peer-checked:text-sky-400 transition-colors shrink-0">
-                                                <i data-lucide="zap" class="w-5 h-5"></i>
-                                            </div>
-                                            <div>
-                                                <p class="text-sm font-bold text-white leading-tight">Smart Boiler HVAC Link</p>
-                                                <p class="text-[11px] text-slate-400">Existing water boiler & HVAC/gas heating wired directly to the calendar</p>
-                                            </div>
-                                        </div>
-                                        <div class="text-right shrink-0 ml-4 font-black text-xs text-sky-400">
-                                            +45,000 HUF
-                                        </div>
+                                    <label class="flex items-center gap-3.5 p-4 bg-slate-950/40 border border-slate-800 hover:border-slate-700 hover:bg-slate-900/40 rounded-2xl cursor-pointer transition-colors">
+                                        <input type="checkbox" id="heat-floor" onchange="calculateHostSavings()" class="rounded bg-slate-900 border-slate-800 text-sky-500 focus:ring-0 focus:ring-offset-0">
+                                        <span class="text-xs text-slate-300 font-semibold select-none">Floor heating / other</span>
                                     </label>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Price display & form -->
-                        <div class="lg:col-span-5 flex flex-col justify-between h-full bg-slate-950/60 border border-slate-800 rounded-3xl p-6 relative">
+                            <!-- Step 4: Occupancy Rate Slider -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <label class="block text-xs uppercase tracking-widest text-sky-400 font-bold">4. Average annual occupancy rate</label>
+                                    <span id="host-calc-occupancy-val" class="text-xs font-bold text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded">70% (approx. 256 days/year)</span>
+                                </div>
+                                <input type="range" id="host-calc-occupancy" min="20" max="100" step="5" value="70" oninput="updateOccupancySlider(this.value)" class="w-full accent-sky-400 bg-slate-850 rounded-lg appearance-none cursor-pointer h-1.5 focus:outline-none">
+                                <div class="flex justify-between text-[10px] text-slate-500 mt-1.5 font-medium px-0.5">
+                                    <span>20% (low)</span>
+                                    <span>70% (realistic)</span>
+                                    <span>100% (fully booked)</span>
+                                </div>
+                            </div>
+
+                            <!-- Step 5: Annual utility cost -->
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-sky-400 font-bold mb-2">5. Current estimated annual total utility cost</label>
+                                <div class="relative flex items-center max-w-md">
+                                    <input type="text" id="host-calc-annual-cost" value="600000" oninput="onAnnualCostManualInput(this.value)" class="w-full pl-4 pr-20 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm font-bold text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50">
+                                    <span class="absolute right-4 text-xs font-bold text-slate-500">HUF / year</span>
+                                </div>
+                                <p class="text-[11px] text-slate-500 mt-1.5 italic">Smart recommendation based on your inputs. Feel free to overwrite with your own actual figures!</p>
+                            </div>
+
+                            <!-- Info Box: How the system saves -->
+                            <div class="p-5 bg-slate-950/50 border border-slate-800/80 rounded-2xl flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400 shrink-0">
+                                    <i data-lucide="help-circle" class="w-5 h-5"></i>
+                                </div>
+                                <div class="space-y-1">
+                                    <h4 class="text-xs font-bold text-white uppercase tracking-wider">How does the system save energy?</h4>
+                                    <p class="text-[11px] sm:text-xs text-slate-400 leading-relaxed">
+                                        Savings are achieved by the software automatically turning off the A/C when windows are open, setting heating to eco-mode after guest checkout, and cutting power to the water boiler when there are no active bookings.
+                                    </p>
+                                </div>
+                                   <!-- Results display & form (Right) -->
+                        <div class="lg:col-span-5 flex flex-col justify-between h-full bg-slate-950/60 border border-slate-800 rounded-2xl sm:rounded-3xl px-4 py-5 sm:p-6 relative min-h-0 sm:min-h-[420px] w-full max-w-full">
+                            <!-- Background decoration -->
                             <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-sky-500/20 to-transparent"></div>
                             
                             <div>
-                                <h4 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Estimated Total</h4>
-                                
-                                <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800/60 mb-6">
-                                    <div class="text-slate-400 text-xs mb-1">Total One-time Cost:</div>
-                                    <div class="text-3xl sm:text-4xl font-black text-sky-400" id="host-estimated-total">
-                                        185,000 HUF
+                                <!-- Placeholder before clicking (hidden by default) -->
+                                <div id="host-savings-placeholder" class="hidden py-12 text-center flex flex-col justify-center items-center h-full min-h-[350px]">
+                                    <div class="w-16 h-16 bg-sky-500/10 rounded-2xl flex items-center justify-center text-sky-400 mb-4 animate-bounce">
+                                        <i data-lucide="trending-up" class="w-8 h-8"></i>
                                     </div>
-                                    <p class="text-[10px] text-slate-500 mt-2 font-medium">All estimates include the 100,000 HUF localized gateway controller and software configuration. One-off purchase, 1-year local warranty, absolute transparency.</p>
+                                    <h4 class="text-base font-bold text-white mb-2">Estimate Your Utility Savings!</h4>
+                                    <p class="text-slate-400 text-xs leading-relaxed max-w-xs mx-auto">
+                                        Configure the values on the left side for instant, live updates!
+                                    </p>
                                 </div>
-
-                                <!-- Inquiry Form -->
-                                <div class="space-y-4">
-                                    <div>
-                                        <label for="host-name" class="block text-[10px] uppercase font-bold text-slate-400 mb-1.5">Your Name *</label>
-                                        <input type="text" id="host-name" placeholder="E.g. James Wilson" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50">
-                                    </div>
-                                    
-                                    <div>
-                                        <label for="host-email" class="block text-[10px] uppercase font-bold text-slate-400 mb-1.5">Email Address *</label>
-                                        <input type="email" id="host-email" placeholder="james@example.com" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50">
-                                    </div>
-
-                                    <div>
-                                        <label for="host-phone" class="block text-[10px] uppercase font-bold text-slate-400 mb-1.5">Phone Number *</label>
-                                        <input type="text" id="host-phone" placeholder="E.g. +36 20 123 4567" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50">
+ 
+                                <!-- Dynamic Results, Trust Points, and 2-Step CTA -->
+                                <div id="host-savings-results" class="space-y-4 sm:space-y-6">
+                                    <!-- Savings indicator -->
+                                    <div class="bg-emerald-500/10 border border-emerald-500/20 p-4 sm:p-5 rounded-2xl text-center shadow-lg shadow-emerald-950/10 w-full max-w-full">
+                                        <span class="text-[10px] text-emerald-400 uppercase font-black tracking-widest block font-sans">Expected Annual Utility Savings</span>
+                                        <strong id="host-calculated-savings-range" class="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-black text-emerald-400 block mt-1 sm:mt-1.5 tracking-tight leading-none text-center">148,000 - 236,000 HUF</strong>
+                                        <div id="host-calc-breakdown" class="my-3 sm:my-4 flex flex-col gap-2">
+                                            <!-- Dynamically filled with breakdown -->
+                                        </div>
+                                        <span class="text-[11px] text-slate-300 mt-2 sm:mt-2.5 block text-center leading-relaxed font-sans" id="host-calc-explanation">
+                                            Based on: 1 apartment, 45 m², gas heating + climate system with an average 35% customer experience savings.
+                                        </span>
                                     </div>
 
-                                    <div>
-                                        <label for="host-address" class="block text-[10px] uppercase font-bold text-slate-400 mb-1.5">Property Location / Address *</label>
-                                        <input type="text" id="host-address" placeholder="E.g. Budapest 6th district" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50">
+                                    <!-- Investment and pricing bands -->
+                                    <div class="bg-slate-900/50 border border-slate-800/80 p-4 sm:p-5 rounded-2xl space-y-3.5 text-left">
+                                        <div class="flex items-center gap-2">
+                                            <i data-lucide="calculator" class="w-4 h-4 text-sky-400"></i>
+                                            <h4 class="text-xs font-bold text-white uppercase tracking-wider">What is the investment?</h4>
+                                        </div>
+                                        <p class="text-[11px] sm:text-xs text-slate-400 leading-relaxed font-sans">
+                                            The smart base package starts from <strong class="text-white">100,000 HUF</strong> (includes the dedicated, cloud-independent smart hub and basic integration).
+                                        </p>
+                                        <div class="border-t border-slate-800/60 my-2"></div>
+                                        <p class="text-[10px] text-slate-500 uppercase tracking-widest font-black leading-none">Estimated total installation & ROI:</p>
+                                        <div class="space-y-2 font-sans">
+                                            <div class="p-2.5 bg-slate-950/40 border border-slate-800/50 rounded-xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                                                <span class="text-xs text-slate-300 font-medium">For 1 apartment:</span>
+                                                <div class="text-left sm:text-right">
+                                                    <span class="text-xs font-bold text-sky-400 block sm:inline">approx. 150,000 – 250,000 HUF</span>
+                                                    <span class="text-[10px] text-emerald-400 block sm:inline sm:ml-1.5">(ROI: ~1-1.5 years)</span>
+                                                </div>
+                                            </div>
+                                            <div class="p-2.5 bg-slate-950/40 border border-slate-800/50 rounded-xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                                                <span class="text-xs text-slate-300 font-medium">For 2-3 apartments:</span>
+                                                <div class="text-left sm:text-right">
+                                                    <span class="text-xs font-bold text-sky-400 block sm:inline">approx. 300,000 – 500,000 HUF</span>
+                                                    <span class="text-[10px] text-emerald-400 block sm:inline sm:ml-1.5">(ROI: ~1 year)</span>
+                                                </div>
+                                            </div>
+                                            <div class="p-2.5 bg-slate-950/40 border border-slate-800/50 rounded-xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                                                <span class="text-xs text-slate-300 font-medium">More apartments/custom needs:</span>
+                                                <span class="text-xs font-bold text-slate-400 text-left sm:text-right">Custom calculation required</span>
+                                            </div>
+                                        </div>
+                                    </div>
+ 
+                                    <!-- 2-Step CTA Buttons -->
+                                    <div class="flex flex-col gap-3 w-full" id="host-cta-buttons">
+                                        <button type="button" id="host-cta-show-offer-form-btn" onclick="revealHostOfferForm()" class="w-full py-3 sm:py-3.5 bg-sky-500 hover:bg-sky-400 text-slate-950 font-black text-xs uppercase tracking-widest rounded-xl transition-all cursor-pointer shadow-lg shadow-sky-500/10 active:scale-98 flex items-center justify-center text-center gap-2 font-sans">
+                                            Request Custom Offer
+                                        </button>
+ 
+                                        <a href="#foglalas" class="w-full py-3 sm:py-3.5 bg-emerald-500 hover:bg-emerald-450 text-slate-950 font-black text-xs uppercase tracking-widest rounded-xl transition-all cursor-pointer shadow-lg shadow-emerald-555/10 active:scale-98 flex items-center justify-center text-center gap-2 font-sans">
+                                            Request Free Site Assessment
+                                        </a>
                                     </div>
 
-                                    <div>
-                                        <label for="host-custom-problem" class="block text-[10px] uppercase font-bold text-slate-400 mb-1.5 flex justify-between items-center">
-                                            <span>Specific concerns / unique needs?</span>
-                                            <span class="text-[9px] text-slate-500 lowercase font-normal italic">optional</span>
-                                        </label>
-                                        <textarea id="host-custom-problem" rows="3" placeholder="Describe any custom integrations (e.g. sauna control, complex lock systems, separate meters) and I will build it for you!" class="w-full px-4 py-2 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50 resize-none h-20"></textarea>
+                                    <!-- Contact details and actual offer form (Reveals smoothly) -->
+                                    <div id="host-offer-form-container" class="hidden space-y-4 pt-4 border-t border-slate-800/80">
+                                        <h5 class="text-xs font-bold uppercase tracking-widest text-sky-400">Request Custom Quote</h5>
+                                        
+                                        <div class="space-y-3">
+                                            <div>
+                                                <label for="host-name" class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Your Full Name *</label>
+                                                <input type="text" id="host-name" placeholder="E.g. James Wilson" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-xs text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50">
+                                            </div>
+                                            
+                                            <div>
+                                                <label for="host-email" class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Email Address *</label>
+                                                <input type="email" id="host-email" placeholder="james@example.co.uk" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-xs text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50">
+                                            </div>
+
+                                            <div>
+                                                <label for="host-phone" class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Phone Number *</label>
+                                                <input type="text" id="host-phone" placeholder="E.g. +36 20 123 4567" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-xs text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50">
+                                            </div>
+
+                                            <div>
+                                                <label for="host-address" class="block text-[10px] uppercase font-bold text-slate-400 mb-1">Rental Apartment Address *</label>
+                                                <input type="text" id="host-address" placeholder="E.g. Budapest district 6" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-xs text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50">
+                                            </div>
+
+                                            <div>
+                                                <label for="host-custom-problem" class="block text-[10px] uppercase font-bold text-slate-400 mb-1 flex justify-between items-center">
+                                                    <span>Special requirements / comments:</span>
+                                                    <span class="text-[9px] text-slate-500 lowercase font-normal italic">optional</span>
+                                                </label>
+                                                <textarea id="host-custom-problem" rows="3" placeholder="Describe any custom needs or property details..." class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-xs text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50 resize-none h-16"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <button type="button" onclick="submitHostInquiry()" id="host-submit-btn" class="w-full py-4 bg-sky-500 hover:bg-sky-400 text-slate-950 font-black text-xs uppercase tracking-widest rounded-xl transition-all cursor-pointer shadow-lg active:scale-98 flex items-center justify-center gap-2">
+                                            Send Configuration Setup →
+                                        </button>
+                                        <p class="text-[9px] text-center text-slate-500">
+                                            No spam, guaranteed. Data is exclusively processed by Levente Nagy for drafting your tailored quote.
+                                        </p>
+                                    </div>
+
+                                    <!-- Trust indicators list -->
+                                    <div class="space-y-3 bg-slate-900/40 p-4 border border-slate-800/60 rounded-xl">
+                                        <div class="flex items-start gap-3">
+                                            <div class="w-5 h-5 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
+                                                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                            </div>
+                                            <p class="text-xs text-slate-300 leading-relaxed font-medium">No Chinese cloud reliance or monthly subscription fees – 100% secure offline local core system.</p>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <div class="w-5 h-5 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
+                                                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                            </div>
+                                            <p class="text-xs text-slate-300 leading-relaxed font-medium">Full 2-year warranty on all installed hardware units, devices, and custom styling presets.</p>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <div class="w-5 h-5 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
+                                                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                            </div>
+                                            <p class="text-xs text-slate-300 leading-relaxed font-semibold">Personal direct technician support – reach out directly to me for customizations or inquiries.</p>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <div class="w-5 h-5 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
+                                                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                            </div>
+                                            <p class="text-xs text-slate-300 leading-relaxed font-semibold">We achieve this by automatically sliding HVAC to savings modes at guest checkout times, and closing energy drains if windows/terraces remain open.</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="mt-8">
-                                <button onclick="submitHostInquiry()" id="host-submit-btn" class="w-full py-4 bg-sky-500 hover:bg-sky-400 text-slate-950 font-black text-xs uppercase tracking-widest rounded-xl transition-all cursor-pointer shadow-lg shadow-sky-500/10 active:scale-98 flex items-center justify-center gap-2">
-                                    Submit Quote Request →
-                                </button>
-                                <p class="text-[10px] text-center text-slate-500 mt-2.5">
-                                    We respect your data privacy. Information is strictly used for arranging consultation meetings.
-                                </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Success Box -->
+                <!-- Success Box inside the same container directly -->
                 <div id="host-calculator-success" class="hidden text-center py-10 max-w-2xl mx-auto">
                     <div class="w-16 h-16 bg-emerald-500/15 border border-emerald-500/30 rounded-2xl flex items-center justify-center text-emerald-400 mx-auto mb-6">
                         <i data-lucide="check-circle" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-3xl font-display font-black text-white mb-2">Thank you!</h3>
+                    <h3 class="text-3xl font-display font-black text-white mb-2">Thank you for your inquiry!</h3>
                     <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                        We have successfully computed the configuration for your vacation apartment.
+                        We have successfully computed the custom smart home configuration for your rental unit.
                     </p>
 
                     <div class="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 my-6 max-w-md mx-auto">
@@ -797,16 +986,16 @@
                         <div class="text-3xl font-display font-black text-sky-400 tracking-widest" id="host-success-tracking-id">#SZ-A8C5B</div>
                         <div class="h-px bg-slate-800/80 my-4"></div>
                         <div class="text-slate-300 text-xs leading-relaxed">
-                            This custom technical code has been attached to your Calendly session parameters, giving Nagy Levente direct insight upon booking.
+                            This quote ID was automatically linked with your Calendly selection, ensuring Levente has absolute context upon visit.
                         </div>
                     </div>
 
                     <!-- Host custom summary and copy section -->
                     <div class="bg-slate-950/45 border border-slate-800/80 rounded-2xl p-5 mb-6 text-left max-w-md mx-auto">
                         <div class="flex justify-between items-center mb-3">
-                            <p class="text-[10px] text-slate-500 uppercase font-black tracking-wider">Estimated Configuration Details:</p>
+                            <p class="text-[10px] text-slate-500 uppercase font-black tracking-wider">Calculated configuration parameters:</p>
                             <button id="host-copy-text-btn" onclick="copyHostSummaryToClipboard()" class="flex items-center gap-1.5 text-[11px] font-bold text-sky-450 hover:text-sky-400 transition-colors cursor-pointer bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-lg">
-                                <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Summary
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Details
                             </button>
                         </div>
                         <div class="max-h-[140px] overflow-y-auto custom-scrollbar">
@@ -816,13 +1005,13 @@
 
                     <div class="text-center mb-6">
                         <button onclick="triggerHostMailSender()" class="text-slate-400 hover:text-sky-400 text-xs font-bold transition-all underline cursor-pointer">
-                            Open manual draft in email client instead →
+                            Open email draft in manual client instead →
                         </button>
                     </div>
 
                     <div class="mb-5 p-5 border border-emerald-500/20 bg-emerald-500/5 rounded-2xl text-center">
                         <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
-                            Secure your priority on-site assessment slot in seconds! Select an open day in our calendar below; your custom configuration is already pre-filled.
+                            Complete your priority site assessment and consultation slot! Choose a preferred time; the details are synchronized.
                         </p>
                         <a href="#foglalas" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs uppercase tracking-widest rounded-xl transition-all shadow-lg active:scale-98 font-display">
                             Go to Calendar <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -850,7 +1039,7 @@
                 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-30"></div>
                 
                 <div class="flex-shrink-0 w-[200px] sm:w-[240px] aspect-[3/4]">
-                    <img src="profil.jpg" alt="Levente Nagy" class="w-full h-full object-cover rounded-2xl border-2 border-sky-500/20 shadow-lg hover:scale-[1.02] transition-transform duration-300">
+                    <img src="profil.jpg" alt="Levente Nagy" class="w-full h-full object-cover rounded-2xl border-2 border-sky-500/20 shadow-lg transition-all duration-300">
                 </div>
 
                 <div class="flex-1 text-left">
@@ -908,47 +1097,109 @@
         </div>
 
         <!-- SECTION 5: CONTACT -->
-        <section id="kapcsolat" class="scroll-reveal mb-20">
-            <div class="bg-slate-900/40 border border-slate-800 rounded-[2.5rem] p-6 sm:p-10 md:p-12 backdrop-blur-xl shadow-2xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-30"></div>
+        <section id="kapcsolat" class="scroll-reveal mb-20 text-left">
+            <div class="p-6 sm:p-10 md:p-12 bg-slate-900/40 border border-slate-800 rounded-[2.5rem] backdrop-blur-xl shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-50"></div>
                 
-                <div class="max-w-3xl mx-auto text-center">
-                    <h3 class="text-2xl sm:text-3xl font-display font-black text-white leading-tight mb-4">
-                        Have Immediate Questions?
-                    </h3>
-                    <p class="text-sky-400 text-base sm:text-lg font-semibold mb-8">
-                        Get in touch directly – I am happy to discuss any smart home concerns!
-                    </p>
+                <div class="grid lg:grid-cols-12 gap-8 items-stretch">
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-2xl mx-auto">
-                        <!-- Phone -->
-                        <a href="tel:+36202109008" class="flex items-center gap-5 group p-5 bg-slate-950/60 border border-slate-800/80 hover:border-sky-500/35 rounded-2xl transition-all shadow-lg">
-                            <div class="w-14 h-14 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 group-hover:scale-105 transition-transform shrink-0">
-                                <i data-lucide="phone" class="w-7 h-7"></i>
-                            </div>
-                            <div>
-                                <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Phone</p>
-                                <p class="text-lg md:text-xl font-black text-white group-hover:text-sky-400 transition-colors">+36 20 210 9008</p>
-                            </div>
-                        </a>
+                    <!-- Left Column -->
+                    <div class="lg:col-span-5 flex flex-col justify-between text-left">
+                        <div>
+                            <span class="inline-flex px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] uppercase font-extrabold text-emerald-400 tracking-widest mb-4">
+                                Contact & Consultation
+                            </span>
+                            <h3 class="text-2xl sm:text-3xl font-display font-black text-white leading-tight mb-4">
+                                Scale up your apartment's automation!
+                            </h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                                Claim a complimentary, zero-obligation assessment at your rental property or ask anything you need! During our on-site consult, I will bring a working demo kit so you can try the experience in real time.
+                            </p>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex flex-col gap-4 my-6">
+                            <!-- Calendly booking button -->
+                            <a href="#foglalas" class="w-full py-5 px-6 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm sm:text-base uppercase tracking-wide rounded-xl transition-all flex items-center justify-center gap-3 cursor-pointer shadow-lg hover:shadow-emerald-500/20 active:scale-98 font-display">
+                                <i data-lucide="calendar" class="w-6 h-6 text-slate-950"></i>
+                                Book Appointment on Calendar
+                            </a>
 
-                        <!-- Email -->
-                        <a href="mailto:nagylevente.tech@gmail.com" class="flex items-center gap-5 group p-5 bg-slate-950/60 border border-slate-800/80 hover:border-sky-500/35 rounded-2xl transition-all shadow-lg">
-                            <div class="w-14 h-14 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400 group-hover:scale-105 transition-transform shrink-0">
-                                <i data-lucide="mail" class="w-7 h-7"></i>
-                            </div>
-                            <div class="overflow-hidden">
-                                <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Email</p>
-                                <p class="text-base sm:text-lg font-black text-white group-hover:text-sky-400 transition-colors truncate">nagylevente.tech@gmail.com</p>
-                            </div>
-                        </a>
-                    </div>
+                            <!-- Phone call -->
+                            <a href="tel:+36202109008" class="w-full py-5 px-6 bg-slate-950 hover:bg-slate-850 border border-slate-800 text-white font-extrabold text-sm sm:text-base uppercase tracking-wide rounded-xl transition-all flex items-center justify-center gap-3 cursor-pointer active:scale-98 font-display">
+                                <i data-lucide="phone" class="w-6 h-6 text-emerald-400"></i>
+                                Call now: +36 20 210 9008
+                            </a>
 
-                    <div class="mt-8 pt-6 border-t border-slate-800/60 max-w-2xl mx-auto">
-                        <p class="text-xs text-slate-400 italic leading-relaxed">
-                            Feel free to contact me at any time! If you would prefer to schedule a consultation directly via phone instead of the online booking widget, I am fully at your disposal.
+                            <!-- Messenger button -->
+                            <a href="https://m.me/61581849661468" target="_blank" rel="noopener noreferrer" class="w-full py-5 px-6 bg-[#0084FF] hover:bg-[#0072E0] text-white font-extrabold text-sm sm:text-base uppercase tracking-wide rounded-xl transition-all flex items-center justify-center gap-3 cursor-pointer shadow-lg active:scale-98 font-display">
+                                <i data-lucide="message-circle" class="w-6 h-6 text-white"></i>
+                                Send Messenger message
+                            </a>
+
+                            <!-- Facebook button -->
+                            <a href="https://www.facebook.com/profile.php?id=61581849661468" target="_blank" rel="noopener noreferrer" class="w-full py-5 px-6 bg-[#1877F2] hover:bg-[#166FE5] text-white font-extrabold text-sm sm:text-base uppercase tracking-wide rounded-xl transition-all flex items-center justify-center gap-3 cursor-pointer shadow-lg active:scale-98 font-display">
+                                <i data-lucide="facebook" class="w-6 h-6 text-white"></i>
+                                Visit Facebook page
+                            </a>
+                        </div>
+
+                        <p class="text-[11px] text-slate-400/90 leading-normal italic">
+                            ★ I reply personally to all inquiries within 24 hours. The initial structural appraisal is fully commitment-free!
                         </p>
                     </div>
+
+                    <!-- Right Column: Interactive Contact Form -->
+                    <div class="lg:col-span-7 bg-slate-950/60 border border-slate-800 rounded-2xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden text-left">
+                        <div class="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-transparent pointer-events-none"></div>
+                        
+                        <div class="relative z-10 w-full">
+                            <h4 class="text-lg font-display font-black text-white mb-2">
+                                Write to me directly!
+                            </h4>
+                            <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+                                Share your contact details and message, and I'll recall you instantly with customized recommendations!
+                            </p>
+
+                            <form id="host-contact-form" onsubmit="submitHostContactForm(event)" class="space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="contact-name" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Name *</label>
+                                        <input type="text" id="contact-name" required placeholder="Your name" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50 transition-all">
+                                    </div>
+                                    <div>
+                                        <label for="contact-phone" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Phone *</label>
+                                        <input type="tel" id="contact-phone" required placeholder="+36 20 123 4567" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50 transition-all">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="contact-email" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Email Address *</label>
+                                    <input type="email" id="contact-email" required placeholder="name@example.com" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50 transition-all">
+                                </div>
+
+                                <div>
+                                    <label for="contact-address" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Property address / city *</label>
+                                    <input type="text" id="contact-address" required placeholder="E.g., Budapest 6th district or Tahitótfalu" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50 transition-all">
+                                </div>
+
+                                <div>
+                                    <label for="contact-message" class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Custom requests / Message</label>
+                                    <textarea id="contact-message" rows="3" placeholder="What problem would you like to solve primary? (E.g., prevent AC waste, remote climate control, keypad check-in...)" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50 transition-all resize-none"></textarea>
+                                </div>
+
+                                <button type="submit" id="contact-submit-btn" class="w-full py-4 bg-sky-500 hover:bg-sky-400 text-slate-950 font-black text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg active:scale-98">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Send message
+                                </button>
+                                
+                                <div id="contact-success-msg" class="hidden p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-center">
+                                    <strong class="text-emerald-400 text-sm block">Thank you! Your message was received successfully.</strong>
+                                    <span class="text-xs text-slate-300 block mt-1">I will contact you very soon!</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -1008,59 +1259,257 @@
             });
         });
 
-        // --- APARTMENT OKOSOTTHON CONFIGURATOR LOGIC ---
-        let currentHostPropertyType = 'studio';
+        // Navigation bar backdrop updates on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (nav) {
+                if (window.scrollY > 40) {
+                    nav.classList.add('bg-slate-950/95', 'shadow-lg');
+                    nav.classList.remove('bg-slate-950/80');
+                } else {
+                    nav.classList.remove('bg-slate-950/95', 'shadow-lg');
+                    nav.classList.add('bg-slate-950/80');
+                }
+            }
+        });
 
-        window.latestHostCalculatedTotal = 120000;
+        // --- APARTMENT OKOSOTTHON CONFIGURATOR LOGIC ---
+        let userEditedAnnualCost = false;
+        window.latestHostCalculatedTotal = 150000;
         window.latestHostTrackingId = null;
+        window.latestHostSavingsRange = "148,000 - 236,000 HUF";
         window.lastGeneratedHostMailSubject = "";
         window.lastGeneratedHostMailBody = "";
 
-        window.selectHostPropertyType = function(type) {
-            currentHostPropertyType = type;
-            
-            document.querySelectorAll('.host-prop-btn').forEach(btn => {
-                btn.classList.remove('border-sky-500/40', 'bg-sky-500/5', 'text-white');
-                btn.classList.add('border-slate-800', 'bg-slate-950/40', 'text-slate-400');
-            });
-            
-            const selectedBtn = document.getElementById(`btn-prop-${type}`);
-            if (selectedBtn) {
-                selectedBtn.classList.remove('border-slate-800', 'bg-slate-950/40', 'text-slate-400');
-                selectedBtn.classList.add('border-sky-500/40', 'bg-sky-500/5', 'text-white');
-            }
-            
-            calculateHostEstimate();
-        };
-
-        window.scrollToCalculator = function(type) {
-            selectHostPropertyType(type);
+        window.scrollToCalculator = function() {
             const anchor = document.getElementById('host-calc-anchor');
             if (anchor) {
                 anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         };
 
-        window.calculateHostEstimate = function() {
-            let total = 100000; // Base package price
-            
-            if (currentHostPropertyType === 'house') {
-                total += 30000; // Plus signal range expanders
+        window.changeApartmentCount = function(val) {
+            const el = document.getElementById('host-calc-apartments');
+            if (!el) return;
+            let count = parseInt(el.value) || 1;
+            count += val;
+            if (count < 1) count = 1;
+            if (count > 100) count = 100;
+            el.value = count;
+            window.updateEstimatedAnnualCost();
+        };
+
+        window.updateOccupancySlider = function(val) {
+            const label = document.getElementById('host-calc-occupancy-val');
+            if (label) {
+                const days = Math.round((parseInt(val) || 70) * 3.65);
+                label.textContent = `${val}% (approx. ${days} days/year)`;
+            }
+            window.calculateHostSavings();
+        };
+
+        window.onAnnualCostManualInput = function(val) {
+            userEditedAnnualCost = true;
+            window.calculateHostSavings();
+        };
+
+        window.updateEstimatedAnnualCost = function() {
+            const apartments = parseInt(document.getElementById('host-calc-apartments')?.value || "1") || 1;
+            const sqm = parseInt(document.getElementById('host-calc-sqm')?.value || "45") || 45;
+            if (!userEditedAnnualCost) {
+                // Realistic 600,000 HUF per average 45 m2 unit
+                const estValue = Math.round(apartments * 600000 * (sqm / 45));
+                const costEl = document.getElementById('host-calc-annual-cost');
+                if (costEl) {
+                    costEl.value = estValue.toLocaleString('en-US').replace(/,/g, '');
+                }
+            }
+            window.calculateHostSavings();
+        };
+
+        // Formats English numbers with comma grouping
+        const formatNum = (num) => new Intl.NumberFormat('en-US').format(num);
+
+        window.calculateHostSavings = function() {
+            const apartments = parseInt(document.getElementById('host-calc-apartments')?.value || "1") || 1;
+            const sqm = parseInt(document.getElementById('host-calc-sqm')?.value || "45") || 45;
+            const costInputVal = document.getElementById('host-calc-annual-cost')?.value || "";
+            let annualCost = parseFloat(costInputVal.replace(/,/g, '')) || 0;
+            if (annualCost === 0) {
+                annualCost = Math.round(apartments * 600000 * (sqm / 45));
             }
 
-            if (document.getElementById('chk-extra-calendar')?.checked) total += 20000;
-            if (document.getElementById('chk-extra-lock')?.checked) total += 139000;
-            if (document.getElementById('chk-extra-water')?.checked) total += 45000;
-            if (document.getElementById('chk-extra-noise')?.checked) total += 35000;
-            if (document.getElementById('chk-extra-boiler')?.checked) total += 45000;
-
-            const formatted = new Intl.NumberFormat('en-US').format(total) + " HUF";
-            const totalEl = document.getElementById('host-estimated-total');
-            if (totalEl) {
-                totalEl.textContent = formatted;
-            }
+            // Let's check heating/cooling selection modifier
+            let modifier = 1.0;
+            const selectedHeats = [];
             
-            window.latestHostCalculatedTotal = total;
+            const hasGas = document.getElementById('heat-gas')?.checked;
+            const hasElectric = document.getElementById('heat-electric')?.checked;
+            const hasFloor = document.getElementById('heat-floor')?.checked;
+            const hasHeating = hasGas || hasElectric || hasFloor;
+            const hasClimate = document.getElementById('heat-ac')?.checked;
+
+            if (hasGas) {
+                modifier += 0.02;
+                selectedHeats.push("gas heating");
+            }
+            if (hasElectric) {
+                modifier += 0.05;
+                selectedHeats.push("electric heating");
+            }
+            if (hasClimate) {
+                modifier += 0.04;
+                selectedHeats.push("A/C");
+            }
+            if (hasFloor) {
+                modifier += 0.02;
+                selectedHeats.push("floor heating");
+            }
+
+            const heatingTxt = selectedHeats.join(" + ") || "custom systems";
+
+            // 30% - 42% savings
+            let minSavingsPercent = 0.30;
+            let maxSavingsPercent = 0.42;
+
+            // Factor in occupancy: higher occupancy = slightly higher utility cost, so higher absolute savings potential
+            const occupancy = parseInt(document.getElementById('host-calc-occupancy')?.value || "70") || 70;
+            const occupancyFactor = (occupancy / 100);
+
+            const minSavings = Math.round(annualCost * minSavingsPercent * occupancyFactor * modifier);
+            const maxSavings = Math.round(annualCost * maxSavingsPercent * occupancyFactor * modifier);
+
+            const savingsRangeText = `${formatNum(minSavings)} - ${formatNum(maxSavings)} HUF`;
+            const textEl = document.getElementById('host-calculated-savings-range');
+            if (textEl) {
+                textEl.textContent = savingsRangeText;
+            }
+
+            // Dynamic explanation text update in English
+            const expEl = document.getElementById('host-calc-explanation');
+            if (expEl) {
+                expEl.innerHTML = `Based on: <span class="text-sky-400 font-bold">${apartments}</span> apartment(s), <span class="text-sky-400 font-bold">${sqm}</span> m², <span class="text-white">${heatingTxt}</span>, reflecting average 35% customer-verified savings.`;
+            }
+
+            // Calculate detailed breakdown
+            const avgSavings = Math.round((minSavings + maxSavings) / 2);
+            let heatingSavingsAmount = 0;
+            let climateSavingsAmount = 0;
+
+            if (hasHeating && hasClimate) {
+                heatingSavingsAmount = Math.round(avgSavings * 0.60);
+                climateSavingsAmount = Math.round(avgSavings * 0.40);
+            } else if (hasHeating) {
+                heatingSavingsAmount = avgSavings;
+            } else if (hasClimate) {
+                climateSavingsAmount = avgSavings;
+            }
+
+            const breakdownEl = document.getElementById('host-calc-breakdown');
+            if (breakdownEl) {
+                let breakdownHTML = '';
+                if (hasHeating) {
+                    breakdownHTML += `
+                        <div class="flex items-center justify-between bg-slate-950/30 px-3.5 py-2.5 rounded-xl border border-slate-800/50">
+                            <span class="flex items-center gap-2 text-slate-300">
+                                <i data-lucide="thermometer" class="w-4 h-4 text-orange-400"></i>
+                                Estimated heating savings:
+                            </span>
+                            <span class="font-bold text-emerald-400 font-mono">~${formatNum(heatingSavingsAmount)} HUF</span>
+                        </div>
+                    `;
+                }
+                if (hasClimate) {
+                    breakdownHTML += `
+                        <div class="flex items-center justify-between bg-slate-950/30 px-3.5 py-2.5 rounded-xl border border-slate-800/50">
+                            <span class="flex items-center gap-2 text-slate-300">
+                                <i data-lucide="snowflake" class="w-4 h-4 text-sky-400"></i>
+                                Estimated A/C savings:
+                            </span>
+                            <span class="font-bold text-emerald-400 font-mono">~${formatNum(climateSavingsAmount)} HUF</span>
+                        </div>
+                    `;
+                }
+                breakdownEl.innerHTML = breakdownHTML;
+                breakdownEl.classList.toggle('hidden', !hasHeating && !hasClimate);
+                if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                    window.lucide.createIcons();
+                }
+            }
+
+            window.latestHostCalculatedTotal = avgSavings; // Save average as total reference
+            window.latestHostSavingsRange = savingsRangeText;
+
+            const stickyValEl = document.getElementById('host-calc-sticky-val');
+            if (stickyValEl) {
+                stickyValEl.textContent = savingsRangeText + " / yr";
+            }
+        };
+
+        window.scrollToHostCta = function() {
+            const el = document.getElementById('host-cta-buttons') || document.getElementById('host-calc-explanation');
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        };
+
+        window.addEventListener('scroll', function() {
+            const bar = document.getElementById('mobile-sticky-savings-bar');
+            if (!bar) return;
+            
+            const anchor = document.getElementById('host-calc-anchor');
+            const successBox = document.getElementById('host-calculator-success');
+            const formCtn = document.getElementById('host-offer-form-container');
+            const messenger = document.querySelector('.floating-messenger');
+            
+            if (!anchor) return;
+            
+            const rect = anchor.getBoundingClientRect();
+            const isSuccessVisible = successBox && !successBox.classList.contains('hidden');
+            const isFormVisible = formCtn && !formCtn.classList.contains('hidden');
+            
+            // Show sticky bar on mobile when scrolled into the calculator section
+            // and hide when form is active or success screen is shown, or outside of calculator zone
+            if (rect.top < 100 && rect.bottom > 200 && !isSuccessVisible && !isFormVisible) {
+                bar.classList.remove('translate-y-full');
+                if (messenger) {
+                    messenger.classList.add('mobile-lifted');
+                }
+            } else {
+                bar.classList.add('translate-y-full');
+                if (messenger) {
+                    messenger.classList.remove('mobile-lifted');
+                }
+            }
+        });
+
+        window.revealHostOfferForm = function() {
+            const ctn = document.getElementById('host-offer-form-container');
+            const btns = document.getElementById('host-cta-buttons');
+            if (ctn) {
+                ctn.classList.remove('hidden');
+                // Hide the selector buttons to focus on the form
+                if (btns) btns.classList.add('hidden');
+                setTimeout(() => {
+                    ctn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            }
+        };
+
+        window.calculateHostSavingsAndShow = function() {
+            window.calculateHostSavings();
+
+            // Hide placeholder
+            const ph = document.getElementById('host-savings-placeholder');
+            if (ph) ph.classList.add('hidden');
+
+            // Show results pane
+            const rs = document.getElementById('host-savings-results');
+            if (rs) {
+                rs.classList.remove('hidden');
+                // Smooth scroll to results
+                rs.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
         };
 
         window.triggerHostMailSender = function() {
@@ -1082,9 +1531,85 @@
                         if (typeof lucide !== 'undefined') lucide.createIcons();
                     }, 2000);
                 }).catch(err => {
-                    console.error("Failed to copy details to clipboard:", err);
+                    console.error("Failed to copy clipboard:", err);
                 });
             }
+        };
+
+        window.submitHostContactForm = function(event) {
+            event.preventDefault();
+            const name = document.getElementById('contact-name')?.value?.trim();
+            const phone = document.getElementById('contact-phone')?.value?.trim();
+            const email = document.getElementById('contact-email')?.value?.trim();
+            const address = document.getElementById('contact-address')?.value?.trim();
+            const message = document.getElementById('contact-message')?.value?.trim() || "No custom message";
+
+            const trackingId = `SZ-C${Math.floor(Math.random() * 9000 + 1000)}`;
+
+            const payload = {
+                trackingId: trackingId,
+                name: name,
+                email: email,
+                phone: phone,
+                address: address,
+                customProblem: `Smart Host Contact Inquiry (EN subpage): ${message}`,
+                total: 0,
+                propertyType: "Airbnb/Booking Partner",
+                rooms: "Contact request (EN)",
+                goal: "Direct message from accommodations subpage (EN)",
+                basicFunctions: ["Apartman automatizálás"],
+                proFunctions: [],
+                has230V: true,
+                systemName: "Host Contact Form EN",
+                deviceCount: 1,
+                lang: "en",
+                items: [
+                    { name: `Host Message EN`, price: 0, count: 1 }
+                ]
+            };
+
+            const submitBtn = document.getElementById('contact-submit-btn');
+            const successMsg = document.getElementById('contact-success-msg');
+            const form = document.getElementById('host-contact-form');
+
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `Sending...`;
+            }
+
+            const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwIu3kcAPtTSZjQ9o8KztX9z8bXHQsOT85BaEyUhMQxGsYgjVDl1DscToXp8wF863EP/exec";
+
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                if (submitBtn) submitBtn.classList.add('hidden');
+                if (successMsg) successMsg.classList.remove('hidden');
+                
+                // Reset form fields
+                if (form) form.reset();
+
+                // Smooth scroll to Calendly section after 2 seconds
+                setTimeout(() => {
+                    const calendlySection = document.getElementById('foglalas');
+                    if (calendlySection) {
+                        calendlySection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 2000);
+            })
+            .catch(err => {
+                console.error("[Error]:", err);
+                if (successMsg) {
+                    successMsg.classList.remove('hidden');
+                    successMsg.innerHTML = `<strong class="text-emerald-400 text-sm block">Thank you! Your message was saved.</strong><span class="text-xs text-slate-300 block mt-1">I will contact you shortly!</span>`;
+                }
+                if (submitBtn) submitBtn.classList.add('hidden');
+            });
         };
 
         window.submitHostInquiry = function() {
@@ -1096,6 +1621,7 @@
 
             let hasError = false;
 
+            // Reset borders
             ['host-name', 'host-email', 'host-phone', 'host-address'].forEach(id => {
                 const el = document.getElementById(id);
                 if (el) el.classList.remove('border-rose-500', 'focus:border-rose-500');
@@ -1130,64 +1656,75 @@
                 if (typeof lucide !== 'undefined') lucide.createIcons();
             }
 
+            // Generate "SZ-" unique tracking ID for Accommodation partner
             const base36Time = Date.now().toString(36).slice(-4).toUpperCase();
             const randomChar = Math.floor(10 + Math.random() * 80).toString(36).toUpperCase();
             const trackingId = `SZ-${base36Time}${randomChar}`;
             window.latestHostTrackingId = trackingId;
 
-            const selectedExtras = [];
-            if (document.getElementById('chk-extra-calendar')?.checked) selectedExtras.push("Booking-Synced Eco Mode (+20k HUF)");
-            if (document.getElementById('chk-extra-lock')?.checked) selectedExtras.push("PIN Lock Integration (+139k HUF)");
-            if (document.getElementById('chk-extra-water')?.checked) selectedExtras.push("Central Water Isolation (+45k HUF)");
-            if (document.getElementById('chk-extra-noise')?.checked) selectedExtras.push("GDPR Noise Decorum Sensor (+35k HUF)");
-            if (document.getElementById('chk-extra-boiler')?.checked) selectedExtras.push("Smart Boiler HVAC Link (+45k HUF)");
+            // Get selected modules list
+            const apartmentCount = parseInt(document.getElementById('host-calc-apartments')?.value || "1") || 1;
+            const sqm = parseInt(document.getElementById('host-calc-sqm')?.value || "45") || 45;
+            const occupancyRate = parseInt(document.getElementById('host-calc-occupancy')?.value || "60") || 60;
+            const annualCostStr = document.getElementById('host-calc-annual-cost')?.value || "0";
+            const annualUtilityCost = parseFloat(annualCostStr.replace(/,/g, '')) || 0;
 
-            const propNameEn = currentHostPropertyType === 'studio' ? 'Studio / Garcon' : (currentHostPropertyType === 'apartment' ? '1.5 - 2 Rooms' : '3+ Rooms / House');
+            const selectedHeats = [];
+            if (document.getElementById('heat-gas')?.checked) selectedHeats.push("Gas heating");
+            if (document.getElementById('heat-electric')?.checked) selectedHeats.push("Electric heating panels");
+            if (document.getElementById('heat-ac')?.checked) selectedHeats.push("Air Conditioning");
+            if (document.getElementById('heat-floor')?.checked) selectedHeats.push("Floor heating");
+            const heatingTypes = selectedHeats.join(", ") || "Not specified";
 
+            const propNameEn = `${apartmentCount} apartments (${sqm} m²)`;
+
+            // Build line items including possible custom typed text
             const inquiryItems = [
-                { name: "Estimated Hardware & Installation", price: window.latestHostCalculatedTotal, count: 1 },
-                { name: `Apartment Type: ${propNameEn}`, price: 0, count: 1 },
-                { name: `Selected Add-ons: ${selectedExtras.join(", ") || "none"}` , price: 0, count: 1 }
+                { name: "Calculated annual savings", price: 0, count: 1 },
+                { name: `Apartment details: ${propNameEn}`, price: 0, count: 1 },
+                { name: `Heating/cooling system: ${heatingTypes}` , price: 0, count: 1 }
             ];
             
             if (customProblem) {
-                inquiryItems.push({ name: `Genuinely typed requests: ${customProblem}`, price: 0, count: 1 });
+                inquiryItems.push({ name: `Special requirements: ${customProblem}`, price: 0, count: 1 });
             }
 
+            // Generate email body & subject in English
             const formatPrice = (p) => new Intl.NumberFormat('en-US').format(p);
-            const hostEmailSubject = `New Accommodations Smart Config [ID: #${trackingId}] - ${name}`;
+            const hostEmailSubject = `New hosts savings calculation [ID: #${trackingId}] - ${name}`;
             const hostEmailBody = `Dear Levente Nagy,
-            
-A new Airbnb/Booking host custom smart configurator lead has been generated.
+
+A new Airbnb/Booking host utility savings calculation was submitted from the website.
 
 INQUIRER CONTACT INFO:
 -------------------------------------
 Name: ${name}
-Phone Number: ${phone}
-Email Address: ${email}
+Phone: ${phone}
+Email: ${email}
 Apartment Address: ${address}
 
-PROPERTY DETAILS & ADD-ONS:
+PROPERTY DETAILS:
 -------------------------------------
-Type of Property: ${propNameEn}
-Selected Add-on Automations:
-${selectedExtras.length > 0 ? selectedExtras.map(e => "- " + e).join("\n") : "- Smart Host Base Gateway Core Only (hardware server + setup)"}
+Apartment count & area: ${propNameEn}
+Heating/cooling type: ${heatingTypes}
+Average occupancy: ${occupancyRate}%
+Estimated annual utility cost: ${formatPrice(annualUtilityCost)} HUF
 
-CUSTOM PROBLEMS / SPECIAL REQUESTS:
+ESTIMATED SAVINGS:
 -------------------------------------
-${customProblem ? customProblem : "No specific parameters described."}
+Inquiry ID: #${trackingId}
+Expected annual utility savings: ${window.latestHostSavingsRange}
 
-PROPOSED CONFIGURATION SUMMARY:
+SPECIAL REQUIREMENTS / COMMENTS:
 -------------------------------------
-Reference Code Hash: #${trackingId}
-Estimated Count of Devices: 1 Local Offline Gateway Hub + ${selectedExtras.length} Custom Smart Modules
-Proposed One-time Cost (with direct craft placement): ${formatPrice(window.latestHostCalculatedTotal)} HUF
+${customProblem ? customProblem : "No custom comments specified."}
 
-(All calculations incorporate the base 100,000 HUF Local Offline Server Hub and primary software deployment fees. No recurring software dues, local tech support warranty for 1-year included.)`;
+(This estimate was generated based on average 30-42% reduction in wasted energy, turning off climate/heating automatically when rooms stand empty.)`;
 
             window.lastGeneratedHostMailSubject = hostEmailSubject;
             window.lastGeneratedHostMailBody = hostEmailBody;
 
+            // POST query to Google Sheets endpoint
             const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwIu3kcAPtTSZjQ9o8KztX9z8bXHQsOT85BaEyUhMQxGsYgjVDl1DscToXp8wF863EP/exec";
             
             fetch(GOOGLE_SCRIPT_URL, {
@@ -1206,23 +1743,30 @@ Proposed One-time Cost (with direct craft placement): ${formatPrice(window.lates
                     total: window.latestHostCalculatedTotal,
                     propertyType: "Airbnb/Booking Partner (EN)",
                     rooms: propNameEn,
-                    goal: customProblem ? `Typed need: ${customProblem}` : "Accommodations energy reduction and total remote custody",
-                    basicFunctions: ["Booking-calendar synced auto check-out (optional)", ...selectedExtras],
+                    goal: customProblem ? `Typed requirement: ${customProblem}` : "Host utility savings and full remote control (EN)",
+                    basicFunctions: ["Calendar-synced check-out mode (optional)", "Utility savings", ...selectedHeats],
                     proFunctions: [],
                     has230V: true,
-                    systemName: `Smart Host ${propNameEn} System (EN)`,
-                    deviceCount: 3 + selectedExtras.length,
+                    systemName: `Smart Host ${propNameEn} System`,
+                    deviceCount: apartmentCount,
                     items: inquiryItems,
                     mailSubject: hostEmailSubject,
                     mailBody: hostEmailBody,
-                    lang: "en"
+                    lang: "en",
+                    isHostCalc: true,
+                    apartmentCount: apartmentCount,
+                    sqm: sqm,
+                    heatingTypes: heatingTypes,
+                    occupancyRate: occupancyRate,
+                    annualUtilityCost: annualUtilityCost,
+                    calculatedSavings: window.latestHostSavingsRange
                 })
             })
             .then(() => {
-                console.log("[HelyiOkos Host API]: Lead submitted successfully!");
+                console.log("[HelyiOkos Host API]: English lead submitted successfully!");
             })
             .catch(err => {
-                console.error("[HelyiOkos Host API Error]:", err);
+                console.error("[HelyiOkos Host API error]:", err);
             })
             .finally(() => {
                 if (submitBtn) {
@@ -1231,6 +1775,7 @@ Proposed One-time Cost (with direct craft placement): ${formatPrice(window.lates
                     if (typeof lucide !== 'undefined') lucide.createIcons();
                 }
 
+                // Show success view state
                 document.getElementById('host-calculator-box')?.classList.add('hidden');
                 
                 const successTrackingIdEl = document.getElementById('host-success-tracking-id');
@@ -1246,6 +1791,7 @@ Proposed One-time Cost (with direct craft placement): ${formatPrice(window.lates
                 document.getElementById('host-calculator-success')?.classList.remove('hidden');
                 if (typeof lucide !== 'undefined') lucide.createIcons();
 
+                // Dynamic Calendly loading
                 updateHostCalendly(trackingId, name, email, phone, address);
             });
         };
@@ -1325,11 +1871,11 @@ Proposed One-time Cost (with direct craft placement): ${formatPrice(window.lates
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(initCalendly, 400);
-                setTimeout(calculateHostEstimate, 100);
+                setTimeout(window.updateEstimatedAnnualCost, 100);
             });
         } else {
             setTimeout(initCalendly, 400);
-            setTimeout(calculateHostEstimate, 100);
+            setTimeout(window.updateEstimatedAnnualCost, 100);
         }
 
         // --- COOKIE BANNER ---
@@ -1406,6 +1952,17 @@ Proposed One-time Cost (with direct craft placement): ${formatPrice(window.lates
             checkCookieConsent();
         }
     </script>
+
+    <!-- Mobile-specific Sticky Bar for live savings display -->
+    <div id="mobile-sticky-savings-bar" class="fixed bottom-0 left-0 right-0 bg-slate-950/95 border-t border-slate-800/80 backdrop-blur-md px-5 py-4 z-40 flex items-center justify-between gap-4 transition-transform duration-300 translate-y-full lg:hidden shadow-2xl">
+        <div class="flex flex-col">
+            <span class="text-[9px] uppercase font-bold text-slate-400 tracking-wider">HelyiOkos Live Estimate</span>
+            <strong id="host-calc-sticky-val" class="text-emerald-400 text-sm sm:text-base font-black tracking-tight">148,000 - 236,000 HUF</strong>
+        </div>
+        <button type="button" onclick="scrollToHostCta()" class="px-5 py-2.5 bg-sky-500 hover:bg-sky-450 text-slate-950 font-black text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-lg shadow-sky-500/20 active:scale-98">
+            Request Offer
+        </button>
+    </div>
 
     <!-- Cookie Consent Banner -->
     <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 translate-y-full transition-all duration-500 ease-out hidden">
